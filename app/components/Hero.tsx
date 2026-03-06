@@ -4,9 +4,9 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-[#060d1b] overflow-hidden pt-16">
       {/* Background glow orbs */}
-      <div className="absolute z-1 top-1/3 left-1/4 w-[500px] h-[500px] bg-purple-700/20 rounded-full blur-[120px] pointer-events-none" />
+      {/* <div className="absolute z-1 top-1/3 left-1/4 w-[500px] h-[500px] bg-purple-700/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute z-1 bottom-1/4 right-1/4 w-[400px] h-[400px] bg-pink-700/20 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute z-1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute z-1 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-[150px] pointer-events-none" /> */}
       <video
         src="/video/hero-video.mp4"
         loop
@@ -18,12 +18,12 @@ export default function Hero() {
 
       {/* Grid overlay */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
+        className="absolute top-0 w-full bg-black/40 h-screen"
+      // style={{
+      //   backgroundImage:
+      //     "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
+      //   backgroundSize: "60px 60px",
+      // }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 flex flex-col justify-center items-center gap-5 text-center">

@@ -3,6 +3,7 @@
 import { ChevronDown, CodeXml, Sparkles, SquarePercent } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "../../public/images/logo.png"
+import logoWhite from "../../public/images/logoWhite.png"
 import Image from "next/image";
 import Link from "next/link";
 
@@ -32,12 +33,13 @@ export default function Navbar() {
 
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white" : "bg-black/40"}`}>
+    // <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white" : "bg-black/40"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white" : ""}`}>
       <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Image src={logo} alt="logo" width={1920} height={1080} className="w-50 h-auto" />
+            <Image src={scrolled ? logo : logoWhite} alt="logo" width={1920} height={1080} className="w-50 h-auto" />
           </Link>
 
           {/* Desktop Nav */}
