@@ -29,10 +29,10 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 flex flex-col justify-center items-center gap-5 text-center">
 
         {/* Badge */}
-<div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-purple-500/30 rounded-full px-6 py-2 mb-10">
-  <span className="text-purple-400 text-lg">✦</span>
-  <span className="text-white text-sm font-medium tracking-wide">Hello AI</span>
-</div>
+        {/* <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-purple-500/30 rounded-full px-6 py-2 mb-10">
+          <span className="text-purple-400 text-lg">✦</span>
+          <span className="text-white text-sm font-medium tracking-wide">Hello AI</span>
+        </div> */}
 
         {/* Main Heading */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-[1.1] tracking-tight">
@@ -58,27 +58,26 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto w-full">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto w-full">
           {[
-            { value: "10+", label: "Years Experience" },
+            { value: "12+", label: "Years Experience" },
             { value: "350+", label: "Products Built" },
             { value: "96%", label: "Satisfaction Rate" },
             { value: "12+", label: "Countries Served" },
           ].map((stat) => (
             <div
               key={stat.label}
-              className="text-center p-16 rounded-xl 
-      bg-white/10 backdrop-blur-md 
-      border border-white/20 
-      shadow-lg hover:bg-white/15 
+              className="flex flex-col justify-center items-center text-center p-10 min-h-[100px] rounded-2xl
+      bg-white/10 backdrop-blur-md
+      border border-white/20
+      shadow-xl hover:bg-white/15 hover:scale-105
       transition duration-300"
             >
-              <div className="text-4xl font-bold gradient-text mb-2">{stat.value}</div>
-              <div className="text-gray-300 text-sm">{stat.label}</div>
+              <div className="text-5xl font-bold gradient-text mb-2">{stat.value}</div>
+              <div className="text-gray-300 text-base">{stat.label}</div>
             </div>
           ))}
         </div>
-
       </div>
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#060d1b] to-transparent pointer-events-none" />
