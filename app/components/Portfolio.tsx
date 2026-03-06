@@ -85,7 +85,7 @@ export default function Portfolio() {
 
   return (
     <section id="portfolio" className="section-bg py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest mb-4">

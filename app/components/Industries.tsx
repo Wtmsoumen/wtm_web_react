@@ -27,7 +27,7 @@ const industries = [
 export default function Industries() {
   return (
     <section id="industries" className="section-bg-alt py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <span className="inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest mb-4">

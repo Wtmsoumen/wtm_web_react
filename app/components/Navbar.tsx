@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown, CodeXml, Sparkles, SquarePercent } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../public/images/logo.png"
 import Image from "next/image";
 import Link from "next/link";
@@ -19,10 +19,21 @@ const navLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openMegaMenu, setOpenMegaMenu] = useState("")
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50); // change after 50px scroll
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white" : "bg-black/40"}`}>
+      <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
@@ -34,7 +45,7 @@ export default function Navbar() {
             {navLinks.map((item) => (
               <div
                 key={item.label}
-                className="text-white hover:text-red-300 font-medium text-sm transition-colors duration-200 group"
+                className={`${scrolled ? "text-black hover:text-gray-600" : "text-white hover:text-red-300"} cursor-pointer font-medium text-sm transition-colors duration-200 group`}
                 onMouseEnter={() => setOpenMegaMenu(item.icon)}
                 onClick={() => setOpenMegaMenu("")}
               >
@@ -47,7 +58,7 @@ export default function Navbar() {
               </div>
             ))}
 
-            {openMegaMenu !== "" ? <div className="absolute top-10.5 bg-white w-full rounded-3xl p-5!">
+            {openMegaMenu !== "" ? <div className="absolute top-11 bg-white w-full rounded-3xl p-5!">
               <p className="text-black" onMouseLeave={() => setOpenMegaMenu("")}>
                 {openMegaMenu}
               </p>
@@ -55,7 +66,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <button className="bg-white/20 hover:bg-white/40  duration-300 cursor-pointer text-white px-4! py-2! border border-white/20 rounded-full text-sm font-medium">
+          <button className={`${scrolled ? "bg-black/20 hover:bg-black/40 text-black border-black/20" : "bg-white/20 hover:bg-white/40 text-white border-white/20"} duration-300 cursor-pointer px-4! py-2! border rounded-full text-sm font-medium`}>
             Get Quote
           </button>
 
