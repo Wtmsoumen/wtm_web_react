@@ -29,10 +29,10 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 flex flex-col justify-center items-center gap-5 text-center">
 
         {/* Badge */}
-<div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-purple-500/30 rounded-full px-6 py-2 mb-10">
-  <span className="text-purple-400 text-lg">✦</span>
-  <span className="text-white text-sm font-medium tracking-wide">Hello AI</span>
-</div>
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-purple-500/30 rounded-full px-6 py-2 mb-10">
+          <span className="text-purple-400 text-lg">✦</span>
+          <span className="text-white text-sm font-medium tracking-wide">Hello AI</span>
+        </div>
 
         {/* Main Heading */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-8 leading-[1.1] tracking-tight">
@@ -67,7 +67,7 @@ export default function Hero() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="text-center p-16 rounded-xl 
+              className="text-center p-26 rounded-xl 
       bg-white/10 backdrop-blur-md 
       border border-white/20 
       shadow-lg hover:bg-white/15 
