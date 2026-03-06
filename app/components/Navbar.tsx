@@ -1,59 +1,63 @@
 "use client";
 
+import { ChevronDown, CodeXml, Sparkles, SquarePercent } from "lucide-react";
 import { useState } from "react";
+import logo from "../../public/images/logo.png"
+import Image from "next/image";
+import Link from "next/link";
 
 const navLinks = [
-  { label: "AI Development", href: "#services" },
-  { label: "Blockchain", href: "#services" },
-  { label: "Development", href: "#services" },
-  { label: "On-Demand", href: "#ondemand" },
-  { label: "Industries", href: "#industries" },
-  { label: "Company", href: "#footer" },
+  { label: "Hello AI", href: "#helloai", icon: "helloai" },
+  { label: "Marketing", href: "#markating", icon: "markating" },
+  { label: "Development", href: "#development", icon: "development" },
+  { label: "Services", href: "#services", icon: "services" },
+  { label: "On-Demand", href: "#ondemand", icon: "ondemand" },
+  { label: "Industry", href: "#industry", icon: "industry" },
+  { label: "Company", href: "#footer", icon: "footer" },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openMegaMenu, setOpenMegaMenu] = useState("")
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-xl flex items-center justify-center gradient-btn">
-              <span className="text-white font-bold text-base">A</span>
-            </div>
-            <span className="text-white font-bold text-lg">
-              Wtm
-              <span className="gradient-text"> Technologies</span>
-            </span>
-          </a>
+          <Link href="/" className="flex items-center gap-2">
+            <Image src={logo} alt="logo" width={1920} height={1080} className="w-50 h-auto" />
+          </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="relative hidden lg:flex items-center gap-6">
             {navLinks.map((item) => (
-              <a
+              <div
                 key={item.label}
-                href={item.href}
-                className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
+                className="text-white hover:text-red-300 font-medium text-sm transition-colors duration-200 group"
+                onMouseEnter={() => setOpenMegaMenu(item.icon)}
+                onClick={() => setOpenMegaMenu("")}
               >
-                {item.label}
-              </a>
+                <div className="relative flex gap-1 z-11">
+                  {item.icon === "helloai" ? <Sparkles className="w-4.5 h-auto text-red-500" /> : item.icon === "markating" ? <SquarePercent className="w-4 h-auto text-amber-400" /> : item.icon === "development" ? <CodeXml className="w-4 h-auto text-sky-400" /> : ""}
+                  {item.label}
+                  <ChevronDown className="w-4.5 h-auto group-hover:rotate-180 duration-300" />
+                </div>
+                {/* <div className="w-full h-12 absolute top-0 bg-black z-10" /> */}
+              </div>
             ))}
+
+            {openMegaMenu !== "" ? <div className="absolute top-10.5 bg-white w-full rounded-3xl p-5!">
+              <p className="text-black" onMouseLeave={() => setOpenMegaMenu("")}>
+                {openMegaMenu}
+              </p>
+            </div> : ""}
           </div>
 
           {/* CTA */}
-          <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="#contact"
-              className="text-gray-300 hover:text-white text-sm transition-colors"
-            >
-              Contact
-            </a>
-            <button className="gradient-btn text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity">
-              Start Your Project
-            </button>
-          </div>
+          <button className="bg-white/20 hover:bg-white/40  duration-300 cursor-pointer text-white px-4! py-2! border border-white/20 rounded-full text-sm font-medium">
+            Get Quote
+          </button>
 
           {/* Mobile menu toggle */}
           <button
@@ -81,7 +85,7 @@ export default function Navbar() {
             <a
               key={item.label}
               href={item.href}
-              className="text-gray-300 hover:text-white text-sm py-1"
+              className="text-white hover:text-white text-sm py-1"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
@@ -89,7 +93,7 @@ export default function Navbar() {
           ))}
           <div className="pt-2 border-t border-white/10">
             <button className="gradient-btn text-white px-5 py-3 rounded-full text-sm font-semibold w-full">
-              Start Your Project
+              Get Quote
             </button>
           </div>
         </div>
