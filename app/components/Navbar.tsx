@@ -1,6 +1,18 @@
 "use client";
 
-import { ChevronDown, CodeXml, Sparkles, SquarePercent } from "lucide-react";
+import {
+  ChevronDown, CodeXml, Sparkles, SquarePercent, Share2,
+  Lightbulb,
+  TrendingUp,
+  Users,
+  Search,
+  UserPlus,
+  ShieldCheck,
+  ShoppingCart,
+  Megaphone,
+  FileText,
+  Target
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "../../public/images/logo.png"
 import logoWhite from "../../public/images/logoWhite.png"
@@ -9,7 +21,21 @@ import Link from "next/link";
 
 const navLinks = [
   { label: "Hello AI", href: "#helloai", icon: "helloai" },
-  { label: "Marketing", href: "#markating", icon: "markating" },
+  {
+    label: "Marketing", href: "#markating", icon: "markating", megaMenu: [
+      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "ffb900" },
+      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "ffb900" },
+      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "ffb900" },
+      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "ffb900" },
+      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "ffb900" },
+      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "ffb900" },
+      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "ffb900" },
+      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "ffb900" },
+      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "ffb900" },
+      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "ffb900" },
+      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "ffb900" }
+    ]
+  },
   { label: "Development", href: "#development", icon: "development" },
   { label: "Services", href: "#services", icon: "services" },
   { label: "On-Demand", href: "#ondemand", icon: "ondemand" },
@@ -19,8 +45,12 @@ const navLinks = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openMegaMenu, setOpenMegaMenu] = useState("")
+  const [openMegaMenu, setOpenMegaMenu] = useState<any>([])
   const [scrolled, setScrolled] = useState(false);
+
+  // useEffect(() => {
+  //   console.log(openMegaMenu[0], "openMegaMenu0__")
+  // }, [openMegaMenu?.length])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,11 +78,11 @@ export default function Navbar() {
               <div
                 key={item.label}
                 className={`${scrolled ? "text-black hover:text-gray-600" : "text-white hover:text-red-300"} cursor-pointer font-medium text-sm transition-colors duration-200 group`}
-                onMouseEnter={() => setOpenMegaMenu(item.icon)}
-                onClick={() => setOpenMegaMenu("")}
+                onMouseEnter={() => setOpenMegaMenu(item?.megaMenu)}
+                onClick={() => setOpenMegaMenu([])}
               >
-                <div className="relative flex gap-1 z-11">
-                  {item.icon === "helloai" ? <Sparkles className="w-4.5 h-auto text-red-500" /> : item.icon === "markating" ? <SquarePercent className="w-4 h-auto text-amber-400" /> : item.icon === "development" ? <CodeXml className="w-4 h-auto text-sky-400" /> : ""}
+                <div className="relative flex gap-1 z-11 font-medium text-[15px]">
+                  {item.icon === "helloai" ? <Sparkles className="w-5 h-auto text-red-500" /> : item.icon === "markating" ? <SquarePercent className="w-5 h-auto text-amber-400" /> : item.icon === "development" ? <CodeXml className="w-5 h-auto text-sky-400" /> : ""}
                   {item.label}
                   <ChevronDown className="w-4.5 h-auto group-hover:rotate-180 duration-300" />
                 </div>
@@ -60,10 +90,16 @@ export default function Navbar() {
               </div>
             ))}
 
-            {openMegaMenu !== "" ? <div className="absolute top-11 bg-white w-full rounded-3xl p-5!">
-              <p className="text-black" onMouseLeave={() => setOpenMegaMenu("")}>
-                {openMegaMenu}
-              </p>
+            {openMegaMenu?.length > 0 ? <div className="absolute top-11 bg-white w-full rounded-3xl overflow-hidden flex">
+              <div className="text-black grid grid-cols-2 p-5! gap-y-6 gap-x-2 w-[75%]" onMouseLeave={() => setOpenMegaMenu([])}>
+                {openMegaMenu?.length > 0 ? openMegaMenu?.map((v: any, idx: number) => {
+                  const Icon = v?.icon;
+                  return (
+                    <Link href={v?.href} key={idx} className={`flex items-start gap-2 font-medium group`}>{v?.icon !== "" ? <Icon className={`w-5 group-hover:w-5.5 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} /> : ""}{v?.title}</Link>
+                  )
+                }) : ""}
+              </div>
+              <div className="w-[25%] h-[-webkit-fill-available] z-10" style={{ backgroundColor: openMegaMenu[0]?.color }} />
             </div> : ""}
           </div>
 
@@ -95,14 +131,14 @@ export default function Navbar() {
       {menuOpen && (
         <div className="lg:hidden bg-[#080f20] border-t border-white/10 px-4 py-5 flex flex-col gap-4">
           {navLinks.map((item) => (
-            <a
+            <Link
               key={item.label}
               href={item.href}
               className="text-white hover:text-white text-sm py-1"
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <div className="pt-2 border-t border-white/10">
             <button className="gradient-btn text-white px-5 py-3 rounded-full text-sm font-semibold w-full">
