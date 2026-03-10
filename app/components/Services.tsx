@@ -1,75 +1,91 @@
+import {
+  Sparkles, Bot,
+  Link2,
+  Smartphone,
+  Globe,
+  Code2,
+  RefreshCw,
+  BarChart2,
+  TrendingUp,
+  ShoppingCart,
+} from "lucide-react";
+
+
+
+
 const services = [
   {
-    icon: "🤖",
+    icon: Bot,
     title: "AI Engineering",
-    description:
-      "Custom AI models, LLM integrations, and intelligent automation solutions tailored for your business needs.",
+    description: "Custom AI models, LLM integrations, and intelligent automation solutions tailored for your business needs.",
   },
   {
-    icon: "⛓",
+    icon: Link2,
     title: "Blockchain Development",
-    description:
-      "Smart contracts, DeFi platforms, NFT marketplaces, and enterprise blockchain solutions.",
+    description: "Smart contracts, DeFi platforms, NFT marketplaces, and enterprise blockchain solutions.",
   },
   {
-    icon: "📱",
+    icon: Smartphone,
     title: "Mobile App Development",
-    description:
-      "Native and cross-platform iOS & Android apps with seamless user experiences.",
+    description: "Native and cross-platform iOS & Android apps with seamless user experiences.",
   },
   {
-    icon: "🌐",
+    icon: Globe,
     title: "Custom Web Development",
-    description:
-      "Scalable web applications, SaaS platforms, and progressive web apps built for performance.",
+    description: "Scalable web applications, SaaS platforms, and progressive web apps built for performance.",
   },
   {
-    icon: "💻",
+    icon: Code2,
     title: "Software Development",
-    description:
-      "End-to-end custom software solutions, APIs, and microservices architecture.",
+    description: "End-to-end custom software solutions, APIs, and microservices architecture.",
   },
   {
-    icon: "🔄",
+    icon: RefreshCw,
     title: "Digital Transformation",
-    description:
-      "Legacy modernization, cloud migration, and business process automation.",
+    description: "Legacy modernization, cloud migration, and business process automation.",
   },
   {
-    icon: "📊",
+    icon: BarChart2,
     title: "Digital Marketing",
-    description:
-      "Data-driven marketing strategies, SEO, performance campaigns, and growth hacking.",
+    description: "Data-driven marketing strategies, SEO, performance campaigns, and growth hacking.",
   },
   {
-    icon: "📈",
+    icon: TrendingUp,
     title: "Data Science & Analytics",
-    description:
-      "Big data processing, predictive analytics, and business intelligence dashboards.",
+    description: "Big data processing, predictive analytics, and business intelligence dashboards.",
   },
   {
-    icon: "🛒",
+    icon: ShoppingCart,
     title: "E-commerce Development",
-    description:
-      "Custom storefronts, marketplace platforms, and headless commerce solutions.",
+    description: "Custom storefronts, marketplace platforms, and headless commerce solutions.",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="section-bg-alt py-24">
-      <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8">
+    <section id="services" className="  !bg-white py-16!">
+      <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8 ">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest mb-4">
-            Our Expertise
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="flex flex-col items-center text-center !mb-13  gap-4">
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 !px-4 !py-2 rounded-full gradient-btn border-gray-100">
+            <Sparkles className="w-5 h-5 " />
+            <span className="text-md font-semibold tracking-wide">
+              Our Expertise
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h2 className="text-black text-5xl md:text-6xl font-bold">
             What We <span className="gradient-text">Offer</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+
+          {/* Description */}
+          <p className="text-black text-xl  max-w-2xl leading-relaxed">
             Comprehensive technology services to build, scale, and transform your digital products.
           </p>
+
         </div>
 
         {/* Grid */}
@@ -77,16 +93,16 @@ export default function Services() {
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="card-glass rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300 group cursor-pointer"
+              className="flex flex-col gap-3 card-glass rounded-2xl !p-6 transition-all duration-300 group cursor-pointer"
             >
-              <div className="w-12 h-12 rounded-xl gradient-btn flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                {service.icon}
+              <div className="w-12 h-12 rounded-xl icon-gradient flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <service.icon className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-white font-semibold text-lg mb-2">{service.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4">{service.description}</p>
+              <h3 className="text-black font-semibold text-lg mb-2">{service.title}</h3>
+              <p className="text-gray-600 text-md leading-relaxed mb-4">{service.description}</p>
               <a
                 href="#"
-                className="inline-flex items-center gap-1 text-purple-400 text-sm font-medium hover:text-pink-400 transition-colors"
+                className="inline-flex items-center gap-1 text-[#ff0000b1] text-md  font-medium hover:text-pink-400 transition-colors"
               >
                 Explore
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

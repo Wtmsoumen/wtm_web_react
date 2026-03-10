@@ -51,15 +51,15 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="section-bg py-24">
+    <section className="section-bg !py-24">
       <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest mb-4">
+          {/* <span className="inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest mb-4">
             Why Choose Us
-          </span>
+          </span> */}
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Built for <span className="gradient-text">Scale & Speed</span>
+           Why <span className="gradient-text">Choose Us ?</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             We combine technical excellence with proven processes to deliver products that succeed.
@@ -69,7 +69,7 @@ export default function WhyChooseUs() {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f, idx) => (
-            <div key={idx} className="card-glass rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300">
+            <div key={idx} className="card-glass-why-choose-usrounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300">
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl gradient-btn flex items-center justify-center text-xl shrink-0">
                   {f.icon}

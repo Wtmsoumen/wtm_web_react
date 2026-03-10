@@ -24,24 +24,56 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #a855f7, #ec4899);
+  /* background: linear-gradient(135deg, #e74c3c, #ab1707d4, #1a0505); */
+  background:#c70b0bca;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-btn {
-  background: linear-gradient(135deg, #a855f7, #ec4899);
+  background: linear-gradient(135deg, #1D74CF, #b33b41, #D04425);
 }
-
 .gradient-btn:hover {
   opacity: 0.9;
 }
 
+.icon-gradient {  background: linear-gradient(135deg, #D04425, #b33b41,  #1D74CF); }  
 .card-glass {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.7); /* works on white background */
+  border: 1px solid rgba(236, 72, 153, 0.12);
   backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+
+
+.card-glass-why-choose-us {
+  background: rgba(4, 225, 41, 0.622);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.3) inset;
+  transition: all 0.3s ease;
+}
+
+.card-glass-why-choose-us :hover {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 
+    0 8px 40px rgba(0, 0, 0, 0.5),
+    0 1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.3) inset;
+  transform: translateY(-2px);
+}
+
+.card-glass:hover {
+  /* background: rgba(236, 72, 153, 0.08); pink glass */
+  border-color: rgba(236, 72, 153, 0.4);
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.15);
 }
 
 .section-bg {

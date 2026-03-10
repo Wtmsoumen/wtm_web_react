@@ -18,7 +18,7 @@ export default function Hero() {
 
       {/* Grid overlay */}
       <div
-        className="absolute top-0 w-full bg-black/40 h-screen"
+        className="absolute top-0 w-full bg-linear-90 to-slate-700/45 via-red-700/10 from-black/45 h-screen"
       // style={{
       //   backgroundImage:
       //     "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)",
@@ -51,7 +51,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
           <button className="group gradient-btn text-white !px-8 !py-4 rounded-full text-base font-semibold transition-all duration-300 hover:opacity-90 hover:scale-105 hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] w-full sm:w-auto flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(168,85,247,0.3)]">
-            <Sparkles className="w-5 h-5" />
+            <Sparkles className="w-6 h-6" />
             <span>Start Your Project</span>
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
