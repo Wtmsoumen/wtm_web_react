@@ -14,11 +14,11 @@ import Footer from "./components/Footer";
 import OurService from "./components/OurService";
 import ServicesTestimonialsSection from "./components/TestimonialsSection";
 import OurExpertise from "./components/OurExpertise";
+import ClientsSection from "./components/Clientssection";
 
 export default function Home() {
   return (
     <div className="min-h-screen ">
-      <Navbar />
       <Hero />
       <Services />
       <WhyChooseUs />
@@ -30,6 +30,7 @@ export default function Home() {
       {/* <Testimonials /> */}
       <OurExpertise />
       <ServicesTestimonialsSection />
+      <ClientsSection />
       <FAQ />
       <BlogSection />
       <Newsletter />

@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {features.map((f, idx) => (
-            <div className={`${globalStyle.cardGlassWhyChooseUs} flex flex-col gap-3 group relative`}>
+            <div className={`${globalStyle?.cardGlassWhyChooseUs} flex flex-col gap-3 group relative`}>
 
               {/* Bottom right half circle blob */}
               <div className="absolute bottom-0 -right-7 w-40 h-40 rounded-full 

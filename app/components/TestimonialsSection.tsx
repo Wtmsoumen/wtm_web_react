@@ -90,7 +90,7 @@ function TechMarquee() {
 // ─── Testimonial Section ──────────────────────────────────────────────────────
 function TestimonialsSection() {
     return (
-        <section className="relative px-6 md:px-16 py-20">
+        <section className="relative px-6 md:px-16! py-20!">
             <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                 {/* Left: Main Video */}
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-gray-800 group cursor-pointer">
@@ -172,7 +172,7 @@ function TestimonialsSection() {
 export default function ServicesTestimonialsSection() {
     return (
         <div
-            className="min-h-screen text-white"
+            className="min-h-screen text-white pb-0"
             style={{
                 background: "radial-gradient(ellipse at top left, #1a0a3d 0%, #07122a 40%, #050d1f 100%)",
                 fontFamily: "'Syne', 'DM Sans', sans-serif",
@@ -191,7 +191,7 @@ export default function ServicesTestimonialsSection() {
       `}</style>
 
             {/* ── Section 1: Services Grid ─────────────────────────── */}
-            <section className="px-6 md:px-16 pt-16 pb-12">
+            <section className="px-6! md:px-16! pt-16! pb-12!">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
@@ -258,7 +258,7 @@ export default function ServicesTestimonialsSection() {
             </section>
 
             {/* ── Section 2: Stats + "End to End Technology" ────────── */}
-            <section className="px-6 md:px-16 py-16">
+            <section className="px-6! md:px-16! py-16!">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-center gap-10">
                     <div className="flex-1">
                         <p className="text-white/70 text-2xl font-light">End to End</p>
@@ -285,7 +285,7 @@ export default function ServicesTestimonialsSection() {
             <TechMarquee />
 
             {/* ── Section 4: Testimonials ────────────────────────────── */}
-            <TestimonialsSection />
+            {/* <TestimonialsSection /> */}
         </div>
     );
 }
