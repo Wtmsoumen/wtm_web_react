@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
               {/* Bottom right half circle blob */}
               <div className="absolute bottom-0 -right-7 w-40 h-40 rounded-full 
   bg-gray-600
-    translate-x-10 translate-y-10 opacity-10 
+    translate-x-10 translate-y-10 opacity-20 
     transition-all duration-500
    group-hover:scale-125 group-hover:bg-gradient-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425]" />
 
@@ -92,8 +92,7 @@ export default function WhyChooseUs() {
               </h3>
 
               <p className="text-gray-400 text-md leading-relaxed transition-all duration-300
-    group-hover:bg-gradient-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425]
-    group-hover:bg-clip-text group-hover:text-transparent">
+    ">
                 {f.description}
               </p>
 

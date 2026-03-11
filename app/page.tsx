@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import OurService from "./components/OurService";
 import ServicesTestimonialsSection from "./components/TestimonialsSection";
 import OurExpertise from "./components/OurExpertise";
+import PoweredByAI from "./components/PoweredByAI";
 
 export default function Home() {
   return (
@@ -23,11 +24,13 @@ export default function Home() {
       <Services />
       <WhyChooseUs />
       <TrustIndicators />
+   
       <Portfolio />
-      {/* <OnDemand /> */}
+
+ 
       <OurService />
       <Industries />
-      {/* <Testimonials /> */}
+      <PoweredByAI />
       <OurExpertise />
       <ServicesTestimonialsSection />
       <FAQ />

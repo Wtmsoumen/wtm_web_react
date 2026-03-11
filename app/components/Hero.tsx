@@ -211,10 +211,10 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-<p className="text-white/90 text-lg md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed 
+{/* <p className="text-white/90 text-lg md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed 
 ">
   We create AI-driven applications and digital solutions that help businesses grow and evolve globally. From the initial idea to the final launch, we focus on delivering products that are fast, dependable, and built to scale.
-</p>
+</p> */}
 
         {/* CTA Button */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
