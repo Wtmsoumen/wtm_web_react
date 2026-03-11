@@ -9,6 +9,7 @@ import {
   TrendingUp,
   ShoppingCart,
 } from "lucide-react";
+import { globalStyle } from "../globalStyle";
 
 
 
@@ -78,7 +79,7 @@ export default function Services() {
 
           {/* Heading */}
           <h2 className="text-black text-5xl md:text-6xl font-bold">
-            What We <span className="gradient-text">Offer</span>
+            What We <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Offer</span>
           </h2>
 
           {/* Description */}
