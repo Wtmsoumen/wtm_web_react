@@ -1,3 +1,5 @@
+import { globalStyle } from "../globalStyle";
+
 const posts = [
   {
     category: "AI & ML",
@@ -42,7 +44,7 @@ export default function BlogSection() {
               Blog & Insights
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-white">
-              Latest <span className="gradient-text">Tech News</span>
+              Latest <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Tech News</span>
             </h2>
           </div>
           <a

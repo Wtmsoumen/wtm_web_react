@@ -48,7 +48,7 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="section-bg !py-24 ">
+    <section className="section-bg !py-24 bg-[#0f172a]!">
       <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
             Why Choose Us
           </span> */}
           <h2 className="text-4xl md:text-5xl font-bold text-white  ">
-            Why <span className="gradient-text">Choose Us ?</span>
+            Why <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Choose Us ?</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             We combine technical excellence with proven processes to deliver products that succeed.

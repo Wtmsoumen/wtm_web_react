@@ -9,4 +9,12 @@ export const globalStyle = {
         "hover:bg-[rgba(26,22,52,0.92)] hover:border-purple-500/30 " +
         "hover:shadow-[0_16px_48px_rgba(0,0,0,0.6),0_0_28px_rgba(160,80,220,0.15)_inset] " +
         "hover:-translate-y-2",
+
+// gradientText:
+// "bg-gradient-to-r from-[#ff3b3b] via-[#ff0000] to-[#cc0000]"
+
+
+gradientText:
+"bg-gradient-to-r from-[#1D74CF] via-[#BA4491] to-[#ff2a2a]"
+
 }

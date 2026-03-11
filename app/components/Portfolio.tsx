@@ -1,3 +1,4 @@
+import { globalStyle } from "../globalStyle";
 import PortfolioScroller from "./PortfolioScroller";
 
 const projects = [
@@ -90,11 +91,12 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest mb-4">
+          <span  className={`${globalStyle?.gradientText} bg-clip-text text-transparent inline-block text-purple-400 text-xl font-semibold uppercase tracking-widest  mb-4`}> 
+           {/* inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest  mb-4 */}
             Our Portfolio
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Projects That Drive <span className="gradient-text">Real Results</span>
+            Projects That Drive <span  className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Real Results</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             From crypto exchanges to AI-powered apps — we build products that scale globally.
