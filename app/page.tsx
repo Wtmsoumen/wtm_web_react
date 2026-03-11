@@ -11,6 +11,9 @@ import FAQ from "./components/FAQ";
 import BlogSection from "./components/BlogSection";
 import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
+import OurService from "./components/OurService";
+import ServicesTestimonialsSection from "./components/TestimonialsSection";
+import OurExpertise from "./components/OurExpertise";
 
 export default function Home() {
   return (
@@ -21,9 +24,12 @@ export default function Home() {
       <WhyChooseUs />
       <TrustIndicators />
       <Portfolio />
+      {/* <OnDemand /> */}
+      <OurService />
       <Industries />
-      <OnDemand />
-      <Testimonials />
+      {/* <Testimonials /> */}
+      <OurExpertise />
+      <ServicesTestimonialsSection />
       <FAQ />
       <BlogSection />
       <Newsletter />
