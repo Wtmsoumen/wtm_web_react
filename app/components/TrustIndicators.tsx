@@ -50,7 +50,7 @@ function StarRating({ count }: { count: number }) {
 
 export default function TrustIndicators() {
   return (
-    <section className="section-bg-alt py-16 border-y border-white/5">
+    <section className="section-bg-alt py-16 border-y border-white/5 bg-white!">
       <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <p className="text-gray-400 text-sm uppercase tracking-widest font-medium">
