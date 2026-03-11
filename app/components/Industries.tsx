@@ -1,75 +1,106 @@
-const industries = [
-  { name: "Healthcare", count: "150+", icon: "🏥" },
-  { name: "FinTech", count: "200+", icon: "💰" },
-  { name: "eCommerce", count: "250+", icon: "🛍" },
-  { name: "Education", count: "110+", icon: "🎓" },
-  { name: "Logistics", count: "120+", icon: "🚚" },
-  { name: "Automotive", count: "40+", icon: "🚗" },
-  { name: "Agriculture", count: "30+", icon: "🌾" },
-  { name: "Gaming", count: "60+", icon: "🎮" },
-  { name: "Sports", count: "35+", icon: "⚽" },
-  { name: "On-Demand", count: "300+", icon: "⚡" },
-  { name: "Events", count: "45+", icon: "🎪" },
-  { name: "Social", count: "80+", icon: "💬" },
-  { name: "Fitness", count: "70+", icon: "💪" },
-  { name: "Entertainment", count: "90+", icon: "🎬" },
-  { name: "Restaurant", count: "100+", icon: "🍽" },
-  { name: "SaaS", count: "150+", icon: "☁️" },
-  { name: "Government", count: "20+", icon: "🏛" },
-  { name: "Real Estate", count: "55+", icon: "🏘" },
-  { name: "EV & Energy", count: "25+", icon: "⚡" },
-  { name: "Media", count: "40+", icon: "📺" },
-  { name: "Aviation", count: "15+", icon: "✈️" },
-  { name: "OTT", count: "30+", icon: "📡" },
-  { name: "Travel", count: "65+", icon: "🌍" },
-];
 
-export default function Industries() {
+
+import Image from 'next/image'
+import React from 'react'
+
+import ida from "../../public/images/dgwIcons/1ida.png"
+import b2bpm from "../../public/images/dgwIcons/2b2bpm.png"
+import fapp from "../../public/images/dgwIcons/3fapp.png"
+import rest from "../../public/images/dgwIcons/4rest.png"
+import hewe from "../../public/images/dgwIcons/5hewe.png"
+import sone from "../../public/images/dgwIcons/6sone.png"
+import lnt from "../../public/images/dgwIcons/7lnt.png"
+import blcr from "../../public/images/dgwIcons/8blcr.png"
+import trho from "../../public/images/dgwIcons/9trho.png"
+import fifi from "../../public/images/dgwIcons/10fifi.png"
+import bfi from "../../public/images/dgwIcons/11bfi.png"
+import ecr from "../../public/images/dgwIcons/12ecr.png"
+import { globalStyle } from '../globalStyle'
+
+const Industries = () => {
+
+  let industries = [
+    {
+      id: 1,
+      title: "Interior Design & Architecture",
+      image: ida,
+    },
+    {
+      id: 2,
+      title: "B2B Portals & Marketplaces",
+      image: b2bpm,
+    },
+    {
+      id: 3,
+      title: "Fashion & Apparel",
+      image: fapp,
+    },
+    {
+      id: 4,
+      title: "Real Estate",
+      image: rest,
+    },
+    {
+      id: 5,
+      title: "Healthcare & Wellness",
+      image: hewe,
+    },
+    {
+      id: 6,
+      title: "Social Networking",
+      image: sone,
+    },
+    {
+      id: 7,
+      title: "Logistics & Transportation",
+      image: lnt,
+    },
+    {
+      id: 8,
+      title: "Blockchain & Crypto",
+      image: blcr,
+    },
+    {
+      id: 9,
+      title: "Travel & Hospitality",
+      image: trho,
+    },
+    {
+      id: 10,
+      title: "Finance & Fintech",
+      image: fifi,
+    },
+    {
+      id: 11,
+      title: "Banking, Finance & Insurance",
+      image: bfi,
+    },
+    {
+      id: 12,
+      title: "E-commerce & Retail",
+      image: ecr,
+    },
+  ]
+
   return (
-    <section id="industries" className="section-bg-alt py-24">
-      <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest mb-4">
-            Industry Solutions
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            23+ Industries <span className="gradient-text">Served</span>
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Deep domain expertise across all major verticals — delivering specialized solutions that meet industry-specific challenges.
-          </p>
+    <div className='bg-linear-to-r from-[#1E7FF8] via-[#0E8DF6]  to-[#E75061]'>
+      <div className={`${globalStyle?.container} py-16!`}>
+        <div className='flex flex-col items-center gap-4'>
+          <h1 className='uppercase tracking-[2.5%] text-base font-medium text-white'>DIGITALLY GROWING WITH</h1>
+          <h2 className='text-5xl font-normal text-white'>Industries <strong>We Serve</strong></h2>
+          <p className='text-base font-normal text-white text-center max-w-3xl'>At WebTechnomind, we empower businesses across diverse industries with innovative digital solutions that fuel growth and transformation. From stunning websites and intuitive mobile apps to custom software and strategic branding, we craft experiences that help grow your business online.</p>
         </div>
-
-        {/* Top 5 highlights */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10">
-          {industries.slice(0, 5).map((ind, idx) => (
-            <div
-              key={idx}
-              className="card-glass rounded-2xl p-5 text-center hover:border-purple-500/30 transition-all duration-300 group cursor-pointer"
-            >
-              <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">{ind.icon}</div>
-              <div className="text-white font-semibold text-sm">{ind.name}</div>
-              <div className="text-purple-400 font-bold text-lg">{ind.count}</div>
-              <div className="text-gray-500 text-xs">apps built</div>
-            </div>
-          ))}
-        </div>
-
-        {/* All industries grid */}
-        <div className="flex flex-wrap gap-3 justify-center">
-          {industries.slice(5).map((ind, idx) => (
-            <div
-              key={idx}
-              className="card-glass rounded-full px-5 py-2.5 flex items-center gap-2 hover:border-purple-500/30 transition-all duration-300 cursor-pointer"
-            >
-              <span className="text-base">{ind.icon}</span>
-              <span className="text-gray-300 text-sm font-medium">{ind.name}</span>
-              <span className="text-purple-400 text-xs font-bold">{ind.count}</span>
+        <div className='grid grid-cols-6 gap-4 mt-10!'>
+          {industries.map((industry) => (
+            <div key={industry.id} className='p-7! bg-white rounded-[20px] w-full flex flex-col items-center gap-4'>
+              <Image src={industry.image} alt="industriesWeServe" width={70} height={70} />
+              <p className='text-base font-normal text-black text-center'>{industry?.title}</p>
             </div>
           ))}
         </div>
       </div>
-    </section>
-  );
+    </div>
+  )
 }
+
+export default Industries
