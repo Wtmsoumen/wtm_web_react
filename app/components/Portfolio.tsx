@@ -1,3 +1,5 @@
+import PortfolioScroller from "./PortfolioScroller";
+
 const projects = [
   {
     name: "BitDelta",
@@ -99,8 +101,10 @@ export default function Portfolio() {
           </p>
         </div>
 
+       <PortfolioScroller/>
+
         {/* Featured Project */}
-        <div
+        {/* <div
           className={`relative card-glass rounded-3xl p-8 md:p-12 mb-6 overflow-hidden bg-gradient-to-br ${featured.bg}`}
         >
           <div className="absolute top-4 right-4">
@@ -134,10 +138,10 @@ export default function Portfolio() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Rest of portfolio */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {rest.map((project, idx) => (
             <div
               key={idx}
@@ -176,14 +180,14 @@ export default function Portfolio() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* View All */}
-        <div className="text-center mt-10">
+        {/* <div className="text-center mt-10">
           <button className="border border-purple-500/40 text-purple-400 px-8 py-3 rounded-full text-sm font-semibold hover:bg-purple-500/10 transition-colors">
             View All Projects
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
