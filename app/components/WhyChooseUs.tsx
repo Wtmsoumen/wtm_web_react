@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
           {/* <span className="inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest mb-4">
             Why Choose Us
           </span> */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white  ">
            Why <span className="gradient-text">Choose Us ?</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -67,10 +67,10 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {features.map((f, idx) => (
-            <div key={idx} className="card-glass-why-choose-usrounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300">
-              <div className="flex items-start gap-4 mb-4">
+            <div key={idx} className="card-glass-why-choose-us border-2 flex flerx-col gap-2 rounded-2xl p-6 hover:border-purple-500/30 transition-all duration-300">
+              <div className="flex items-start  gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl gradient-btn flex items-center justify-center text-xl shrink-0">
                   {f.icon}
                 </div>
