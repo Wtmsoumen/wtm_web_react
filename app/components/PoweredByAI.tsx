@@ -117,15 +117,15 @@ export default function PoweredByAI() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-10">
           <div className="">
             {/* Badge */}
-            <div  className={`${globalStyle?.gradientText} inline-flex items-center gap-1.5 bordertext-md font-semibold px-5 py-3  rounded-full mb-4`}>
-                {/* inline-flex items-center gap-1.5 border border-orange-300 bg-orange-50 text-orange-500 text-md font-semibold px-5 py-3  rounded-full mb-4 */}
+            <div className={`${globalStyle?.gradientText} inline-flex items-center gap-1.5 bordertext-md font-semibold px-5 py-3  rounded-full mb-4`}>
+              {/* inline-flex items-center gap-1.5 border border-orange-300 bg-orange-50 text-orange-500 text-md font-semibold px-5 py-3  rounded-full mb-4 */}
               <span className="text-base">⚡</span>
               High-Demand Solutions
             </div>
 
             {/* Heading */}
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 mb-3 leading-tight">
-              On-Demand Apps&nbsp;<span  className={`${globalStyle?.gradientText}  bg-clip-text text-transparent`}>Powered by AI</span>
+              On-Demand Apps&nbsp;<span className={`${globalStyle?.gradientText}  bg-clip-text text-transparent`}>Powered by AI</span>
             </h2>
 
             {/* Subtitle */}
@@ -145,47 +145,47 @@ export default function PoweredByAI() {
         </div>
 
         {/* Grid */}
-     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-  {solutions.map((item) => {
-    const Icon = item.icon;
-    return (
-      <div
-        key={item.id}
-        className="relative bg-white border border-gray-100 rounded-2xl p-4 flex flex-col gap-3
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {solutions.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.id}
+                className="relative bg-white border border-gray-100 rounded-2xl p-8 flex flex-col gap-3
           shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
-      >
-        {/* HOT badge */}
-        {item.hot && (
-          <div className="absolute -top-2.5 left-4 flex items-center gap-1 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">
-            <Flame className="w-2.5 h-2.5" />
-            HOT
-          </div>
-        )}
+              >
+                {/* HOT badge */}
+                {item.hot && (
+                  <div className="absolute -top-2.5 left-4 flex items-center gap-1 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-sm">
+                    <Flame className="w-2.5 h-2.5" />
+                    HOT
+                  </div>
+                )}
 
-        {/* Icon */}
-        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.iconBg} flex items-center justify-center shadow-sm`}>
-          <Icon className="w-8 h-8 text-white" />
+                {/* Icon */}
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${item.iconBg} flex items-center justify-center shadow-sm`}>
+                  <Icon className="w-8 h-8 text-white" />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-gray-900 font-bold text-md leading-tight group-hover:text-violet-600 transition-colors duration-200">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-400 text-md leading-relaxed line-clamp-2">
+                  {item.description}
+                </p>
+
+                {/* Stat */}
+                <div className="flex items-center gap-1.5 mt-auto">
+                  <Package className="w-5 h-5 text-violet-400" />
+                  <span className="text-violet-500 text-xs font-semibold">{item.stat}</span>
+                </div>
+              </div>
+            );
+          })}
         </div>
-
-        {/* Title */}
-        <h3 className="text-gray-900 font-bold text-md leading-tight group-hover:text-violet-600 transition-colors duration-200">
-          {item.title}
-        </h3>
-
-        {/* Description */}
-        <p className="text-gray-400 text-md leading-relaxed line-clamp-2">
-          {item.description}
-        </p>
-
-        {/* Stat */}
-        <div className="flex items-center gap-1.5 mt-auto">
-          <Package className="w-5 h-5 text-violet-400" />
-          <span className="text-violet-500 text-xs font-semibold">{item.stat}</span>
-        </div>
-      </div>
-    );
-  })}
-</div>
       </div>
     </section>
   );
