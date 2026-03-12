@@ -65,7 +65,7 @@ export default function Navbar() {
 
   return (
     // <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white" : "bg-black/40"}`}>
-    <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 shadow-sm shadow-gray-300 ${scrolled ? "bg-white" : ""}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white shadow-sm shadow-gray-300" : ""}`}>
       <div className={globalStyle?.container}>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -74,7 +74,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="relative hidden lg:flex items-center gap-6">
+          <div className="relative hidden lg:flex items-center gap-5">
             {navLinks.map((item) => (
               <div
                 key={item.label}

@@ -185,7 +185,7 @@ import { globalStyle } from "../globalStyle";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-[#060d1b] overflow-hidden pt-16">
-      
+
       {/* Video Background */}
       <video
         src="/video/hero-video2.mp4"
@@ -197,7 +197,7 @@ export default function Hero() {
       />
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-red-900/20 to-slate-900/40" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/40 via-red-black/50 to-black/60" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col justify-center items-center text-center w-full">
@@ -205,13 +205,13 @@ export default function Hero() {
         {/* Main Heading */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">
           Your{" "}
-          <span  className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Next-gen</span>
+          <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Next-gen</span>
           <br />
           <span className="text-white">Tech Growth Partner</span>
         </h1>
 
         {/* Subtitle */}
-{/* <p className="text-white/90 text-lg md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed 
+        {/* <p className="text-white/90 text-lg md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed 
 ">
   We create AI-driven applications and digital solutions that help businesses grow and evolve globally. From the initial idea to the final launch, we focus on delivering products that are fast, dependable, and built to scale.
 </p> */}
@@ -249,7 +249,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#060d1b] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#060d1b] to-transparent pointer-events-none" />
     </section>
   );
 }
