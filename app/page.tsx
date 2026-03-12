@@ -14,25 +14,26 @@ import Footer from "./components/Footer";
 import OurService from "./components/OurService";
 import ServicesTestimonialsSection from "./components/TestimonialsSection";
 import OurExpertise from "./components/OurExpertise";
+import ClientsSection from "./components/Clientssection";
 import PoweredByAI from "./components/PoweredByAI";
 
 export default function Home() {
   return (
     <div className="min-h-screen ">
-      <Navbar />
       <Hero />
       <Services />
       <WhyChooseUs />
       <TrustIndicators />
-   
+
       <Portfolio />
 
- 
+
       <OurService />
       <Industries />
       <PoweredByAI />
       <OurExpertise />
       <ServicesTestimonialsSection />
+      <ClientsSection />
       <FAQ />
       <BlogSection />
       <Newsletter />
