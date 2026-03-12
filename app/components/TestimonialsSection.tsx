@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { MouseEventHandler, useEffect, useRef, useState } from "react";
 import { ArrowRight, ShoppingCart, Megaphone, Globe, Smartphone, Star, ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 // ─── Tech Logos (SVG inline) ──────────────────────────────────────────────────
@@ -38,15 +38,19 @@ interface ServiceCardProps {
     description: string;
     highlight?: boolean;
     className?: string;
+    onMouseEnter?: MouseEventHandler;
+    onMouseLeave?: MouseEventHandler;
 }
 
-function ServiceCard({ icon, title, description, highlight, className = "" }: ServiceCardProps) {
+function ServiceCard({ icon, title, description, highlight, className = "", onMouseEnter, onMouseLeave }: ServiceCardProps) {
     return (
         <div
             className={`relative rounded-2xl p-7 flex flex-col gap-5 transition-transform duration-300 hover:-translate-y-1 ${highlight
-                ? "bg-gradient-to-br from-[#7B5CE5] via-[#6144D3] to-[#3B2DB5]"
+                ? "bg-linear-to-tl from-[#692cb5] via-[#341f7a] to-[#2817c9]"
                 : "bg-[#0d1b3e]/80 border border-white/10"
                 } ${className}`}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
         >
             <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${highlight ? "bg-white/20" : "bg-white/10"}`}>
                 {icon}
@@ -170,6 +174,9 @@ function TestimonialsSection() {
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 export default function ServicesTestimonialsSection() {
+
+    const [highlight, setHighlight] = useState("")
+
     return (
         <div
             className="min-h-screen text-white pb-0"
@@ -214,7 +221,9 @@ export default function ServicesTestimonialsSection() {
 
                         {/* Full-Stack (highlighted) */}
                         <ServiceCard
-                            highlight
+                            highlight={highlight === "Full-Stack Development" ? true : false}
+                            onMouseEnter={() => setHighlight("Full-Stack Development")}
+                            onMouseLeave={() => setHighlight("")}
                             icon={<Globe className="w-6 h-6 text-white" />}
                             title="Full-Stack Development"
                             description="Webtechnomind provides comprehensive full-stack solutions, solidifying our reputation as a top web development company."
@@ -222,6 +231,9 @@ export default function ServicesTestimonialsSection() {
 
                         {/* Mobile Apps */}
                         <ServiceCard
+                            highlight={highlight === "Mobile Apps Development" ? true : false}
+                            onMouseEnter={() => setHighlight("Mobile Apps Development")}
+                            onMouseLeave={() => setHighlight("")}
                             icon={<Smartphone className="w-6 h-6 text-white/70" />}
                             title="Mobile Apps Development"
                             description="Webtechnomind offers cutting-edge mobile app development services tailored to meet your business goals. Our expert."
@@ -229,6 +241,9 @@ export default function ServicesTestimonialsSection() {
 
                         {/* Ecommerce */}
                         <ServiceCard
+                            highlight={highlight === "Ecommerce Development" ? true : false}
+                            onMouseEnter={() => setHighlight("Ecommerce Development")}
+                            onMouseLeave={() => setHighlight("")}
                             icon={<ShoppingCart className="w-6 h-6 text-white/70" />}
                             title="Ecommerce Development"
                             description="Webtechnomind is a trusted ecommerce development company offering custom, scalable, and user-friendly solutions."
@@ -236,6 +251,9 @@ export default function ServicesTestimonialsSection() {
 
                         {/* Digital Marketing */}
                         <ServiceCard
+                            highlight={highlight === "Digital Marketing" ? true : false}
+                            onMouseEnter={() => setHighlight("Digital Marketing")}
+                            onMouseLeave={() => setHighlight("")}
                             icon={<Megaphone className="w-6 h-6 text-white/70" />}
                             title="Digital Marketing"
                             description="Unlock exponential business growth with Webtechnomind — a tech-powered digital marketing agency that thrives."

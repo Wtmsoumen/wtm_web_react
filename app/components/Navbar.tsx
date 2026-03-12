@@ -11,7 +11,11 @@ import {
   ShoppingCart,
   Megaphone,
   FileText,
-  Target
+  Target,
+  LaptopMinimalCheck,
+  ShieldAlert,
+  Factory,
+  Building2
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "../../public/images/logo.png"
@@ -21,9 +25,9 @@ import Link from "next/link";
 import { globalStyle } from "../globalStyle";
 
 const navLinks = [
-  { label: "Hello AI", href: "#helloai", icon: "helloai" },
+  { label: "Hello AI", href: "#helloai", icon: Sparkles },
   {
-    label: "Marketing", href: "#markating", icon: "markating", megaMenu: [
+    label: "Marketing", href: "#markating", icon: SquarePercent, megaMenu: [
       { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "ffb900" },
       { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "ffb900" },
       { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "ffb900" },
@@ -37,11 +41,11 @@ const navLinks = [
       { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "ffb900" }
     ]
   },
-  { label: "Development", href: "#development", icon: "development" },
-  { label: "Services", href: "#services", icon: "services" },
-  { label: "On-Demand", href: "#ondemand", icon: "ondemand" },
-  { label: "Industry", href: "#industry", icon: "industry" },
-  { label: "Company", href: "#footer", icon: "footer" },
+  { label: "Development", href: "#development", icon: CodeXml },
+  { label: "Services", href: "#services", icon: LaptopMinimalCheck },
+  { label: "On-Demand", href: "#ondemand", icon: ShieldAlert },
+  { label: "Industry", href: "#industry", icon: Factory },
+  { label: "Company", href: "#footer", icon: Building2 },
 ];
 
 export default function Navbar() {
@@ -74,38 +78,43 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="relative hidden lg:flex items-center gap-5">
-            {navLinks.map((item) => (
-              <div
-                key={item.label}
-                className={`${scrolled ? "text-black hover:text-gray-600" : "text-white hover:text-red-300"} cursor-pointer font-medium text-sm transition-colors duration-200 group`}
-                onMouseEnter={() => setOpenMegaMenu(item?.megaMenu)}
-                onClick={() => setOpenMegaMenu([])}
-              >
-                <div className="relative flex gap-1 z-11 font-medium text-[15px]">
-                  {item.icon === "helloai" ? <Sparkles className="w-5 h-auto text-red-500" /> : item.icon === "markating" ? <SquarePercent className="w-5 h-auto text-amber-400" /> : item.icon === "development" ? <CodeXml className="w-5 h-auto text-sky-400" /> : ""}
-                  {item.label}
-                  <ChevronDown className="w-4.5 h-auto group-hover:rotate-180 duration-300" />
+          <div className="relative hidden lg:flex items-center gap-3">
+            {navLinks.map((item: any, index: number) => {
+              let Icon = item.icon
+              return (
+                <div
+                  key={index}
+                  className={`${scrolled ? "text-black hover:text-gray-600" : "text-white hover:text-red-300"} cursor-pointer font-medium text-sm transition-colors duration-200 group`}
+                  onMouseEnter={() => setOpenMegaMenu(item?.megaMenu)}
+                  onClick={() => setOpenMegaMenu([])}
+                >
+                  <div className="relative flex gap-1 z-11 font-medium text-sm">
+                    <Icon className={`w-5 h-auto ${index === 0 ? "text-red-500" : index === 1 ? "text-amber-400" : index === 2 ? "text-sky-400" : index === 3 ? "text-fuchsia-700" : index === 4 ? "text-blue-700" : index === 5 ? "text-green-600" : index === 6 ? "text-cyan-600" : ""}`} />
+                    {item.label}
+                    <ChevronDown className="w-4.5 h-auto group-hover:rotate-180 duration-300" />
+                  </div>
+                  {/* <div className="w-full h-12 absolute top-0 bg-black z-10" /> */}
                 </div>
-                {/* <div className="w-full h-12 absolute top-0 bg-black z-10" /> */}
-              </div>
-            ))}
+              )
+            })}
 
-            {openMegaMenu?.length > 0 ? <div className="absolute top-11 bg-white w-full rounded-3xl overflow-hidden flex">
-              <div className="text-black grid grid-cols-2 p-5! gap-y-6 gap-x-2 w-[75%]" onMouseLeave={() => setOpenMegaMenu([])}>
-                {openMegaMenu?.length > 0 ? openMegaMenu?.map((v: any, idx: number) => {
-                  const Icon = v?.icon;
-                  return (
-                    <Link href={v?.href} key={idx} className={`flex items-start gap-2 font-medium group`}>{v?.icon !== "" ? <Icon className={`w-5 group-hover:w-5.5 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} /> : ""}{v?.title}</Link>
-                  )
-                }) : ""}
+            {openMegaMenu?.length > 0 ?
+              <div className={`absolute top-11 bg-white w-full rounded-3xl overflow-hidden flex ${scrolled ? "shadow-md shadow-gray-300" : ""}`}>
+                <div className={`text-black grid grid-cols-2 p-5! gap-y-6 gap-x-2 w-[75%]`} onMouseLeave={() => setOpenMegaMenu([])}>
+                  {openMegaMenu?.length > 0 ? openMegaMenu?.map((v: any, idx: number) => {
+                    const Icon = v?.icon;
+                    return (
+                      <Link href={v?.href} key={idx} className={`flex items-start gap-2 font-medium group`}>{v?.icon !== "" ? <Icon className={`w-5 group-hover:w-5.5 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} /> : ""}{v?.title}</Link>
+                    )
+                  }) : ""}
+                </div>
+                <div className="w-[25%] h-[-webkit-fill-available] z-10" style={{ backgroundColor: openMegaMenu[0]?.color }} />
               </div>
-              <div className="w-[25%] h-[-webkit-fill-available] z-10" style={{ backgroundColor: openMegaMenu[0]?.color }} />
-            </div> : ""}
+              : ""}
           </div>
 
           {/* CTA */}
-          <button className={`${scrolled ? "bg-black/20 hover:bg-black/40 text-black border-black/20" : "bg-white/20 hover:bg-white/40 text-white border-white/20"} duration-300 cursor-pointer px-4! py-2! border rounded-full text-sm font-medium`}>
+          <button className={`${scrolled ? "bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#ff2a2a] text-white border-white" : "bg-white/20 hover:bg-white/40 text-white border-white/20"} hover:scale-105 duration-300 cursor-pointer px-4! py-2! border rounded-full text-sm font-medium`}>
             Get Quote
           </button>
 

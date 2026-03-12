@@ -31,7 +31,7 @@ export default function Home() {
       <OurService />
       <Industries />
       <PoweredByAI />
-      <OurExpertise />
+      {/* <OurExpertise /> */}
       <ServicesTestimonialsSection />
       <ClientsSection />
       <FAQ />
