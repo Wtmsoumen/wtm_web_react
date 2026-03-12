@@ -145,7 +145,7 @@ const OurExpertise = () => {
     const rightServices = active.services.filter(s => s.position.startsWith('right'));
 
     return (
-        <section className="w-full  py-16! bg-white">
+        <section className="w-full  py-16! bg-[#f5f5f7]">
             <div className="max-w-[1300px] mx-auto">
 
                 {/* Heading */}

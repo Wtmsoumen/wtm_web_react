@@ -3,7 +3,7 @@ export const globalStyle = {
    cardGlassWhyChooseUs:
   "py-20 px-10 " +
   "bg-[rgba(55,55,55,0.85)] " +
-  "backdrop-blur-[24px] saturate-[160%] rounded-2xl overflow-hidden " +
+  "backdrop-blur-[24px] saturate-[160%] rounded-2xl " +
   "border border-transparent " +
   "shadow-[0_4px_32px_rgba(0,0,0,0.5),0_1px_0_rgba(255,255,255,0.05)_inset] " +
   "transition-all duration-300 ease-out " +

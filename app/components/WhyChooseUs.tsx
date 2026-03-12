@@ -68,13 +68,23 @@ export default function WhyChooseUs() {
           {features.map((f, idx) => (
             <div className={`${globalStyle?.cardGlassWhyChooseUs} flex flex-col gap-3 group relative`}>
 
+<div className="absolute -top-3 -left-2 w-10 h-10 rounded-full 
+  bg-[rgba(55,55,55,0.85)]
+  group-hover:bg-gradient-to-br group-hover:from-[#1D74CF] group-hover:to-[#b33b41]
+  flex items-center justify-center
+  text-white text-xs font-bold shadow-lg z-10
+  transition-all duration-300">
+  {String(idx + 1).padStart(2, "0")}
+</div>
+
               {/* Bottom right half circle blob */}
-              <div className="absolute bottom-0 -right-7 w-40 h-40 rounded-full 
-  bg-gray-600
+              <div className="absolute bottom-0 right-0 w-40 h-40 overflow-hidden rounded-2xl pointer-events-none">
+                <div className="absolute bottom-0 right-0 w-40 h-40 rounded-full 
+    bg-gray-600
     translate-x-10 translate-y-10 opacity-20 
     transition-all duration-500
-   group-hover:scale-125 group-hover:bg-gradient-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425]" />
-
+    group-hover:scale-125 group-hover:bg-gradient-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425]" />
+              </div>
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-14 h-14 rounded-xl gradient-btn flex items-center justify-center text-xl shrink-0">
                   {f.icon}

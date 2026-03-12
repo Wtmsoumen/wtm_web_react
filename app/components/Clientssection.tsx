@@ -1,6 +1,7 @@
 "use client";
 
 import { Star } from "lucide-react";
+import { globalStyle } from "../globalStyle";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Testimonial {
@@ -265,7 +266,7 @@ export default function ClientsSection() {
                 </div>
                 <h2 className="text-4xl font-bold text-gray-900 mb-3">
                     What Our{" "}
-                    <span style={{ color: "#EC4899" }}>Clients Say</span>
+                    <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Clients Say</span>
                 </h2>
                 <p className="text-gray-500 text-sm leading-relaxed">
                     Real stories from founders across industries who built successful

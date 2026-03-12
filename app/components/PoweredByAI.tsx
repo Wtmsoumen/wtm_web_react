@@ -145,13 +145,13 @@ export default function PoweredByAI() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {solutions.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.id}
-                className="relative bg-white border border-gray-100 rounded-2xl p-8 flex flex-col gap-3
+                className="relative bg-white border border-gray-100 rounded-2xl py-8 pl-5 pr-3 flex flex-col gap-3
           shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer group"
               >
                 {/* HOT badge */}
