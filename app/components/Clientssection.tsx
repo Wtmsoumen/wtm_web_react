@@ -75,7 +75,7 @@ const featuredTestimonial: Testimonial = {
     stars: 5,
     quote: (
         <>
-            "Working with Appinop was transformative for our business. They didn't
+            "Working with WTM was transformative for our business. They didn't
             just build an app— they became our strategic partner. The platform handles{" "}
             <strong>$50M+ in daily transactions</strong> with zero downtime. Their
             expertise in AI integration helped us launch faster than expected."
@@ -128,7 +128,7 @@ const gridTestimonials: Testimonial[] = [
         stars: 5,
         quote: (
             <>
-                "Appinop built our adaptive learning platform that now serves{" "}
+                "WTM built our adaptive learning platform that now serves{" "}
                 <strong>500K+ students</strong>. Professional, knowledgeable, and always
                 available."
             </>
