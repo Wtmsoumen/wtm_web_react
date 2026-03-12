@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ShoppingCart, Megaphone, Globe, Smartphone, Star, ChevronLeft, ChevronRight, Play } from "lucide-react";
-import { globalStyle } from "../globalStyle";
 
 // ─── Tech Logos (SVG inline) ──────────────────────────────────────────────────
 const ReactLogo = () => (
@@ -125,7 +124,7 @@ function TestimonialsSection() {
                             What our
                         </h2>
                         <h2 className="text-4xl font-light leading-tight">
-                            <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Client's Said</span>
+                            <span className="bg-linear-to-l from-pink-500 to-blue-500 bg-clip-text text-transparent">Client's Said</span>
                         </h2>
                         <div className="flex gap-1 mt-3">
                             {[...Array(5)].map((_, i) => (
