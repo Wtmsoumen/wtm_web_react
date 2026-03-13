@@ -82,7 +82,7 @@ export default function Footer() {
   return (
     <footer id="footer" className="bg-[#040912] border-t border-white/5">
       {/* CTA Banner */}
-      <div className="border-b border-white/5">
+      {/* <div className="border-b border-white/5">
         <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8 py-16">
           <div className="relative card-glass rounded-3xl p-10 md:p-14 text-center overflow-hidden">
             <div className="absolute top-0 left-1/3 w-96 h-96 bg-purple-700/15 rounded-full blur-3xl pointer-events-none" />
@@ -105,7 +105,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8 py-16">

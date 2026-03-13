@@ -13,6 +13,14 @@ const ReactLogo = () => (
     </svg>
 );
 
+const NextLogo = () => (
+    <div className="bg-white rounded-full">
+        <svg viewBox="0 0 48 48" className="w-6 h-6" fill="none">
+            <path fill="#212121" d="M18.974,31.5c0,0.828-0.671,1.5-1.5,1.5s-1.5-0.672-1.5-1.5v-14c0-0.653,0.423-1.231,1.045-1.43 c0.625-0.198,1.302,0.03,1.679,0.563l16.777,23.704C40.617,36.709,44,30.735,44,24c0-11-9-20-20-20S4,13,4,24s9,20,20,20 c3.192,0,6.206-0.777,8.89-2.122L18.974,22.216V31.5z M28.974,16.5c0-0.828,0.671-1.5,1.5-1.5s1.5,0.672,1.5,1.5v13.84l-3-4.227 V16.5z"></path>
+        </svg>
+    </div>
+);
+
 const NodeLogo = () => (
     <svg viewBox="0 0 40 40" className="w-6 h-6" fill="none">
         <path d="M20 4L34 12V28L20 36L6 28V12L20 4Z" stroke="#68A063" strokeWidth="1.5" fill="none" />
@@ -21,14 +29,17 @@ const NodeLogo = () => (
 );
 
 const techStack = [
-    { name: "React", Logo: ReactLogo, color: "#61DAFB" },
+    { name: "React.js", Logo: ReactLogo, color: "#61DAFB" },
+    { name: "Next.js", Logo: NextLogo, color: "#ffffff" },
     { name: "Node.js", Logo: NodeLogo, color: "#68A063" },
+    { name: "PHP", color: "#ffffff", isText: true },
     { name: "ORACLE", color: "#F80000", isText: true },
     { name: "MySQL", color: "#E48E00", isText: true },
     { name: "Google Cloud", color: "#4285F4", isText: true },
     { name: "Azure", color: "#0078D4", isText: true },
     { name: "Node.js", Logo: NodeLogo, color: "#68A063" },
     { name: "MySQL", color: "#E48E00", isText: true },
+    { name: "AI Integration", color: "#4285F4", isText: true },
 ];
 
 // ─── Service Card ─────────────────────────────────────────────────────────────

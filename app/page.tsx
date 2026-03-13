@@ -16,6 +16,8 @@ import ServicesTestimonialsSection from "./components/TestimonialsSection";
 import OurExpertise from "./components/OurExpertise";
 import ClientsSection from "./components/Clientssection";
 import PoweredByAI from "./components/PoweredByAI";
+import FreeConsultation from "./components/FreeConsultation";
+import PortfolioSection from "./components/Projects";
 
 export default function Home() {
   return (
@@ -35,8 +37,10 @@ export default function Home() {
       <ServicesTestimonialsSection />
       <ClientsSection />
       <FAQ />
+      <FreeConsultation />
+      <PortfolioSection />
       <BlogSection />
-      <Newsletter />
+      {/* <Newsletter /> */}
       <Footer />
     </div>
   );
