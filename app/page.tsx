@@ -27,7 +27,7 @@ export default function Home() {
       <WhyChooseUs />
       <TrustIndicators />
 
-      <Portfolio />
+      <PortfolioSection />
 
 
       <OurService />
@@ -38,7 +38,7 @@ export default function Home() {
       <ClientsSection />
       <FAQ />
       <FreeConsultation />
-      <PortfolioSection />
+    
       <BlogSection />
       {/* <Newsletter /> */}
       <Footer />
