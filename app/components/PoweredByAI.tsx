@@ -110,7 +110,7 @@ const solutions: Solution[] = [
 
 export default function PoweredByAI() {
   return (
-    <section className="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-white py-16 px-4 sm:px-6  ">
       <div className="max-w-7xl mx-auto">
 
         {/* Top header row */}

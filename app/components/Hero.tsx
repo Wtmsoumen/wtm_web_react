@@ -27,7 +27,7 @@
 //       // }}
 //       />
 
-//       <div className=" relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:py-28 flex flex-col justify-center items-center  text-center">
+//       <div className=" relative z-10 max-w-7xl mx-auto px-4 sm:px-6   md:py-28 flex flex-col justify-center items-center  text-center">
 
 //         {/* Badge */}
 //         {/* <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-purple-500/30 rounded-full px-6 py-2 mb-10">
@@ -123,7 +123,7 @@
 //         }}
 //       />
 
-//       <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 flex flex-col items-center">
+//       <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6   text-center py-20 flex flex-col items-center">
 //         {/* Main Heading */}
 //         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4 leading-[1.15] tracking-tight">
 //           We Create
@@ -200,7 +200,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-linear-to-t from-black/20 via-black/10 to-black/30" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col justify-center items-center text-center w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6   py-20 flex flex-col justify-center items-center text-center w-full">
 
         {/* Main Heading */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">

@@ -65,7 +65,7 @@ function StarRating({ count }: { count: number }) {
 export default function TrustIndicators() {
   return (
     <section className="bg-white py-16! border-y border-white/5">
-      <div className="max-w-7xl mx-auto! px-4! sm:px-6! lg:px-8!">
+      <div className="max-w-7xl mx-auto! px-4! sm:px-6!  !">
         <div className="text-center mb-10!">
           <p className="text-3xl md:text-4xl font-bold text-gray-900">
             Trusted by <span className="bg-linear-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Industry Leaders</span>

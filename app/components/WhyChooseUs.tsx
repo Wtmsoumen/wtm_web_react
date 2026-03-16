@@ -49,7 +49,7 @@ const features = [
 export default function WhyChooseUs() {
   return (
     <section className="section-bg !py-24 bg-[#0f172a]!">
-      <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto! px-4 sm:px-6  ">
         {/* Header */}
         <div className="text-center mb-12">
           {/* <span className="inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest mb-4">
@@ -68,14 +68,14 @@ export default function WhyChooseUs() {
           {features.map((f, idx) => (
             <div className={`${globalStyle?.cardGlassWhyChooseUs} flex flex-col gap-3 group relative`}>
 
-<div className="absolute -top-3 -left-2 w-10 h-10 rounded-full 
+              <div className="absolute -top-3 -left-2 w-10 h-10 rounded-full 
   bg-[rgba(55,55,55,0.85)]
   group-hover:bg-gradient-to-br group-hover:from-[#1D74CF] group-hover:to-[#b33b41]
   flex items-center justify-center
   text-white text-xs font-bold shadow-lg z-10
   transition-all duration-300">
-  {String(idx + 1).padStart(2, "0")}
-</div>
+                {String(idx + 1).padStart(2, "0")}
+              </div>
 
               {/* Bottom right half circle blob */}
               <div className="absolute bottom-0 right-0 w-40 h-40 overflow-hidden rounded-2xl pointer-events-none">

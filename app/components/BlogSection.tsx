@@ -59,8 +59,8 @@ const posts = [
 
 export default function BlogSection() {
   return (
-    <section className="bg-white py-18">
-      <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8">
+    <section className="bg-white pb-18!">
+      <div className="max-w-7xl mx-auto! px-4 sm:px-6  ">
         {/* Header */}
         <div className="flex flex-col items-center  mb-16 gap-4">
 

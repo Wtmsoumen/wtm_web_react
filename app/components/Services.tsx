@@ -66,7 +66,7 @@ const services = [
 export default function Services() {
   return (
     <section id="services" className="  !bg-white py-16!">
-      <div className="max-w-7xl mx-auto! px-4 sm:px-6 lg:px-8 ">
+      <div className="max-w-7xl mx-auto! px-4 sm:px-6   ">
         {/* Header */}
         <div className="flex flex-col items-center text-center !mb-13  gap-4">
 
@@ -115,12 +115,12 @@ export default function Services() {
           ))}
         </div>
 
-         {/* CTA Button */}
+        {/* CTA Button */}
         <div className="flex justify-center mt-8">
           <button className={`${globalStyle?.gradientText} flex items-center gap-3  text-white text-sm font-bold px-14 py-5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300  `}>
-       
-           
-           Discuss Your Project
+
+
+            Discuss Your Project
             <ArrowRight className="w-6 h-6" />
           </button>
         </div>

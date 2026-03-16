@@ -213,7 +213,7 @@ const Industries = () => {
   const smallCards = industries.filter((i) => !i.large);
 
   return (
-    <section className="w-full bg-[#f5f5f7] py-20 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-[#f5f5f7] py-20 px-4 sm:px-6  ">
 
       {/* --------------UPPER INDUSTRIES---------------- */}
       <div className={`${globalStyle?.container}`}>
@@ -342,15 +342,15 @@ const Industries = () => {
 
       </div>
 
-        {/* CTA Button */}
-        <div className="flex justify-center mt-8">
-          <button className={`${globalStyle?.gradientText} flex items-center gap-3  text-white text-sm font-bold px-14 py-5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300  `}>
-       
-            <Sparkles className="w-6 h-6" />
-            Start Your AI-Powered Project
-            <ArrowRight className="w-6 h-6" />
-          </button>
-        </div>
+      {/* CTA Button */}
+      <div className="flex justify-center mt-8">
+        <button className={`${globalStyle?.gradientText} flex items-center gap-3  text-white text-sm font-bold px-14 py-5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300  `}>
+
+          <Sparkles className="w-6 h-6" />
+          Start Your AI-Powered Project
+          <ArrowRight className="w-6 h-6" />
+        </button>
+      </div>
     </section>
   );
 };

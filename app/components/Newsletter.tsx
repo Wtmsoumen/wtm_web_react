@@ -13,7 +13,7 @@ export default function Newsletter() {
 
   return (
     <section className="section-bg py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6  ">
         <div className="relative card-glass rounded-3xl p-10 md:p-16 text-center overflow-hidden">
           {/* Background glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-purple-700/20 rounded-full blur-3xl pointer-events-none" />
