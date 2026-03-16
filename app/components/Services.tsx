@@ -22,9 +22,9 @@ const services = [
     description: "Custom AI models, LLM integrations, and intelligent automation solutions tailored for your business needs.",
   },
   {
-    icon: Link2,
-    title: "Blockchain Development",
-    description: "Smart contracts, DeFi platforms, NFT marketplaces, and enterprise blockchain solutions.",
+    icon: BarChart2,
+    title: "Digital Marketing",
+    description: "Data-driven marketing strategies, SEO, performance campaigns, and growth hacking.",
   },
   {
     icon: Smartphone,
@@ -47,19 +47,19 @@ const services = [
     description: "Legacy modernization, cloud migration, and business process automation.",
   },
   {
-    icon: BarChart2,
-    title: "Digital Marketing",
-    description: "Data-driven marketing strategies, SEO, performance campaigns, and growth hacking.",
+    icon: ShoppingCart,
+    title: "E-commerce Development",
+    description: "Custom storefronts, marketplace platforms, and headless commerce solutions.",
+  },
+  {
+    icon: Link2,
+    title: "Blockchain Development",
+    description: "Smart contracts, DeFi platforms, NFT marketplaces, and enterprise blockchain solutions.",
   },
   {
     icon: TrendingUp,
     title: "Data Science & Analytics",
     description: "Big data processing, predictive analytics, and business intelligence dashboards.",
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-commerce Development",
-    description: "Custom storefronts, marketplace platforms, and headless commerce solutions.",
   },
 ];
 
