@@ -8,6 +8,7 @@ import {
   BarChart2,
   TrendingUp,
   ShoppingCart,
+  ArrowRight,
 } from "lucide-react";
 import { globalStyle } from "../globalStyle";
 
@@ -112,6 +113,16 @@ export default function Services() {
               </a>
             </div>
           ))}
+        </div>
+
+         {/* CTA Button */}
+        <div className="flex justify-center mt-8">
+          <button className={`${globalStyle?.gradientText} flex items-center gap-3  text-white text-sm font-bold px-14 py-5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300  `}>
+       
+           
+           Discuss Your Project
+            <ArrowRight className="w-6 h-6" />
+          </button>
         </div>
       </div>
     </section>
