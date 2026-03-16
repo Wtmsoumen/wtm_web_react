@@ -197,7 +197,7 @@ export default function Hero() {
       />
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-linear-to-t from-black/40 via-red-black/50 to-black/60" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/20 via-black/10 to-black/30" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col justify-center items-center text-center w-full">
