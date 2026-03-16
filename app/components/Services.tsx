@@ -95,8 +95,12 @@ export default function Services() {
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="flex flex-col gap-3 card-glass rounded-2xl !p-6 transition-all duration-300 group cursor-pointer"
+              className="flex flex-col gap-3 card-glass rounded-2xl p-6! transition-all duration-300 group cursor-pointer relative group shadow-lg"
             >
+              <div className="absolute bottom-0 right-0 w-40 h-40 overflow-hidden rounded-2xl pointer-events-none">
+                <div className="absolute bottom-0 right-0 w-40 h-40 rounded-full  bg-gray-400 translate-x-10 translate-y-10 opacity-20  transition-all duration-500 group-hover:scale-125 group-hover:bg-gradient-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425]">
+                </div>
+              </div>
               <div className="w-12 h-12 rounded-xl icon-gradient flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                 <service.icon className="w-8 h-8 text-white" />
               </div>
