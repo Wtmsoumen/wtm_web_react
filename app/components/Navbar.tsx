@@ -201,15 +201,14 @@ export default function Navbar() {
 
           {/* CTA */}
           <button
-            // className={`${scrolled ? "bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#ff2a2a] text-white border-white" : "bg-white/20 hover:bg-white/40 text-white border-white/20"} hover:scale-105 duration-300 cursor-pointer px-4! py-2! border rounded-full text-sm font-medium`}
-            className={`bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#ff2a2a] text-white  hover:scale-105 duration-300 cursor-pointer px-4! py-2! rounded-full text-sm font-medium`}
+            className={`hidden lg:block bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#ff2a2a] text-white hover:scale-105 duration-300 cursor-pointer px-4! py-2! rounded-full text-sm font-medium`}
           >
             Get Quote
           </button>
 
           {/* Mobile menu toggle */}
           <button
-            className="lg:hidden text-white p-2"
+            className={`lg:hidden p-2 ${scrolled ? "text-black" : "text-white"}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >

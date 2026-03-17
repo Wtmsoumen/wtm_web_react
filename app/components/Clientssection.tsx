@@ -264,7 +264,7 @@ export default function ClientsSection() {
                 <div className="inline-block border border-purple-300 rounded-full px-4 py-1 text-xs font-semibold text-purple-600 tracking-widest uppercase mb-5 bg-white">
                     SUCCESS STORIES
                 </div>
-                <h2 className="text-4xl font-bold text-gray-900 mb-3">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
                     What Our{" "}
                     <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Clients Say</span>
                 </h2>
@@ -274,7 +274,7 @@ export default function ClientsSection() {
                 </p>
             </div>
 
-            <div className="max-w-7xl mx-auto px-10 flex flex-col gap-4">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col gap-4">
                 {/* ── Row 1: Featured + 2 grid cards ───────────────────── */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {/* Featured Card */}

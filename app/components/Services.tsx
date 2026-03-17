@@ -81,12 +81,12 @@ export default function Services() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-black text-5xl md:text-6xl font-bold">
+          <h2 className="text-black text-3xl md:text-5xl lg:text-6xl font-bold">
             What We <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Offer</span>
           </h2>
 
           {/* Description */}
-          <p className="text-black text-xl  max-w-2xl leading-relaxed">
+          <p className="text-black text-base md:text-xl max-w-2xl leading-relaxed">
             Comprehensive technology services to build, scale, and transform your digital products.
           </p>
 

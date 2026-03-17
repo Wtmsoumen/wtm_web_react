@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6   py-20 flex flex-col justify-center items-center text-center w-full">
 
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-shadow-2xs">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-shadow-2xs">
           Your{" "}
           <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Next-gen</span>
           <br />
@@ -64,7 +64,7 @@ export default function Hero() {
                 bg-white/5 backdrop-blur-lg border border-white/20 text-shadow-2xs
                 shadow-2xl hover:bg-white/15 hover:scale-105 transition duration-300"
             >
-              <div className={`text-4xl md:text-5xl font-bold mb-1 bg-clip-text text-transparent ${globalStyle?.gradientText}`}>
+              <div className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-1 bg-clip-text text-transparent ${globalStyle?.gradientText}`}>
                 {stat.value}
               </div>
               <div className="text-gray-300 text-sm md:text-base">{stat.label}</div>

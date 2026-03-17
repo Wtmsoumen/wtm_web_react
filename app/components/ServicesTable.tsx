@@ -92,7 +92,7 @@ const ServicesTable = () => {
   ];
 
   return (
-    <section className="w-full py-20! px-6! relative">
+    <section className="w-full py-10 md:py-20 px-4 md:px-6 relative">
       <div className="max-w-7xl mx-auto">
 
         {/* Services Table */}
@@ -118,15 +118,15 @@ const ServicesTable = () => {
               </div>
 
               {/* Title */}
-              <div className="col-span-5 md:col-span-3 flex items-center py-6 md:py-10 px-4">
-                <h3 className={`text-lg md:text-xl font-bold uppercase transition-colors duration-300 ${hoveredService === service.id ? 'text-white' : 'text-black'
+              <div className="col-span-10 md:col-span-3 flex items-center py-6 md:py-10 px-4">
+                <h3 className={`text-base md:text-xl font-bold uppercase transition-colors duration-300 ${hoveredService === service.id ? 'text-white' : 'text-black'
                   }`}>
                   {service.title}
                 </h3>
               </div>
 
               {/* Description */}
-              <div className="col-span-5 md:col-span-5 flex items-center py-6 md:py-10 px-4">
+              <div className="hidden md:flex md:col-span-5 items-center py-6 md:py-10 px-4">
                 <p className={`text-sm md:text-base transition-colors duration-300 ${hoveredService === service.id ? 'text-white' : 'text-gray-700'
                   }`}>
                   {service.description}
