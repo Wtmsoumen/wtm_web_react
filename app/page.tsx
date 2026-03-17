@@ -26,10 +26,7 @@ export default function Home() {
       <Services />
       <WhyChooseUs />
       <TrustIndicators />
-
       <PortfolioSection />
-
-
       <OurService />
       <Industries />
       <PoweredByAI />
