@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
             Why Choose Us
           </span> */}
           <h2 className="text-4xl md:text-5xl font-bold text-white  ">
-            Why <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Choose Us ?</span>
+            Why <span className={`bg-linear-to-r from-pink-500 to-blue-500  bg-clip-text text-transparent`}>Choose Us ?</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             We combine technical excellence with proven processes to deliver products that succeed.
@@ -86,7 +86,8 @@ export default function WhyChooseUs() {
     group-hover:scale-125 group-hover:bg-gradient-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425]" />
               </div>
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-14 h-14 rounded-xl gradient-btn flex items-center justify-center text-xl shrink-0">
+                <div className={`${globalStyle?.  gradientText} w-14 h-14 rounded-xl flex items-center justify-center text-xl shrink-0  `}>
+                  {/**/}
                   {f.icon}
                 </div>
                 <div>
