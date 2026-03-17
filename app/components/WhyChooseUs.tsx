@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {features.map((f, idx) => (
-            <div className={`${globalStyle?.cardGlassWhyChooseUs} flex flex-col gap-3 group relative`}>
+            <div key={idx} className={`${globalStyle?.cardGlassWhyChooseUs} flex flex-col gap-3 group relative`}>
 
               <div className="absolute -top-3 -left-2 w-10 h-10 rounded-full 
   bg-[rgba(55,55,55,0.85)]
@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
     group-hover:scale-125 group-hover:bg-gradient-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425]" />
               </div>
               <div className="flex items-start gap-4 mb-4">
-                <div className={`${globalStyle?.  gradientText} w-14 h-14 rounded-xl flex items-center justify-center text-xl shrink-0  `}>
+                <div className={`${globalStyle?.gradientText} w-14 h-14 rounded-xl flex items-center justify-center text-xl shrink-0  `}>
                   {/**/}
                   {f.icon}
                 </div>
