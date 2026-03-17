@@ -71,7 +71,8 @@ export default function Services() {
         <div className="flex flex-col items-center text-center !mb-13  gap-4">
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 !px-4 !py-2 rounded-full gradient-btn border-gray-100">
+          <div  className={`${globalStyle?.gradientText} inline-flex items-center gap-2 !px-4 !py-2 rounded-full border-gray-100`}>
+            {/* inline-flex items-center gap-2 !px-4 !py-2 rounded-full border-gray-100*/}
             <Sparkles className="w-5 h-5 " />
             <span className="text-md font-semibold tracking-wide">
               Our Expertise
@@ -97,7 +98,8 @@ export default function Services() {
               key={idx}
               className="flex flex-col gap-3 card-glass rounded-2xl !p-6 transition-all duration-300 group cursor-pointer"
             >
-              <div className="w-12 h-12 rounded-xl icon-gradient flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+              <div className={`${globalStyle?.gradientText} w-12 h-12 rounded-xl  flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                {/*  */}
                 <service.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-black font-semibold text-lg mb-2">{service.title}</h3>
@@ -117,7 +119,7 @@ export default function Services() {
 
         {/* CTA Button */}
         <div className="flex justify-center mt-8">
-          <button className={`${globalStyle?.gradientText} flex items-center gap-3  text-white text-sm font-bold px-14 py-5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300  `}>
+          <button className={`bg-linear-to-r from-pink-500 to-blue-500  flex items-center gap-3  text-white text-sm font-bold px-14 py-5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300  `}>
 
 
             Discuss Your Project

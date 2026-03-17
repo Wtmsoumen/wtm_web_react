@@ -4,7 +4,7 @@ import girl from "../../public/images/Freeconsultation_left_girl.webp"
 
 const FreeConsultation = () => {
     return (
-        <div className='w-full  pt-16 flex p-8 bg-white'>
+        <div className='w-full  pt-40 flex p-8 bg-[#f5f5f7] '>
             {/* -----left girl------ */}
             <div className='w-[50%] h-[300px] flex items-center justify-center '>
                 <div className="relative flex items-center justify-center">

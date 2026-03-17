@@ -16,6 +16,9 @@ export const globalStyle = {
 
 
   gradientText:
-    "bg-gradient-to-r from-[#1D74CF] via-[#BA4491] to-[#ff2a2a]"
+    "bg-gradient-to-r from-[#1D74CF] via-[#BA4491] to-[#ff2a2a]",
+
+gradientBtn:
+  "bg-[linear-gradient(135deg,#1D74CF,#b33b41,#D04425)]",
 
 }
