@@ -94,12 +94,12 @@ export default function Services() {
           </div>
 
           {/* Heading */}
-          <h2 className="text-black text-5xl md:text-6xl font-bold">
+          <h2 className="text-black text-3xl md:text-5xl lg:text-6xl font-bold">
             What We <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Offer</span>
           </h2>
 
           {/* Description */}
-          <p className="text-black text-xl  max-w-2xl leading-relaxed">
+          <p className="text-black text-base md:text-xl max-w-2xl leading-relaxed">
             Comprehensive technology services to build, scale, and transform your digital products.
           </p>
 
@@ -110,23 +110,27 @@ export default function Services() {
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="flex flex-col gap-3 card-glass rounded-2xl !p-6 transition-all duration-300 group cursor-pointer"
+              className="flex flex-col gap-3 card-glass rounded-2xl p-6! transition-all duration-300 group cursor-pointer relative group shadow-lg"
             >
+              <div className="absolute bottom-0 right-0 w-40 h-40 overflow-hidden rounded-2xl pointer-events-none">
+                <div className="absolute bottom-0 right-0 w-40 h-40 rounded-full  bg-gray-400 translate-x-10 translate-y-10 opacity-20  transition-all duration-500 group-hover:scale-125 group-hover:bg-gradient-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425]">
+                </div>
+              </div>
               <div className={`${globalStyle?.gradientText} w-12 h-12 rounded-xl  flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                 {/*  */}
                 <service.icon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-black font-semibold text-lg mb-2">{service.title}</h3>
               <p className="text-gray-600 text-md leading-relaxed mb-4">{service.description}</p>
-              <a
-                href={`services/${service.slug}`}
+              <Link
+                href="#"
                 className="inline-flex items-center gap-1 text-[#ff0000b1] text-md  font-medium hover:text-pink-400 transition-colors"
               >
                 Explore
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </a>
+              </ Link>
             </div>
           ))}
         </div>

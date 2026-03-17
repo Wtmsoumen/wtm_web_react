@@ -237,10 +237,10 @@ const Industries = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-3 gap-7 mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mx-auto">
 
-          {/* Large card - left, spans 2 rows */}
-          <div className={`relative col-span-1 row-span-2 shadow-xl  rounded-3xl bg-gradient-to-br ${largeCard.gradient} p-8 flex flex-col justify-between overflow-hidden cursor-pointer group`}>
+          {/* Large card - left, spans 2 rows on lg+ */}
+          <div className={`relative sm:col-span-1 lg:row-span-2 shadow-xl  rounded-3xl bg-gradient-to-br ${largeCard.gradient} p-8 flex flex-col justify-between overflow-hidden cursor-pointer group min-h-[260px]`}>
             {/* Dot pattern */}
             <div className="absolute inset-0 opacity-10"
               style={{
@@ -309,7 +309,7 @@ const Industries = () => {
 
 
       {/* -----------LOWER SECTION--------- */}
-      <div className="w-[85%]  mx-auto mt-16 shadow-md bg-white  rounded-3xl p-8">
+      <div className="w-full md:w-[85%] mx-auto mt-16 shadow-md bg-white rounded-3xl p-4 md:p-8">
 
         {/* Section Header */}
         <div className="flex items-center gap-2 mb-8">
@@ -319,11 +319,11 @@ const Industries = () => {
 
         {/* Grid */}
         <div className="">
-          <div className="grid grid-cols-6 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 md:gap-4">
             {moreIndustries.map((industry) => (
               <div
                 key={industry.id}
-                className="flex flex-col items-center gap-3 p-5 rounded-2xl bg-[#f5f5f7] hover:bg-purple-50 cursor-pointer transition-all duration-200 group border border-transparent hover:border-purple-200"
+                className="flex flex-col items-center gap-2 p-3 md:p-5 rounded-2xl bg-[#f5f5f7] hover:bg-purple-50 cursor-pointer transition-all duration-200 group border border-transparent hover:border-purple-200"
               >
                 <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-sm group-hover:shadow-md transition-all duration-200 group-hover:bg-purple-100">
                   <industry.icon className="w-6 h-6 text-gray-700 group-hover:text-purple-500 transition-colors duration-200" />

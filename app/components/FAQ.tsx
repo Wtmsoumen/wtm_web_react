@@ -48,16 +48,16 @@ const FAQ = () => {
   return (
     <div className='bg-white'>
       <div className={`py-16 ${globalStyle?.container}`}>
-        <div className='flex  items-center justify-between'>
+        <div className='flex flex-col md:flex-row items-start justify-between gap-10'>
 
           {/* ----------Left part----------- */}
-          <div className="w-[45%]   ">
+          <div className="w-full md:w-[45%]">
 
             {/* Label */}
             <p className="text-pink-500 text-2xl  font-bold tracking-widest uppercase mb-2">FAQ</p>
 
             {/* Heading */}
-            <h2 className="text-5xl font-bold text-black leading-tight mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold text-black leading-tight mb-8">
               Frequently Asked <br />
               <span className="bg-linear-to-r from-[#1E7FF8] via-[#0E8DF6] via-[#AB82E0] to-[#E75061] bg-clip-text text-transparent">
                 Questions
@@ -86,7 +86,7 @@ const FAQ = () => {
 
           {/* ------------Right part----------- */}
 
-          <div className="w-[50%] flex flex-col gap-4 ">
+          <div className="w-full md:w-[50%] flex flex-col gap-4">
             {faqs.map((faq) => {
               const isOpen = openId === faq.id;
               return (

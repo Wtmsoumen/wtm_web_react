@@ -1,3 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
+import logoWhite from "../../public/images/logoWhite.png"
+
 const footerLinks = {
   Services: [
     "AI Development",
@@ -113,13 +117,15 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-xl gradient-btn flex items-center justify-center">
+              {/* <div className="w-9 h-9 rounded-xl gradient-btn flex items-center justify-center">
                 <span className="text-white font-bold text-base">A</span>
-              </div>
-              <span className="text-white font-bold text-lg">Wtm</span>
+              </div> */}
+              <Link href="/" className="flex items-center gap-2">
+                <Image src={logoWhite} alt="logo" width={1920} height={1080} className="w-auto h-auto" />
+              </Link>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Next-gen AI & on-demand software development company. Building products that scale globally since 2012.
+              © 2012-2026 Wtm Technologies Pvt. Ltd. All Rights Reserved.
             </p>
 
             {/* Offices */}
@@ -145,7 +151,7 @@ export default function Footer() {
                 <a
                   key={s.name}
                   href={s.href}
-                  className="w-9 h-9 card-glass rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500/40 transition-all"
+                  className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-gray-700 bg-gray-300 text-gray-900 hover:text-white hover:border-purple-500/40 transition-all"
                   aria-label={s.name}
                 >
                   {s.icon}
@@ -174,15 +180,14 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="border-t border-white/5">
-        <div className="max-w-7xl mx-auto! px-4 sm:px-6   py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-500 text-sm text-center md:text-left">
-            © 2012–2026 Wtm Technologies Pvt. Ltd. All Rights Reserved.
+        <div className="max-w-7xl mx-auto! px-4 sm:px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-white text-sm text-center md:text-left">
+            © 2012-2026 Wtm Technologies Pvt. Ltd. All Rights Reserved.
           </p>
-          <div className="flex items-center gap-2 text-gray-500 text-sm">
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            All systems operational
+          <div className="flex flex-col items-start text-white text-sm">
+            <strong>Corporate Identity Number :</strong><span className="text-xs font-normal">U62012WB2023PTC261715</span>
           </div>
-          <div className="flex items-center gap-2 text-gray-500 text-xs">
+          <div className="flex items-center gap-2 text-white text-xs">
             <span>Founded 2012</span>
             <span>·</span>
             <span>50+ Experts</span>

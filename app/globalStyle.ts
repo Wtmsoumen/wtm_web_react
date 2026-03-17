@@ -1,7 +1,7 @@
 export const globalStyle = {
   container: "max-w-7xl! mx-auto! px-4! sm:px-6!  !",
   cardGlassWhyChooseUs:
-    "py-20 px-10 " +
+    "py-10 md:py-20 px-5 md:px-10 " +
     "bg-[rgba(55,55,55,0.85)] " +
     "backdrop-blur-[24px] saturate-[160%] rounded-2xl " +
     "border border-transparent " +

@@ -225,7 +225,7 @@ export default function ServicesTestimonialsSection() {
                                 </h2>
                             </div>
                             <div className="mt-8">
-                                <div className="text-7xl font-bold text-white leading-none">90%</div>
+                                <div className="text-5xl md:text-7xl font-bold text-white leading-none">90%</div>
                                 <p className="text-white/50 text-sm mt-1">Client Satisfaction Rate</p>
                             </div>
                         </div>
@@ -297,13 +297,13 @@ export default function ServicesTestimonialsSection() {
                             </span>
                         </h2>
                     </div>
-                    <div className="flex gap-16">
+                    <div className="flex gap-8 md:gap-16">
                         <div>
-                            <div className="text-6xl font-bold text-white">2K+</div>
+                            <div className="text-4xl md:text-6xl font-bold text-white">2K+</div>
                             <p className="text-white/50 text-sm mt-1">Successful Project</p>
                         </div>
                         <div>
-                            <div className="text-6xl font-bold text-white">90%</div>
+                            <div className="text-4xl md:text-6xl font-bold text-white">90%</div>
                             <p className="text-white/50 text-sm mt-1">Client Satisfaction Rate</p>
                         </div>
                     </div>

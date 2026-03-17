@@ -4,17 +4,17 @@ import girl from "../../public/images/Freeconsultation_left_girl.webp"
 
 const FreeConsultation = () => {
     return (
-        <div className='w-full  pt-40 flex p-8 bg-[#f5f5f7] '>
+        <div className='w-full pt-8 md:pt-40 flex flex-col md:flex-row p-4 md:p-8 bg-[#f5f5f7]'>
             {/* -----left girl------ */}
-            <div className='w-[50%] h-[300px] flex items-center justify-center '>
+            <div className='w-full md:w-[50%] h-[260px] md:h-[300px] flex items-center justify-center'>
                 <div className="relative flex items-center justify-center">
 
-                    {/* Gradient Ring */}
+                    {/* Gradient Ring - hidden on small mobile to avoid overflow */}
                     <div
-                        className="absolute top-[120px] rounded-full"
+                        className="absolute top-[80px] md:top-[120px] rounded-full hidden sm:block"
                         style={{
-                            width: '410px',
-                            height: '370px',
+                            width: '300px',
+                            height: '270px',
                             background: 'conic-gradient(from 180deg, #E91E8C, #E53935, #1E88E5, #1E88E5, #E91E8C)',
                             padding: '14px',
                             borderRadius: '50%',
@@ -31,7 +31,7 @@ const FreeConsultation = () => {
                             alt="girl with laptop"
                             height={500}
                             width={550}
-                            className="object-contain"
+                            className="object-contain max-h-[250px] md:max-h-none"
                         />
                     </div>
 
@@ -39,17 +39,15 @@ const FreeConsultation = () => {
             </div>
 
             {/* -----right part---------- */}
-            <div className='w-[50%] flex items-center justify-center'>
-                <div className='w-full  relative bottom-15'
-
-                >
+            <div className='w-full md:w-[50%] flex items-center justify-center'>
+                <div className='w-full md:relative md:bottom-15'>
                     {/* Title */}
                     <p className='text-[#ED286C] text-[15px] font-bold tracking-widest uppercase mb-1'>Free Consultation</p>
-                    <h2 className='text-[50px] font-regular text-[#020200] leading-tight'>Web Development</h2>
-                    <h2 className='text-[55px] font-bold mb-5 text-[#1E7FF8]' >Company</h2>
+                    <h2 className='text-3xl md:text-[50px] font-regular text-[#020200] leading-tight'>Web Development</h2>
+                    <h2 className='text-4xl md:text-[55px] font-bold mb-5 text-[#1E7FF8]'>Company</h2>
 
                     {/* Form Grid */}
-                    <div className='grid grid-cols-2 gap-5'>
+                    <div className='grid grid-cols-1 sm:grid-cols-2 gap-5'>
 
                         {/* Name */}
                         <div className='flex items-center gap-3 bg-white rounded-xl px-4 py-5 shadow-sm border-[#E6E5E5] border-1'>

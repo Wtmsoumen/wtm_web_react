@@ -155,7 +155,7 @@ export default function Navbar() {
 
   return (
     // <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white" : "bg-black/40"}`}>
-    <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white shadow-sm shadow-gray-300" : ""}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white shadow-sm shadow-gray-300" : "bg-linear-to-t to-black/50 via-[#00000010] from-[#00000005]"}`}>
       <div className={`${globalStyle?.container} max-w-full!`}>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -200,13 +200,15 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <button className={`${scrolled ? "bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#ff2a2a] text-white border-white" : "bg-white/20 hover:bg-white/40 text-white border-white/20"} hover:scale-105 duration-300 cursor-pointer px-4! py-2! border rounded-full text-sm font-medium`}>
+          <button
+            className={`hidden lg:block bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#ff2a2a] text-white hover:scale-105 duration-300 cursor-pointer px-4! py-2! rounded-full text-sm font-medium`}
+          >
             Get Quote
           </button>
 
           {/* Mobile menu toggle */}
           <button
-            className="lg:hidden text-white p-2"
+            className={`lg:hidden p-2 ${scrolled ? "text-black" : "text-white"}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
