@@ -12,16 +12,15 @@ const services = [
   { slug: "ecommerce-development", title: "E-commerce Development" },
 ];
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const service = services.find((s) => s.slug === params.slug);
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const service = services.find((s) => s.slug === slug);
 
   if (!service) return notFound();
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#060d1b] text-white">
-      <h1 className="text-5xl font-bold">
-        {service.title}
-      </h1>
+      <h1 className="text-5xl font-bold">{service.title}</h1>
     </div>
   );
 }

@@ -123,7 +123,7 @@ export default function Services() {
               <h3 className="text-black font-semibold text-lg mb-2">{service.title}</h3>
               <p className="text-gray-600 text-md leading-relaxed mb-4">{service.description}</p>
               <Link
-                href="#"
+              href={`/services/${service.slug}`}
                 className="inline-flex items-center gap-1 text-[#ff0000b1] text-md  font-medium hover:text-pink-400 transition-colors"
               >
                 Explore
