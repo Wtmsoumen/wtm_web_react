@@ -18,49 +18,62 @@ import Link from "next/link";
 
 const services = [
   {
+    slug: "ai-engineering",
     icon: Bot,
     title: "AI Engineering",
     description: "Custom AI models, LLM integrations, and intelligent automation solutions tailored for your business needs.",
   },
   {
-    icon: BarChart2,
-    title: "Digital Marketing",
-    description: "Data-driven marketing strategies, SEO, performance campaigns, and growth hacking.",
+
+    slug: "blockchain-development",
+    icon: Link2,
+    title: "Blockchain Development",
+    description: "Smart contracts, DeFi platforms, NFT marketplaces, and enterprise blockchain solutions.",
   },
+
   {
+    slug: "mobile-app-development",
     icon: Smartphone,
     title: "Mobile App Development",
     description: "Native and cross-platform iOS & Android apps with seamless user experiences.",
   },
+
   {
+    slug: "custom-web-development",
     icon: Globe,
     title: "Custom Web Development",
     description: "Scalable web applications, SaaS platforms, and progressive web apps built for performance.",
   },
   {
+    slug: "software-development",
     icon: Code2,
     title: "Software Development",
     description: "End-to-end custom software solutions, APIs, and microservices architecture.",
   },
+
   {
+    slug: "digital-transformation",
     icon: RefreshCw,
     title: "Digital Transformation",
     description: "Legacy modernization, cloud migration, and business process automation.",
   },
   {
-    icon: ShoppingCart,
-    title: "E-commerce Development",
-    description: "Custom storefronts, marketplace platforms, and headless commerce solutions.",
+    slug: "digital-marketing",
+    icon: BarChart2,
+    title: "Digital Marketing",
+    description: "Data-driven marketing strategies, SEO, performance campaigns, and growth hacking.",
   },
   {
-    icon: Link2,
-    title: "Blockchain Development",
-    description: "Smart contracts, DeFi platforms, NFT marketplaces, and enterprise blockchain solutions.",
-  },
-  {
+    slug: "data-science-analytics",
     icon: TrendingUp,
     title: "Data Science & Analytics",
     description: "Big data processing, predictive analytics, and business intelligence dashboards.",
+  },
+  {
+    slug: "ecommerce-development",
+    icon: ShoppingCart,
+    title: "E-commerce Development",
+    description: "Custom storefronts, marketplace platforms, and headless commerce solutions.",
   },
 ];
 
@@ -110,7 +123,7 @@ export default function Services() {
               <h3 className="text-black font-semibold text-lg mb-2">{service.title}</h3>
               <p className="text-gray-600 text-md leading-relaxed mb-4">{service.description}</p>
               <Link
-                href="#"
+              href={`/services/${service.slug}`}
                 className="inline-flex items-center gap-1 text-[#ff0000b1] text-md  font-medium hover:text-pink-400 transition-colors"
               >
                 Explore
