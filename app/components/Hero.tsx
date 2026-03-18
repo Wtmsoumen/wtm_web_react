@@ -29,11 +29,14 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6   py-20 flex flex-col justify-center items-center text-center w-full">
 
         {/* Main Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-shadow-2xs">
+        {/* <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-shadow-2xs">
           Your{" "}
           <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Next-gen</span>
           <br />
           <span className="text-white">Tech Growth Partner</span>
+        </h1> */}
+        <h1 className=" text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-shadow-2xs! shadow-red-500!" style={{ textShadow: "0 0 10px #2b7fff !important" }}>
+          Your{" "}<span style={{ textShadow: "0 0 10px #f6339a !important" }}>Next-gen</span> <br /> Tech Growth Partner
         </h1>
 
         {/* Subtitle */}
@@ -44,7 +47,7 @@ export default function Hero() {
 
         {/* CTA Button */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-          <button onClick={() => setIsModalOpen(true)} className="group bg-linear-to-r from-pink-500 to-blue-500  text-white px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:opacity-90 hover:scale-105 hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] w-full sm:w-auto flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(168,85,247,0.3)]">
+          <button onClick={() => setIsModalOpen(true)} className="group bg-linear-to-r from-blue-500 to-pink-500 text-white px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:opacity-90 hover:scale-105 hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] w-full sm:w-auto flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(168,85,247,0.3)]">
             <Sparkles className="w-5 h-5" />
             <span>Start Your Project</span>
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -62,8 +65,9 @@ export default function Hero() {
             <div
               key={stat.label}
               className="flex flex-col justify-center items-center text-center p-6 rounded-2xl
-                bg-white/5 backdrop-blur-lg border border-white/20 text-shadow-2xs
-                shadow-2xl hover:bg-white/15 hover:scale-105 transition duration-300"
+                bg-black/70 backdrop-blur-lg border border-white/20
+                shadow-2xl hover:bg-black/90 hover:scale-105 transition duration-300"
+            // style={{ textShadow: "0 0 16px #ffffff !important" }}
             >
               <div className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-1 bg-clip-text text-transparent ${globalStyle?.gradientText}`}>
                 {stat.value}

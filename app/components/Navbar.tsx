@@ -190,7 +190,7 @@ export default function Navbar() {
                   {openMegaMenu?.length > 0 ? openMegaMenu?.map((v: any, idx: number) => {
                     const Icon = v?.icon;
                     return (
-                      <Link href={v?.href} key={idx} className={`flex items-start gap-2 font-medium group`}>{v?.icon !== "" ? <Icon className={`w-5 group-hover:w-5.5 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} /> : ""}{v?.title}</Link>
+                      <Link href={v?.href} key={idx} className={`flex items-start gap-2 font-normal group text-sm`}>{v?.icon !== "" ? <Icon className={`w-5 group-hover:w-5.5 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} /> : ""}{v?.title}</Link>
                     )
                   }) : ""}
                 </div>
