@@ -29,15 +29,18 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6   py-20 flex flex-col justify-center items-center text-center w-full">
 
         {/* Main Heading */}
-        {/* <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-shadow-2xs">
-          Your{" "}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight ">
+          <span style={{ textShadow: `0 0 20px #ba4491, 0 0 18px #1d74cf, 0 0 16px #ff2a2a ` }}>Your</span>{" "}
           <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Next-gen</span>
           <br />
-          <span className="text-white">Tech Growth Partner</span>
-        </h1> */}
-        <h1 className=" text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-shadow-2xs! shadow-red-500!" style={{ textShadow: "0 0 10px #2b7fff !important" }}>
-          Your{" "}<span style={{ textShadow: "0 0 10px #f6339a !important" }}>Next-gen</span> <br /> Tech Growth Partner
+          <span style={{ textShadow: `0 0 20px #ba4491, 0 0 18px #1d74cf, 0 0 16px #ff2a2a ` }} className="text-white">Tech Growth Partner</span>
         </h1>
+        {/* <h1
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight text-white bg-clip-text"
+          style={{ textShadow: `0 0 10px #f6339a, 0 0 10px #2b7fff` }}
+        >
+          Your <span>Next-gen</span> <br /> Tech Growth Partner
+        </h1> */}
 
         {/* Subtitle */}
         {/* <p className="text-white/90 text-lg md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed 
