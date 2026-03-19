@@ -23,17 +23,17 @@ export default function Hero() {
       />
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-linear-to-t from-black/20 via-black/10 to-black/60" />
+      <div className="absolute top-16 inset-0 bg-linear-to-t from-black/20 via-black/10 to-black/80" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6   py-20 flex flex-col justify-center items-center text-center w-full">
 
         {/* Main Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight ">
-          <span style={{ textShadow: `0 0 20px #ba4491, 0 0 18px #1d74cf, 0 0 16px #ff2a2a ` }}>Your</span>{" "}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-shadow-2xs">
+          <span>Your</span>{" "}
           <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Next-gen</span>
           <br />
-          <span style={{ textShadow: `0 0 20px #ba4491, 0 0 18px #1d74cf, 0 0 16px #ff2a2a ` }} className="text-white">Tech Growth Partner</span>
+          <span className="text-white">Tech Growth Partner</span>
         </h1>
         {/* <h1
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight text-white bg-clip-text"
