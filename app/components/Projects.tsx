@@ -14,7 +14,7 @@ const featuredProject = {
         { value: "130+", label: "Countries" },
     ],
     cta: "View Case Study",
-    image: "/images/portfilio/transform_chic_more.webp", 
+    image: "/images/portfilio/transform_chic_more.webp",
     bg: "from-[#0d1117] to-[#1a1f2e]",
 };
 
@@ -120,7 +120,7 @@ export default function PortfolioSection() {
                         Real Results
                     </span>
                 </h2>
-                <p className="text-center text-white/50 text-sm max-w-md mx-auto mb-10">
+                <p className="text-center text-white/70 text-lg max-w-md mx-auto mb-10">
                     From crypto exchanges to healthcare platforms — we build digital
                     products that scale globally.
                 </p>
@@ -141,11 +141,11 @@ export default function PortfolioSection() {
                             <h3 className="text-xl font-bold text-white">
                                 {featuredProject.title}
                             </h3>
-                            <p className="text-white/50 text-xs mt-0.5">
+                            <p className="text-white/70 text-md mt-0.5">
                                 {featuredProject.subtitle}
                             </p>
                         </div>
-                        <p className="text-white/40 text-xs leading-relaxed">
+                        <p className="text-white/70 text-md leading-relaxed">
                             {featuredProject.description}
                         </p>
                         <div className="flex gap-6">
@@ -160,7 +160,7 @@ export default function PortfolioSection() {
                         </div>
                         <a
                             href="#"
-                            className="flex items-center gap-1.5 text-blue-400 text-xs font-semibold hover:text-blue-300 transition-colors w-fit group"
+                            className="flex items-center gap-1.5 text-blue-400 text-md font-semibold hover:text-blue-300 transition-colors w-fit group"
                         >
                             {featuredProject.cta}
                             <span className="transition-transform group-hover:translate-x-1">

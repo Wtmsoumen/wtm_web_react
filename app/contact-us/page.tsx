@@ -15,6 +15,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { globalStyle } from "../globalStyle";
+import Footer from "../components/Footer";
 
 // ─── Team Data ───────────────────────────────────────────────────────────────
 const teamMembers = [
@@ -209,9 +210,7 @@ export default function ContactPage() {
                     Our Success
                   </span>
                 </h2>
-                <p className="text-gray-500 mt-3 text-sm leading-relaxed max-w-md">
-                  A passionate team of strategists, engineers, and creatives driving innovation across the globe.
-                </p>
+               
               </div>
 
               {/* Team grid */}
@@ -277,7 +276,7 @@ export default function ContactPage() {
                     className="group rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300"
                   >
                     {/* Photo with flag overlay */}
-                    <div className="relative w-full overflow-hidden" style={{ height: "220px" }}>
+                    <div className="relative w-full overflow-hidden" style={{ height: "250px" }}>
                       <img
                         src={office.image}
                         alt={`Webtechnomind IT Solutions - ${office.country}`}
@@ -312,8 +311,23 @@ export default function ContactPage() {
       </section>
       {/* ── CONTACT FORM + MAP ────────────────────────────────────────── */}
       <section className="bg-white py-20">
+           {/* ── Background texture ── */}
+        <div className="pointer-events-none absolute inset-0">
+          {/* Faint grid */}
+          <div
+            className="absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage:
+                "linear-gradient(#000 1px,transparent 1px),linear-gradient(90deg,#000 1px,transparent 1px)",
+              backgroundSize: "48px 48px",
+            }}
+          />
+          {/* Gradient blobs */}
+          <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-gradient-to-br from-[#1D74CF]/10 to-transparent blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tl from-[#D04425]/8 to-transparent blur-3xl" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Maps column */}
             <div className="flex flex-col gap-6">
               {offices.slice(0, 2).map((office, i) => (
@@ -348,10 +362,10 @@ export default function ContactPage() {
               </h3>
               <p className="text-[#D04425] font-semibold mb-6">Let's Build It.</p>
 
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-8">
                 {/* Name */}
                 <div className="flex items-center gap-3 border-b border-gray-200 pb-2 group focus-within:border-[#1D74CF] transition-colors">
-                  <User className="w-4 h-4 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0" />
+                  <User className="w-6 h-6 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0" />
                   <input
                     type="text"
                     placeholder="Name"
@@ -363,7 +377,7 @@ export default function ContactPage() {
 
                 {/* Company */}
                 <div className="flex items-center gap-3 border-b border-gray-200 pb-2 group focus-within:border-[#1D74CF] transition-colors">
-                  <Briefcase className="w-4 h-4 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0" />
+                  <Briefcase className="w-6 h-6 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0" />
                   <input
                     type="text"
                     placeholder="Company Name"
@@ -375,7 +389,7 @@ export default function ContactPage() {
 
                 {/* Phone */}
                 <div className="flex items-center gap-3 border-b border-gray-200 pb-2 group focus-within:border-[#1D74CF] transition-colors">
-                  <Phone className="w-4 h-4 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0" />
+                  <Phone className="w-6 h-6 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0" />
                   <input
                     type="tel"
                     placeholder="Phone"
@@ -387,7 +401,7 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <div className="flex items-center gap-3 border-b border-gray-200 pb-2 group focus-within:border-[#1D74CF] transition-colors">
-                  <Mail className="w-4 h-4 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0" />
+                  <Mail className="w-6 h-6 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0" />
                   <input
                     type="email"
                     placeholder="Email"
@@ -399,7 +413,7 @@ export default function ContactPage() {
 
                 {/* Service Select */}
                 <div className="flex items-center gap-3 border-b border-gray-200 pb-2 group focus-within:border-[#1D74CF] transition-colors">
-                  <Globe2 className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                  <Globe2 className="w-6 h-6 text-gray-400 flex-shrink-0" />
                   <select
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
@@ -410,12 +424,12 @@ export default function ContactPage() {
                       <option key={s} value={s} className="text-black">{s}</option>
                     ))}
                   </select>
-                  <ChevronDown className="w-4 h-4 text-gray-400 flex-shrink-0" />
+                  <ChevronDown className="w-6 h-6 text-gray-400 flex-shrink-0" />
                 </div>
 
                 {/* Message */}
                 <div className="flex items-start gap-3 border-b border-gray-200 pb-2 group focus-within:border-[#1D74CF] transition-colors">
-                  <MessageSquare className="w-4 h-4 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0 mt-1" />
+                  <MessageSquare className="w-6 h-6 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0 mt-1" />
                   <textarea
                     placeholder="Message"
                     rows={3}
@@ -483,6 +497,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <Footer/>
     </main>
   );
 }
