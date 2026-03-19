@@ -14,7 +14,7 @@ const featuredProject = {
         { value: "130+", label: "Countries" },
     ],
     cta: "View Case Study",
-    image: "/images/portfilio/transform_chic_more.webp", // replace with actual image
+    image: "/images/portfilio/transform_chic_more.webp", 
     bg: "from-[#0d1117] to-[#1a1f2e]",
 };
 
