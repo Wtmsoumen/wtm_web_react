@@ -91,3 +91,31 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+
+.corner-border::before,
+.corner-border::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 4px solid transparent;
+}
+
+/* Top Left */
+.corner-border::before {
+  top: 0;
+  left: 0;
+  border-top: 4px solid;
+  border-left: 4px solid;
+  border-image: linear-gradient(45deg, #1D74CF, #BA4491, #ff2a2a) 1;
+}
+
+/* Bottom Right */
+.corner-border::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 4px solid;
+  border-right: 4px solid;
+  border-image: linear-gradient(45deg, #1D74CF, #BA4491, #ff2a2a) 1;
+}
