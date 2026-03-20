@@ -15,7 +15,29 @@ import {
   LaptopMinimalCheck,
   ShieldAlert,
   Factory,
-  Building2
+  Building2,
+  HeartPulse, Landmark, GraduationCap,
+  Truck, Plane, Car, Wheat, Gamepad2, Trophy,
+  Clock, CalendarDays, Dumbbell, Clapperboard,
+  UtensilsCrossed, LayoutDashboard, CheckSquare, Home,
+  Zap, Newspaper, PlaneTakeoff, Radio,
+  Rocket,
+  Layers,
+  TabletSmartphone,
+  MonitorSmartphone,
+  Hexagon,
+  Triangle,
+  Globe,
+  PanelsTopLeft,
+  Braces,
+  MonitorSpeaker,
+  MessageSquare,
+  Brain,
+  Bot,
+  Plug,
+  ChartColumn,
+  Cpu,
+  ArrowRight
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "../../public/images/logo.png"
@@ -24,17 +46,35 @@ import Image from "next/image";
 import Link from "next/link";
 import { globalStyle } from "../globalStyle";
 
+const services = [
+  {
+    abbr: "GPT",
+    abbrColor: "text-violet-300",
+    label: "OpenAI Integration",
+  },
+  {
+    abbr: "LLM",
+    abbrColor: "text-pink-400",
+    label: "Custom Models",
+  },
+  {
+    abbr: "ML",
+    abbrColor: "text-cyan-400",
+    label: "Deep Learning",
+  },
+];
+
 const navLinks = [
   {
     label: "Hello AI", href: "#helloai", title: "AI Development Services", subtitle: "Next-Gen AI & ML Solutions", icon: Sparkles, megaMenu: [
-      { title: "AI development", href: "#socialmediamarketing", icon: Share2, color: "#fb2c36", color1: "#570707" },
-      { title: "AI Chatbot Development", href: "#searchengineoptimization", icon: Search, color: "#fb2c36", color1: "#570707" },
-      { title: "Generative AI Development", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "#fb2c36", color1: "#570707" },
-      { title: "AI Agent Development", href: "#leadgeneration", icon: UserPlus, color: "#fb2c36", color1: "#570707" },
-      { title: "AI Integration", href: "#conversionrateoptimization", icon: TrendingUp, color: "#fb2c36", color1: "#570707" },
-      { title: "ML Development", href: "#brandmanagement", icon: ShieldCheck, color: "#fb2c36", color1: "#570707" },
-      { title: "AI Product Development", href: "#trustedinfluencermarketingagency", icon: Users, color: "#fb2c36", color1: "#570707" },
-      { title: "Machine Learning & Deep Learning", href: "#specializedecommerceseo", icon: ShoppingCart, color: "#fb2c36", color1: "#570707" },
+      { title: "AI development", href: "#socialmediamarketing", icon: Sparkles, color: "#fb2c36", color1: "#570707" },
+      { title: "AI Chatbot Development", href: "#searchengineoptimization", icon: MessageSquare, color: "#fb2c36", color1: "#570707" },
+      { title: "Generative AI Development", href: "#digitalmarketingstrategy", icon: Brain, color: "#fb2c36", color1: "#570707" },
+      { title: "AI Agent Development", href: "#leadgeneration", icon: Bot, color: "#fb2c36", color1: "#570707" },
+      { title: "AI Integration", href: "#conversionrateoptimization", icon: Plug, color: "#fb2c36", color1: "#570707" },
+      { title: "ML Development", href: "#brandmanagement", icon: ChartColumn, color: "#fb2c36", color1: "#570707" },
+      { title: "AI Product Development", href: "#trustedinfluencermarketingagency", icon: Cpu, color: "#fb2c36", color1: "#570707" },
+      { title: "Machine Learning & Deep Learning", href: "#specializedecommerceseo", icon: Layers, color: "#fb2c36", color1: "#570707" },
     ]
   },
 
@@ -56,8 +96,16 @@ const navLinks = [
 
   {
     label: "Development", href: "#development", title: "Development Services", subtitle: "Development Solutions", icon: CodeXml, megaMenu: [
-      { title: "Mobile App Development", href: "#socialmediamarketing", icon: Share2, color: "#00bcff", color1: "#000000", subMenue: [{ title: "Mobile App Development", href: "#socialmediamarketing", icon: Share2, }] },
-      { title: "Website Development", href: "#socialmediamarketing", icon: Share2, color: "#00bcff", color1: "#000000", subMenue: [{ title: "Mobile App Development", href: "#socialmediamarketing", icon: Share2, }] },
+      { title: "Mobile App Development", href: "#socialmediamarketing", icon: TabletSmartphone, color: "#00bcff", color1: "#000000", },
+      { title: "Ios App Development", href: "#socialmediamarketing", icon: TabletSmartphone, color: "#00bcff", color1: "#000000", },
+      { title: "Android App Development", href: "#socialmediamarketing", icon: TabletSmartphone, color: "#00bcff", color1: "#000000", },
+      { title: "Web App Development", href: "#socialmediamarketing", icon: MonitorSmartphone, color: "#00bcff", color1: "#000000", },
+      { title: "Wordpress Development", href: "#socialmediamarketing", icon: PanelsTopLeft, color: "#00bcff", color1: "#000000", },
+      { title: "Website Development", href: "#socialmediamarketing", icon: MonitorSpeaker, color: "#00bcff", color1: "#000000", },
+      { title: "React.js Development", href: "#socialmediamarketing", icon: Globe, color: "#00bcff", color1: "#000000", },
+      { title: "Next.js Development", href: "#socialmediamarketing", icon: Triangle, color: "#00bcff", color1: "#000000", },
+      { title: "Node.js Development", href: "#socialmediamarketing", icon: Hexagon, color: "#00bcff", color1: "#000000", },
+      { title: "Laravel Development", href: "#socialmediamarketing", icon: Braces, color: "#00bcff", color1: "#000000", },
     ]
   },
 
@@ -83,33 +131,66 @@ const navLinks = [
   // },
   {
     label: "Industry", href: "#industry", title: "Industry", subtitle: "Industry", icon: Factory, megaMenu: [
-      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "#0092b8", color1: "#000000" },
-      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "#0092b8", color1: "#000000" },
-      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "#0092b8", color1: "#000000" },
-      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "#0092b8", color1: "#000000" },
-      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "#0092b8", color1: "#000000" },
-      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "#0092b8", color1: "#000000" },
-      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "#0092b8", color1: "#000000" },
-      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "#0092b8", color1: "#000000" },
-      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "#0092b8", color1: "#000000" },
-      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "#0092b8", color1: "#000000" },
-      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "#0092b8", color1: "#000000" }
+      { title: "FinTech", href: "#fintech", icon: Landmark, color: "#2d9cdb", color1: "#000000" },
+      { title: "Healthcare", href: "#healthcare", icon: HeartPulse, color: "#ff4d6d", color1: "#fff0f3" },
+      { title: "eCommerce", href: "#ecommerce", icon: ShoppingCart, color: "#f2994a", color1: "#fff4ec" },
+      { title: "Education", href: "#education", icon: GraduationCap, color: "#2d9cdb", color1: "#e8f4fd" },
+      { title: "Logistics", href: "#logistics", icon: Truck, color: "#f2994a", color1: "#fff4ec" },
+      { title: "Travel & Hospitality", href: "#travel", icon: Plane, color: "#2d9cdb", color1: "#e8f4fd" },
+      { title: "Automotive", href: "#automotive", icon: Car, color: "#6fcf97", color1: "#edfbf2" },
+      { title: "Agriculture", href: "#agriculture", icon: Wheat, color: "#6fcf97", color1: "#edfbf2" },
+      { title: "Gaming", href: "#gaming", icon: Gamepad2, color: "#9b51e0", color1: "#f3ecfd" },
+      { title: "Sports", href: "#sports", icon: Trophy, color: "#6fcf97", color1: "#edfbf2" },
+      { title: "On-Demand", href: "#ondemand", icon: Clock, color: "#f2994a", color1: "#fff4ec" },
+      { title: "Events", href: "#events", icon: CalendarDays, color: "#2d9cdb", color1: "#e8f4fd" },
+      { title: "Social Networking", href: "#socialnetworking", icon: Users, color: "#2d9cdb", color1: "#e8f4fd" },
+      { title: "Fitness & Wellness", href: "#fitness", icon: Dumbbell, color: "#ff4d6d", color1: "#fff0f3" },
+      { title: "Entertainment", href: "#entertainment", icon: Clapperboard, color: "#9b51e0", color1: "#f3ecfd" },
+      { title: "Restaurant & Food", href: "#food", icon: UtensilsCrossed, color: "#f2994a", color1: "#fff4ec" },
+      { title: "SaaS", href: "#saas", icon: LayoutDashboard, color: "#2d9cdb", color1: "#e8f4fd" },
+      { title: "Politics & Governance", href: "#politics", icon: CheckSquare, color: "#2d9cdb", color1: "#e8f4fd" },
+      { title: "Real Estate", href: "#realestate", icon: Home, color: "#f2994a", color1: "#fff4ec" },
+      { title: "Electric Vehicle", href: "#ev", icon: Zap, color: "#6fcf97", color1: "#edfbf2" },
+      { title: "News & Media", href: "#news", icon: Newspaper, color: "#ff4d6d", color1: "#fff0f3" },
+      { title: "Aviation", href: "#aviation", icon: PlaneTakeoff, color: "#2d9cdb", color1: "#e8f4fd" },
+      { title: "OTT", href: "#ott", icon: Radio, color: "#9b51e0", color1: "#f3ecfd" },
     ]
   },
 
   {
     label: "Company", href: "#footer", title: "Our Company", subtitle: "Our Company Details", icon: Building2, megaMenu: [
-      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "#00a63e", color1: "#000000" },
-      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "#00a63e", color1: "#000000" },
-      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "#00a63e", color1: "#000000" },
-      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "#00a63e", color1: "#000000" },
-      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "#00a63e", color1: "#000000" },
-      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "#00a63e", color1: "#000000" },
-      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "#00a63e", color1: "#000000" },
-      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "#00a63e", color1: "#000000" },
-      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "#00a63e", color1: "#000000" },
-      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "#00a63e", color1: "#000000" },
-      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "#00a63e", color1: "#000000" }
+      {
+        title: "About Us",
+        description: "Our story & mission",
+        href: "#about",
+        icon: Building2,
+        color: "#00a63e",
+        color1: "#000000"
+      },
+      {
+        title: "How We Work",
+        description: "Our development process",
+        href: "#how-we-work",
+        icon: Rocket,
+        color: "#6fcf97",
+        color1: "#edfbf2",
+      },
+      {
+        title: "Portfolio & Testimonials",
+        description: "Our work & client reviews",
+        href: "#portfolio",
+        icon: Layers,
+        color: "#9b51e0",
+        color1: "#f3ecfd",
+      },
+      {
+        title: "Careers",
+        description: "Join our team",
+        href: "#careers",
+        icon: Users,
+        color: "#f2994a",
+        color1: "#fff4ec",
+      },
     ]
   },
 ];
@@ -166,7 +247,7 @@ export default function Navbar() {
             })}
 
             {openMegaMenu?.data?.length > 0 ?
-              <div onMouseLeave={() => setOpenMegaMenu({})} className={`absolute top-11 -right-12 bg-white w-[120%] rounded-3xl overflow-hidden flex ${scrolled ? "shadow-md shadow-gray-300" : ""}`}>
+              <div onMouseLeave={() => setOpenMegaMenu({})} className={`absolute top-11 bg-white rounded-3xl overflow-hidden flex w-[150%] -right-32 ${scrolled ? "shadow-md shadow-gray-300" : ""}`}>
                 <div className={`w-[72%]`}>
                   <div className="text-black px-8 pt-6">
                     <div className="flex items-start gap-2">
@@ -183,7 +264,8 @@ export default function Navbar() {
                       </div>
                     </div>
                   </div>
-                  <div className={`text-black grid grid-cols-2 p-5! gap-x-2`}>
+                  <hr className="w-full border-gray-200 mt-5!" />
+                  <div className={`text-black grid ${openMegaMenu?.title === "Industry" ? "grid-cols-4" : openMegaMenu?.title === "Our Company" ? "grid-cols-1" : "grid-cols-2"} p-5! gap-x-2`}>
                     {openMegaMenu?.data?.length > 0 ? openMegaMenu?.data?.map((v: any, idx: number) => {
                       const Icon = v?.icon;
                       return (
@@ -197,7 +279,7 @@ export default function Navbar() {
                             <span className="font-semibold text-base text-gray-600">{v?.title}</span>
                           </Link>
 
-                          {v?.subMenue?.length > 0 ? v?.subMenue?.map((val: any, indx: number) => {
+                          {/* {v?.subMenue?.length > 0 ? v?.subMenue?.map((val: any, indx: number) => {
                             const Icon = val?.icon;
                             return (
                               <Link href={v?.href} key={indx} className={`flex p-3 items-center gap-2 font-normal group text-sm rounded-xl border border-solid border-transparent hover:border-gray-200`}>
@@ -209,17 +291,101 @@ export default function Navbar() {
                                 <span className="font-semibold text-base text-gray-600">{val?.title}</span>
                               </Link>
                             )
-                          }) : ""}
+                          }) : ""} */}
                         </div>
                       )
                     }) : ""}
                   </div>
                 </div>
-                <div className="w-[28%] h-[-webkit-fill-available] z-10"
+                <div className="w-[28%] h-[-webkit-fill-available] z-10 flex items-center justify-center"
                   style={{
                     background: `linear-gradient(0deg, ${openMegaMenu?.data[0]?.color} 0%, ${openMegaMenu?.data[0]?.color1} 100%)`
                   }} >
-                  sdfsd
+                  <div className="flex items-center justify-center p-6">
+                    <div
+                      className="relative flex flex-col gap-5"
+                    >
+                      {/* Subtle glow blob */}
+
+
+                      {/* Header */}
+                      <div className="flex items-center gap-3 relative z-10">
+                        <div
+                          className="w-10 h-10 rounded-xl flex items-center justify-center"
+                          style={{
+                            background: "linear-gradient(135deg, rgba(139,92,246,0.35) 0%, rgba(99,51,220,0.2) 100%)",
+                            border: "1px solid rgba(139,92,246,0.3)",
+                          }}
+                        >
+                          <Brain size={20} className="text-violet-300" />
+                        </div>
+                        <div>
+                          <h2 className="text-white font-bold text-base leading-tight tracking-wide">
+                            AI Excellence
+                          </h2>
+                          <p className="text-violet-300/70 text-xs font-medium tracking-wider uppercase">
+                            Cutting-Edge Technology
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Service Items */}
+                      <div className="flex flex-col gap-3 relative z-10">
+                        {services.map(({ abbr, abbrColor, label }) => (
+                          <div
+                            key={abbr}
+                            className="flex items-center gap-4 rounded-2xl px-4 py-3 transition-all duration-200 cursor-pointer group"
+                            style={{
+                              background: "rgba(255,255,255,0.05)",
+                              border: "1px solid rgba(255,255,255,0.07)",
+                            }}
+                            onMouseEnter={(e) => {
+                              (e.currentTarget as HTMLDivElement).style.background =
+                                "rgba(255,255,255,0.09)";
+                              (e.currentTarget as HTMLDivElement).style.border =
+                                "1px solid rgba(255,255,255,0.13)";
+                            }}
+                            onMouseLeave={(e) => {
+                              (e.currentTarget as HTMLDivElement).style.background =
+                                "rgba(255,255,255,0.05)";
+                              (e.currentTarget as HTMLDivElement).style.border =
+                                "1px solid rgba(255,255,255,0.07)";
+                            }}
+                          >
+                            <span
+                              className={`font-extrabold text-xl w-12 shrink-0 tracking-tight ${abbrColor}`}
+                            >
+                              {abbr}
+                            </span>
+                            <span className="text-white/80 text-sm font-medium">{label}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* CTA Button */}
+                      <button
+                        className="relative z-10 flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-semibold text-sm text-white transition-all duration-200 active:scale-95"
+                        style={{
+                          background: "linear-gradient(135deg, #a855f7 0%, #ec4899 100%)",
+                          boxShadow: "0 8px 24px rgba(168, 85, 247, 0.4)",
+                        }}
+                        onMouseEnter={(e) => {
+                          (e.currentTarget as HTMLButtonElement).style.boxShadow =
+                            "0 12px 32px rgba(168, 85, 247, 0.6)";
+                          (e.currentTarget as HTMLButtonElement).style.filter = "brightness(1.1)";
+                        }}
+                        onMouseLeave={(e) => {
+                          (e.currentTarget as HTMLButtonElement).style.boxShadow =
+                            "0 8px 24px rgba(168, 85, 247, 0.4)";
+                          (e.currentTarget as HTMLButtonElement).style.filter = "brightness(1)";
+                        }}
+                      >
+                        <Sparkles size={15} className="shrink-0" />
+                        Explore AI Services
+                        <ArrowRight size={15} className="shrink-0" />
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
               : ""}
