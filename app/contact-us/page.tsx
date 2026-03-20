@@ -162,7 +162,7 @@ export default function ContactPage() {
       </section>
 
   {/* ── GROWTH / TEAM SECTION ─────────────────────────────────────── */}
-      <section className="relative bg-white py-24 overflow-hidden">
+      <section className="relative bg-white  overflow-hidden">
 
         {/* ── Background texture ── */}
         <div className="pointer-events-none absolute inset-0">
