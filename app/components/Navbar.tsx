@@ -26,117 +26,97 @@ import { globalStyle } from "../globalStyle";
 
 const navLinks = [
   {
-    label: "Hello AI", href: "#helloai", icon: Sparkles, megaMenu: [
-      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "fb2c36" },
-      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "fb2c36" },
-      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "fb2c36" },
-      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "fb2c36" },
-      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "fb2c36" },
-      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "fb2c36" },
-      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "fb2c36" },
-      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "fb2c36" },
-      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "fb2c36" },
-      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "fb2c36" },
-      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "fb2c36" }
+    label: "Hello AI", href: "#helloai", title: "AI Development Services", subtitle: "Next-Gen AI & ML Solutions", icon: Sparkles, megaMenu: [
+      { title: "AI development", href: "#socialmediamarketing", icon: Share2, color: "#fb2c36", color1: "#570707" },
+      { title: "AI Chatbot Development", href: "#searchengineoptimization", icon: Search, color: "#fb2c36", color1: "#570707" },
+      { title: "Generative AI Development", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "#fb2c36", color1: "#570707" },
+      { title: "AI Agent Development", href: "#leadgeneration", icon: UserPlus, color: "#fb2c36", color1: "#570707" },
+      { title: "AI Integration", href: "#conversionrateoptimization", icon: TrendingUp, color: "#fb2c36", color1: "#570707" },
+      { title: "ML Development", href: "#brandmanagement", icon: ShieldCheck, color: "#fb2c36", color1: "#570707" },
+      { title: "AI Product Development", href: "#trustedinfluencermarketingagency", icon: Users, color: "#fb2c36", color1: "#570707" },
+      { title: "Machine Learning & Deep Learning", href: "#specializedecommerceseo", icon: ShoppingCart, color: "#fb2c36", color1: "#570707" },
     ]
   },
+
   {
-    label: "Marketing", href: "#markating", icon: SquarePercent, megaMenu: [
-      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "ffb900" },
-      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "ffb900" },
-      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "ffb900" },
-      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "ffb900" },
-      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "ffb900" },
-      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "ffb900" },
-      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "ffb900" },
-      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "ffb900" },
-      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "ffb900" },
-      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "ffb900" },
-      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "ffb900" }
+    label: "Marketing", href: "#markating", title: "Marketing Services", subtitle: "Marketing Solutions", icon: SquarePercent, megaMenu: [
+      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "#D95204", color1: "#782E00" },
+      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "#D95204", color1: "#782E00" },
+      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "#D95204", color1: "#782E00" },
+      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "#D95204", color1: "#782E00" },
+      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "#D95204", color1: "#782E00" },
+      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "#D95204", color1: "#782E00" },
+      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "#D95204", color1: "#782E00" },
+      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "#D95204", color1: "#782E00" },
+      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "#D95204", color1: "#782E00" },
+      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "#D95204", color1: "#782E00" },
+      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "#D95204", color1: "#782E00" }
     ]
   },
+
   {
-    label: "Development", href: "#development", icon: CodeXml, megaMenu: [
-      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "00bcff" },
-      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "00bcff" },
-      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "00bcff" },
-      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "00bcff" },
-      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "00bcff" },
-      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "00bcff" },
-      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "00bcff" },
-      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "00bcff" },
-      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "00bcff" },
-      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "00bcff" },
-      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "00bcff" }
+    label: "Development", href: "#development", title: "Development Services", subtitle: "Development Solutions", icon: CodeXml, megaMenu: [
+      { title: "Mobile App Development", href: "#socialmediamarketing", icon: Share2, color: "#00bcff", color1: "#000000", subMenue: [{ title: "Mobile App Development", href: "#socialmediamarketing", icon: Share2, }] },
+      { title: "Website Development", href: "#socialmediamarketing", icon: Share2, color: "#00bcff", color1: "#000000", subMenue: [{ title: "Mobile App Development", href: "#socialmediamarketing", icon: Share2, }] },
     ]
   },
+
   {
-    label: "Services", href: "#services", icon: LaptopMinimalCheck, megaMenu: [
-      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "a800b7" },
-      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "a800b7" },
-      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "a800b7" },
-      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "a800b7" },
-      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "a800b7" },
-      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "a800b7" },
-      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "a800b7" },
-      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "a800b7" },
-      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "a800b7" },
-      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "a800b7" },
-      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "a800b7" }
+    label: "Services", href: "#services", title: "Our Services", subtitle: "Our Services", icon: LaptopMinimalCheck, megaMenu: [
+      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "#a800b7", color1: "#000000" },
+      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "#a800b7", color1: "#000000" },
+      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "#a800b7", color1: "#000000" },
+      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "#a800b7", color1: "#000000" },
+      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "#a800b7", color1: "#000000" },
+      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "#a800b7", color1: "#000000" },
+      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "#a800b7", color1: "#000000" },
+      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "#a800b7", color1: "#000000" },
+      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "#a800b7", color1: "#000000" },
+      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "#a800b7", color1: "#000000" },
+      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "#a800b7", color1: "#000000" }
     ]
   },
 
   // on que
   // {
-  //   label: "On-Demand", href: "#ondemand", icon: ShieldAlert, megaMenu: [
-  //     { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "1447e6" },
-  //     { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "1447e6" },
-  //     { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "1447e6" },
-  //     { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "1447e6" },
-  //     { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "1447e6" },
-  //     { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "1447e6" },
-  //     { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "1447e6" },
-  //     { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "1447e6" },
-  //     { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "1447e6" },
-  //     { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "1447e6" },
-  //     { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "1447e6" }
-  //   ]
+  //   label: "On-Demand", href: "#ondemand", icon: ShieldAlert,
   // },
   {
-    label: "Industry", href: "#industry", icon: Factory, megaMenu: [
-      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "00a63e" },
-      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "00a63e" },
-      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "00a63e" },
-      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "00a63e" },
-      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "00a63e" },
-      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "00a63e" },
-      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "00a63e" },
-      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "00a63e" },
-      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "00a63e" },
-      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "00a63e" },
-      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "00a63e" }
+    label: "Industry", href: "#industry", title: "Industry", subtitle: "Industry", icon: Factory, megaMenu: [
+      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "#0092b8", color1: "#000000" },
+      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "#0092b8", color1: "#000000" },
+      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "#0092b8", color1: "#000000" },
+      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "#0092b8", color1: "#000000" },
+      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "#0092b8", color1: "#000000" },
+      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "#0092b8", color1: "#000000" },
+      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "#0092b8", color1: "#000000" },
+      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "#0092b8", color1: "#000000" },
+      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "#0092b8", color1: "#000000" },
+      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "#0092b8", color1: "#000000" },
+      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "#0092b8", color1: "#000000" }
     ]
   },
+
   {
-    label: "Company", href: "#footer", icon: Building2, megaMenu: [
-      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "0092b8" },
-      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "0092b8" },
-      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "0092b8" },
-      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "0092b8" },
-      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "0092b8" },
-      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "0092b8" },
-      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "0092b8" },
-      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "0092b8" },
-      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "0092b8" },
-      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "0092b8" },
-      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "0092b8" }
+    label: "Company", href: "#footer", title: "Our Company", subtitle: "Our Company Details", icon: Building2, megaMenu: [
+      { title: "Social Media Marketing", href: "#socialmediamarketing", icon: Share2, color: "#00a63e", color1: "#000000" },
+      { title: "Digital Marketing Strategy", href: "#digitalmarketingstrategy", icon: Lightbulb, color: "#00a63e", color1: "#000000" },
+      { title: "Conversion Rate Optimization", href: "#conversionrateoptimization", icon: TrendingUp, color: "#00a63e", color1: "#000000" },
+      { title: "Trusted Influencer Marketing Agency", href: "#trustedinfluencermarketingagency", icon: Users, color: "#00a63e", color1: "#000000" },
+      { title: "Search Engine Optimization", href: "#searchengineoptimization", icon: Search, color: "#00a63e", color1: "#000000" },
+      { title: "Lead Generation", href: "#leadgeneration", icon: UserPlus, color: "#00a63e", color1: "#000000" },
+      { title: "Brand Management", href: "#brandmanagement", icon: ShieldCheck, color: "#00a63e", color1: "#000000" },
+      { title: "Specialized eCommerce SEO Services", href: "#specializedecommerceseo", icon: ShoppingCart, color: "#00a63e", color1: "#000000" },
+      { title: "Google Ad Campaigns", href: "#googleadcampaigns", icon: Megaphone, color: "#00a63e", color1: "#000000" },
+      { title: "Content Marketing", href: "#contentmarketing", icon: FileText, color: "#00a63e", color1: "#000000" },
+      { title: "Paid Advertising", href: "#paidadvertising", icon: Target, color: "#00a63e", color1: "#000000" }
     ]
   },
 ];
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openMegaMenu, setOpenMegaMenu] = useState<any>([])
+  const [openMegaMenu, setOpenMegaMenu] = useState<any>({})
   const [scrolled, setScrolled] = useState(false);
 
   // useEffect(() => {
@@ -152,10 +132,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  let Ticon = openMegaMenu?.icon;
 
   return (
     // <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white" : "bg-black/40"}`}>
-    <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white shadow-sm shadow-gray-300" : "bg-linear-to-t to-black/50 via-[#00000010] from-[#00000005]"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white shadow-sm shadow-gray-300" : "bg-black/80"}`}>
       <div className={`${globalStyle?.container} max-w-full!`}>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -171,11 +152,11 @@ export default function Navbar() {
                 <div
                   key={index}
                   className={`${scrolled ? "text-black hover:text-gray-600" : "text-white hover:text-red-300"} cursor-pointer font-medium text-sm transition-colors duration-200 group`}
-                  onMouseEnter={() => setOpenMegaMenu(item?.megaMenu)}
-                  onClick={() => setOpenMegaMenu([])}
+                  onMouseEnter={() => setOpenMegaMenu({ title: item?.title, subtitle: item?.subtitle, icon: item?.icon, data: item?.megaMenu })}
+                  onClick={() => setOpenMegaMenu({})}
                 >
                   <div className="relative flex gap-1 z-11 font-medium text-sm">
-                    <Icon className={`w-5 h-auto ${index === 0 ? "text-red-500" : index === 1 ? "text-amber-400" : index === 2 ? "text-sky-400" : index === 3 ? "text-fuchsia-700" : index === 4 ? "text-blue-700" : index === 5 ? "text-green-600" : index === 6 ? "text-cyan-600" : ""}`} />
+                    <Icon className={`w-5 h-auto ${index === 0 ? "text-red-500" : index === 1 ? "text-amber-400" : index === 2 ? "text-sky-400" : index === 3 ? "text-fuchsia-600" : index === 4 ? "text-cyan-600" : index === 5 ? "text-green-600" : index === 6 ? "text-cyan-600" : ""}`} />
                     {item.label}
                     <ChevronDown className="w-4.5 h-auto group-hover:rotate-180 duration-300" />
                   </div>
@@ -184,17 +165,62 @@ export default function Navbar() {
               )
             })}
 
-            {openMegaMenu?.length > 0 ?
-              <div onMouseLeave={() => setOpenMegaMenu([])} className={`absolute top-11 bg-white w-full rounded-3xl overflow-hidden flex ${scrolled ? "shadow-md shadow-gray-300" : ""}`}>
-                <div className={`text-black grid grid-cols-2 p-5! gap-y-6 gap-x-2 w-[75%]`}>
-                  {openMegaMenu?.length > 0 ? openMegaMenu?.map((v: any, idx: number) => {
-                    const Icon = v?.icon;
-                    return (
-                      <Link href={v?.href} key={idx} className={`flex items-start gap-2 font-medium group`}>{v?.icon !== "" ? <Icon className={`w-5 group-hover:w-5.5 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} /> : ""}{v?.title}</Link>
-                    )
-                  }) : ""}
+            {openMegaMenu?.data?.length > 0 ?
+              <div onMouseLeave={() => setOpenMegaMenu({})} className={`absolute top-11 -right-12 bg-white w-[120%] rounded-3xl overflow-hidden flex ${scrolled ? "shadow-md shadow-gray-300" : ""}`}>
+                <div className={`w-[72%]`}>
+                  <div className="text-black px-8 pt-6">
+                    <div className="flex items-start gap-2">
+                      <div
+                        className="p-2 rounded-lg"
+                        style={{
+                          background: `linear-gradient(0deg, ${openMegaMenu?.data[0]?.color} 0%, ${openMegaMenu?.data[0]?.color1} 100%)`
+                        }} >
+                        <Ticon className={`w-5 h-auto text-white`} />
+                      </div>
+                      <div className="flex flex-col font-semibold text-gray-600">
+                        <h1 className="text-xl">{openMegaMenu?.title}</h1>
+                        <h2 className="font-medium text-sm">{openMegaMenu?.subtitle}</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={`text-black grid grid-cols-2 p-5! gap-x-2`}>
+                    {openMegaMenu?.data?.length > 0 ? openMegaMenu?.data?.map((v: any, idx: number) => {
+                      const Icon = v?.icon;
+                      return (
+                        <div key={idx}>
+                          <Link href={v?.href} className={`flex p-3 items-center gap-2 font-normal group text-sm rounded-xl border border-solid border-transparent hover:border-gray-200`}>
+                            {v?.icon !== "" ?
+                              <div className={`p-3 rounded-xl`} style={{ background: v?.subMenue?.length ? `${v?.color}40` : `${v?.color}20`, }}>
+                                <Icon className={`w-4 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} />
+                              </div>
+                              : ""}
+                            <span className="font-semibold text-base text-gray-600">{v?.title}</span>
+                          </Link>
+
+                          {v?.subMenue?.length > 0 ? v?.subMenue?.map((val: any, indx: number) => {
+                            const Icon = val?.icon;
+                            return (
+                              <Link href={v?.href} key={indx} className={`flex p-3 items-center gap-2 font-normal group text-sm rounded-xl border border-solid border-transparent hover:border-gray-200`}>
+                                {val?.icon !== "" ?
+                                  <div className={`p-3 rounded-xl`} style={{ background: `${v?.color}20` }}>
+                                    <Icon className={`w-4 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} />
+                                  </div>
+                                  : ""}
+                                <span className="font-semibold text-base text-gray-600">{val?.title}</span>
+                              </Link>
+                            )
+                          }) : ""}
+                        </div>
+                      )
+                    }) : ""}
+                  </div>
                 </div>
-                <div className="w-[25%] h-[-webkit-fill-available] z-10" style={{ backgroundColor: openMegaMenu[0]?.color }} />
+                <div className="w-[28%] h-[-webkit-fill-available] z-10"
+                  style={{
+                    background: `linear-gradient(0deg, ${openMegaMenu?.data[0]?.color} 0%, ${openMegaMenu?.data[0]?.color1} 100%)`
+                  }} >
+                  sdfsd
+                </div>
               </div>
               : ""}
           </div>
