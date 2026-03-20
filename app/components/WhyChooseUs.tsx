@@ -48,65 +48,68 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="section-bg !py-24 bg-[#0f172a]!">
-      <div className="max-w-7xl mx-auto! px-4 sm:px-6  ">
+    <section className="section-bg !py-24 bg-white!">
+      <div className="max-w-7xl mx-auto! px-4 sm:px-6">
         {/* Header */}
         <div className="text-center mb-12">
-          {/* <span className="inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest mb-4">
-            Why Choose Us
-          </span> */}
-          <h2 className="text-4xl md:text-5xl font-bold text-white  ">
-            Why <span className={`bg-linear-to-r from-pink-500 to-blue-500  bg-clip-text text-transparent`}>Choose Us ?</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-black">
+            Why <span className="bg-linear-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Choose Us ?</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
             We combine technical excellence with proven processes to deliver products that succeed.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f, idx) => (
-            <div className={`${globalStyle?.cardGlassWhyChooseUs} flex flex-col gap-3 group relative`}>
-
-              <div className="absolute -top-3 -left-2 w-10 h-10 rounded-full 
-  bg-[rgba(55,55,55,0.85)]
-  group-hover:bg-gradient-to-br group-hover:from-[#1D74CF] group-hover:to-[#b33b41]
-  flex items-center justify-center
-  text-white text-xs font-bold shadow-lg z-10
-  transition-all duration-300">
+            <div
+              key={idx}
+              className="flex flex-col gap-3 group relative bg-white rounded-2xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300"
+            >
+              {/* Index badge */}
+              <div className="absolute -top-3 -left-2 w-10 h-10 rounded-full
+                bg-gray-200
+                group-hover:bg-gradient-to-br group-hover:from-[#1D74CF] group-hover:to-[#b33b41]
+                flex items-center justify-center
+                text-gray-600 group-hover:text-white text-xs font-bold shadow-md z-10
+                transition-all duration-300">
                 {String(idx + 1).padStart(2, "0")}
               </div>
 
-              {/* Bottom right half circle blob */}
+              {/* Bottom right blob */}
               <div className="absolute bottom-0 right-0 w-40 h-40 overflow-hidden rounded-2xl pointer-events-none">
-                <div className="absolute bottom-0 right-0 w-40 h-40 rounded-full 
-    bg-gray-600
-    translate-x-10 translate-y-10 opacity-20 
-    transition-all duration-500
-    group-hover:scale-125 group-hover:bg-gradient-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425]" />
+                <div className="absolute bottom-0 right-0 w-40 h-40 rounded-full
+                  bg-gray-200
+                  translate-x-10 translate-y-10 opacity-40
+                  transition-all duration-500
+                  group-hover:scale-125 group-hover:bg-gradient-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425]" />
               </div>
+
+              {/* Icon + stat */}
               <div className="flex items-start gap-4 mb-4">
-                <div className={`${globalStyle?.  gradientText} w-14 h-14 rounded-xl flex items-center justify-center text-xl shrink-0  `}>
-                  {/**/}
+                <div className={`${globalStyle?.gradientText} w-14 h-14 rounded-xl flex items-center justify-center text-xl shrink-0`}>
                   {f.icon}
                 </div>
                 <div>
-                  <div className="text-3xl font-bold gradient-text">{f.stat}</div>
-                  <div className="text-gray-500 text-sm">{f.statLabel}</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] bg-clip-text text-transparent">
+                    {f.stat}
+                  </div>
+                  <div className="text-gray-400 text-sm">{f.statLabel}</div>
                 </div>
               </div>
 
-              <h3 className="text-white font-semibold text-xl mb-2 transition-all duration-300
-    group-hover:bg-gradient-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425]
-    group-hover:bg-clip-text group-hover:text-transparent">
+              {/* Title */}
+              <h3 className="text-black font-semibold text-xl mb-2 transition-all duration-300
+                group-hover:bg-gradient-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425]
+                group-hover:bg-clip-text group-hover:text-transparent">
                 {f.title}
               </h3>
 
-              <p className="text-gray-400 text-md leading-relaxed transition-all duration-300
-    ">
+              {/* Description */}
+              <p className="text-gray-500 text-md leading-relaxed">
                 {f.description}
               </p>
-
             </div>
           ))}
         </div>

@@ -24,11 +24,12 @@ export default function Home() {
     <div className="min-h-screen flex flex-col ">
       <Hero />
       <Services />
+        <Industries />
       <WhyChooseUs />
       <TrustIndicators />
       <PortfolioSection />
       <OurService />
-      <Industries />
+    
       <PoweredByAI />
       {/* <OurExpertise /> */}
       <ServicesTestimonialsSection />
