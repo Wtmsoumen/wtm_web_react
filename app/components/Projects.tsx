@@ -219,7 +219,7 @@ export default function PortfolioSection() {
                         className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200 shadow-lg shadow-blue-900/30"
                     >
                         Explore Full Portfolio
-                        <span className="bg-white/20 rounded-full p-0.5 flex items-center justify-center text-xs">
+                        <span className=" rounded-full p-0.5! flex items-center justify-center text-xs">
                             →
                         </span>
                     </a>
