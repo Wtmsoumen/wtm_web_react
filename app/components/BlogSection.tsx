@@ -101,7 +101,7 @@ export default function BlogSection() {
           {posts.map((post, idx) => (
             <article
               key={idx}
-              className="card-glass rounded-2xl overflow-hidden hover:[border-image:linear-gradient(to_right,#1D74CF,#BA4491,#ff2a2a)_1]  transition-all duration-300 cursor-pointer group"
+              className="card-glass rounded-2xl shadow-sm hover:shadow-md overflow-hidden hover:[border-image:linear-gradient(to_right,#1D74CF,#BA4491,#ff2a2a)_1]  transition-all duration-300 cursor-pointer group"
             >
               {/* Card image/banner */}
               <div className="h-40 relative overflow-hidden">
@@ -116,8 +116,8 @@ export default function BlogSection() {
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <span
-                    className={`text-sm px-3 py-1 rounded-full font-medium transition-all border
-  border-purple-500/30 bg-purple-500/20 text-purple-300
+                    className={`text-sm px-3 py-1 rounded-full transition-all border
+  border-purple-500/30 bg-purple-500/20 text-purple-400
   group-hover:bg-transparent
   group-hover:border-purple-400`}
                   >

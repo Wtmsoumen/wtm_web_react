@@ -220,13 +220,14 @@ export default function Navbar() {
 
   return (
     // <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white" : "bg-black/40"}`}>
-    
-    <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white shadow-sm shadow-gray-300" : "bg-black/80"}`}>
+
+    <div className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white shadow-sm shadow-gray-300" : "lg:bg-black/80 bg-white"}`}>
       <div className={`${globalStyle?.container} max-w-full!`}>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Image src={scrolled ? logo : logoWhite} alt="logo" width={1920} height={1080} className="w-50 h-auto" />
+            <Image src={scrolled ? logo : logoWhite} alt="logo" width={1920} height={1080} className="w-50 h-auto lg:flex hidden" />
+            <Image src={logo} alt="logo" width={1920} height={1080} className="w-50 h-auto lg:hidden flex" />
           </Link>
 
           {/* Desktop Nav */}
@@ -397,7 +398,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <button
-          onClick={() => setFormOpen(true)}
+            onClick={() => setFormOpen(true)}
             className={`hidden lg:block bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#ff2a2a] text-white hover:scale-105 duration-300 cursor-pointer px-4! py-2! rounded-full text-sm font-medium`}
           >
             Get Quote
@@ -405,7 +406,7 @@ export default function Navbar() {
 
           {/* Mobile menu toggle */}
           <button
-            className={`lg:hidden p-2 ${scrolled ? "text-black" : "text-white"}`}
+            className={`lg:hidden p-2 ${scrolled ? "text-black" : "lg:text-white text-black"}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -424,13 +425,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-[#080f20] border-t border-white/10 px-4 py-5 flex flex-col gap-4 max-h-[85vh] overflow-y-auto w-full">
+        <div className="lg:hidden bg-[#ffffff] border-t border-white/10 px-4 py-5 flex flex-col gap-4 max-h-[85vh] overflow-y-auto w-full">
           {navLinks.map((item: any) => {
             const Icon = item.icon;
             return (
               <div key={item.label} className="flex flex-col gap-2">
-                <div 
-                  className="flex justify-between items-center text-white cursor-pointer"
+                <div
+                  className="flex justify-between items-center text-black cursor-pointer"
                   onClick={() => {
                     if (item.megaMenu) {
                       setOpenMobileMegaMenu(openMobileMegaMenu === item.label ? null : item.label);
@@ -439,7 +440,7 @@ export default function Navbar() {
                     }
                   }}
                 >
-                  <div className="flex items-center gap-2 hover:text-white text-sm py-1 flex-1">
+                  <div className="flex items-center gap-2 hover:text-black text-sm py-1 flex-1">
                     {Icon && <Icon className="w-4 h-4" />}
                     {item.label}
                   </div>
@@ -449,7 +450,7 @@ export default function Navbar() {
                     </div>
                   )}
                 </div>
-                
+
                 {item.megaMenu && openMobileMegaMenu === item.label && (
                   <div className="flex flex-col gap-3 pl-6 mt-2 border-l border-white/10 ml-2">
                     {item.megaMenu.map((subItem: any, idx: number) => {
@@ -458,7 +459,7 @@ export default function Navbar() {
                         <Link
                           key={idx}
                           href={subItem.href}
-                          className="text-gray-300 hover:text-white text-sm py-1 flex items-center gap-2"
+                          className="text-black hover:text-black text-sm py-1 flex items-center gap-2"
                           onClick={() => setMenuOpen(false)}
                         >
                           {SubIcon && <SubIcon className="w-3.5 h-3.5" style={{ color: subItem.color }} />}
@@ -472,9 +473,9 @@ export default function Navbar() {
             );
           })}
           <div className="pt-2 border-t border-white/10">
-            <button 
-            onClick={() => { setMenuOpen(false); setFormOpen(true); }}
-            className="gradient-btn text-white px-5 py-3 rounded-full text-sm font-semibold w-full">
+            <button
+              onClick={() => { setMenuOpen(false); setFormOpen(true); }}
+              className="gradient-btn text-white px-5 py-3 rounded-full text-sm font-semibold w-full">
               Get Quote
             </button>
           </div>
@@ -482,6 +483,6 @@ export default function Navbar() {
       )}
 
       <DiscussProjectForm isOpen={formOpen} onClose={() => setFormOpen(false)} />
-    </nav>
+    </div>
   );
 }
