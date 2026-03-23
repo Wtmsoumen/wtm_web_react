@@ -18,8 +18,10 @@ import {
   Twitter,
   Mail,
 } from "lucide-react";
+
 import { globalStyle } from "../globalStyle";
 import Link from "next/link";
+import Footer from "../components/Footer";
 
 const slides = [
   { src: "images/abacus-building.webp", alt: "Webtechnomind India Office" },
@@ -473,6 +475,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <Footer/>
 
     </main>
   );

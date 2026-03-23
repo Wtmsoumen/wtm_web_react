@@ -45,6 +45,7 @@ import logoWhite from "../../public/images/logoWhite.png"
 import Image from "next/image";
 import Link from "next/link";
 import { globalStyle } from "../globalStyle";
+import DiscussProjectForm from "./DiscussProjectForm";
 
 const services = [
   {
@@ -162,7 +163,7 @@ const navLinks = [
       {
         title: "About Us",
         description: "Our story & mission",
-        href: "#about",
+        href: "/about-us",
         icon: Building2,
         color: "#00a63e",
         color1: "#000000"
@@ -199,6 +200,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openMegaMenu, setOpenMegaMenu] = useState<any>({})
   const [scrolled, setScrolled] = useState(false);
+  const [formOpen, setFormOpen] = useState(false);
 
   // useEffect(() => {
   //   console.log(openMegaMenu[0], "openMegaMenu0__")
@@ -217,6 +219,7 @@ export default function Navbar() {
 
   return (
     // <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white" : "bg-black/40"}`}>
+    
     <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white shadow-sm shadow-gray-300" : "bg-black/80"}`}>
       <div className={`${globalStyle?.container} max-w-full!`}>
         <div className="flex items-center justify-between h-16">
@@ -393,6 +396,7 @@ export default function Navbar() {
 
           {/* CTA */}
           <button
+          onClick={() => setFormOpen(true)}
             className={`hidden lg:block bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#ff2a2a] text-white hover:scale-105 duration-300 cursor-pointer px-4! py-2! rounded-full text-sm font-medium`}
           >
             Get Quote
@@ -431,12 +435,16 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-2 border-t border-white/10">
-            <button className="gradient-btn text-white px-5 py-3 rounded-full text-sm font-semibold w-full">
+            <button 
+            onClick={() => { setMenuOpen(false); setFormOpen(true); }}
+            className="gradient-btn text-white px-5 py-3 rounded-full text-sm font-semibold w-full">
               Get Quote
             </button>
           </div>
         </div>
       )}
+
+      <DiscussProjectForm isOpen={formOpen} onClose={() => setFormOpen(false)} />
     </nav>
   );
 }
