@@ -1,3 +1,5 @@
+
+"use client";
 import {
   Sparkles, Bot,
   Link2,
@@ -12,6 +14,9 @@ import {
 } from "lucide-react";
 import { globalStyle } from "../globalStyle";
 import Link from "next/link";
+
+import DiscussProjectForm from "./DiscussProjectForm";
+import { useState } from "react";
 
 
 
@@ -76,6 +81,8 @@ const services = [
 ];
 
 export default function Services() {
+
+  const [formOpen, setFormOpen] = useState(false);
   return (
     <section id="services" className="  !bg-white py-16!">
       <div className="max-w-7xl mx-auto! px-4 sm:px-6   ">
@@ -135,7 +142,9 @@ export default function Services() {
 
         {/* CTA Button */}
         <div className="flex justify-center mt-8">
-          <button className={`bg-linear-to-r from-pink-500 to-blue-500  flex items-center gap-3  text-white text-sm font-bold px-14 py-5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300  `}>
+          <button 
+          onClick={() => setFormOpen(true)}
+          className={`bg-linear-to-r from-pink-500 to-blue-500  flex items-center gap-3  text-white text-sm font-bold px-14 py-5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300  `}>
 
 
             Discuss Your Project
@@ -143,6 +152,7 @@ export default function Services() {
           </button>
         </div>
       </div>
+        <DiscussProjectForm isOpen={formOpen} onClose={() => setFormOpen(false)} />
     </section>
   );
 }
