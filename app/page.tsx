@@ -24,22 +24,21 @@ export default function Home() {
     <div className="min-h-screen flex flex-col ">
       <Hero />
       <Services />
-        <Industries />
+      <Industries />
       <WhyChooseUs />
       <TrustIndicators />
       <PortfolioSection />
       <OurService />
-    
+
       <PoweredByAI />
       {/* <OurExpertise /> */}
       <ServicesTestimonialsSection />
       <ClientsSection />
       <FAQ />
       <FreeConsultation />
-    
+
       <BlogSection />
       {/* <Newsletter /> */}
-      <Footer />
     </div>
   );
 }

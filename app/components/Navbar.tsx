@@ -197,7 +197,8 @@ const navLinks = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [openMegaMenu, setOpenMegaMenu] = useState<any>({})
+  const [openMegaMenu, setOpenMegaMenu] = useState<any>({});
+  const [openMobileMegaMenu, setOpenMobileMegaMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
   // useEffect(() => {
@@ -419,17 +420,53 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-[#080f20] border-t border-white/10 px-4 py-5 flex flex-col gap-4">
-          {navLinks.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="text-white hover:text-white text-sm py-1"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div className="lg:hidden bg-[#080f20] border-t border-white/10 px-4 py-5 flex flex-col gap-4 max-h-[85vh] overflow-y-auto w-full">
+          {navLinks.map((item: any) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.label} className="flex flex-col gap-2">
+                <div 
+                  className="flex justify-between items-center text-white cursor-pointer"
+                  onClick={() => {
+                    if (item.megaMenu) {
+                      setOpenMobileMegaMenu(openMobileMegaMenu === item.label ? null : item.label);
+                    } else {
+                      setMenuOpen(false);
+                    }
+                  }}
+                >
+                  <div className="flex items-center gap-2 hover:text-white text-sm py-1 flex-1">
+                    {Icon && <Icon className="w-4 h-4" />}
+                    {item.label}
+                  </div>
+                  {item.megaMenu && (
+                    <div className="p-2 -mr-2">
+                      <ChevronDown className={`w-4 h-4 transition-transform ${openMobileMegaMenu === item.label ? 'rotate-180' : ''}`} />
+                    </div>
+                  )}
+                </div>
+                
+                {item.megaMenu && openMobileMegaMenu === item.label && (
+                  <div className="flex flex-col gap-3 pl-6 mt-2 border-l border-white/10 ml-2">
+                    {item.megaMenu.map((subItem: any, idx: number) => {
+                      const SubIcon = subItem.icon;
+                      return (
+                        <Link
+                          key={idx}
+                          href={subItem.href}
+                          className="text-gray-300 hover:text-white text-sm py-1 flex items-center gap-2"
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          {SubIcon && <SubIcon className="w-3.5 h-3.5" style={{ color: subItem.color }} />}
+                          {subItem.title}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
           <div className="pt-2 border-t border-white/10">
             <button className="gradient-btn text-white px-5 py-3 rounded-full text-sm font-semibold w-full">
               Get Quote
