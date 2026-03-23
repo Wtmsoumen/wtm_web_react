@@ -6,6 +6,7 @@ import {
   Rocket, Lock, TrendingUp, Users, RefreshCw,
   type LucideIcon,
 } from "lucide-react";
+import Footer from "@/app/components/Footer";
 
 const services = [
   {
@@ -361,6 +362,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 }

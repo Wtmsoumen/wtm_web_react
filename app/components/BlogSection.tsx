@@ -1,7 +1,10 @@
+import Link from "next/link";
 import { globalStyle } from "../globalStyle";
 
 const posts = [
   {
+
+    slug: "how-ai-is-transforming-on-demand-app-development-2025",
     category: "AI & ML",
     title: "How AI is Transforming On-Demand App Development in 2025",
     excerpt:
@@ -11,6 +14,8 @@ const posts = [
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
   },
   {
+
+    slug: "building-scalable-defi-platforms-architecture-deep-dive",
     category: "Blockchain",
     title: "Building Scalable DeFi Platforms: Architecture Deep Dive",
     excerpt:
@@ -20,6 +25,8 @@ const posts = [
     image: "https://images.unsplash.com/photo-1639322537228-f710d846310a",
   },
   {
+
+    slug: "react-native-vs-flutter-2025",
     category: "Mobile Dev",
     title: "React Native vs Flutter in 2025: Which Should You Choose?",
     excerpt:
@@ -29,6 +36,8 @@ const posts = [
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3",
   },
   {
+
+
     category: "Blockchain",
     title: "Building Scalable DeFi Platforms: Architecture Deep Dive",
     excerpt:
@@ -38,6 +47,8 @@ const posts = [
     image: "https://images.unsplash.com/photo-1621761191319-c6fb62004040",
   },
   {
+
+
     category: "AI & ML",
     title: "How AI is Transforming On-Demand App Development in 2025",
     excerpt:
@@ -47,6 +58,8 @@ const posts = [
     image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485",
   },
   {
+
+
     category: "Mobile Dev",
     title: "React Native vs Flutter in 2025: Which Should You Choose?",
     excerpt:
@@ -130,9 +143,15 @@ export default function BlogSection() {
                 <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">{post.excerpt}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-gray-500 text-xs">{post.date}</span>
-                  <a href="#" className="text-purple-400 text-sm font-medium hover:text-pink-400 transition-colors">
-                    Read More →
-                  </a>
+                  <Link href={`/blogs/${post.slug}`}>
+                    <article className="card-glass rounded-2xl ...">
+                      ...
+                      {/* Update Read More too */}
+                      <span className="text-purple-400 text-sm font-medium hover:text-pink-400 transition-colors">
+                        Read More →
+                      </span>
+                    </article>
+                  </Link>
                 </div>
               </div>
             </article>

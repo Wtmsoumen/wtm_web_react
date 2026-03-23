@@ -18,10 +18,17 @@ import {
   Twitter,
   Mail,
 } from "lucide-react";
+
 import { globalStyle } from "../globalStyle";
 import Link from "next/link";
+import Footer from "../components/Footer";
 
-
+const slides = [
+  { src: "images/abacus-building.webp", alt: "Webtechnomind India Office" },
+  { src: "images/abacus2.webp", alt: "Webtechnomind Dubai Office" },
+  { src: "images/abacus3.webp", alt: "Webtechnomind USA Office" },
+  { src: "images/abacus4.webp", alt: "Webtechnomind Global Team" },
+];
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -143,6 +150,8 @@ function StatItem({ value, label }: { value: string; label: string }) {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function AboutPage() {
+
+    const [active, setActive] = useState(0);
   return (
     <main className="bg-white min-h-screen overflow-x-hidden pt-20">
 
@@ -293,52 +302,7 @@ export default function AboutPage() {
       </section>
 
       {/* ══ 4. JOURNEY / TIMELINE ══════════════════════════════════════════════ */}
-      <section className="bg-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Header */}
-          <div className="flex flex-col items-center text-center gap-4 mb-14">
-            <div className={`${globalStyle?.gradientText} inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-100 shadow-sm`}>
-              <TrendingUp className="w-4 h-4" />
-              <span className="text-sm font-semibold tracking-wide">Our Journey</span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-black text-black">
-              Built Over{" "}
-              <span className="bg-gradient-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] bg-clip-text text-transparent">
-                A Decade
-              </span>
-            </h2>
-          </div>
 
-          {/* Timeline */}
-          <div className="relative">
-            {/* vertical line */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#1D74CF] via-[#b33b41] to-[#D04425] hidden md:block" />
-
-            <div className="flex flex-col gap-10">
-              {milestones.map((m, i) => (
-                <div key={i} className={`flex flex-col md:flex-row items-center gap-6 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                  {/* Content card */}
-                  <div className="flex-1 flex justify-end md:pr-10">
-                    <div className={`${i % 2 !== 0 ? "md:ml-0 md:mr-0" : ""} max-w-sm w-full rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-lg transition-shadow p-6 group`}>
-                      <span className="text-xs font-bold tracking-widest uppercase bg-gradient-to-r from-[#1D74CF] to-[#D04425] bg-clip-text text-transparent">{m.year}</span>
-                      <h3 className="text-lg font-bold text-black mt-1 mb-2">{m.title}</h3>
-                      <p className="text-gray-500 text-sm leading-relaxed">{m.desc}</p>
-                    </div>
-                  </div>
-
-                  {/* Dot */}
-                  <div className="relative z-10 w-10 h-10 rounded-full bg-gradient-to-br from-[#1D74CF] via-[#b33b41] to-[#D04425] flex items-center justify-center shadow-lg flex-shrink-0">
-                    <CheckCircle2 className="w-5 h-5 text-white" />
-                  </div>
-
-                  {/* Empty side */}
-                  <div className="flex-1 hidden md:block" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ══ 5. TEAM ════════════════════════════════════════════════════════════ */}
       <section className="relative bg-gray-50 py-20 overflow-hidden">
@@ -346,52 +310,124 @@ export default function AboutPage() {
           style={{ backgroundImage: "linear-gradient(#000 1px,transparent 1px),linear-gradient(90deg,#000 1px,transparent 1px)", backgroundSize: "48px 48px" }} />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           {/* Header */}
-          <div className="flex flex-col items-center text-center gap-4 mb-14">
-            <div className={`${globalStyle?.gradientText} inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-100 shadow-sm`}>
-              <Users className="w-4 h-4" />
-              <span className="text-sm font-semibold tracking-wide">Leadership</span>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-black text-black">
-              Meet the{" "}
-              <span className="bg-gradient-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] bg-clip-text text-transparent">
-                Leaders
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+ 
+          {/* ── Left: Text ── */}
+          <div className="flex flex-col gap-5">
+            <h2 className="text-3xl md:text-4xl font-black text-black leading-tight">
+              Our{" "}
+              <span className="bg-gradient-to-r from-[#1D74CF] to-[#b33b41] bg-clip-text text-transparent">
+                Global
+              </span>{" "}
+              <span className="bg-gradient-to-r from-[#b33b41] to-[#D04425] bg-clip-text text-transparent">
+                Presence
               </span>
             </h2>
-            <p className="text-gray-500 max-w-xl text-base leading-relaxed">
-              The visionaries and strategists shaping Webtechnomind's global growth.
-            </p>
+ 
+            <div className="flex flex-col gap-4 text-gray-600 text-sm md:text-base leading-relaxed">
+              <p>
+                At WebTechnoMind, we proudly operate as a globally recognized brand with
+                strong local expertise. With a strategic presence across North America,
+                Canada, Europe, the Middle East, and APAC, we deliver customized digital
+                solutions that reflect each region's unique culture, market dynamics, and
+                regulatory needs.
+              </p>
+              <p>
+                We go beyond one-size-fits-all approaches by crafting region-specific strategies
+                tailored to your business goals. Our global delivery model ensures high-quality
+                results, fast turnaround, and scalable solutions — whether you're a startup or
+                an established enterprise.
+              </p>
+              <p>
+                Backed by a worldwide team and local partners, we offer 24/7 support, agile
+                project execution, and deep cultural insight. Wherever you are,
+                WebTechnoMind is your trusted partner for globally minded, locally effective
+                digital transformation.
+              </p>
+            </div>
           </div>
+ 
+          {/* ── Right: Image slider ── */}
+          <div className="flex flex-col gap-4">
+            {/* Image */}
+        <div
+              className="relative rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-gray-100 cursor-grab active:cursor-grabbing select-none"
+              style={{ height: "380px" }}
+              onMouseDown={(e) => {
+                const startX = e.clientX;
+                const onMove = (ev: MouseEvent) => {
+                  const diff = ev.clientX - startX;
+                  if (Math.abs(diff) > 50) {
+                    if (diff < 0) setActive((p) => (p + 1) % slides.length);
+                    else setActive((p) => (p - 1 + slides.length) % slides.length);
+                    document.removeEventListener("mousemove", onMove);
+                    document.removeEventListener("mouseup", onUp);
+                  }
+                };
+                const onUp = () => {
+                  document.removeEventListener("mousemove", onMove);
+                  document.removeEventListener("mouseup", onUp);
+                };
+                document.addEventListener("mousemove", onMove);
+                document.addEventListener("mouseup", onUp);
+              }}
+              onTouchStart={(e) => {
+                const startX = e.touches[0].clientX;
+                const onMove = (ev: TouchEvent) => {
+                  const diff = ev.touches[0].clientX - startX;
+                  if (Math.abs(diff) > 50) {
+                    if (diff < 0) setActive((p) => (p + 1) % slides.length);
+                    else setActive((p) => (p - 1 + slides.length) % slides.length);
+                    document.removeEventListener("touchmove", onMove);
+                  }
+                };
+                document.addEventListener("touchmove", onMove, { passive: true });
+              }}
+            >
+              {slides.map((slide, i) => (
+                <img
+                  key={i}
+                  src={slide.src}
+                  alt={slide.alt}
+                  draggable={false}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === active ? "opacity-100" : "opacity-0"}`}
+                />
+              ))}
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {teamMembers.map((member, i) => (
-              <div key={i} className="group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer">
-                {/* Photo */}
-                <div className="relative w-full overflow-hidden bg-gray-100" style={{ height: "240px" }}>
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-                  {/* country badge */}
-                  <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2.5 py-1 text-[10px] font-semibold text-gray-600 shadow-sm">
-                    {member.country}
-                  </div>
-                  {/* scrim */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  {/* social icons on hover */}
-                  <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 opacity-0 translate-y-3 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    {[Linkedin, Twitter, Mail].map((Icon, j) => (
-                      <div key={j} className="w-8 h-8 rounded-full bg-white/90 flex items-center justify-center hover:bg-white transition-colors">
-                        <Icon className="w-4 h-4 text-gray-700" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                {/* Info */}
-                <div className="px-4 py-4 flex flex-col gap-0.5">
-                  <p className="text-sm font-bold text-black leading-snug">{member.name}</p>
-                  <p className="text-xs text-gray-400 leading-snug">{member.role}</p>
-                </div>
-                <div className="h-[3px] bg-gradient-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Left / Right arrow hints */}
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/70 backdrop-blur-sm flex items-center justify-center shadow opacity-0 hover:opacity-100 transition-opacity pointer-events-none">
+                <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
               </div>
-            ))}
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/70 backdrop-blur-sm flex items-center justify-center shadow opacity-0 hover:opacity-100 transition-opacity pointer-events-none">
+                <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+ 
+            {/* Dots */}
+            <div className="flex items-center justify-center gap-2">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActive(i)}
+                  className={`rounded-full border transition-all duration-300 ${
+                    i === active
+                      ? "w-8 h-3 border-[#1D74CF] bg-[#1D74CF]"
+                      : "w-3 h-3 border-gray-300 bg-white hover:border-[#b33b41]"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
+ 
+        </div>
+      </div>
+
+        
         </div>
       </section>
 
@@ -439,6 +475,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <Footer/>
 
     </main>
   );
