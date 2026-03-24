@@ -1,9 +1,12 @@
+
 "use client";
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const featuredProject = {
+    slug: "bitdelta",                        
     tag: "Crypto Exchange",
     title: "BitDelta",
     subtitle: "Global Crypto & Derivatives Exchange",
@@ -20,6 +23,7 @@ const featuredProject = {
 
 const gridProjects = [
     {
+        slug: "flitpay",                     
         tag: "Crypto Exchange",
         tagColor: "bg-blue-500",
         title: "Flitpay",
@@ -29,6 +33,7 @@ const gridProjects = [
         bg: "bg-[#0f172a]",
     },
     {
+        slug: "mintit",
         tag: "Fintech",
         tagColor: "bg-purple-500",
         title: "MINTIT",
@@ -38,6 +43,7 @@ const gridProjects = [
         bg: "bg-[#13111f]",
     },
     {
+        slug: "bodhi",
         tag: "Astrology",
         tagColor: "bg-orange-500",
         title: "Bodhi",
@@ -48,6 +54,7 @@ const gridProjects = [
         dark: true,
     },
     {
+        slug: "once-dating",
         tag: "Dating & Social",
         tagColor: "bg-pink-500",
         title: "Once Dating",
@@ -57,6 +64,7 @@ const gridProjects = [
         bg: "bg-[#1a0f1a]",
     },
     {
+        slug: "tuning-empire",
         tag: "Automotive",
         tagColor: "bg-green-500",
         title: "Tuning Empire",
@@ -71,8 +79,7 @@ const gridProjects = [
 function Tag({ label, color }: { label: string; color?: string }) {
     return (
         <span
-            className={`inline-block px-3 py-0.5 rounded-full text-[11px] font-semibold tracking-wide text-white ${color || "bg-blue-600"
-                }`}
+            className={`inline-block px-3 py-0.5 rounded-full text-[11px] font-semibold tracking-wide text-white ${color || "bg-blue-600"}`}
         >
             {label}
         </span>
@@ -126,64 +133,59 @@ export default function PortfolioSection() {
                 </p>
 
                 {/* Featured Card */}
-                <div className="rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-[#111827] to-[#1a2035] mb-5 flex flex-col sm:flex-row items-center">
-                    {/* Left: screenshot */}
-                    <div className="relative w-full sm:w-[55%] overflow-hidden p-4">
-
-                        <Image src={gridProjects[0]?.image} alt={gridProjects[0]?.title} width={1920} height={1080} className="w-full h-auto" />
-
-                    </div>
-
-                    {/* Right: content */}
-                    <div className="flex flex-col justify-center p-6 w-full sm:w-[45%] gap-3">
-                        <Tag label={featuredProject.tag} color="bg-blue-600 w-fit py-1" />
-                        <div>
-                            <h3 className="text-xl font-bold text-white">
-                                {featuredProject.title}
-                            </h3>
-                            <p className="text-white/70 text-md mt-0.5">
-                                {featuredProject.subtitle}
-                            </p>
+                <Link
+                    href={`/Portfolios/${featuredProject.slug}`}
+                    className="block rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-[#111827] to-[#1a2035] mb-5 hover:border-white/20 transition-colors duration-200 group"
+                >
+                    <div className="flex flex-col sm:flex-row items-center">
+                        {/* Left: screenshot */}
+                        <div className="relative w-full sm:w-[55%] overflow-hidden p-4">
+                            <Image
+                                src={gridProjects[0]?.image}
+                                alt={featuredProject.title}
+                                width={1920}
+                                height={1080}
+                                className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-300"
+                            />
                         </div>
-                        <p className="text-white/70 text-md leading-relaxed">
-                            {featuredProject.description}
-                        </p>
-                        <div className="flex gap-6">
-                            {featuredProject.stats.map((s, i) => (
-                                <div key={i}>
-                                    <div className="text-lg font-extrabold text-white">
-                                        {s.value}
+
+                        {/* Right: content */}
+                        <div className="flex flex-col justify-center p-6 w-full sm:w-[45%] gap-3">
+                            <Tag label={featuredProject.tag} color="bg-blue-600 w-fit py-1" />
+                            <div>
+                                <h3 className="text-xl font-bold text-white">{featuredProject.title}</h3>
+                                <p className="text-white/70 text-md mt-0.5">{featuredProject.subtitle}</p>
+                            </div>
+                            <p className="text-white/70 text-md leading-relaxed">{featuredProject.description}</p>
+                            <div className="flex gap-6">
+                                {featuredProject.stats.map((s, i) => (
+                                    <div key={i}>
+                                        <div className="text-lg font-extrabold text-white">{s.value}</div>
+                                        <div className="text-[11px] text-white/40">{s.label}</div>
                                     </div>
-                                    <div className="text-[11px] text-white/40">{s.label}</div>
-                                </div>
-                            ))}
-                        </div>
-                        <a
-                            href="#"
-                            className="flex items-center gap-1.5 text-blue-400 text-md font-semibold hover:text-blue-300 transition-colors w-fit group"
-                        >
-                            {featuredProject.cta}
-                            <span className="transition-transform group-hover:translate-x-1">
-                                →
+                                ))}
+                            </div>
+                            <span className="flex items-center gap-1.5 text-blue-400 text-md font-semibold group-hover:text-blue-300 transition-colors w-fit">
+                                {featuredProject.cta}
+                                <span className="transition-transform group-hover:translate-x-1">→</span>
                             </span>
-                        </a>
+                        </div>
                     </div>
-                </div>
+                </Link>
 
                 {/* Grid Cards */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-5">
                     {gridProjects.map((project, i) => (
-                        <div
+                        <Link
                             key={i}
+                            href={`/Portfolios/${project.slug}`}
                             onMouseEnter={() => setHovered(i)}
                             onMouseLeave={() => setHovered(null)}
-                            className={`group relative rounded-2xl overflow-hidden border border-white/10 ${project.bg} p-0 flex flex-col transition-transform duration-200 ${hovered === i ? "scale-[1.02] border-white/20" : ""
-                                } cursor-pointer`}
+                            className={`group relative rounded-2xl overflow-hidden border border-white/10 ${project.bg} p-0 flex flex-col transition-transform duration-200 ${hovered === i ? "scale-[1.02] border-white/20" : ""} cursor-pointer`}
                             style={{ minHeight: 160 }}
                         >
                             {/* Mock image / bg area */}
                             <div className="relative w-full flex-1 min-h-[90px] flex items-center justify-center overflow-hidden">
-                                {/* Placeholder for project screenshot */}
                                 <div className="absolute inset-0 opacity-30 bg-gradient-to-br from-white/5 to-transparent" />
                                 <span className="text-white/10 text-[10px] font-mono select-none z-10">
                                     <Image src={project?.image} alt={project?.title} width={1920} height={1080} />
@@ -200,34 +202,26 @@ export default function PortfolioSection() {
                             <div className="p-3 pt-2 z-11">
                                 <StatsBadges stats={project.stats} />
                                 <div className="mt-1.5">
-                                    <div className="text-white text-sm font-bold leading-tight">
-                                        {project.title}
-                                    </div>
-                                    <div className="text-white/40 text-[11px] mt-0.5">
-                                        {project.subtitle}
-                                    </div>
+                                    <div className="text-white text-sm font-bold leading-tight">{project.title}</div>
+                                    <div className="text-white/40 text-[11px] mt-0.5">{project.subtitle}</div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 
                 {/* CTA Button */}
                 <div className="flex flex-col items-center gap-2 mt-8">
-                    <a
-                        href="#"
+                    <Link
+                        href="/portfolio"
                         className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200 shadow-lg shadow-blue-900/30"
                     >
                         Explore Full Portfolio
-                        <span className=" rounded-full p-0.5! flex items-center justify-center text-xs">
-                            →
-                        </span>
-                    </a>
-                    <p className="text-white/30 text-xs">
-                        27+ projects across 12 industries
-                    </p>
+                        <span className="rounded-full p-0.5! flex items-center justify-center text-xs">→</span>
+                    </Link>
+                    <p className="text-white/30 text-xs">27+ projects across 12 industries</p>
                 </div>
             </div>
-        </section >
+        </section>
     );
 }

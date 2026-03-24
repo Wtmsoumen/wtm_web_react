@@ -37,7 +37,8 @@ import {
   Plug,
   ChartColumn,
   Cpu,
-  ArrowRight
+  ArrowRight,
+  UserRoundSearch
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "../../public/images/logo.png"
@@ -168,6 +169,17 @@ const navLinks = [
         color: "#00a63e",
         color1: "#000000"
       },
+
+       {
+        title: "Contact Us",
+        description: "Our story & mission",
+        href: "/contact-us",
+        icon: UserRoundSearch,
+        color: "#00a63e",
+        color1: "#000000"
+      },
+      
+
       {
         title: "How We Work",
         description: "Our development process",
