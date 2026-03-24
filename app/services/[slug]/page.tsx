@@ -125,6 +125,44 @@ const allServices = [
   { slug: "digital-marketing", title: "Digital Marketing" },
   { slug: "data-science-analytics", title: "Data Science & Analytics" },
   { slug: "ecommerce-development", title: "E-commerce Development" },
+  { slug: "social-media-marketing", title: "Social Media Marketing" },
+  { slug: "digital-marketing-strategy", title: "Digital Marketing Strategy" },
+  { slug: "conversion-rate-optimization", title: "Conversion Rate Optimization" },
+  { slug: "trusted-influencer-marketing-agency", title: "Trusted Influencer Marketing Agency" },
+  { slug: "search-engine-optimization", title: "Search Engine Optimization" },
+  { slug: "lead-generation", title: "Lead Generation" },
+  { slug: "brand-management", title: "Brand Management" },
+  { slug: "specialized-ecommerce-seo-services", title: "Specialized eCommerce SEO Services" },
+  { slug: "google-ad-campaigns", title: "Google Ad Campaigns" },
+  { slug: "content-marketing", title: "Content Marketing" },
+  { slug: "paid-advertising", title: "Paid Advertising" },
+  { slug: "ios-app-development", title: "iOS App Development" },
+  { slug: "android-app-development", title: "Android App Development" },
+  { slug: "web-app-development", title: "Web App Development" },
+  { slug: "wordpress-development", title: "Wordpress Development" },
+  { slug: "website-development", title: "Website Development" },
+  { slug: "react-js-development", title: "React.js Development" },
+  { slug: "next-js-development", title: "Next.js Development" },
+  { slug: "node-js-development", title: "Node.js Development" },
+  { slug: "laravel-development", title: "Laravel Development" },
+  { slug: "mobile-app-development", title: "Mobile App Development" },
+  { slug: "ios-app-development", title: "iOS App Development" },
+  { slug: "android-app-development", title: "Android App Development" },
+  { slug: "web-app-development", title: "Web App Development" },
+  { slug: "wordpress-development", title: "Wordpress Development" },
+  { slug: "website-development", title: "Website Development" },
+  { slug: "react-js-development", title: "React.js Development" },
+  { slug: "next-js-development", title: "Next.js Development" },
+  { slug: "node-js-development", title: "Node.js Development" },
+  { slug: "laravel-development", title: "Laravel Development" },
+  { slug: "ai-development", title: "AI Development" },
+  { slug: "ai-chatbot-development", title: "AI Chatbot Development" },
+  { slug: "generative-ai-development", title: "Generative AI Development" },
+  { slug: "ai-agent-development", title: "AI Agent Development" },
+  { slug: "ai-integration", title: "AI Integration" },
+  { slug: "ml-development", title: "ML Development" },
+  { slug: "ai-product-development", title: "AI Product Development" },
+  { slug: "machine-learning-deep-learning", title: "Machine Learning & Deep Learning" },
 ];
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
@@ -362,6 +400,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           </div>
         </div>
       </section>
-         </div>
+    </div>
   );
 }
