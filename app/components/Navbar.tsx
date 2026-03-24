@@ -170,22 +170,22 @@ const navLinks = [
         color1: "#000000"
       },
 
-       {
+      {
         title: "Contact Us",
         description: "Our story & mission",
         href: "/contact-us",
         icon: UserRoundSearch,
-        color: "#00a63e",
+        color: "#ff00eb",
         color1: "#000000"
       },
-      
+
 
       {
         title: "How We Work",
         description: "Our development process",
         href: "#how-we-work",
         icon: Rocket,
-        color: "#6fcf97",
+        color: "#0083f3",
         color1: "#edfbf2",
       },
       {
@@ -197,9 +197,9 @@ const navLinks = [
         color1: "#f3ecfd",
       },
       {
-        title: "Careers",
+        title: "Our Team",
         description: "Join our team",
-        href: "#careers",
+        href: "/our-team",
         icon: Users,
         color: "#f2994a",
         color1: "#fff4ec",
@@ -264,7 +264,7 @@ export default function Navbar() {
             })}
 
             {openMegaMenu?.data?.length > 0 ?
-              <div onMouseLeave={() => setOpenMegaMenu({})} className={`absolute top-11 bg-white rounded-3xl overflow-hidden flex w-[150%] -right-32 ${scrolled ? "shadow-md shadow-gray-300" : ""}`}>
+              <div onMouseLeave={() => setOpenMegaMenu({})} className={`absolute top-11 bg-white rounded-3xl overflow-hidden flex w-[150%] -right-32 ${scrolled ? "shadow-md shadow-gray-300" : "shadow-md shadow-gray-300"}`}>
                 <div className={`w-[72%]`}>
                   <div className="text-black px-8 pt-6">
                     <div className="flex items-start gap-2">
@@ -287,7 +287,7 @@ export default function Navbar() {
                       const Icon = v?.icon;
                       return (
                         <div key={idx}>
-                          <Link href={v?.href} className={`flex p-3 items-center gap-2 font-normal group text-sm rounded-xl border border-solid border-transparent hover:border-gray-200`}>
+                          <Link onClick={() => setOpenMegaMenu({})} href={v?.href} className={`flex p-3 items-center gap-2 font-normal group text-sm rounded-xl border border-solid border-transparent hover:border-gray-200`}>
                             {v?.icon !== "" ?
                               <div className={`p-3 rounded-xl`} style={{ background: v?.subMenue?.length ? `${v?.color}40` : `${v?.color}20`, }}>
                                 <Icon className={`w-4 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} />
