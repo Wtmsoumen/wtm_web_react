@@ -55,6 +55,13 @@ const teamMembers = [
      image: "images/debu.jpg",
     tier: "manager",
   },
+
+  {
+    name: "Debashis Majumdar",
+    role: "Chief Marketing Officer",
+     image: "images/avijit_sir.jpg",
+    tier: "manager",
+  },
 ];
 
 // ─── Office Locations ─────────────────────────────────────────────────────────
@@ -108,6 +115,78 @@ function AvatarPlaceholder({ name, size = 80 }: { name: string; size?: number })
   );
 }
 
+
+// Diamond shape: rows of [1, 2, 3, 1]
+const diamondRows = [
+  teamMembers.slice(0, 1), // apex
+  teamMembers.slice(1, 3), // shoulders
+  teamMembers.slice(3, 6), // widest
+  teamMembers.slice(6, 7), // base
+];
+ 
+const tierBadge: Record<string, string> = {
+  founder: "bg-[#1D74CF]/80 text-white",
+  director: "bg-[#b33b41]/80 text-white",
+  manager: "bg-black/40 text-white",
+};
+ 
+const tierLabel: Record<string, string> = {
+  founder: "Founder",
+  director: "Director",
+  manager: "Manager",
+};
+ 
+type Member = (typeof teamMembers)[number];
+ 
+function MemberCard({
+  member,
+  large = false,
+}: {
+  member: Member;
+  large?: boolean;
+}) {
+  return (
+    <div
+      className={`group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-gray-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] hover:border-gray-300 ${
+        large ? "w-40" : "w-[136px]"
+      }`}
+    >
+      {/* Photo */}
+      <div
+        className={`relative w-full overflow-hidden bg-gray-100 ${
+          large ? "h-36" : "h-[120px]"
+        }`}
+      >
+        <img
+          src={member.image}
+          alt={member.name}
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+        />
+        {/* Scrim */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Tier badge */}
+        <span
+          className={`absolute top-1.5 left-1.5 text-[9px] font-medium px-1.5 py-0.5 rounded-full backdrop-blur-sm ${
+            tierBadge[member.tier]
+          }`}
+        >
+          {tierLabel[member.tier]}
+        </span>
+      </div>
+ 
+      {/* Info */}
+      <div className="px-2.5 pt-2 pb-2 flex flex-col gap-0.5">
+        <p className="text-[11.5px] font-bold text-black leading-snug">
+          {member.name}
+        </p>
+        <p className="text-[10px] text-gray-400 leading-snug">{member.role}</p>
+      </div>
+ 
+      {/* Gradient bottom bar */}
+      <div className="h-[3px] bg-gradient-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    </div>
+  );
+}
 // ─── Main Component ───────────────────────────────────────────────────────────
 export default function ContactPage() {
   const [formData, setFormData] = useState({
