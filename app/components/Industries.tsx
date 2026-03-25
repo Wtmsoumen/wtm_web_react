@@ -213,7 +213,7 @@ const Industries = () => {
   const smallCards = industries.filter((i) => !i.large);
 
   return (
-    <section className="w-full bg-[#f5f5f7] py-20 px-4 sm:px-6  ">
+    <section className="w-full bg-white py-20 px-4 sm:px-6  ">
 
       {/* --------------UPPER INDUSTRIES---------------- */}
       <div className={`${globalStyle?.container}`}>

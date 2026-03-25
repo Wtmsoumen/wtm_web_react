@@ -18,14 +18,17 @@ import ClientsSection from "./components/Clientssection";
 import PoweredByAI from "./components/PoweredByAI";
 import FreeConsultation from "./components/FreeConsultation";
 import PortfolioSection from "./components/Projects";
+import DigitalMarketingSection from "./components/DigitalMarketingSection";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col ">
       <Hero />
       <Services />
+       <DigitalMarketingSection/>
       <Industries />
       <WhyChooseUs />
+     
       <TrustIndicators />
       <PortfolioSection />
       <OurService />
