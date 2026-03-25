@@ -260,7 +260,7 @@ export default function ClientsSection() {
       `}</style>
 
             {/* ── Header ─────────────────────────────────────────────── */}
-            <div className="text-center mb-12 max-w-xl mx-auto">
+            <div className="text-center mb-12 max-w-xl mx-auto" data-aos="fade-down">
                 <div className="inline-block border border-purple-300 rounded-full px-4 py-1 text-xs font-semibold text-purple-600 tracking-widest uppercase mb-5 bg-white">
                     SUCCESS STORIES
                 </div>
@@ -278,7 +278,10 @@ export default function ClientsSection() {
                 {/* ── Row 1: Featured + 2 grid cards ───────────────────── */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {/* Featured Card */}
-                    <div className="bg-white rounded-2xl p-6 shadow-sm border-t border-x border-gray-200 flex flex-col justify-between md:row-span-2 scale-100 hover:scale-105 duration-300">
+                    <div 
+                        className="bg-white rounded-2xl p-6 shadow-sm border-t border-x border-gray-200 flex flex-col justify-between md:row-span-2 scale-100 hover:scale-105 duration-300"
+                        data-aos="fade-right"
+                    >
                         <div className="flex flex-col gap-4">
                             <Badge label={featuredTestimonial.category} color={categoryColors[featuredTestimonial.category]} />
                             <Stars count={featuredTestimonial.stars} />
@@ -315,17 +318,21 @@ export default function ClientsSection() {
                     </div>
 
                     {/* Top-right 2 cards */}
-                    {gridTestimonials.slice(0, 4).map((t) => (
-                        <TestimonialCard key={t.name} t={t} />
+                    {gridTestimonials.slice(0, 4).map((t, idx) => (
+                        <div key={t.name} data-aos="fade-up" data-aos-delay={idx * 100}>
+                            <TestimonialCard t={t} />
+                        </div>
                     ))}
                 </div>
 
                 {/* ── Row 3: Mini cards ─────────────────────────────────── */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                    {miniTestimonials.map((t) => (
+                    {miniTestimonials.map((t, idx) => (
                         <div
                             key={t.name}
                             className="bg-white rounded-2xl p-4 shadow-sm border-t border-x border-gray-200 flex flex-col gap-3 scale-100 hover:scale-105 duration-300"
+                            data-aos="fade-up"
+                            data-aos-delay={idx * 50}
                         >
                             <div className="flex items-center gap-2">
                                 <Avatar initials={t.avatar} bg={avatarColors[t.avatar]} />
@@ -341,7 +348,10 @@ export default function ClientsSection() {
                 </div>
 
                 {/* ── Footer: Trusted by ────────────────────────────────── */}
-                <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 pt-4 border-t border-gray-200 mt-2">
+                <div 
+                    className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 pt-4 border-t border-gray-200 mt-2"
+                    data-aos="fade-in"
+                >
                     <span className="text-gray-400 text-xs">Trusted by teams in:</span>
                     {trustedCountries.map((c) => (
                         <span key={c.code} className="text-gray-600 text-xs font-medium flex items-center gap-1">
@@ -374,7 +384,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
     const [locCode, ...locName] = t.location.split(" ");
 
     return (
-        <div className="bg-white rounded-2xl p-5 shadow-sm border-t border-x border-gray-200 flex flex-col gap-3 scale-100 hover:scale-105 duration-300">
+        <div className="bg-white rounded-2xl p-5 shadow-sm border-t border-x border-gray-200 flex flex-col gap-3 scale-100 hover:scale-105 duration-300 h-full">
             <div className="flex items-center justify-between">
                 <Badge label={t.category} color={categoryColors[t.category] ?? "#6366f1"} />
             </div>

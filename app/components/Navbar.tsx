@@ -45,6 +45,7 @@ import logo from "../../public/images/logo.png"
 import logoWhite from "../../public/images/logoWhite.png"
 import Image from "next/image";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { globalStyle } from "../globalStyle";
 import DiscussProjectForm from "./DiscussProjectForm";
 
@@ -233,7 +234,12 @@ export default function Navbar() {
   return (
     // <nav className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white" : "bg-black/40"}`}>
 
-    <div className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white shadow-sm shadow-gray-300" : "lg:bg-black/80 bg-white"}`}>
+    <motion.div 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white shadow-sm shadow-gray-300" : "lg:bg-black/80 bg-white"}`}
+    >
       <div className={`${globalStyle?.container} max-w-full!`}>
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -263,9 +269,17 @@ export default function Navbar() {
               )
             })}
 
-            {openMegaMenu?.data?.length > 0 ?
-              <div onMouseLeave={() => setOpenMegaMenu({})} className={`absolute top-11 bg-white rounded-3xl overflow-hidden flex w-[150%] -right-32 ${scrolled ? "shadow-md shadow-gray-300" : "shadow-md shadow-gray-300"}`}>
-                <div className={`w-[72%]`}>
+            <AnimatePresence>
+              {openMegaMenu?.data?.length > 0 ?
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  onMouseLeave={() => setOpenMegaMenu({})} 
+                  className={`absolute top-11 bg-white rounded-3xl overflow-hidden flex w-[150%] -right-32 shadow-md shadow-gray-300`}
+                >
+                  <div className={`w-[72%]`}>
                   <div className="text-black px-8 pt-6">
                     <div className="flex items-start gap-2">
                       <div
@@ -404,8 +418,9 @@ export default function Navbar() {
                     </div>
                   </div>
                 </div>
-              </div>
-              : ""}
+                </motion.div>
+                : ""}
+            </AnimatePresence>
           </div>
 
           {/* CTA */}
@@ -495,6 +510,6 @@ export default function Navbar() {
       )}
 
       <DiscussProjectForm isOpen={formOpen} onClose={() => setFormOpen(false)} />
-    </div>
+    </motion.div>
   );
 }

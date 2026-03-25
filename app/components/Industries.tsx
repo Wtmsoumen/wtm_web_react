@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -12,6 +11,7 @@ import rest from "../../public/images/dgwIcons/4rest.png";
 import hewe from "../../public/images/dgwIcons/5hewe.png";
 import { globalStyle } from "../globalStyle";
 
+import ScrollReveal from "./ScrollReveal";
 import {
   Cpu, ArrowRight, HeartPulse, BadgeDollarSign, ShoppingCart,
   GraduationCap, Truck, Car, Wheat, Gamepad2, Trophy, Clock,
@@ -105,13 +105,16 @@ const Industries = () => {
   const smallCards = industries.filter((i) => !i.large);
 
   return (
-    <section className="w-full bg-white py-20 px-4 sm:px-6  ">
+    <ScrollReveal><section className="w-full bg-white py-20 px-4 sm:px-6  ">
 
       {/* --------------UPPER INDUSTRIES---------------- */}
       <div className={`${globalStyle?.container}`}>
 
         {/* Header */}
-        <div className="flex flex-col items-center text-center mb-12">
+        <div 
+          className="flex flex-col items-center text-center mb-12"
+          data-aos="fade-down"
+        >
           <div className="inline-flex items-center gap-2 border border-purple-200 bg-white text-purple-500 text-xs font-semibold px-4 py-1.5 rounded-full mb-5 shadow-sm">
             <Cpu className="w-6 h-6" />
             23+ Industries Served
@@ -132,7 +135,10 @@ const Industries = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mx-auto">
 
           {/* Large card - left, spans 2 rows on lg+ */}
-          <div className={`relative sm:col-span-1 lg:row-span-2 shadow-xl  rounded-3xl bg-gradient-to-br ${largeCard.gradient} p-8 flex flex-col justify-between overflow-hidden cursor-pointer group min-h-[260px]`}>
+          <div 
+            className={`relative sm:col-span-1 lg:row-span-2 shadow-xl  rounded-3xl bg-gradient-to-br ${largeCard.gradient} p-8 flex flex-col justify-between overflow-hidden cursor-pointer group min-h-[260px]`}
+            data-aos="fade-right"
+          >
             {/* Dot pattern */}
             <div className="absolute inset-0 opacity-10"
               style={{
@@ -168,10 +174,12 @@ const Industries = () => {
           </div>
 
           {/* 4 small cards - 2x2 right side */}
-          {smallCards.map((item) => (
+          {smallCards.map((item, idx) => (
             <div
               key={item.id}
               className={`relative   shadow-xl  rounded-3xl bg-gradient-to-br ${item.gradient} p-6 flex flex-col justify-between min-h-[200px] overflow-hidden cursor-pointer group`}
+              data-aos="fade-up"
+              data-aos-delay={idx * 100}
             >
               {/* Dot pattern */}
               <div className="absolute inset-0 opacity-10"
@@ -201,7 +209,10 @@ const Industries = () => {
 
 
       {/* -----------LOWER SECTION--------- */}
-      <div className="w-full md:w-[85%] mx-auto mt-16 shadow-md bg-white rounded-3xl p-4 md:p-8">
+      <div 
+        className="w-full md:w-[85%] mx-auto mt-16 shadow-md bg-white rounded-3xl p-4 md:p-8"
+        data-aos="zoom-in"
+      >
 
         {/* Section Header */}
         <div className="flex items-center gap-2 mb-8">
@@ -243,7 +254,7 @@ const Industries = () => {
           <ArrowRight className="w-6 h-6" />
         </button>
       </div>
-    </section>
+    </section></ScrollReveal>
   );
 };
 

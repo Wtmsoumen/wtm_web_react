@@ -1,5 +1,6 @@
 import { globalStyle } from "../globalStyle";
 import PortfolioScroller from "./PortfolioScroller";
+import ScrollReveal from "./ScrollReveal";
 
 const projects = [
   {
@@ -87,7 +88,7 @@ export default function Portfolio() {
   const rest = projects.slice(1);
 
   return (
-    <section id="portfolio" className="section-bg py-24">
+    <ScrollReveal><section id="portfolio" className="section-bg py-24">
       <div className="max-w-7xl mx-auto! px-4 sm:px-6  ">
         {/* Header */}
         <div className="text-center mb-16">
@@ -191,6 +192,6 @@ export default function Portfolio() {
           </button>
         </div> */}
       </div>
-    </section>
+    </section></ScrollReveal>
   );
 }

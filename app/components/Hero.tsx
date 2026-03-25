@@ -2,15 +2,40 @@
 import { Sparkles, ArrowRight } from "lucide-react";
 import { globalStyle } from "../globalStyle";
 import DiscussProjectForm from "./DiscussProjectForm";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollReveal from "./ScrollReveal";
 
 
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const container = useRef<HTMLDivElement>(null);
 
+  useGSAP(() => {
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    tl.fromTo(
+      ".hero-title",
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1 }
+    )
+    .fromTo(
+      ".hero-btn",
+      { scale: 0.9, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 0.6 },
+      "-=0.5"
+    )
+    .fromTo(
+      ".hero-stat",
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, stagger: 0.15 },
+      "-=0.3"
+    );
+  }, { scope: container });
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-[#060d1b] overflow-hidden pt-16">
+    <ScrollReveal><section ref={container} className="relative min-h-screen flex items-center justify-center bg-[#060d1b] overflow-hidden pt-16">
 
       {/* Video Background */}
       <video
@@ -29,7 +54,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:py-20 py-10 flex flex-col justify-center items-center text-center w-full">
 
         {/* Main Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-shadow-2xs">
+        <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-shadow-2xs">
           <span>Your</span>{" "}
           <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Next-gen</span>
           <br />
@@ -49,7 +74,7 @@ export default function Hero() {
           </p> */}
 
         {/* CTA Button */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <div className="hero-btn flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <button onClick={() => setIsModalOpen(true)} className="group bg-linear-to-r from-blue-500 to-pink-500 text-white px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:opacity-90 hover:scale-105 hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] w-full sm:w-auto flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(168,85,247,0.3)]">
             <Sparkles className="w-5 h-5" />
             <span>Start Your Project</span>
@@ -67,7 +92,7 @@ export default function Hero() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="flex flex-col justify-center items-center text-center p-6 rounded-2xl
+              className="hero-stat flex flex-col justify-center items-center text-center p-6 rounded-2xl
                 bg-black/70 backdrop-blur-lg border border-white/20
                 shadow-2xl hover:bg-black/90 hover:scale-105 transition duration-300"
             // style={{ textShadow: "0 0 16px #ffffff !important" }}
@@ -89,6 +114,6 @@ export default function Hero() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-    </section>
+    </section></ScrollReveal>
   );
 }

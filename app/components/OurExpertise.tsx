@@ -3,11 +3,8 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { Layers, Smartphone, ShoppingCart, BarChart2, Brain, Cloud, type LucideIcon, Megaphone, BrainCircuit } from 'lucide-react'
+import ScrollReveal from "./ScrollReveal";
 
-
-
-
-// Define icon type properly
 interface Tab {
     id: string;
     label: string;
@@ -16,6 +13,7 @@ interface Tab {
     description: string;
     services: { label: string; color: string; position: string }[];
 }
+
 const tabs = [
     {
         id: 'fullstack',
@@ -138,98 +136,98 @@ Webtechnomind – Where creativity meets conversion.`,
         ],
     },
 ];
+
 const OurExpertise = () => {
     const [activeTab, setActiveTab] = useState('digital');
     const active = tabs.find(t => t.id === activeTab)!;
-    const leftServices = active.services.filter(s => s.position.startsWith('left'));
-    const rightServices = active.services.filter(s => s.position.startsWith('right'));
 
     return (
-        <section className="w-full  py-16! bg-[#f5f5f7]">
-            <div className="max-w-[1300px] mx-auto">
+        <ScrollReveal>
+            <section className="w-full py-16! bg-[#f5f5f7]">
+                <div className="max-w-[1300px] mx-auto">
 
-                {/* Heading */}
-                <h2 className="text-4xl font-bold text-center text-gray-900 mb-10">
-                    Your Dream{' '}
-                    <span className="bg-linear-to-r from-[#1E7FF8] via-[#0E8DF6] via-[#AB82E0] to-[#E75061] bg-clip-text text-transparent">
-                        Our Expertise
-                    </span>
-                </h2>
-                <div className="flex items-center justify-center gap-6 flex-wrap mb-2  ">
-                    {tabs.map((tab) => {
-                        const Icon = tab.IconComponent;
-                        const isActive = activeTab === tab.id;
+                    {/* Heading */}
+                    <div data-aos="fade-down" className="text-center mb-10">
+                        <h2 className="text-4xl font-bold text-gray-900">
+                            Your Dream{' '}
+                            <span className="bg-linear-to-r from-[#1E7FF8] via-[#0E8DF6] via-[#AB82E0] to-[#E75061] bg-clip-text text-transparent">
+                                Our Expertise
+                            </span>
+                        </h2>
+                    </div>
 
-                        return (
-                            <button
-                                key={tab.id}
-                                onClick={() => setActiveTab(tab.id)}
-                                className="relative flex flex-col items-center pt-8 focus:outline-none cursor-pointer"
-                            >
-                                {/* Floating Icon */}
-                                <div
-                                    className={`absolute -top-1 w-14 h-14 rounded-full flex items-center justify-center border transition-all duration-300 z-10
-                                     ${isActive
-                                            ? "bg-gray-900 border-gray-300"
-                                            : "bg-white border-gray-300"
-                                        }`}
+                    <div className="flex items-center justify-center gap-6 flex-wrap mb-2">
+                        {tabs.map((tab, idx) => {
+                            const Icon = tab.IconComponent;
+                            const isActive = activeTab === tab.id;
+
+                            return (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => setActiveTab(tab.id)}
+                                    className="relative flex flex-col items-center pt-8 focus:outline-none cursor-pointer"
+                                    data-aos="fade-up"
+                                    data-aos-delay={idx * 100}
                                 >
-                                    <Icon
-                                        className={`w-6 h-6 transition-all duration-300 ${isActive ? "text-white" : "text-gray-500"
+                                    {/* Floating Icon */}
+                                    <div
+                                        className={`absolute -top-1 w-14 h-14 rounded-full flex items-center justify-center border transition-all duration-300 z-10
+                                         ${isActive
+                                                ? "bg-gray-900 border-gray-300"
+                                                : "bg-white border-gray-300"
                                             }`}
-                                    />
-                                </div>
+                                    >
+                                        <Icon
+                                            className={`w-6 h-6 transition-all duration-300 ${isActive ? "text-white" : "text-gray-500"
+                                                }`}
+                                        />
+                                    </div>
 
-                                {/* Card Body */}
-                                <div
-                                    className={`p-7 rounded-xl  flex items-center justify-center text-center border transition-all duration-300
-                                        ${isActive
-                                            ? "bg-gray-900 text-white border-gray-900 shadow-lg"
-                                            : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
-                                        }`}
-                                >
-                                    <span className="text-[13px] font-semibold leading-snug w-full break-all hyphens-none">
-                                        {tab.label}
-                                    </span>
-                                </div>
+                                    {/* Card Body */}
+                                    <div
+                                        className={`p-7 rounded-xl  flex items-center justify-center text-center border transition-all duration-300
+                                            ${isActive
+                                                ? "bg-gray-900 text-white border-gray-900 shadow-lg"
+                                                : "bg-white text-gray-600 border-gray-200 hover:border-gray-400"
+                                            }`}
+                                    >
+                                        <span className="text-[13px] font-semibold leading-snug w-full break-all hyphens-none">
+                                            {tab.label}
+                                        </span>
+                                    </div>
 
-                            </button>
-                        );
-                    })}
-                </div>
-
-                {/* Content */}
-                <div className=" flex justify-between items-center px-3">
-
-                    {/* Left Text */}
-                    <div className="w-[35%] shrink-0 ">
-                        <h3 className="text-2xl font-bold text-black mb-4">{active.title}</h3>
-                        <div className="text-[16px] text-[#3F3F3F]  font-medium leading-relaxed whitespace-pre-line">
-                            {active.description}
-                        </div>
+                                </button>
+                            );
+                        })}
                     </div>
 
-                    {/* Right Visual */}
-                    <div className="   " style={{ minHeight: '420px' }} >
+                    {/* Content */}
+                    <div className="flex justify-between items-center px-3 mt-10">
 
-
-                        {/* Girl Image */}
-                        <div className="relative  z-10">
-                            <Image
-                                src="/images/digital_marketing_our_expertise.webp"
-                                alt="expertise"
-                                width={800}
-                                height={550}
-                                className="object-contain"
-                            />
+                        {/* Left Text */}
+                        <div className="w-[35%] shrink-0" data-aos="fade-right">
+                            <h3 className="text-2xl font-bold text-black mb-4">{active.title}</h3>
+                            <div className="text-[16px] text-[#3F3F3F]  font-medium leading-relaxed whitespace-pre-line">
+                                {active.description}
+                            </div>
                         </div>
 
-
-
+                        {/* Right Visual */}
+                        <div className="relative" style={{ minHeight: '420px' }} data-aos="fade-left">
+                            <div className="relative z-10">
+                                <Image
+                                    src="/images/digital_marketing_our_expertise.webp"
+                                    alt="expertise"
+                                    width={800}
+                                    height={550}
+                                    className="object-contain"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </ScrollReveal>
     );
 };
 

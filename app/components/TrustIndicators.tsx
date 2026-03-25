@@ -1,3 +1,4 @@
+import ScrollReveal from "./ScrollReveal";
 const ratings = [
   {
     platform: "Vape Marley",
@@ -64,33 +65,39 @@ function StarRating({ count }: { count: number }) {
 
 export default function TrustIndicators() {
   return (
-    <section className="bg-white py-16! border-y border-white/5">
-      <div className="max-w-7xl mx-auto! px-4! sm:px-6!  !">
-        <div className="text-center mb-10!">
-          <p className="text-3xl md:text-4xl font-bold text-gray-900">
-            Trusted by <span className="bg-linear-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Industry Leaders</span>
-          </p>
-        </div>
+    <ScrollReveal>
+      <section className="bg-white py-16! border-y border-white/5">
+        <div className="max-w-7xl mx-auto! px-4! sm:px-6!">
+          <div 
+            className="text-center mb-10!"
+            data-aos="fade-down"
+          >
+            <p className="text-3xl md:text-4xl font-bold text-gray-900">
+              Trusted by <span className="bg-linear-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Industry Leaders</span>
+            </p>
+          </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-12">
-          {ratings.map((r, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center p-6! bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-default hover:-translate-y-2 border border-gray-100 min-w-[140px]"
-            >
-              <div className="text-lg font-bold text-gray-800 mb-2!">{r.platform}</div>
-              {/* <div className="flex items-center gap-1 mb-1">{r.score}</div> */}
-              <div className="flex items-center gap-1 mb-1!">
-                <StarRating count={r.stars} />
-                <div className="text-2xl font-bold bg-linear-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">{r.score}</div>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-12">
+            {ratings.map((r, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col items-center p-6! bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-default hover:-translate-y-2 border border-gray-100 min-w-[140px]"
+                data-aos="fade-up"
+                data-aos-delay={idx * 50}
+              >
+                <div className="text-lg font-bold text-gray-800 mb-2!">{r.platform}</div>
+                <div className="flex items-center gap-1 mb-1!">
+                  <StarRating count={r.stars} />
+                  <div className="text-2xl font-bold bg-linear-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">{r.score}</div>
+                </div>
+                <span className="text-xs text-gray-500">
+                  {r.reviews}
+                </span>
               </div>
-              <span className="text-xs text-gray-500">
-                {r.reviews}
-              </span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </ScrollReveal>
   );
 }

@@ -51,7 +51,7 @@ const FAQ = () => {
         <div className='flex flex-col md:flex-row items-start justify-between gap-10'>
 
           {/* ----------Left part----------- */}
-          <div className="w-full md:w-[45%]">
+          <div className="w-full md:w-[45%]" data-aos="fade-right">
 
             {/* Label */}
             <p className="text-pink-500 text-2xl  font-bold tracking-widest uppercase mb-2">FAQ</p>
@@ -66,10 +66,6 @@ const FAQ = () => {
 
             {/* Image + Badges */}
             <div className="relative w-full">
-
-
-
-              {/* Main Image - used as-is */}
               <Image
                 src={faq_image}
                 alt="FAQ"
@@ -77,9 +73,6 @@ const FAQ = () => {
                 height={650}
                 className="w-full h-auto object-contain"
               />
-
-
-
             </div>
           </div>
 
@@ -87,12 +80,14 @@ const FAQ = () => {
           {/* ------------Right part----------- */}
 
           <div className="w-full md:w-[50%] flex flex-col gap-4">
-            {faqs.map((faq) => {
+            {faqs.map((faq, idx) => {
               const isOpen = openId === faq.id;
               return (
                 <div
                   key={faq.id}
                   className="rounded-2xl overflow-hidden shadow-sm"
+                  data-aos="fade-left"
+                  data-aos-delay={idx * 100}
                   style={{
                     border: isOpen ? 'none' : '1px solid #f0e6e6',
                   }}
