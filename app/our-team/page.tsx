@@ -7,7 +7,7 @@ import ScrollReveal from "../components/ScrollReveal";
 import priya from "../../public/images/team/priya.jpg";
 import rahul from "../../public/images/team/rahul.jpg";
 import rajdwip from "../../public/images/team/rajdwip.jpg";
-import sourav from "../../public/images/team/sourav.jpeg";
+import sourav from "../../public/images/team/sourav.jpg";
 import suchandra from "../../public/images/team/suchandra.jpg";
 import supriyo from "../../public/images/team/supriyo.jpg";
 import suraj from "../../public/images/team/suraj.jpg";
@@ -18,14 +18,13 @@ import tarun from "../../public/images/team/tarun.jpg";
 import arnab from "../../public/images/team/arnab.jpg";
 import avijit from "../../public/images/team/avijit.jpg";
 import ayan from "../../public/images/team/ayan.jpeg";
-import balaram from "../../public/images/team/balaram.png";
+import balaram from "../../public/images/team/balaram.jpeg";
 import jeet from "../../public/images/team/jeet.jpg";
 import laxman from "../../public/images/team/laxman.jpg";
 import ritwik from "../../public/images/team/ritwik.jpg";
 import satyajit from "../../public/images/team/satyajit.jpg";
 import subhankar from "../../public/images/team/subhankar.jpg";
-import sunaina from "../../public/images/team/sunaina.jpg";
-import tanusree from "../../public/images/team/tanusree.jpg";
+import tanusree from "../../public/images/team/tanusree.jpeg";
 import mitul from "../../public/images/team/Mitul.jpg";
 import amit from "../../public/images/team/amit.jpg";
 import debu from "../../public/images/team/debu.jpg";
@@ -63,7 +62,7 @@ const teamData = [
             { name: "Amit Singh", role: "Founder, Director & CEO", image: amit, social: true },
             { name: "Neha Singh", role: "Director", image: nehasingh, social: true },
             { name: "Kalyan Mondal", role: "CTO", image: kalyan },
-            { name: "Debashis Majumdar", role: "Director - Marketing", image: debu },
+            { name: "Debashis Majumdar", role: "Director - Marketing (World Wide)", image: debu },
             { name: "Mitul", role: "Director of Marketing (Dubai)", image: mitul }
         ]
     },
@@ -80,11 +79,11 @@ const teamData = [
             { name: "Devjit", role: "Full Stack Lead", image: devjit },
             { name: "Priya", role: "Senior Web Developer", image: priya },
             { name: "Sourav", role: "Web Developer", image: sourav },
-            { name: "Supriyo", role: "App Developer", image: supriyo },
+            { name: "Suprio", role: "App Developer", image: supriyo },
             { name: "Rajdwip", role: "Web Developer", image: rajdwip },
             { name: "Aditya", role: "Web Developer", image: aditya },
             { name: "Suraj", role: "App Developer", image: suraj },
-            { name: "WD1", role: "Web Developer", image: WD1 },
+            { name: "Sandip", role: "Web Developer", image: WD1 },
         ]
     },
     {
@@ -92,7 +91,6 @@ const teamData = [
         members: [
             { name: "Ritwik", role: "UI/UX Lead", image: ritwik },
             { name: "Jeet", role: "Graphic Designer", image: jeet },
-            { name: "Sunaina", role: "UI/UX Designer", image: sunaina }
         ]
     },
     {
