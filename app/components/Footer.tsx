@@ -4,33 +4,33 @@ import logoWhite from "../../public/images/logoWhite.png"
 
 const footerLinks = {
   Services: [
-    "AI Development",
-    "Mobile App Development",
-    "Web Development",
-    "Blockchain",
-    "E-commerce",
-    "On-Demand Apps",
+    { name: "AI Development", href: "/services/ai-development" },
+    { name: "Mobile App Development", href: "/services/mobile-app-development" },
+    { name: "Web Development", href: "/services/website-development" },
+    { name: "Blockchain", href: "#" },
+    { name: "E-commerce", href: "/services/specialized-ecommerce-seo-services" },
+    { name: "On-Demand Apps", href: "/Industry/on-demand" },
   ],
   Solutions: [
-    "Food Delivery App",
-    "Taxi Booking App",
-    "Healthcare App",
-    "FinTech Platform",
-    "Crypto Exchange",
-    "NFT Marketplace",
+    { name: "Food Delivery App", href: "/Industry/restaurant-and-food" },
+    { name: "Taxi Booking App", href: "/Industry/automotive" },
+    { name: "Healthcare App", href: "/Industry/healthcare-software-development" },
+    { name: "FinTech Platform", href: "/Industry/fintech" },
+    { name: "Crypto Exchange", href: "/Industry/fintech" },
+    { name: "NFT Marketplace", href: "#" },
   ],
   Company: [
-    "About Us",
-    "Portfolio",
-    "Careers",
-    "Blog",
-    "Contact Us",
+    { name: "About Us", href: "/about-us" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Careers", href: "#" },
+    { name: "Blog", href: "/blogs" },
+    { name: "Contact Us", href: "/contact-us" },
   ],
   Legal: [
-    "Privacy Policy",
-    "Terms & Conditions",
-    "Sitemap",
-    "Cookie Policy",
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms & Conditions", href: "#" },
+    { name: "Sitemap", href: "#" },
+    { name: "Cookie Policy", href: "#" },
   ],
 };
 
@@ -166,10 +166,10 @@ export default function Footer() {
               <div className="text-white font-semibold text-sm mb-4">{category}</div>
               <ul className="flex flex-col gap-2.5">
                 {links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">
-                      {link}
-                    </a>
+                  <li key={link.name}>
+                    <Link href={link.href} className="text-gray-400 text-sm hover:text-white transition-colors">
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
