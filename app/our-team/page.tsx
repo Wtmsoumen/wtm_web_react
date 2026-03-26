@@ -32,6 +32,7 @@ import amit from "../../public/images/team/amit.jpg";
 import debu from "../../public/images/team/debu.jpg";
 import kalyan from "../../public/images/team/kalyan.jpg";
 import nehasingh from "../../public/images/team/nehasingh.jpg";
+// ID Card Image Bypasses static import due to memory limits
 
 const teamData = [
     {
@@ -84,7 +85,7 @@ const teamData = [
         category: "Performance Marketing",
         members: [
             { name: "Avijit", role: "CMO", image: avijit, id: "WTM-CM-022" },
-            { name: "Laxman", role: "Digital Marketing Manager", image: laxman, id: "WTM-MM-023" },
+            { name: "Laxmon", role: "Digital Marketing Manager", image: laxman, id: "WTM-MM-023" },
             { name: "Tanusree", role: "Marketing Executive", image: tanusree, id: "WTM-ME-024" },
             { name: "Ayan", role: "Creative Strategy", image: ayan, id: "WTM-CS-025" }
         ]
@@ -127,10 +128,11 @@ const IDCard = ({ member, index }: { member: any, index: number }) => {
                 {/* ID Header */}
                 <div className="flex justify-between items-center mb-6">
                     <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center border border-red-100 shadow-inner">
-                            <Orbit className="w-4 h-4 text-red-500 animate-spin-slow" />
-                        </div>
-                        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Official Member</span>
+                        {/* <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center border border-red-100 shadow-inner"> */}
+                        {/* <Orbit className="w-4 h-4 text-red-500 animate-spin-slow" /> */}
+                        <Image src="/images/roundLogo.png" alt="Logo" width={16} height={16} className="w-7 h-auto" unoptimized />
+                        {/* </div> */}
+                        <span className="text-[12px] font-medium uppercase tracking-[0.1em] text-slate-500">Official Member</span>
                     </div>
                     <div className="flex gap-1">
                         <div className="w-1.5 h-1.5 rounded-full bg-red-400/40" />
@@ -174,10 +176,10 @@ const IDCard = ({ member, index }: { member: any, index: number }) => {
                 <div className="relative">
                     <div className="flex justify-between items-start mb-2">
                         <div>
-                            <h3 className="text-xl font-black text-black group-hover:text-red-600 transition-colors tracking-tight">
+                            <h3 className="text-xl font-semibold text-black group-hover:text-red-600 transition-colors tracking-tight">
                                 {member.name}
                             </h3>
-                            <p className="text-[11px] font-bold text-red-600/80 uppercase tracking-[0.2em] mt-1">
+                            <p className="text-[11px] font-medium text-red-600/80 uppercase tracking-widest mt-1">
                                 {member.role}
                             </p>
                         </div>
@@ -187,13 +189,13 @@ const IDCard = ({ member, index }: { member: any, index: number }) => {
                     </div>
 
                     {/* Footer ID Details */}
-                    <div className="mt-6 pt-4 border-t border-slate-100 flex justify-between items-end">
+                    {/* <div className="mt-6 pt-4 border-t border-slate-100 flex justify-between items-end">
                         <div className="space-y-1">
                             <p className="text-[8px] uppercase tracking-widest text-slate-500 font-bold">Access ID</p>
                             <p className="text-[12px] text-slate-800 tracking-tighter">{member.id || 'WTM-MB-HID'}</p>
                         </div>
                         <BarcodeIcon />
-                    </div>
+                    </div> */}
                 </div>
             </div>
 
