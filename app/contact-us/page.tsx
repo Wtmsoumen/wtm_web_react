@@ -34,31 +34,31 @@ const teamMembers = [
   {
     name: "ANZ Region Sales (Aus)",
     role: "ANZ Region Sales",
-     image: "images/Vaibhav.jpg",
+    image: "images/Vaibhav.jpg",
     tier: "manager",
   },
   {
     name: "ANZ Region Sales (Aus)",
     role: "ANZ Region Sales",
-     image: "images/Manuj.jpeg",
+    image: "images/Manuj.jpeg",
     tier: "manager",
   },
   {
     name: "Rahul Halder",
     role: "Project Manager",
-     image: "images/rahul-da.jpg",
+    image: "images/rahul-da.jpg",
     tier: "manager",
   },
   {
     name: "Debashis Majumdar",
     role: "Director - Marketing (World Wide)",
-     image: "images/debu.jpg",
+    image: "images/debu.jpg",
     tier: "manager",
   },
   {
     name: "Avijit Sir",
     role: "Chief Marketing Officer",
-     image: "images/avijit_sir.jpg",
+    image: "images/avijit_sir.jpg",
     tier: "manager",
   },
 ];
@@ -71,7 +71,7 @@ const offices = [
     mapEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.748!2d88.462!3d22.573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM0JzIyLjgiTiA4OMKwMjcnNDMuMiJF!5e0!3m2!1sen!2sin!4v1700000000000",
     flag: "🇮🇳",
-     image: "images/ps-abacus-featured.webp",
+    image: "images/ps-abacus-featured.webp",
   },
   {
     country: "Dubai, UAE",
@@ -79,7 +79,7 @@ const offices = [
     mapEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178!2d55.264!3d25.186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDExJzA5LjYiTiA1NcKwMTUnNTAuNCJF!5e0!3m2!1sen!2sae!4v1700000000000",
     flag: "🇦🇪",
-       image: "images/Dubai-UAE.jpg",
+    image: "images/Dubai-UAE.jpg",
   },
 ];
 
@@ -171,14 +171,14 @@ export default function ContactPage() {
                         />
                         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-black/60 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                         <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                           <p className="text-xs text-white/80 font-medium">{member.role}</p>
+                          <p className="text-xs text-white/80 font-medium">{member.role}</p>
                         </div>
                       </div>
                       <div className="p-4">
                         <p className="text-sm font-bold text-black">{member.name}</p>
                         <p className="text-[10px] text-gray-400 font-medium uppercase tracking-wider">{member.tier}</p>
                       </div>
-                      <div className="h-1 w-full bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425]" />
+                      <div className="h-1 w-full bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] group-hover:flex hidden" />
                     </div>
                   ))}
                 </div>
@@ -218,7 +218,7 @@ export default function ContactPage() {
 
                       <div className="p-8 flex items-start gap-4">
                         <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center shrink-0">
-                           <MapPin className="w-6 h-6 text-blue-600" />
+                          <MapPin className="w-6 h-6 text-blue-600" />
                         </div>
                         <div>
                           <p className="font-bold text-black text-lg mb-1">Webtechnomind IT Solutions ({office.country})</p>
@@ -240,7 +240,7 @@ export default function ContactPage() {
         <section className="bg-gray-50 py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              
+
               {/* Maps column */}
               <div className="flex flex-col gap-8" data-aos="fade-right">
                 {offices.map((office, i) => (
@@ -250,9 +250,9 @@ export default function ContactPage() {
                         <span className="text-2xl">{office.flag}</span>
                         <p className="font-bold text-black">{office.country} Branch</p>
                       </div>
-                      <a 
-                        href={`https://maps.google.com?q=${encodeURIComponent(office.address)}`} 
-                        target="_blank" 
+                      <a
+                        href={`https://maps.google.com?q=${encodeURIComponent(office.address)}`}
+                        target="_blank"
                         rel="noreferrer"
                         className="text-xs font-bold text-blue-600 hover:underline tracking-widest uppercase"
                       >
@@ -272,7 +272,7 @@ export default function ContactPage() {
               </div>
 
               {/* Form column */}
-              <div 
+              <div
                 className="bg-white rounded-3xl p-10 shadow-2xl border border-gray-100 relative overflow-hidden"
                 data-aos="fade-left"
               >

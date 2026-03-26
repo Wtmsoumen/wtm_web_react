@@ -113,8 +113,8 @@ function StatItem({ value, label, delay }: { value: string; label: string; delay
   }, []);
 
   return (
-    <div 
-      ref={ref} 
+    <div
+      ref={ref}
       className="flex flex-col items-center gap-1 group"
       data-aos="zoom-in"
       data-aos-delay={delay}
@@ -131,7 +131,7 @@ export default function AboutPage() {
   const [active, setActive] = useState(0);
 
   return (
-    <main className="bg-white min-h-screen overflow-x-hidden pt-20">
+    <main className="bg-white overflow-y-hidden overflow-x-hidden pt-10">
 
       {/* ══ 1. HERO ════════════════════════════════════════════════════════════ */}
       <ScrollReveal>
@@ -139,7 +139,7 @@ export default function AboutPage() {
           {/* blobs */}
           <div className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-linear-to-br from-[#1D74CF]/8 to-transparent blur-3xl" />
           <div className="pointer-events-none absolute top-0 right-0 w-80 h-80 rounded-full bg-linear-to-bl from-[#D04425]/8 to-transparent blur-3xl" />
-          
+
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pb-16">
 
@@ -253,8 +253,8 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {values.map(({ icon: Icon, title, description }, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   className="group relative flex flex-col gap-4 p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                   data-aos="fade-up"
                   data-aos-delay={i * 100}
@@ -328,8 +328,8 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               {technologies.map((tech, i) => (
-                <span 
-                  key={i} 
+                <span
+                  key={i}
                   className="px-6 py-3 rounded-full border border-gray-200 text-sm font-bold text-gray-700 bg-white hover:border-blue-600 hover:text-blue-600 transition-all duration-300 shadow-sm"
                   data-aos="fade-up"
                   data-aos-delay={i * 50}

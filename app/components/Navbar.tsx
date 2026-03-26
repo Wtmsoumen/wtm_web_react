@@ -184,7 +184,7 @@ const navLinks = [
       {
         title: "How We Work",
         description: "Our development process",
-        href: "#how-we-work",
+        href: "/how-we-work",
         icon: Rocket,
         color: "#0083f3",
         color1: "#edfbf2",
