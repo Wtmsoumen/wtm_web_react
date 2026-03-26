@@ -51,10 +51,10 @@ const features = [
 export default function WhyChooseUs() {
   return (
     <ScrollReveal>
-      <section className="section-bg py-24! bg-white">
+      <section className="section-bg py-24! bg-white!">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Header */}
-          <div 
+          <div
             className="text-center mb-12"
             data-aos="fade-down"
           >

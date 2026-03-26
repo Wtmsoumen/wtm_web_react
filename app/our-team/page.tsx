@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Linkedin, Instagram, Facebook, ShieldCheck, Cpu, Code2, Sparkles, Orbit } from 'lucide-react';
+import { Linkedin, Instagram, Facebook, Twitter, ShieldCheck, Cpu, Code2, Sparkles, Orbit } from 'lucide-react';
 import ScrollReveal from "../components/ScrollReveal";
 
 import priya from "../../public/images/team/priya.jpg";
@@ -54,7 +54,7 @@ const teamData = [
     {
         category: "Development Team",
         members: [
-            { name: "Devjit", role: "Full Stack Lead", image: devjit, id: "WTM-LD-008" },
+            { name: "Devjit", role: "Team Lead", image: devjit, id: "WTM-LD-008" },
             { name: "Priya", role: "Senior Web Developer", image: priya, id: "WTM-SW-009" },
             { name: "Sourav", role: "Web Developer", image: sourav, id: "WTM-WD-010" },
             { name: "Suprio", role: "App Developer", image: supriyo, id: "WTM-AD-011" },
@@ -67,14 +67,14 @@ const teamData = [
     {
         category: "UI/UX & Design",
         members: [
-            { name: "Ritwik", role: "UI/UX Lead", image: ritwik, id: "WTM-UI-016" },
+            { name: "Ritwik", role: "Team Lead", image: ritwik, id: "WTM-UI-016" },
             { name: "Jeet", role: "Graphic Designer", image: jeet, id: "WTM-GD-017" },
         ]
     },
     {
         category: "UI Developer",
         members: [
-            { name: "Tarun", role: "UI Lead", image: tarun, id: "WTM-LI-018" },
+            { name: "Tarun", role: "Team Lead", image: tarun, id: "WTM-LI-018" },
             { name: "Satyajit", role: "Senior UI Developer", image: satyajit, id: "WTM-SI-019" },
             { name: "Arnab", role: "Senior UI Developer", image: arnab, id: "WTM-SI-020" },
             { name: "Balaram", role: "UI Developer", image: balaram, id: "WTM-UI-021" },
@@ -98,7 +98,7 @@ const teamData = [
 ];
 
 const BarcodeIcon = () => (
-    <div className="flex gap-x-[2px] h-6 opacity-30">
+    <div className="flex gap-x-[2px] h-6 opacity-50">
         {[...Array(20)].map((_, i) => (
             <div key={i} className={`h-full w-[1px] bg-red-600 ${i % 3 === 0 ? 'w-[2px]' : i % 5 === 0 ? 'w-[3px]' : ''}`} />
         ))}
@@ -106,6 +106,7 @@ const BarcodeIcon = () => (
 );
 
 const IDCard = ({ member, index }: { member: any, index: number }) => {
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -113,7 +114,7 @@ const IDCard = ({ member, index }: { member: any, index: number }) => {
             transition={{ duration: 0.8, delay: index * 0.1 }}
             viewport={{ once: true }}
             whileHover={{ y: -10, rotateX: 5, rotateY: -5 }}
-            className="group relative perspective-1000"
+            className="group relative perspective-1000 w-[18rem]"
         >
             {/* Subtle Glow Border Effect */}
             <div className="absolute -inset-[1px] bg-linear-to-r from-red-200/50 via-slate-100 to-red-300/50 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
@@ -146,19 +147,22 @@ const IDCard = ({ member, index }: { member: any, index: number }) => {
                     />
 
                     {/* Social Overlay */}
-                    <div className="absolute inset-0 bg-linear-to-t from-white/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6">
+                    {member.social && <div className="absolute inset-0 bg-linear-to-t from-red-50/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pb-6">
                         <div className="flex gap-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                            {[Linkedin, Instagram, Facebook].map((Icon, i) => (
-                                <motion.div
-                                    key={i}
-                                    whileHover={{ scale: 1.2, color: '#dc2626' }}
-                                    className="p-2.5 rounded-xl bg-red-50 backdrop-blur-md border border-red-100 cursor-pointer text-slate-600 hover:text-red-600 transition-colors"
-                                >
-                                    <Icon className="w-4 h-4" />
-                                </motion.div>
-                            ))}
+                            {[{ icon: Facebook, name: "Facebook", link: "" }, { icon: Twitter, name: "Twitter", link: "" }, { icon: Instagram, name: "Instagram", link: "" }, { icon: Linkedin, name: "Linkedin", link: "" }].map((v, i) => {
+                                let Icon = v.icon;
+                                return (
+                                    <motion.div
+                                        key={i}
+                                        whileHover={{ scale: 1.2, color: '#dc2626' }}
+                                        className="p-2.5 rounded-xl bg-red-50 backdrop-blur-md border border-red-100 cursor-pointer text-slate-600 hover:text-red-600 transition-colors"
+                                    >
+                                        <Icon className="w-4 h-4" />
+                                    </motion.div>
+                                )
+                            })}
                         </div>
-                    </div>
+                    </div>}
 
                     {/* Verified Badge */}
                     <div className="absolute top-3 right-3 p-1.5 rounded-full bg-white/80 backdrop-blur-md border border-slate-100 scale-0 group-hover:scale-100 transition-transform duration-300">
@@ -170,7 +174,7 @@ const IDCard = ({ member, index }: { member: any, index: number }) => {
                 <div className="relative">
                     <div className="flex justify-between items-start mb-2">
                         <div>
-                            <h3 className="text-xl font-black text-slate-900 group-hover:text-red-600 transition-colors tracking-tight">
+                            <h3 className="text-xl font-black text-black group-hover:text-red-600 transition-colors tracking-tight">
                                 {member.name}
                             </h3>
                             <p className="text-[11px] font-bold text-red-600/80 uppercase tracking-[0.2em] mt-1">
@@ -185,8 +189,8 @@ const IDCard = ({ member, index }: { member: any, index: number }) => {
                     {/* Footer ID Details */}
                     <div className="mt-6 pt-4 border-t border-slate-100 flex justify-between items-end">
                         <div className="space-y-1">
-                            <p className="text-[8px] uppercase tracking-widest text-slate-400 font-bold">Access ID</p>
-                            <p className="text-[12px] font-mono text-slate-600 tracking-tighter">{member.id || 'WTM-MB-HID'}</p>
+                            <p className="text-[8px] uppercase tracking-widest text-slate-500 font-bold">Access ID</p>
+                            <p className="text-[12px] text-slate-800 tracking-tighter">{member.id || 'WTM-MB-HID'}</p>
                         </div>
                         <BarcodeIcon />
                     </div>
@@ -200,6 +204,7 @@ const IDCard = ({ member, index }: { member: any, index: number }) => {
 };
 
 export default function TeamPage() {
+
     return (
         <main className="bg-white min-h-screen pt-24 pb-24 overflow-hidden relative">
             {/* Background Mesh Gradients - Subtle for Light Mode */}
@@ -221,7 +226,7 @@ export default function TeamPage() {
                             <Sparkles className="w-4 h-4 text-red-600" />
                             <span className="text-[10px] font-black uppercase tracking-[0.3em] text-red-600">Elite Talent</span>
                         </div>
-                        <h1 className="text-5xl md:text-8xl font-black text-slate-900 mb-8 tracking-tighter leading-none">
+                        <h1 className="text-5xl md:text-8xl font-black text-black mb-8 tracking-tighter leading-none">
                             Architects of <br />
                             <span className="relative inline-block">
                                 <span className="bg-linear-to-r from-red-600 via-red-700 to-red-900 bg-clip-text text-transparent">Digital Future</span>
@@ -234,23 +239,23 @@ export default function TeamPage() {
                             </span>
                         </h1>
                         <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
-                            A synergy of <span className="text-slate-900 font-bold">40+ visionaries</span> pushing the boundaries of technology and creative excellence.
+                            A synergy of <span className="text-black font-bold">40+ visionaries</span> pushing the boundaries of technology and creative excellence.
                         </p>
                     </motion.div>
 
                     {/* Team Categories mapped */}
                     {teamData.map((category, catIdx) => (
                         <div key={catIdx} className="mb-40">
-                            <div className="flex flex-col items-center mb-16 relative">
+                            <div className="flex flex-col items-center justify-center mb-16 relative">
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
-                                    className="absolute -top-12 text-slate-200/50 text-6xl md:text-9xl font-black uppercase tracking-[0.5em] pointer-events-none select-none whitespace-nowrap"
+                                    className="absolute -top-12 text-slate-200/50 text-6xl md:text-9xl font-black uppercase tracking-[0.25em] pointer-events-none select-none whitespace-nowrap"
                                 >
                                     {category.category.split(' ')[0]}
                                 </motion.div>
-                                <h2 className="text-3xl md:text-5xl font-black text-slate-900 text-center relative z-10 flex items-center gap-4">
+                                <h2 className="text-3xl md:text-5xl font-black text-black text-center relative z-10 flex items-center gap-4">
                                     <div className="w-8 h-[2px] bg-red-600 rounded-full" />
                                     {category.category}
                                     <div className="w-8 h-[2px] bg-red-600 rounded-full" />
@@ -261,7 +266,7 @@ export default function TeamPage() {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
+                            <div className="flex flex-wrap justify-center gap-8 lg:gap-10">
                                 {category.members.map((member, memIdx) => (
                                     <IDCard key={memIdx} member={member} index={memIdx} />
                                 ))}
@@ -275,7 +280,7 @@ export default function TeamPage() {
             <div className="absolute bottom-0 left-0 w-full p-20 flex justify-between items-end opacity-5 pointer-events-none">
                 <Code2 className="w-32 h-32 text-red-600" />
                 <div className="text-right">
-                    <p className="text-8xl font-black text-slate-900">WTM</p>
+                    <p className="text-8xl font-black text-black">WTM</p>
                     <p className="text-xl font-bold tracking-[1em] text-red-600">INTERNAL</p>
                 </div>
             </div>
