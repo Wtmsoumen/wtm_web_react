@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useRef, useEffect, useState } from "react";
 import {
@@ -104,9 +103,8 @@ function ServiceRow({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className="relative group border-b border-gray-100 last:border-0"
-      style={{
-        animationDelay: `${index * 100}ms`,
-      }}
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
     >
       {/* Hover fill */}
       <div
@@ -171,7 +169,6 @@ function ServiceRow({
 const DigitalMarketingSection = () => {
   return (
     <>
-      {/* Google Fonts */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800;900&family=DM+Sans:wght@300;400;500&display=swap');
 
@@ -208,7 +205,7 @@ const DigitalMarketingSection = () => {
 
           {/* ── Top label + heading ─────────── */}
           <div className="grid lg:grid-cols-2 gap-10 items-end mb-16">
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5" data-aos="fade-right">
               <div className={`${globalStyle?.gradientText} inline-flex items-center gap-2 px-4 py-2 rounded-full self-start`}>
                 <Zap className="w-4 h-4" />
                 <span className="text-xs font-bold uppercase tracking-widest">
@@ -229,7 +226,7 @@ const DigitalMarketingSection = () => {
               </h2>
             </div>
 
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6" data-aos="fade-left">
               <p className="text-gray-500 text-lg leading-relaxed max-w-md">
                 We blend strategy, creative, and ruthless data analysis to turn your marketing into a growth engine — not an expense.
               </p>
@@ -248,6 +245,7 @@ const DigitalMarketingSection = () => {
 
           {/* ── Stats bar ───────────────────── */}
           <div className="noise-bg relative rounded-2xl overflow-hidden mb-16"
+            data-aos="zoom-in"
             style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)" }}>
             <div className="flex items-center divide-x divide-white/10">
               {stats.map((s, i) => (
@@ -270,7 +268,7 @@ const DigitalMarketingSection = () => {
           <div className="grid lg:grid-cols-2 gap-10 items-start">
 
             {/* LEFT: Services accordion list */}
-            <div className="flex flex-col">
+            <div className="flex flex-col" data-aos="fade-right">
               <div className="mb-6">
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">
                   What we do
@@ -285,7 +283,7 @@ const DigitalMarketingSection = () => {
             </div>
 
             {/* RIGHT: Visual panel */}
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6" data-aos="fade-left">
 
               {/* Image card */}
               <div className="relative rounded-2xl overflow-hidden group"

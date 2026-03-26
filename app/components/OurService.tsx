@@ -32,7 +32,7 @@
 
 // const OurService = () => {
 //     return (
-//         <section className="w-[95%] mt-2 mx-auto">
+//         <ScrollReveal><section className="w-[95%] mt-2 mx-auto">
 //             <div className="mx-auto">
 //                 <div className="bg-gradient-to-l from-[#87177C] via-[#ae474c] to-[#ED2831] rounded-[60px] p-12 md:px-30 py-20">
 
@@ -62,7 +62,7 @@
 
 //                 </div>
 //             </div>
-//         </section>
+//         </section></ScrollReveal>
 //     )
 // }
 
@@ -76,6 +76,7 @@
 import Image from 'next/image'
 import ServicesHeading from './Servicesheading'
 import ServicesTable from './ServicesTable'
+import ScrollReveal from "./ScrollReveal";
 
 
 

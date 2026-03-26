@@ -1,36 +1,40 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import logoWhite from "../../public/images/logoWhite.png"
 
 const footerLinks = {
   Services: [
-    "AI Development",
-    "Mobile App Development",
-    "Web Development",
-    "Blockchain",
-    "E-commerce",
-    "On-Demand Apps",
+    { name: "AI Development", href: "/services/ai-development" },
+    { name: "Mobile App Development", href: "/services/mobile-app-development" },
+    { name: "Web Development", href: "/services/website-development" },
+    { name: "Blockchain", href: "#" },
+    { name: "E-commerce", href: "/services/specialized-ecommerce-seo-services" },
+    { name: "On-Demand Apps", href: "/Industry/on-demand" },
   ],
   Solutions: [
-    "Food Delivery App",
-    "Taxi Booking App",
-    "Healthcare App",
-    "FinTech Platform",
-    "Crypto Exchange",
-    "NFT Marketplace",
+    { name: "Food Delivery App", href: "/Industry/restaurant-and-food" },
+    { name: "Taxi Booking App", href: "/Industry/automotive" },
+    { name: "Healthcare App", href: "/Industry/healthcare-software-development" },
+    { name: "FinTech Platform", href: "/Industry/fintech" },
+    { name: "Crypto Exchange", href: "/Industry/fintech" },
+    { name: "NFT Marketplace", href: "#" },
   ],
   Company: [
-    "About Us",
-    "Portfolio",
-    "Careers",
-    "Blog",
-    "Contact Us",
+    { name: "About Us", href: "/about-us" },
+    { name: "How We Work", href: "/how-we-work" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Careers", href: "#" },
+    { name: "Blog", href: "/blogs" },
+    { name: "Contact Us", href: "/contact-us" },
   ],
   Legal: [
-    "Privacy Policy",
-    "Terms & Conditions",
-    "Sitemap",
-    "Cookie Policy",
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms & Conditions", href: "#" },
+    { name: "Sitemap", href: "#" },
+    { name: "Cookie Policy", href: "#" },
   ],
 };
 
@@ -113,9 +117,21 @@ export default function Footer() {
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto! px-4 sm:px-6   py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.1 }
+            }
+          }}
+          className="grid grid-cols-1 lg:grid-cols-5 gap-12"
+        >
           {/* Brand column */}
-          <div className="lg:col-span-1">
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }} className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               {/* <div className="w-9 h-9 rounded-xl gradient-btn flex items-center justify-center">
                 <span className="text-white font-bold text-base">A</span>
@@ -158,24 +174,27 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
+            <motion.div 
+              key={category}
+              variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+            >
               <div className="text-white font-semibold text-sm mb-4">{category}</div>
               <ul className="flex flex-col gap-2.5">
                 {links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">
-                      {link}
-                    </a>
+                  <li key={link.name}>
+                    <Link href={link.href} className="text-gray-400 text-sm hover:text-white transition-colors">
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
-              </ul>
-            </div>
+                </ul>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Bottom bar */}

@@ -19,28 +19,29 @@ import PoweredByAI from "./components/PoweredByAI";
 import FreeConsultation from "./components/FreeConsultation";
 import PortfolioSection from "./components/Projects";
 import DigitalMarketingSection from "./components/DigitalMarketingSection";
+import ScrollReveal from "./components/ScrollReveal";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col ">
       <Hero />
-      <Services />
-       <DigitalMarketingSection/>
-      <Industries />
-      <WhyChooseUs />
+      <ScrollReveal><Services /></ScrollReveal>
+      <ScrollReveal><DigitalMarketingSection/></ScrollReveal>
+      <ScrollReveal><Industries /></ScrollReveal>
+      <ScrollReveal><WhyChooseUs /></ScrollReveal>
      
-      <TrustIndicators />
-      <PortfolioSection />
-      <OurService />
+      <ScrollReveal><TrustIndicators /></ScrollReveal>
+      <ScrollReveal><PortfolioSection /></ScrollReveal>
+      <ScrollReveal><OurService /></ScrollReveal>
 
-      <PoweredByAI />
-      {/* <OurExpertise /> */}
-      <ServicesTestimonialsSection />
-      <ClientsSection />
-      <FAQ />
-      <FreeConsultation />
+      <ScrollReveal><PoweredByAI /></ScrollReveal>
+      {/* <ScrollReveal><OurExpertise /></ScrollReveal> */}
+      <ScrollReveal><ServicesTestimonialsSection /></ScrollReveal>
+      <ScrollReveal><ClientsSection /></ScrollReveal>
+      <ScrollReveal><FAQ /></ScrollReveal>
+      <ScrollReveal><FreeConsultation /></ScrollReveal>
 
-      <BlogSection />
+      <ScrollReveal><BlogSection /></ScrollReveal>
       {/* <Newsletter /> */}
     </div>
   );

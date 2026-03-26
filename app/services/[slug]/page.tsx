@@ -6,7 +6,7 @@ import {
   Rocket, Lock, TrendingUp, Users, RefreshCw,
   type LucideIcon,
 } from "lucide-react";
-import Footer from "@/app/components/Footer";
+import ScrollReveal from "../../components/ScrollReveal";
 
 const services = [
   {
@@ -125,6 +125,34 @@ const allServices = [
   { slug: "digital-marketing", title: "Digital Marketing" },
   { slug: "data-science-analytics", title: "Data Science & Analytics" },
   { slug: "ecommerce-development", title: "E-commerce Development" },
+  { slug: "social-media-marketing", title: "Social Media Marketing" },
+  { slug: "digital-marketing-strategy", title: "Digital Marketing Strategy" },
+  { slug: "conversion-rate-optimization", title: "Conversion Rate Optimization" },
+  { slug: "trusted-influencer-marketing-agency", title: "Trusted Influencer Marketing Agency" },
+  { slug: "search-engine-optimization", title: "Search Engine Optimization" },
+  { slug: "lead-generation", title: "Lead Generation" },
+  { slug: "brand-management", title: "Brand Management" },
+  { slug: "specialized-ecommerce-seo-services", title: "Specialized eCommerce SEO Services" },
+  { slug: "google-ad-campaigns", title: "Google Ad Campaigns" },
+  { slug: "content-marketing", title: "Content Marketing" },
+  { slug: "paid-advertising", title: "Paid Advertising" },
+  { slug: "ios-app-development", title: "iOS App Development" },
+  { slug: "android-app-development", title: "Android App Development" },
+  { slug: "web-app-development", title: "Web App Development" },
+  { slug: "wordpress-development", title: "Wordpress Development" },
+  { slug: "website-development", title: "Website Development" },
+  { slug: "react-js-development", title: "React.js Development" },
+  { slug: "next-js-development", title: "Next.js Development" },
+  { slug: "node-js-development", title: "Node.js Development" },
+  { slug: "laravel-development", title: "Laravel Development" },
+  { slug: "ai-development", title: "AI Development" },
+  { slug: "ai-chatbot-development", title: "AI Chatbot Development" },
+  { slug: "generative-ai-development", title: "Generative AI Development" },
+  { slug: "ai-agent-development", title: "AI Agent Development" },
+  { slug: "ai-integration", title: "AI Integration" },
+  { slug: "ml-development", title: "ML Development" },
+  { slug: "ai-product-development", title: "AI Product Development" },
+  { slug: "machine-learning-deep-learning", title: "Machine Learning & Deep Learning" },
 ];
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
@@ -139,229 +167,258 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <BackgroundParticles />
 
       {/* ── HERO ── */}
-      <section className="relative z-10 pt-32 pb-20 px-4 text-center max-w-6xl mx-auto">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-sm text-gray-300 mb-8">
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-          {service.badge}
-        </div>
-
-        {/* Headline */}
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6">
-          {service.headline.map((line, i) =>
-            service.headlineColors[i] === "gradient-cyan-purple" ? (
-              <span
-                key={i}
-                className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent block"
-              >
-                {line}
-              </span>
-            ) : (
-              <span key={i} className="block text-white">
-                {line}
-              </span>
-            )
-          )}
-        </h1>
-
-        {/* Description */}
-        <p
-          className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: service.description }}
-        />
-
-        {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link
-            href="/contact-us"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105"
-          >
-            Start Your Project →
-          </Link>
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white border border-white/20 hover:border-cyan-400/50 hover:bg-white/5 transition-all duration-300"
-          >
-            View Our Work
-          </Link>
-        </div>
-      </section>
-
-      {/* ── STATS ── */}
-      <section className="relative z-10 py-10 px-4">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          {service.stats.map((stat, i) => (
-            <div
-              key={i}
-              className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400/30 transition-all duration-300 backdrop-blur-sm"
-            >
-              <div className="text-4xl font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-1">
-                {stat.value}
-              </div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── WHAT WE OFFER ── */}
-      <section className="relative z-10 py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase">What We Offer</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold mt-3 mb-4">
-              Comprehensive{" "}
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                {service.title}
-              </span>{" "}
-              Services
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              From strategy to deployment, we cover every dimension of {service.title.toLowerCase()} to deliver measurable business outcomes.
-            </p>
+      <ScrollReveal>
+        <section className="relative z-10 pt-32 pb-20 px-4 text-center max-w-6xl mx-auto">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-sm text-gray-300 mb-8" data-aos="fade-down">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            {service.badge}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {service.features.map((f, i) => {
-              const Icon = f.icon as LucideIcon;
-              return (
-                <div
+          {/* Headline */}
+          <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6" data-aos="fade-up">
+            {service.headline.map((line, i) =>
+              service.headlineColors[i] === "gradient-cyan-purple" ? (
+                <span
                   key={i}
-                  className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400/40 hover:bg-white/8 transition-all duration-300 hover:-translate-y-1"
+                  className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent block"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center mb-4 group-hover:bg-cyan-400/20 transition-colors">
-                    <Icon className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
-                    {f.title}
-                  </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── PROCESS ── */}
-      <section className="relative z-10 py-20 px-4 bg-white/[0.02]">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase">Our Approach</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold mt-3 mb-4">
-              How We{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                Deliver Results
-              </span>
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              A proven, structured process that ensures every project is delivered on time, on budget, and beyond expectations.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {service.process.map((p, i) => (
-              <div key={i} className="relative p-6 rounded-2xl border border-white/10 bg-white/5 hover:border-purple-400/40 transition-all duration-300">
-                <span className="text-5xl font-black text-white/5 absolute top-4 right-6 select-none">
-                  {p.step}
+                  {line}
                 </span>
-                <div className="text-cyan-400 text-xs font-bold tracking-widest mb-3">STEP {p.step}</div>
-                <h3 className="text-lg font-bold text-white mb-2">{p.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              ) : (
+                <span key={i} className="block text-white">
+                  {line}
+                </span>
+              )
+            )}
+          </h1>
 
-      {/* ── TECH STACK ── */}
-      <section className="relative z-10 py-20 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase">Technologies</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold mt-3 mb-4">
-            Tools & Tech{" "}
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              We Master
-            </span>
-          </h2>
-          <p className="text-gray-400 mb-12 max-w-xl mx-auto">
-            We use industry-leading technologies to build robust, scalable, and future-proof solutions.
-          </p>
+          {/* Description */}
+          <p
+            className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: service.description }}
+            data-aos="fade-up"
+            data-aos-delay="100"
+          />
 
-          <div className="flex flex-wrap justify-center gap-3">
-            {service.techStack.map((tech, i) => (
-              <span
-                key={i}
-                className="px-5 py-2.5 rounded-full border border-white/15 bg-white/5 text-gray-300 text-sm font-medium hover:border-cyan-400/50 hover:text-cyan-300 hover:bg-cyan-400/5 transition-all duration-200 cursor-default"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA BANNER ── */}
-      <section className="relative z-10 py-20 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-transparent p-12 text-center">
-            {/* Glow blobs */}
-            <div className="absolute -top-20 -left-20 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
-
-            <span className="relative text-cyan-400 text-sm font-semibold tracking-widest uppercase">
-              Ready to get started?
-            </span>
-            <h2 className="relative text-4xl md:text-5xl font-extrabold mt-3 mb-4">
-              Let&apos;s Build Something{" "}
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                Extraordinary
-              </span>
-            </h2>
-            <p className="relative text-gray-400 max-w-xl mx-auto mb-8">
-              Talk to our experts and get a free project consultation. No commitments — just clarity on how we can help you win.
-            </p>
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
             <Link
-              href="/contact"
-              className="relative inline-flex items-center gap-2 px-10 py-4 rounded-full font-bold text-white bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105"
+              href="/contact-us"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white bg-linear-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105"
             >
-              Get Free Consultation →
+              Start Your Project →
+            </Link>
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white border border-white/20 hover:border-cyan-400/50 hover:bg-white/5 transition-all duration-300"
+            >
+              View Our Work
             </Link>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
-      {/* ── FAQ ── */}
-      <section className="relative z-10 py-20 px-4 pb-32">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-14">
-            <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase">FAQs</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold mt-3">
-              Common{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                Questions
-              </span>
-            </h2>
-          </div>
-
-          <div className="space-y-4">
-            {service.faqs.map((faq, i) => (
-              <details
+      {/* ── STATS ── */}
+      <ScrollReveal>
+        <section className="relative z-10 py-10 px-4">
+          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+            {service.stats.map((stat, i) => (
+              <div
                 key={i}
-                className="group rounded-2xl border border-white/10 bg-white/5 overflow-hidden"
+                className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400/30 transition-all duration-300 backdrop-blur-sm"
+                data-aos="zoom-in"
+                data-aos-delay={i * 100}
               >
-                <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-white hover:text-cyan-300 transition-colors">
-                  {faq.q}
-                  <span className="ml-4 text-cyan-400 group-open:rotate-45 transition-transform duration-200 text-xl flex-shrink-0">+</span>
-                </summary>
-                <div className="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
-                  {faq.a}
+                <div className="text-4xl font-extrabold bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-1">
+                  {stat.value}
                 </div>
-              </details>
+                <div className="text-gray-400 text-sm">{stat.label}</div>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
-         </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ── WHAT WE OFFER ── */}
+      <ScrollReveal>
+        <section className="relative z-10 py-20 px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-14" data-aos="fade-down">
+              <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase">What We Offer</span>
+              <h2 className="text-4xl md:text-5xl font-extrabold mt-3 mb-4">
+                Comprehensive{" "}
+                <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                  {service.title}
+                </span>{" "}
+                Services
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                From strategy to deployment, we cover every dimension of {service.title.toLowerCase()} to deliver measurable business outcomes.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {service.features.map((f, i) => {
+                const Icon = f.icon as LucideIcon;
+                return (
+                  <div
+                    key={i}
+                    className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400/40 hover:bg-white/8 transition-all duration-300 hover:-translate-y-1"
+                    data-aos="fade-up"
+                    data-aos-delay={i * 100}
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center mb-4 group-hover:bg-cyan-400/20 transition-colors">
+                      <Icon className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
+                      {f.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ── PROCESS ── */}
+      <ScrollReveal>
+        <section className="relative z-10 py-20 px-4 bg-white/[0.02]">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-14" data-aos="fade-down">
+              <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase">Our Approach</span>
+              <h2 className="text-4xl md:text-5xl font-extrabold mt-3 mb-4">
+                How We{" "}
+                <span className="bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                  Deliver Results
+                </span>
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                A proven, structured process that ensures every project is delivered on time, on budget, and beyond expectations.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {service.process.map((p, i) => (
+                <div 
+                  key={i} 
+                  className="relative p-6 rounded-2xl border border-white/10 bg-white/5 hover:border-purple-400/40 transition-all duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay={i * 100}
+                >
+                  <span className="text-5xl font-black text-white/5 absolute top-4 right-6 select-none">
+                    {p.step}
+                  </span>
+                  <div className="text-cyan-400 text-xs font-bold tracking-widest mb-3">STEP {p.step}</div>
+                  <h3 className="text-lg font-bold text-white mb-2">{p.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ── TECH STACK ── */}
+      <ScrollReveal>
+        <section className="relative z-10 py-20 px-4">
+          <div className="max-w-5xl mx-auto text-center" data-aos="zoom-in">
+            <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase">Technologies</span>
+            <h2 className="text-4xl md:text-5xl font-extrabold mt-3 mb-4">
+              Tools & Tech{" "}
+              <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                We Master
+              </span>
+            </h2>
+            <p className="text-gray-400 mb-12 max-w-xl mx-auto">
+              We use industry-leading technologies to build robust, scalable, and future-proof solutions.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-3">
+              {service.techStack.map((tech, i) => (
+                <span
+                  key={i}
+                  className="px-5 py-2.5 rounded-full border border-white/15 bg-white/5 text-gray-300 text-sm font-medium hover:border-cyan-400/50 hover:text-cyan-300 hover:bg-cyan-400/5 transition-all duration-200 cursor-default"
+                  data-aos="fade-up"
+                  data-aos-delay={i * 30}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ── CTA BANNER ── */}
+      <ScrollReveal>
+        <section className="relative z-10 py-20 px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-linear-to-br from-cyan-500/10 via-purple-500/10 to-transparent p-12 text-center" data-aos="zoom-out">
+              {/* Glow blobs */}
+              <div className="absolute -top-20 -left-20 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
+
+              <span className="relative text-cyan-400 text-sm font-semibold tracking-widest uppercase">
+                Ready to get started?
+              </span>
+              <h2 className="relative text-4xl md:text-5xl font-extrabold mt-3 mb-4">
+                Let&apos;s Build Something{" "}
+                <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                  Extraordinary
+                </span>
+              </h2>
+              <p className="relative text-gray-400 max-w-xl mx-auto mb-8">
+                Talk to our experts and get a free project consultation. No commitments — just clarity on how we can help you win.
+              </p>
+              <Link
+                href="/contact"
+                className="relative inline-flex items-center gap-2 px-10 py-4 rounded-full font-bold text-white bg-linear-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105"
+              >
+                Get Free Consultation →
+              </Link>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ── FAQ ── */}
+      <ScrollReveal>
+        <section className="relative z-10 py-20 px-4 pb-32">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-14" data-aos="fade-down">
+              <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase">FAQs</span>
+              <h2 className="text-4xl md:text-5xl font-extrabold mt-3">
+                Common{" "}
+                <span className="bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                  Questions
+                </span>
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              {service.faqs.map((faq, i) => (
+                <details
+                  key={i}
+                  className="group rounded-2xl border border-white/10 bg-white/5 overflow-hidden"
+                  data-aos="fade-up"
+                  data-aos-delay={i * 100}
+                >
+                  <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-white hover:text-cyan-300 transition-colors">
+                    {faq.q}
+                    <span className="ml-4 text-cyan-400 group-open:rotate-45 transition-transform duration-200 text-xl flex-shrink-0">+</span>
+                  </summary>
+                  <div className="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
+                    {faq.a}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+    </div>
   );
 }

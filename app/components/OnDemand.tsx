@@ -1,3 +1,5 @@
+import ScrollReveal from "./ScrollReveal";
+
 const solutions = [
   {
     icon: "🚗",
@@ -80,55 +82,61 @@ const stats = [
 
 export default function OnDemand() {
   return (
-    <section id="ondemand" className="section-bg py-24">
-      <div className="max-w-7xl mx-auto! px-4 sm:px-6  ">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest mb-4">
-            On-Demand Solutions
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            On-Demand Apps <span className="gradient-text">Powered by AI</span>
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            End-to-end on-demand platform development with built-in AI, real-time tracking, and proven scalability.
-          </p>
-        </div>
+    <ScrollReveal>
+      <section id="ondemand" className="section-bg py-24">
+        <div className="max-w-7xl mx-auto! px-4 sm:px-6">
+          {/* Header */}
+          <div className="text-center mb-16" data-aos="fade-down">
+            <span className="inline-block text-purple-400 text-sm font-semibold uppercase tracking-widest mb-4">
+              On-Demand Solutions
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              On-Demand Apps <span className="gradient-text">Powered by AI</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              End-to-end on-demand platform development with built-in AI, real-time tracking, and proven scalability.
+            </p>
+          </div>
 
-        {/* Solutions Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-16">
-          {solutions.map((s, idx) => (
-            <div
-              key={idx}
-              className="card-glass rounded-2xl p-5 text-center hover:border-purple-500/30 transition-all duration-300 group cursor-pointer"
-            >
+          {/* Solutions Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-16">
+            {solutions.map((s, idx) => (
               <div
-                className={`w-12 h-12 rounded-xl bg-gradient-to-br ${s.color} flex items-center justify-center text-2xl mx-auto mb-3 group-hover:scale-110 transition-transform`}
+                key={idx}
+                className="card-glass rounded-2xl p-5 text-center hover:border-purple-500/30 transition-all duration-300 group cursor-pointer"
+                data-aos="fade-up"
+                data-aos-delay={idx * 50}
               >
-                {s.icon}
+                <div
+                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${s.color} flex items-center justify-center text-2xl mx-auto mb-3 group-hover:scale-110 transition-transform`}
+                >
+                  {s.icon}
+                </div>
+                <div className="text-white font-medium text-sm mb-1">{s.title}</div>
+                <div className={`text-lg font-bold bg-gradient-to-r ${s.color} bg-clip-text text-transparent`}>
+                  {s.metric}
+                </div>
+                <div className="text-gray-500 text-xs">{s.metricLabel}</div>
               </div>
-              <div className="text-white font-medium text-sm mb-1">{s.title}</div>
-              <div className={`text-lg font-bold bg-gradient-to-r ${s.color} bg-clip-text text-transparent`}>
-                {s.metric}
-              </div>
-              <div className="text-gray-500 text-xs">{s.metricLabel}</div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        {/* Stats bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="card-glass rounded-2xl p-6 text-center"
-            >
-              <div className="text-3xl font-extrabold gradient-text mb-1">{stat.value}</div>
-              <div className="text-gray-400 text-sm">{stat.label}</div>
-            </div>
-          ))}
+          {/* Stats bar */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, idx) => (
+              <div
+                key={idx}
+                className="card-glass rounded-2xl p-6 text-center"
+                data-aos="zoom-in"
+                data-aos-delay={idx * 100}
+              >
+                <div className="text-3xl font-extrabold gradient-text mb-1">{stat.value}</div>
+                <div className="text-gray-400 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </ScrollReveal>
   );
 }

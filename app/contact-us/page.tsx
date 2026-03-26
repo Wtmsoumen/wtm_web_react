@@ -15,7 +15,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { globalStyle } from "../globalStyle";
-import Footer from "../components/Footer";
+import ScrollReveal from "../components/ScrollReveal";
 
 // ─── Team Data ───────────────────────────────────────────────────────────────
 const teamMembers = [
@@ -34,32 +34,31 @@ const teamMembers = [
   {
     name: "ANZ Region Sales (Aus)",
     role: "ANZ Region Sales",
-     image: "images/Vaibhav.jpg",
+    image: "images/Vaibhav.jpg",
     tier: "manager",
   },
   {
     name: "ANZ Region Sales (Aus)",
     role: "ANZ Region Sales",
-     image: "images/Manuj.jpeg",
+    image: "images/Manuj.jpeg",
     tier: "manager",
   },
   {
     name: "Rahul Halder",
     role: "Project Manager",
-     image: "images/rahul-da.jpg",
+    image: "images/rahul-da.jpg",
     tier: "manager",
   },
   {
     name: "Debashis Majumdar",
     role: "Director - Marketing (World Wide)",
-     image: "images/debu.jpg",
+    image: "images/debu.jpg",
     tier: "manager",
   },
-
   {
-    name: "Debashis Majumdar",
+    name: "Avijit Sir",
     role: "Chief Marketing Officer",
-     image: "images/avijit_sir.jpg",
+    image: "images/avijit_sir.jpg",
     tier: "manager",
   },
 ];
@@ -72,7 +71,7 @@ const offices = [
     mapEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.748!2d88.462!3d22.573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDM0JzIyLjgiTiA4OMKwMjcnNDMuMiJF!5e0!3m2!1sen!2sin!4v1700000000000",
     flag: "🇮🇳",
-     image: "images/ps-abacus-featured.webp",
+    image: "images/ps-abacus-featured.webp",
   },
   {
     country: "Dubai, UAE",
@@ -80,9 +79,8 @@ const offices = [
     mapEmbedUrl:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178!2d55.264!3d25.186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDExJzA5LjYiTiA1NcKwMTUnNTAuNCJF!5e0!3m2!1sen!2sae!4v1700000000000",
     flag: "🇦🇪",
-       image: "images/Dubai-UAE.jpg",
+    image: "images/Dubai-UAE.jpg",
   },
- 
 ];
 
 const services = [
@@ -97,97 +95,6 @@ const services = [
   "E-commerce Development",
 ];
 
-// ─── Avatar Placeholder ───────────────────────────────────────────────────────
-function AvatarPlaceholder({ name, size = 80 }: { name: string; size?: number }) {
-  const initials = name
-    .split(" ")
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join("")
-    .toUpperCase();
-  return (
-    <div
-      style={{ width: size, height: size }}
-      className="rounded-full bg-gradient-to-br from-[#1D74CF] via-[#b33b41] to-[#D04425] flex items-center justify-center text-white font-bold text-lg flex-shrink-0"
-    >
-      {initials}
-    </div>
-  );
-}
-
-
-// Diamond shape: rows of [1, 2, 3, 1]
-const diamondRows = [
-  teamMembers.slice(0, 1), // apex
-  teamMembers.slice(1, 3), // shoulders
-  teamMembers.slice(3, 6), // widest
-  teamMembers.slice(6, 7), // base
-];
- 
-const tierBadge: Record<string, string> = {
-  founder: "bg-[#1D74CF]/80 text-white",
-  director: "bg-[#b33b41]/80 text-white",
-  manager: "bg-black/40 text-white",
-};
- 
-const tierLabel: Record<string, string> = {
-  founder: "Founder",
-  director: "Director",
-  manager: "Manager",
-};
- 
-type Member = (typeof teamMembers)[number];
- 
-function MemberCard({
-  member,
-  large = false,
-}: {
-  member: Member;
-  large?: boolean;
-}) {
-  return (
-    <div
-      className={`group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-gray-100 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] hover:border-gray-300 ${
-        large ? "w-40" : "w-[136px]"
-      }`}
-    >
-      {/* Photo */}
-      <div
-        className={`relative w-full overflow-hidden bg-gray-100 ${
-          large ? "h-36" : "h-[120px]"
-        }`}
-      >
-        <img
-          src={member.image}
-          alt={member.name}
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-        />
-        {/* Scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        {/* Tier badge */}
-        <span
-          className={`absolute top-1.5 left-1.5 text-[9px] font-medium px-1.5 py-0.5 rounded-full backdrop-blur-sm ${
-            tierBadge[member.tier]
-          }`}
-        >
-          {tierLabel[member.tier]}
-        </span>
-      </div>
- 
-      {/* Info */}
-      <div className="px-2.5 pt-2 pb-2 flex flex-col gap-0.5">
-        <p className="text-[11.5px] font-bold text-black leading-snug">
-          {member.name}
-        </p>
-        <p className="text-[10px] text-gray-400 leading-snug">{member.role}</p>
-      </div>
- 
-      {/* Gradient bottom bar */}
-      <div className="h-[3px] bg-gradient-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-    </div>
-  );
-}
-// ─── Main Component ───────────────────────────────────────────────────────────
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -197,7 +104,6 @@ export default function ContactPage() {
     service: "",
     message: "",
   });
-  const [activeOffice, setActiveOffice] = useState(0);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.MouseEvent) => {
@@ -207,377 +113,274 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-white min-h-screen">
+    <main className="bg-white min-h-screen pt-20">
       {/* ── HERO BAND ─────────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-white py-20">
-        {/* Decorative blobs */}
-        <div className="pointer-events-none absolute -top-32 -left-32 w-96 h-96 rounded-full bg-gradient-to-br from-[#1D74CF]/10 to-transparent blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 -right-20 w-80 h-80 rounded-full bg-gradient-to-br from-[#D04425]/10 to-transparent blur-3xl" />
+      <ScrollReveal>
+        <section className="relative overflow-hidden bg-white py-20 pb-0">
+          <div className="pointer-events-none absolute -top-32 -left-32 w-96 h-96 rounded-full bg-linear-to-br from-[#1D74CF]/10 to-transparent blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-20 -right-20 w-80 h-80 rounded-full bg-linear-to-br from-[#D04425]/10 to-transparent blur-3xl" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-4">
-          {/* Badge */}
-          <div
-            className={`${globalStyle?.gradientText} inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-100 shadow-sm`}
-          >
-            <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-semibold tracking-wide">Get In Touch</span>
-          </div>
-
-          <h1 className="text-4xl md:text-6xl font-bold text-black leading-tight">
-            Have Some{" "}
-            <span
-              className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}
-            >
-              Questions?
-            </span>
-          </h1>
-
-          <p className="text-gray-500 text-base md:text-xl max-w-2xl leading-relaxed">
-            Welcome to Webtechnomind IT Solutions, the leading Website Design and
-            Development Company in India, offering comprehensive web development,
-            mobile app development and digital marketing services to a global clientele.
-          </p>
-        </div>
-      </section>
-
-  {/* ── GROWTH / TEAM SECTION ─────────────────────────────────────── */}
-      <section className="relative bg-white  overflow-hidden">
-
-        {/* ── Background texture ── */}
-        <div className="pointer-events-none absolute inset-0">
-          {/* Faint grid */}
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#000 1px,transparent 1px),linear-gradient(90deg,#000 1px,transparent 1px)",
-              backgroundSize: "48px 48px",
-            }}
-          />
-          {/* Gradient blobs */}
-          <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-gradient-to-br from-[#1D74CF]/10 to-transparent blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tl from-[#D04425]/8 to-transparent blur-3xl" />
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-
-          {/* ── Section label ── */}
-          <div className="flex items-center gap-3 mb-14">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-gray-200" />
-            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-gray-400">
-              Our Story
-            </span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gray-200" />
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
-            {/* ══ LEFT – Team ══════════════════════════════════════════════ */}
-            <div className="flex flex-col gap-8">
-
-              {/* Left header */}
-              <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-6 h-0.5 bg-gradient-to-r from-[#1D74CF] to-[#b33b41] rounded-full" />
-                  <span className="text-xs font-semibold tracking-widest uppercase text-[#1D74CF]">
-                    Meet the Team
-                  </span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-black leading-tight">
-                  The People Behind{" "}
-                  <span className="bg-gradient-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] bg-clip-text text-transparent">
-                    Our Success
-                  </span>
-                </h2>
-               
-              </div>
-
-              {/* Team grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {teamMembers.map((member, i) => (
-                  <div
-                    key={i}
-                    className="group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
-                  >
-                    {/* Photo */}
-                    <div className="relative w-full h-44 overflow-hidden bg-gray-100">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-top group-hover:scale-107 transition-transform duration-500"
-                      />
-                      {/* Scrim so name always readable */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-
-                    {/* Info */}
-                    <div className="px-3 pt-3 pb-2.5 flex flex-col gap-0.5">
-                      <p className="text-sm font-bold text-black leading-snug">{member.name}</p>
-                      <p className="text-[11px] text-gray-400 leading-snug">{member.role}</p>
-                    </div>
-
-                    {/* Gradient bottom bar */}
-                    <div className="h-[3px] bg-gradient-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                ))}
-              </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-6" data-aos="fade-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-100 bg-blue-50 text-blue-600 shadow-sm" data-aos="fade-down">
+              <Sparkles className="w-4 h-4" />
+              <span className="text-sm font-semibold tracking-wide uppercase">Get In Touch</span>
             </div>
 
-            {/* ══ RIGHT – Tagline + Offices ════════════════════════════════ */}
-            <div className="flex flex-col gap-8">
+            <h1 className="text-4xl md:text-6xl font-black text-black leading-tight">
+              Have Some <span className="bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] bg-clip-text text-transparent">Questions?</span>
+            </h1>
 
-              {/* Right header */}
-              <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-6 h-0.5 bg-gradient-to-r from-[#D04425] to-[#b33b41] rounded-full" />
-                  <span className="text-xs font-semibold tracking-widest uppercase text-[#D04425]">
-                    Our Vision
-                  </span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-black leading-tight">
-                  Growth strategies to be{" "}
-                  <span className="bg-gradient-to-r from-[#D04425] to-[#b33b41] bg-clip-text text-transparent">
-                    effective &amp; competitive
-                  </span>
-                </h2>
-                <p className="text-gray-500 mt-4 leading-relaxed text-sm md:text-base max-w-md">
-                  Welcome to Webtechnomind IT Solutions, the leading Website Design and
-                  Development Company in India, offering comprehensive web development,
-                  mobile app development and digital marketing services to a global clientele.
-                </p>
-              </div>
-
-              {/* Office cards */}
-              <div className="flex flex-col gap-5">
-                {offices.map((office, i) => (
-                  <div
-                    key={i}
-                    className="group rounded-2xl overflow-hidden border border-gray-100 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300"
-                  >
-                    {/* Photo with flag overlay */}
-                    <div className="relative w-full overflow-hidden" style={{ height: "250px" }}>
-                      <img
-                        src={office.image}
-                        alt={`Webtechnomind IT Solutions - ${office.country}`}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      {/* Flag badge */}
-                      <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 shadow-sm">
-                        <span className="text-base">{office.flag}</span>
-                        <span className="text-xs font-semibold text-black">{office.country}</span>
-                      </div>
-                      {/* Bottom scrim */}
-                      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/30 to-transparent" />
-                    </div>
-
-                    {/* Caption */}
-                    <div className="px-4 py-3 flex items-start gap-3 border-t border-gray-50">
-                      <div className="mt-0.5 w-1.5 h-1.5 rounded-full bg-gradient-to-br from-[#1D74CF] to-[#D04425] flex-shrink-0 mt-2" />
-                      <div>
-                        <p className="font-semibold text-black text-sm">
-                          Webtechnomind IT Solutions Pvt. Ltd ({office.country})
-                        </p>
-                        <p className="text-xs text-gray-400 mt-0.5">{office.address}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
+            <p className="text-gray-500 text-lg md:text-xl max-w-2xl leading-relaxed">
+              Leading Website Design and Development Company in India, offering comprehensive technical solutions to a global clientele.
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
+
+      {/* ── STORY / TEAM SECTION ──────────────────────────────────────── */}
+      <ScrollReveal>
+        <section className="relative bg-white py-24 overflow-hidden">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+
+              {/* LEFT – Team */}
+              <div className="flex flex-col gap-10">
+                <div data-aos="fade-right">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-8 h-1 bg-linear-to-r from-[#1D74CF] to-[#b33b41] rounded-full" />
+                    <span className="text-xs font-bold tracking-widest uppercase text-[#1D74CF]">Meet the Team</span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-black text-black leading-tight">
+                    The People Behind <span className="bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] bg-clip-text text-transparent">Our Success</span>
+                  </h2>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                  {teamMembers.map((member, i) => (
+                    <div
+                      key={i}
+                      className="group relative flex flex-col rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+                      data-aos="fade-up"
+                      data-aos-delay={i * 50}
+                    >
+                      <div className="relative w-full h-48 overflow-hidden bg-gray-100">
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-black/60 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                        <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                          <p className="text-xs text-white/80 font-medium">{member.role}</p>
+                        </div>
+                      </div>
+                      <div className="p-4">
+                        <p className="text-sm font-bold text-black">{member.name}</p>
+                        <p className="text-[10px] text-gray-400 font-medium uppercase tracking-wider">{member.tier}</p>
+                      </div>
+                      <div className="h-1 w-full bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] group-hover:flex hidden" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* RIGHT – Offices */}
+              <div className="flex flex-col gap-10">
+                <div data-aos="fade-left">
+                  <div className="flex items-center gap-2 mb-4">
+                    <div className="w-8 h-1 bg-linear-to-r from-[#D04425] to-[#b33b41] rounded-full" />
+                    <span className="text-xs font-bold tracking-widest uppercase text-[#D04425]">Our Locations</span>
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-black text-black leading-tight">
+                    Global Reach, <span className="bg-linear-to-r from-[#D04425] to-[#b33b41] bg-clip-text text-transparent">Local Impact</span>
+                  </h2>
+                </div>
+
+                <div className="flex flex-col gap-8">
+                  {offices.map((office, i) => (
+                    <div
+                      key={i}
+                      className="group rounded-3xl overflow-hidden border border-gray-100 bg-white shadow-lg hover:shadow-2xl transition-all duration-500"
+                      data-aos="fade-left"
+                      data-aos-delay={i * 200}
+                    >
+                      <div className="relative h-64 w-full overflow-hidden">
+                        <img
+                          src={office.image}
+                          alt={office.country}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        <div className="absolute top-6 left-6 flex items-center gap-2 bg-white/95 backdrop-blur-md rounded-full px-4 py-2 shadow-xl">
+                          <span className="text-xl">{office.flag}</span>
+                          <span className="text-xs font-bold text-black uppercase tracking-widest">{office.country}</span>
+                        </div>
+                      </div>
+
+                      <div className="p-8 flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center shrink-0">
+                          <MapPin className="w-6 h-6 text-blue-600" />
+                        </div>
+                        <div>
+                          <p className="font-bold text-black text-lg mb-1">Webtechnomind IT Solutions ({office.country})</p>
+                          <p className="text-sm text-gray-500 leading-relaxed">{office.address}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* ── CONTACT FORM + MAP ────────────────────────────────────────── */}
-      <section className="bg-white py-20">
-           {/* ── Background texture ── */}
-        <div className="pointer-events-none absolute inset-0">
-          {/* Faint grid */}
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage:
-                "linear-gradient(#000 1px,transparent 1px),linear-gradient(90deg,#000 1px,transparent 1px)",
-              backgroundSize: "48px 48px",
-            }}
-          />
-          {/* Gradient blobs */}
-          <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-gradient-to-br from-[#1D74CF]/10 to-transparent blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-gradient-to-tl from-[#D04425]/8 to-transparent blur-3xl" />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Maps column */}
-            <div className="flex flex-col gap-6">
-              {offices.slice(0, 2).map((office, i) => (
-                <div key={i} className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                  <div className="flex items-center gap-3 px-5 py-3 bg-gray-50 border-b border-gray-100">
-                    <span className="text-xl">{office.flag}</span>
-                    <div>
-                      <p className="text-sm font-semibold text-black">Webtechnomind IT Solutions Pvt. Ltd ({office.country})</p>
-                      <p className="text-xs text-gray-500">{office.address}</p>
+      <ScrollReveal>
+        <section className="bg-gray-50 py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+              {/* Maps column */}
+              <div className="flex flex-col gap-8" data-aos="fade-right">
+                {offices.map((office, i) => (
+                  <div key={i} className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 bg-white h-full group">
+                    <div className="p-6 bg-white border-b border-gray-100 flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <span className="text-2xl">{office.flag}</span>
+                        <p className="font-bold text-black">{office.country} Branch</p>
+                      </div>
+                      <a
+                        href={`https://maps.google.com?q=${encodeURIComponent(office.address)}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs font-bold text-blue-600 hover:underline tracking-widest uppercase"
+                      >
+                        Direction
+                      </a>
                     </div>
+                    <iframe
+                      src={office.mapEmbedUrl}
+                      width="100%"
+                      height="300"
+                      className="border-0 grayscale group-hover:grayscale-0 transition-all duration-700"
+                      loading="lazy"
+                      title={office.country}
+                    />
                   </div>
-                  <iframe
-                    src={office.mapEmbedUrl}
-                    width="100%"
-                    height="220"
-                    className="border-0"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title={`Map - ${office.country}`}
-                  />
+                ))}
+              </div>
+
+              {/* Form column */}
+              <div
+                className="bg-white rounded-3xl p-10 shadow-2xl border border-gray-100 relative overflow-hidden"
+                data-aos="fade-left"
+              >
+                <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-linear-to-br from-[#1D74CF]/5 to-[#D04425]/5 blur-3xl" />
+
+                <h3 className="text-3xl font-black text-black mb-2">Ready to Grow?</h3>
+                <p className="text-[#D04425] font-bold text-xl mb-10 uppercase tracking-tight">Let&apos;s talk about your project.</p>
+
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4 border-b-2 border-gray-100 pb-4 group focus-within:border-blue-600 transition-all">
+                    <User className="w-5 h-5 text-gray-400 group-focus-within:text-blue-600" />
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      className="w-full outline-none text-black font-medium"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-4 border-b-2 border-gray-100 pb-4 group focus-within:border-blue-600 transition-all">
+                    <Mail className="w-5 h-5 text-gray-400 group-focus-within:text-blue-600" />
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      className="w-full outline-none text-black font-medium"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-4 border-b-2 border-gray-100 pb-4 group focus-within:border-blue-600 transition-all">
+                    <Phone className="w-5 h-5 text-gray-400 group-focus-within:text-blue-600" />
+                    <input
+                      type="tel"
+                      placeholder="Phone Number"
+                      className="w-full outline-none text-black font-medium"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-4 border-b-2 border-gray-100 pb-4 group focus-within:border-blue-600 transition-all">
+                    <Globe2 className="w-5 h-5 text-gray-400 group-focus-within:text-blue-600" />
+                    <select
+                      className="w-full outline-none text-black font-medium bg-transparent cursor-pointer"
+                      value={formData.service}
+                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                    >
+                      <option value="" disabled>Select a Service</option>
+                      {services.map((s) => <option key={s} value={s}>{s}</option>)}
+                    </select>
+                  </div>
+
+                  <div className="flex items-start gap-4 border-b-2 border-gray-100 pb-4 group focus-within:border-blue-600 transition-all">
+                    <MessageSquare className="w-5 h-5 text-gray-400 group-focus-within:text-blue-600 mt-1" />
+                    <textarea
+                      placeholder="Project Brief"
+                      className="w-full outline-none text-black font-medium h-24 resize-none"
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    />
+                  </div>
+
+                  <button
+                    onClick={handleSubmit}
+                    className="w-full bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] text-white font-black py-5 rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3 shadow-xl"
+                  >
+                    {submitted ? "MESSAGE RECEIVED ✓" : "SEND MESSAGE"}
+                    {!submitted && <Send className="w-5 h-5" />}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ── QUICK CONTACT STRIP ───────────────────────────────────────── */}
+      <ScrollReveal>
+        <section className="bg-white py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { icon: Phone, label: "Call Us", value: "+91 98765 43210", color: "bg-blue-600" },
+                { icon: Mail, label: "Email Us", value: "info@webtechnomind.com", color: "bg-red-600" },
+                { icon: MapPin, label: "Visit Us", value: "Newtown, Kolkata, WB", color: "bg-orange-600" },
+              ].map(({ icon: Icon, label, value, color }, i) => (
+                <div
+                  key={i}
+                  className="group flex items-center gap-6 p-8 rounded-3xl bg-gray-50 hover:bg-white border border-gray-100 hover:shadow-2xl transition-all duration-500"
+                  data-aos="zoom-in"
+                  data-aos-delay={i * 100}
+                >
+                  <div className={`w-14 h-14 rounded-2xl ${color} flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500`}>
+                    <Icon className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">{label}</p>
+                    <p className="text-black font-black text-base">{value}</p>
+                  </div>
                 </div>
               ))}
             </div>
-
-            {/* Form column */}
-            <div className="card-glass rounded-2xl p-8 shadow-lg border border-gray-100 relative overflow-hidden">
-              {/* decorative blob */}
-              <div className="pointer-events-none absolute -bottom-10 -right-10 w-48 h-48 rounded-full bg-gradient-to-br from-[#1D74CF]/10 to-[#D04425]/10 blur-2xl" />
-
-              <h3 className="text-2xl md:text-3xl font-bold text-black mb-1">
-                Want a Store That Drives ROI?
-              </h3>
-              <p className="text-[#D04425] font-semibold mb-6">Let's Build It.</p>
-
-              <div className="flex flex-col gap-8">
-                {/* Name */}
-                <div className="flex items-center gap-3 border-b border-gray-200 pb-2 group focus-within:border-[#1D74CF] transition-colors">
-                  <User className="w-6 h-6 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0" />
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-transparent text-black text-sm outline-none placeholder:text-gray-400"
-                  />
-                </div>
-
-                {/* Company */}
-                <div className="flex items-center gap-3 border-b border-gray-200 pb-2 group focus-within:border-[#1D74CF] transition-colors">
-                  <Briefcase className="w-6 h-6 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0" />
-                  <input
-                    type="text"
-                    placeholder="Company Name"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full bg-transparent text-black text-sm outline-none placeholder:text-gray-400"
-                  />
-                </div>
-
-                {/* Phone */}
-                <div className="flex items-center gap-3 border-b border-gray-200 pb-2 group focus-within:border-[#1D74CF] transition-colors">
-                  <Phone className="w-6 h-6 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0" />
-                  <input
-                    type="tel"
-                    placeholder="Phone"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-transparent text-black text-sm outline-none placeholder:text-gray-400"
-                  />
-                </div>
-
-                {/* Email */}
-                <div className="flex items-center gap-3 border-b border-gray-200 pb-2 group focus-within:border-[#1D74CF] transition-colors">
-                  <Mail className="w-6 h-6 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0" />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-transparent text-black text-sm outline-none placeholder:text-gray-400"
-                  />
-                </div>
-
-                {/* Service Select */}
-                <div className="flex items-center gap-3 border-b border-gray-200 pb-2 group focus-within:border-[#1D74CF] transition-colors">
-                  <Globe2 className="w-6 h-6 text-gray-400 flex-shrink-0" />
-                  <select
-                    value={formData.service}
-                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full bg-transparent text-sm outline-none text-gray-400 cursor-pointer appearance-none"
-                  >
-                    <option value="" disabled>Select Service</option>
-                    {services.map((s) => (
-                      <option key={s} value={s} className="text-black">{s}</option>
-                    ))}
-                  </select>
-                  <ChevronDown className="w-6 h-6 text-gray-400 flex-shrink-0" />
-                </div>
-
-                {/* Message */}
-                <div className="flex items-start gap-3 border-b border-gray-200 pb-2 group focus-within:border-[#1D74CF] transition-colors">
-                  <MessageSquare className="w-6 h-6 text-gray-400 group-focus-within:text-[#1D74CF] transition-colors flex-shrink-0 mt-1" />
-                  <textarea
-                    placeholder="Message"
-                    rows={3}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full bg-transparent text-black text-sm outline-none placeholder:text-gray-400 resize-none"
-                  />
-                </div>
-
-                {/* reCAPTCHA placeholder */}
-                <div className="flex items-center gap-3 border border-gray-200 rounded-lg px-4 py-3 mt-1">
-                  <input type="checkbox" id="robot" className="w-4 h-4 accent-[#1D74CF]" />
-                  <label htmlFor="robot" className="text-sm text-gray-500 cursor-pointer">
-                    I'm not a robot
-                  </label>
-                  <div className="ml-auto flex flex-col items-center">
-                    <div className="w-8 h-8 bg-gradient-to-br from-[#1D74CF] to-[#D04425] rounded opacity-60" />
-                    <span className="text-[9px] text-gray-400 mt-0.5">reCAPTCHA</span>
-                  </div>
-                </div>
-
-                {/* Submit */}
-                <button
-                  onClick={handleSubmit}
-                  className="mt-2 w-full bg-gradient-to-r from-[#b33b41] via-[#D04425] to-[#1D74CF] text-white font-bold text-sm py-4 rounded-full hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2"
-                >
-                  {submitted ? (
-                    "Message Sent! ✓"
-                  ) : (
-                    <>
-                      SUBMIT NOW
-                      <Send className="w-4 h-4" />
-                    </>
-                  )}
-                </button>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
-      {/* ── QUICK CONTACT STRIP ───────────────────────────────────────── */}
-      <section className="bg-gray-50 py-12 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              { icon: Phone, label: "Call Us", value: "+91 98765 43210", sub: "Mon–Sat, 9am–7pm IST" },
-              { icon: Mail, label: "Email Us", value: "info@webtechnomind.com", sub: "We reply within 24hrs" },
-              { icon: MapPin, label: "Visit Us", value: "Newtown, Kolkata, WB", sub: "PS Abacus, Action Area IIE" },
-            ].map(({ icon: Icon, label, value, sub }, i) => (
-              <div
-                key={i}
-                className="card-glass rounded-2xl p-6 flex items-center gap-4 shadow border border-gray-100 group hover:shadow-md transition-shadow"
-              >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1D74CF] via-[#b33b41] to-[#D04425] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <Icon className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">{label}</p>
-                  <p className="text-black font-semibold text-sm tracking-wider">{value}</p>
-                  <p className="text-xs text-gray-400">{sub}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-  
     </main>
   );
 }
