@@ -104,7 +104,7 @@ const projects: Project[] = [
     category: "Web Development",
     industry: "Logistics",
     tech: ["Next.js", "RTK Query", "Tailwind CSS"],
-    image: "images/portfolio/portfolio1.jpg",
+    image: "images/glubery_B2B.jpg",
     description:
       "M Deliver is a multi-step shipment management platform built for a logistics firm. Features include billing region selection, automated quote generation, country flag dropdowns, and responsive shipment tables.",
     stats: [
@@ -177,9 +177,8 @@ export default function PortfolioPage() {
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`px-6 py-2 rounded-lg text-sm font-bold transition-all duration-300 ${
-                      activeTab === tab ? "bg-black text-white shadow-xl" : "text-gray-500 hover:text-black"
-                    }`}
+                    className={`px-6 py-2 rounded-lg text-sm font-bold transition-all duration-300 ${activeTab === tab ? "bg-black text-white shadow-xl" : "text-gray-500 hover:text-black"
+                      }`}
                   >
                     {tab === "industries" ? "Industries" : "Technology"}
                   </button>
@@ -193,11 +192,10 @@ export default function PortfolioPage() {
                     <button
                       key={f}
                       onClick={() => (activeTab === "industries" ? setActiveIndustry(f) : setActiveCategory(f))}
-                      className={`px-5 py-2 rounded-full text-xs font-bold border transition-all duration-300 ${
-                        isActive
+                      className={`px-5 py-2 rounded-full text-xs font-bold border transition-all duration-300 ${isActive
                           ? "bg-linear-to-r from-blue-600 to-purple-600 text-white border-transparent"
                           : "bg-white text-gray-600 border-gray-200 hover:border-blue-600 hover:text-blue-600"
-                      }`}
+                        }`}
                     >
                       {f}
                     </button>
@@ -215,8 +213,8 @@ export default function PortfolioPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="flex flex-col gap-16">
               {filtered.map((project, i) => (
-                <div 
-                  key={project.id} 
+                <div
+                  key={project.id}
                   className={`group flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}
                   data-aos="fade-up"
                 >
@@ -241,18 +239,18 @@ export default function PortfolioPage() {
                     </div>
                     <h3 className="text-3xl font-black text-black leading-tight">{project.title}</h3>
                     <p className="text-gray-500 leading-relaxed">{project.description}</p>
-                    
+
                     <div className="grid grid-cols-2 gap-6 pt-6 border-t border-gray-100">
                       {project.stats.map(stat => {
                         const Icon = StatIcon[stat.key];
                         return (
                           <div key={stat.label} className="flex items-center gap-4">
                             <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center shrink-0">
-                               <Icon className="w-6 h-6 text-blue-600" />
+                              <Icon className="w-6 h-6 text-blue-600" />
                             </div>
                             <div>
-                               <p className="text-2xl font-black text-black">{stat.value}</p>
-                               <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{stat.label}</p>
+                              <p className="text-2xl font-black text-black">{stat.value}</p>
+                              <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{stat.label}</p>
                             </div>
                           </div>
                         )

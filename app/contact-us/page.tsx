@@ -178,7 +178,7 @@ export default function ContactPage() {
                         <p className="text-sm font-bold text-black">{member.name}</p>
                         <p className="text-[10px] text-gray-400 font-medium uppercase tracking-wider">{member.tier}</p>
                       </div>
-                      <div className="h-1 w-full bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] group-hover:flex hidden" />
+                      <div className="h-1 w-full bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] group-hover:flex hidden mt-auto" />
                     </div>
                   ))}
                 </div>
