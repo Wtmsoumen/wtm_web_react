@@ -214,12 +214,12 @@ const DigitalMarketingSection = () => {
               </div>
 
               <h2
-                className="text-4xl md:text-6xl font-black text-gray-900 leading-[1.05] tracking-tight"
-                style={{ fontFamily: "'Syne', sans-serif" }}
+                className="text-4xl md:text-6xl font-semibold  text-gray-900 leading-[1.05] tracking-tight"
+                
               >
-                Growth that{" "}
+                <span className="tracking-[0.1em] text-5xl md:text-7xl">Growth that</span>{" "}
                 <span
-                  className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}
+                  className={`${globalStyle?.gradientText} font-medium bg-clip-text text-transparent`}
                 >
                   compounds.
                 </span>
@@ -252,7 +252,7 @@ const DigitalMarketingSection = () => {
                 <div key={i} className="flex-1 flex items-center justify-center gap-3 py-4 px-4">
                   <span
                     className={`text-2xl font-black tracking-tight ${globalStyle?.gradientText} bg-clip-text text-transparent`}
-                    style={{ fontFamily: "'Syne', sans-serif" }}
+                 
                   >
                     {s.value}
                   </span>
@@ -320,7 +320,7 @@ const DigitalMarketingSection = () => {
                 <div className="rounded-xl border border-gray-100 bg-gray-50 p-5 flex flex-col gap-2">
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Avg. Time to ROI</span>
                   <span className="text-3xl font-black text-gray-900"
-                    style={{ fontFamily: "'Syne', sans-serif" }}>
+                    >
                     47
                     <span className="text-base font-semibold text-gray-400 ml-1">days</span>
                   </span>
@@ -333,7 +333,7 @@ const DigitalMarketingSection = () => {
                   }}>
                   <span className="text-xs font-bold uppercase tracking-widest text-white/70">Platforms</span>
                   <span className="text-3xl font-black"
-                    style={{ fontFamily: "'Syne', sans-serif" }}>
+                  >
                     12+
                   </span>
                   <span className="text-xs text-white/70">Channels managed simultaneously</span>
