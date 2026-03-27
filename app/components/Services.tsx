@@ -150,7 +150,11 @@ export default function Services() {
                 </div>
 
                 {/* Background accent */}
-                <div className={`absolute bottom-0 right-0 w-24 h-24 bg-linear-to-br ${service.color} opacity-[0.03] group-hover:opacity-[0.08] transition-opacity rounded-br-2xl pointer-events-none`}></div>
+                {/* <div className={`absolute bottom-0 right-0 w-24 h-24 bg-linear-to-br ${service.color} opacity-[0.03] group-hover:opacity-[0.08] transition-opacity rounded-br-2xl pointer-events-none`}></div> */}
+                {/* Background icon watermark */}
+<div className="absolute bottom-3 right-3 opacity-[0.06] group-hover:opacity-[0.12] transition-opacity pointer-events-none">
+  <service.icon className="w-20 h-20 text-gray-900" strokeWidth={1} />
+</div>
               </div>
             ))}
           </div>
