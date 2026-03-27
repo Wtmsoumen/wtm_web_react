@@ -171,7 +171,7 @@ const HowWeWork = () => {
                         {principles.map((item, idx) => (
                             <ScrollReveal key={idx} yOffset={30} duration={0.4 + idx * 0.1}>
                                 <div
-                                    className="group p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all duration-300"
+                                    className="h-[-webkit-fill-available] group p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all duration-300"
                                     data-aos="fade-up"
                                     data-aos-delay={idx * 100}
                                 >
