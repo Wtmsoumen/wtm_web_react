@@ -125,7 +125,7 @@ export default function PortfolioSection() {
                     <div className="text-center mb-10" data-aos="fade-up">
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-3">
                             Projects That Drive{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-500">
                                 Real Results
                             </span>
                         </h2>
@@ -139,7 +139,7 @@ export default function PortfolioSection() {
                     <div data-aos="fade-up">
                         <Link
                             href={`/portfolios/${featuredProject.slug}`}
-                            className="block rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-[#111827] to-[#1a2035] mb-5 hover:border-white/20 transition-colors duration-200 group"
+                            className="block rounded-2xl overflow-hidden border border-white/10 bg-linear-to-br from-[#111827] to-[#1a2035] mb-5 hover:border-white/20 transition-colors duration-200 group"
                         >
                             <div className="flex flex-col sm:flex-row items-center">
                                 {/* Left: screenshot */}
@@ -191,7 +191,7 @@ export default function PortfolioSection() {
                                 >
                                     {/* Mock image / bg area */}
                                     <div className="relative w-full flex-1 min-h-[90px] flex items-center justify-center overflow-hidden">
-                                        <div className="absolute inset-0 opacity-30 bg-gradient-to-br from-white/5 to-transparent" />
+                                        <div className="absolute inset-0 opacity-30 bg-linear-to-br from-white/5 to-transparent" />
                                         <span className="text-white/10 text-[10px] font-mono select-none z-10">
                                             <Image src={project?.image} alt={project?.title} width={1920} height={1080} />
                                         </span>
@@ -219,7 +219,7 @@ export default function PortfolioSection() {
                     {/* CTA Button */}
                     <div className="flex flex-col items-center gap-2 mt-8" data-aos="zoom-in">
                         <Link
-                            href="/portfolio"
+                            href="/portfolios"
                             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200 shadow-lg shadow-blue-900/30"
                         >
                             Explore Full Portfolio

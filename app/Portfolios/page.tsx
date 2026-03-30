@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import { Sparkles, ArrowUpRight, TrendingUp, Eye, Users, Star } from "lucide-react";
+import Link from "next/link";
 import { globalStyle } from "../globalStyle";
 import ScrollReveal from "../components/ScrollReveal";
 
@@ -24,10 +25,26 @@ interface Project {
   description: string;
   stats: Stat[];
   link?: string;
+  slug?: string;
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const projects: Project[] = [
+  {
+    id: 0,
+    title: "BitDelta",
+    category: "Crypto Exchange",
+    industry: "Fintech",
+    tech: ["React", "Node.js", "Flutter"],
+    image: "/images/portfolio/portfolio1.jpg",
+    description:
+      "A comprehensive exchange platform with advanced trading engine supporting spot and derivatives trading across 130+ countries. BitDelta serves over 2 million active users with enterprise-grade security.",
+    stats: [
+      { key: "interaction", value: "2M+", label: "Active Users" },
+      { key: "visibility", value: "130+", label: "Countries" },
+    ],
+    slug: "bitdelta",
+  },
   {
     id: 1,
     title: "E-commerce Platform for Wine & Liquor Stores",
@@ -41,6 +58,7 @@ const projects: Project[] = [
       { key: "interaction", value: "60%", label: "Interaction" },
       { key: "visibility", value: "60%", label: "Visibility" },
     ],
+    slug: "ecommerce-wine-liquor",
   },
   {
     id: 2,
@@ -55,6 +73,7 @@ const projects: Project[] = [
       { key: "interaction", value: "60%", label: "Interaction" },
       { key: "visibility", value: "75%", label: "Visibility" },
     ],
+    slug: "ayurvedic-ecommerce",
   },
   {
     id: 3,
@@ -69,6 +88,7 @@ const projects: Project[] = [
       { key: "growth", value: "80%", label: "Lead Growth" },
       { key: "visibility", value: "55%", label: "Visibility" },
     ],
+    slug: "real-estate-portal",
   },
   {
     id: 4,
@@ -83,6 +103,7 @@ const projects: Project[] = [
       { key: "satisfaction", value: "4.8★", label: "App Store Rating" },
       { key: "growth", value: "50+", label: "Restaurant Partners" },
     ],
+    slug: "food-delivery-app",
   },
   {
     id: 5,
@@ -97,6 +118,7 @@ const projects: Project[] = [
       { key: "interaction", value: "90%", label: "Form Completion" },
       { key: "visibility", value: "70%", label: "Traffic Lift" },
     ],
+    slug: "immigration-tools",
   },
   {
     id: 6,
@@ -111,6 +133,7 @@ const projects: Project[] = [
       { key: "growth", value: "65%", label: "Time Saved" },
       { key: "visibility", value: "85%", label: "Satisfaction" },
     ],
+    slug: "logistics-platform",
   },
 ];
 
@@ -257,10 +280,13 @@ export default function PortfolioPage() {
                       })}
                     </div>
 
-                    <button className="w-fit flex items-center gap-2 text-sm font-black text-blue-600 mt-4 group/btn">
+                    <Link 
+                      href={`/portfolios/${project.slug}`}
+                      className="w-fit flex items-center gap-2 text-sm font-black text-blue-600 mt-4 group/btn"
+                    >
                       VIEW CASE STUDY
                       <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               ))}

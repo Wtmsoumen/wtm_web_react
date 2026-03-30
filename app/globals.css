@@ -15,11 +15,13 @@ h6 {
   font-style: normal !important;
 }
 
+html,
 body {
   background: #0f172a;
   color: #ffffff;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 .gradient-text {

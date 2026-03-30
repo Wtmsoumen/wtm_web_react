@@ -11,7 +11,7 @@ const sitemapData = {
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
     { name: "How We Work", href: "/how-we-work" },
-    { name: "Portfolio", href: "/portfolio" },
+    { name: "Portfolio", href: "/portfolios" },
     { name: "Our Team", href: "/our-team" },
     { name: "Blog", href: "/blogs" },
     { name: "Contact Us", href: "/contact-us" },

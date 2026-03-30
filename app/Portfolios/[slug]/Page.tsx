@@ -166,17 +166,17 @@ export default async function PortfolioSlugPage({
 
       {/* ── TOP GLOW ── */}
       <div
-        className="fixed top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] rounded-full blur-[160px] pointer-events-none z-0 opacity-40"
+        className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] rounded-full blur-[160px] pointer-events-none z-0 opacity-40"
         style={{ background: project.glowColor }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-        
+
         {/* Header Section */}
         <ScrollReveal>
           <div className="flex flex-col gap-8 mb-16" data-aos="fade-up">
-             <Link 
-              href="/portfolio" 
+            <Link
+              href="/portfolios"
               className="group flex items-center gap-2 text-white/40 hover:text-white transition-colors w-fit"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -190,7 +190,7 @@ export default async function PortfolioSlugPage({
                 </span>
                 <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-4">{project.title}</h1>
                 <p className="text-white/50 text-xl font-medium mb-12">{project.subtitle}</p>
-                
+
                 <div className="grid grid-cols-3 gap-6 mb-12">
                   {[
                     { icon: Calendar, label: "Year", value: project.year },
@@ -205,17 +205,17 @@ export default async function PortfolioSlugPage({
                 </div>
 
                 <div className="flex flex-wrap gap-4">
-                   {project.links.website && (
+                  {project.links.website && (
                     <a href={project.links.website} target="_blank" className={`bg-linear-to-r ${project.accentColor} text-white font-black px-8 py-4 rounded-xl flex items-center gap-2 hover:scale-105 transition-all shadow-2xl`}>
                       VIEW PROJECT
                       <ArrowUpRight className="w-4 h-4" />
                     </a>
-                   )}
+                  )}
                 </div>
               </div>
 
-              <div className="relative" data-aos="fade-left">
-                <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-purple-600 blur-[100px] opacity-20" />
+              <div className="relative overflow-hidden group" data-aos="fade-left">
+                <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-purple-600 blur-[100px] opacity-10" />
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/5">
                   <Image src={project.image} alt={project.title} width={800} height={500} className="w-full h-auto" />
                 </div>
@@ -228,8 +228,8 @@ export default async function PortfolioSlugPage({
         <ScrollReveal>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 py-20 border-y border-white/5 mb-20">
             {project.stats.map((stat, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className="text-center p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors"
                 data-aos="zoom-in"
                 data-aos-delay={i * 100}
@@ -250,70 +250,70 @@ export default async function PortfolioSlugPage({
                 <p className="text-white/60 leading-relaxed text-lg italic">&quot;{project.challenge}&quot;</p>
               </div>
               <div data-aos="fade-right">
-                 <h3 className="text-xs font-black text-white/30 tracking-widest uppercase mb-6">TECH STACK</h3>
-                 <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech, i) => (
-                      <span key={i} className={`px-4 py-2 rounded-lg border text-[11px] font-bold ${tech.color}`}>
-                        {tech.label}
-                      </span>
-                    ))}
-                 </div>
+                <h3 className="text-xs font-black text-white/30 tracking-widest uppercase mb-6">TECH STACK</h3>
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.map((tech, i) => (
+                    <span key={i} className={`px-4 py-2 rounded-lg border text-[11px] font-bold ${tech.color}`}>
+                      {tech.label}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
 
             <div className="lg:col-span-2 flex flex-col gap-12" data-aos="fade-left">
-               <div>
-                  <h3 className="text-xs font-black text-white/30 tracking-widest uppercase mb-4">OUR SOLUTION</h3>
-                  <p className="text-white/70 text-xl leading-relaxed font-light">{project.solution}</p>
-               </div>
-               <div className="grid sm:grid-cols-2 gap-8">
-                  {project.features.map((feature, i) => (
-                    <div key={i} className="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5">
-                      <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
-                      <span className="text-white/70 font-medium text-sm">{feature}</span>
-                    </div>
-                  ))}
-               </div>
+              <div>
+                <h3 className="text-xs font-black text-white/30 tracking-widest uppercase mb-4">OUR SOLUTION</h3>
+                <p className="text-white/70 text-xl leading-relaxed font-light">{project.solution}</p>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-8">
+                {project.features.map((feature, i) => (
+                  <div key={i} className="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5">
+                    <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
+                    <span className="text-white/70 font-medium text-sm">{feature}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </ScrollReveal>
 
         {/* Results Section */}
         <ScrollReveal>
-           <div className="py-20 bg-linear-to-b from-white/[0.02] to-transparent rounded-[3rem] px-10 mb-20 border border-white/5">
-              <div className="text-center mb-16" data-aos="fade-down">
-                 <h2 className="text-4xl font-black text-white">Tangible Impact</h2>
-                 <div className={`h-1.5 w-20 bg-linear-to-r ${project.accentColor} mx-auto mt-4 rounded-full`} />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {project.results.map((result, i) => (
-                  <div 
-                    key={i} 
-                    className="flex flex-col gap-3 group"
-                    data-aos="fade-up"
-                    data-aos-delay={i * 100}
-                  >
-                    <div className={`text-4xl font-black bg-linear-to-r ${project.accentColor} bg-clip-text text-transparent group-hover:scale-110 transition-transform origin-left duration-300`}>{result.metric}</div>
-                    <p className="text-white/40 text-sm leading-relaxed">{result.desc}</p>
-                  </div>
-                ))}
-              </div>
-           </div>
+          <div className="py-20 bg-linear-to-b from-white/[0.02] to-transparent rounded-[3rem] px-6 md:px-10 mb-20 border border-white/5">
+            <div className="text-center mb-16" data-aos="fade-down">
+              <h2 className="text-4xl font-black text-white">Tangible Impact</h2>
+              <div className={`h-1.5 w-20 bg-linear-to-r ${project.accentColor} mx-auto mt-4 rounded-full`} />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {project.results.map((result, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col gap-3 group"
+                  data-aos="fade-up"
+                  data-aos-delay={i * 100}
+                >
+                  <div className={`text-4xl font-black bg-linear-to-r ${project.accentColor} bg-clip-text text-transparent group-hover:scale-110 transition-transform origin-left duration-300`}>{result.metric}</div>
+                  <p className="text-white/40 text-sm leading-relaxed">{result.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </ScrollReveal>
 
         {/* Testimonial */}
-        <ScrollReveal>
-           <div className="max-w-4xl mx-auto text-center py-20" data-aos="zoom-in">
-              <div className="relative">
-                 <span className="text-9xl text-white/5 absolute -top-10 left-0">&quot;</span>
-                 <p className="text-3xl text-white/80 font-light italic mb-10 leading-relaxed px-10">{project.testimonial.quote}</p>
-                 <div className="flex flex-col items-center">
-                    <p className="text-white font-black text-lg">{project.testimonial.author}</p>
-                    <p className="text-white/30 text-xs font-bold uppercase tracking-widest">{project.testimonial.role}</p>
-                 </div>
-              </div>
-           </div>
-        </ScrollReveal>
+        {/* <ScrollReveal> */}
+        <div className="max-w-4xl mx-auto text-center py-20">
+          <div className="relative">
+            <span className="text-9xl text-white/5 absolute -top-10 left-0">&quot;</span>
+            <p className="text-3xl text-white/80 font-light italic mb-10 leading-relaxed px-10">{project.testimonial.quote}</p>
+            <div className="flex flex-col items-center">
+              <p className="text-white font-black text-lg">{project.testimonial.author}</p>
+              <p className="text-white/30 text-xs font-bold uppercase tracking-widest">{project.testimonial.role}</p>
+            </div>
+          </div>
+        </div>
+        {/* </ScrollReveal> */}
 
       </div>
     </main>

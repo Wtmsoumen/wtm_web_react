@@ -192,7 +192,7 @@ const navLinks = [
       {
         title: "Portfolio & Testimonials",
         description: "Our work & client reviews",
-        href: "/portfolio",
+        href: "/portfolios",
         icon: Layers,
         color: "#9b51e0",
         color1: "#f3ecfd",
@@ -241,7 +241,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white shadow-sm shadow-gray-300" : "lg:bg-black/80 bg-white"}`}
     >
       <div className={`${globalStyle?.container} max-w-full!`}>
-        <div className="flex items-center justify-between h-16 w-[94vw]">
+        <div className="flex items-center justify-between h-16 w-[94%] mx-auto">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image src={scrolled ? logo : logoWhite} alt="logo" width={1920} height={1080} className="w-50 h-auto lg:flex hidden" />
@@ -452,7 +452,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-[#ffffff] border-t border-white/10 px-4 py-5 flex flex-col gap-4 max-h-[85vh] overflow-y-auto w-[94vw]">
+        <div className="lg:hidden bg-[#ffffff] border-t border-white/10 px-4 py-5 flex flex-col gap-4 max-h-[85vh] overflow-y-auto w-[94%] mx-auto">
           {navLinks.map((item: any) => {
             const Icon = item.icon;
             return (
