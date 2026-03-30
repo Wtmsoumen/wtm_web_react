@@ -1,5 +1,5 @@
 import { globalStyle } from "../globalStyle";
-import PortfolioScroller from "./portfoliocroller";
+import PortfolioScroller from "./PortfolioScroller";
 import ScrollReveal from "./ScrollReveal";
 
 const projects = [
