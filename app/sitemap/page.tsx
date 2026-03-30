@@ -88,7 +88,7 @@ export default function SitemapPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              variants={fadeInUp}
+              // variants={fadeInUp}
               className="group"
             >
               <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 h-full hover:border-white/20 transition-all duration-300 shadow-2xl">
@@ -96,7 +96,7 @@ export default function SitemapPage() {
                   {category}
                   <span className="absolute -bottom-2 left-0 w-12 h-1 gradient-btn rounded-full"></span>
                 </h2>
-                
+
                 <ul className="space-y-4">
                   {links.map((link, linkIndex) => (
                     <li key={linkIndex}>
