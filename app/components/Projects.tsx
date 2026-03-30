@@ -138,7 +138,7 @@ export default function PortfolioSection() {
                     {/* Featured Card */}
                     <div data-aos="fade-up">
                         <Link
-                            href={`/portfolios/${featuredProject.slug}`}
+                            href={`/portfolio/${featuredProject.slug}`}
                             className="block rounded-2xl overflow-hidden border border-white/10 bg-linear-to-br from-[#111827] to-[#1a2035] mb-5 hover:border-white/20 transition-colors duration-200 group"
                         >
                             <div className="flex flex-col sm:flex-row items-center">
@@ -183,7 +183,7 @@ export default function PortfolioSection() {
                         {gridProjects.map((project, i) => (
                             <div key={i} data-aos="fade-up" data-aos-delay={i * 100}>
                                 <Link
-                                    href={`/portfolios/${project.slug}`}
+                                    href={`/portfolio/${project.slug}`}
                                     onMouseEnter={() => setHovered(i)}
                                     onMouseLeave={() => setHovered(null)}
                                     className={`group relative rounded-2xl overflow-hidden border border-white/10 ${project.bg} p-0 flex flex-col transition-transform duration-200 ${hovered === i ? "scale-[1.02] border-white/20" : ""} cursor-pointer`}
@@ -219,7 +219,7 @@ export default function PortfolioSection() {
                     {/* CTA Button */}
                     <div className="flex flex-col items-center gap-2 mt-8" data-aos="zoom-in">
                         <Link
-                            href="/portfolios"
+                            href="/portfolio"
                             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200 shadow-lg shadow-blue-900/30"
                         >
                             Explore Full Portfolio

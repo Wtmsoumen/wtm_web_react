@@ -176,7 +176,7 @@ export default async function PortfolioSlugPage({
         <ScrollReveal>
           <div className="flex flex-col gap-8 mb-16" data-aos="fade-up">
             <Link
-              href="/portfolios"
+              href="/portfolio"
               className="group flex items-center gap-2 text-white/40 hover:text-white transition-colors w-fit"
             >
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
