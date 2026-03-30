@@ -31,10 +31,10 @@ const footerLinks = {
     { name: "Contact Us", href: "/contact-us" },
   ],
   Legal: [
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms & Conditions", href: "#" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    // { name: "Terms & Conditions", href: "#" },
     { name: "Sitemap", href: "/sitemap" },
-    { name: "Cookie Policy", href: "#" },
+    // { name: "Cookie Policy", href: "#" },
   ],
 };
 
@@ -117,7 +117,7 @@ export default function Footer() {
 
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto! px-4 sm:px-6   py-16">
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -178,7 +178,7 @@ export default function Footer() {
 
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
-            <motion.div 
+            <motion.div
               key={category}
               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
             >
@@ -191,7 +191,7 @@ export default function Footer() {
                     </Link>
                   </li>
                 ))}
-                </ul>
+              </ul>
             </motion.div>
           ))}
         </motion.div>
