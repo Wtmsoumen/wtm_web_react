@@ -91,7 +91,7 @@ export default function Services() {
       <section id="services" className="bg-white! py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Header */}
-          <div 
+          <div
             className="flex flex-col items-center text-center mb-16 gap-4"
             data-aos="fade-down"
           >
@@ -125,7 +125,7 @@ export default function Services() {
               >
                 {/* Hover gradient decoration */}
                 <div className="absolute inset-0 bg-linear-to-br from-white via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                
+
                 {/* Icon */}
                 <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${service.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform relative z-10`}>
                   <service.icon className="w-7 h-7 text-white" />
@@ -139,7 +139,7 @@ export default function Services() {
                   <p className="text-gray-500 text-sm leading-relaxed mb-6">
                     {service.description}
                   </p>
-                  
+
                   <Link
                     href={`/services/${service.slug}`}
                     className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 group/link"
@@ -152,9 +152,9 @@ export default function Services() {
                 {/* Background accent */}
                 {/* <div className={`absolute bottom-0 right-0 w-24 h-24 bg-linear-to-br ${service.color} opacity-[0.03] group-hover:opacity-[0.08] transition-opacity rounded-br-2xl pointer-events-none`}></div> */}
                 {/* Background icon watermark */}
-<div className="absolute bottom-3 right-3 opacity-[0.06] group-hover:opacity-[0.12] transition-opacity pointer-events-none">
-  <service.icon className="w-20 h-20 text-gray-900" strokeWidth={1} />
-</div>
+                <div className="absolute bottom-3 right-3 opacity-[0.06] group-hover:opacity-[0.12] transition-opacity pointer-events-none">
+                  <service.icon className="w-20 h-20 text-gray-900" strokeWidth={1} />
+                </div>
               </div>
             ))}
           </div>
@@ -163,7 +163,7 @@ export default function Services() {
           <div className="flex justify-center mt-16" data-aos="fade-up">
             <button
               onClick={() => setFormOpen(true)}
-              className="bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 flex items-center gap-3 text-white text-base font-bold px-12 py-5 rounded-full hover:shadow-[0_20px_40px_rgba(37,99,235,0.3)] hover:scale-105 transition-all duration-300"
+              className="cursor-pointer bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 flex items-center gap-3 text-white text-base font-bold px-12 py-5 rounded-full hover:shadow-[0_20px_40px_rgba(37,99,235,0.3)] hover:scale-105 transition-all duration-300"
             >
               Discuss Your Project
               <ArrowRight className="w-6 h-6" />
