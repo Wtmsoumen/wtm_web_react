@@ -33,7 +33,7 @@ const footerLinks = {
   Legal: [
     { name: "Privacy Policy", href: "#" },
     { name: "Terms & Conditions", href: "#" },
-    { name: "Sitemap", href: "#" },
+    { name: "Sitemap", href: "/sitemap" },
     { name: "Cookie Policy", href: "#" },
   ],
 };
