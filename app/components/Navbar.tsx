@@ -192,7 +192,7 @@ const navLinks = [
       {
         title: "Portfolio & Testimonials",
         description: "Our work & client reviews",
-        href: "/portfolios",
+        href: "/portfolio",
         icon: Layers,
         color: "#9b51e0",
         color1: "#f3ecfd",

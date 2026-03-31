@@ -216,8 +216,8 @@ export default function PortfolioPage() {
                       key={f}
                       onClick={() => (activeTab === "industries" ? setActiveIndustry(f) : setActiveCategory(f))}
                       className={`px-5 py-2 rounded-full text-xs font-bold border transition-all duration-300 ${isActive
-                          ? "bg-linear-to-r from-blue-600 to-purple-600 text-white border-transparent"
-                          : "bg-white text-gray-600 border-gray-200 hover:border-blue-600 hover:text-blue-600"
+                        ? "bg-linear-to-r from-blue-600 to-purple-600 text-white border-transparent"
+                        : "bg-white text-gray-600 border-gray-200 hover:border-blue-600 hover:text-blue-600"
                         }`}
                     >
                       {f}
@@ -280,8 +280,8 @@ export default function PortfolioPage() {
                       })}
                     </div>
 
-                    <Link 
-                      href={`/portfolios/${project.slug}`}
+                    <Link
+                      href={`/portfolio/${project.slug}`}
                       className="w-fit flex items-center gap-2 text-sm font-black text-blue-600 mt-4 group/btn"
                     >
                       VIEW CASE STUDY
