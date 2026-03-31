@@ -63,7 +63,7 @@ function StarRating({ count }: { count: number }) {
   );
 }
 
-export default function TrustIndicators() {
+export default function  TrustIndicators() {
   return (
     <ScrollReveal>
       <section className="bg-white py-16! border-y border-white/5">
@@ -81,7 +81,7 @@ export default function TrustIndicators() {
             {ratings.map((r, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center p-6! bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-default hover:-translate-y-2 border border-gray-100 min-w-[140px]"
+                className="flex flex-col items-center p-6! bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-default hover:-translate-y-2 border border-gray-100 w-[240px]"
                 data-aos="fade-up"
                 data-aos-delay={idx * 50}
               >

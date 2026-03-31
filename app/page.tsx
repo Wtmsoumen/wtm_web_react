@@ -26,13 +26,14 @@ export default function Home() {
     <div className="min-h-screen flex flex-col ">
       <Hero />
       <ScrollReveal><Services /></ScrollReveal>
+        <ScrollReveal><OurService /></ScrollReveal>
       <ScrollReveal><DigitalMarketingSection/></ScrollReveal>
       <ScrollReveal><Industries /></ScrollReveal>
       <ScrollReveal><WhyChooseUs /></ScrollReveal>
      
       <ScrollReveal><TrustIndicators /></ScrollReveal>
       <ScrollReveal><PortfolioSection /></ScrollReveal>
-      <ScrollReveal><OurService /></ScrollReveal>
+    
 
       <ScrollReveal><PoweredByAI /></ScrollReveal>
       {/* <ScrollReveal><OurExpertise /></ScrollReveal> */}

@@ -110,8 +110,8 @@ const FreeConsultation = () => {
 
                     <button
                         className="
-                        mt-4 w-full flex items-center justify-between
-                        px-6 py-4 rounded-full
+                        mt-4 mx-auto  flex items-center justify-between
+                        px-14 py-4 rounded-full gap-4
                       text-white font-bold text-sm tracking-widest uppercase
                         bg-gradient-to-r
                       from-[#1E7FF8]
