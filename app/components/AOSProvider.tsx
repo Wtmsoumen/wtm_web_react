@@ -8,7 +8,7 @@ export const AOSProvider = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: false,
+      once: true,
       easing: "ease-in-out",
       offset: 100,
     });

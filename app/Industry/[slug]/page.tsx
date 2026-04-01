@@ -5,9 +5,10 @@ import {
     ShieldCheck, Brain, ArrowRight, Activity,
     Stethoscope, Building2, Microscope, Lock, BadgeCheck,
     Cloud, Sparkles, Workflow, Phone, Laptop, Globe,
-    Landmark, ShoppingCart, Truck, Plane, Car, Gamepad2, Dumbbell
+    Landmark, ShoppingCart, Truck, Plane, Car, Gamepad2, Dumbbell,
+    Plus, Zap, CheckCircle
 } from "lucide-react";
-import { globalStyle } from "../../globalStyle";
+import { motion, AnimatePresence } from "framer-motion";
 import DiscussProjectForm from "../../components/DiscussProjectForm";
 import FAQ from "../../components/FAQ";
 import FreeConsultation from "../../components/FreeConsultation";
@@ -143,7 +144,7 @@ function getIndustryData(slug: string): IndustryData {
             { title: "GDPR", desc: "General Data Protection Regulation" },
             { title: "SOC 2", desc: "Service Organization Control" },
             { title: "CCPA", desc: "California Consumer Privacy Act" },
-            { title: "OWASP Tops", desc: "Top Security Protocols" },
+            { title: "OWASP", desc: "Top Security Protocols" },
             { title: "WCAG 2.1", desc: "Web Content Accessibility Guidelines" },
             { title: "PCI-DSS", desc: "If handling payment transactions" },
             { title: "GLBA", desc: "Gramm-Leach-Bliley Act (If applicable)" },
@@ -166,219 +167,228 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
     const industryData = getIndustryData(resolvedParams?.slug || 'software-development');
 
     return (
-        <div className="min-h-screen flex flex-col pt-16 bg-white overflow-hidden">
+        <div className="min-h-screen bg-[#010816] text-white selection:bg-blue-500/30 overflow-x-hidden">
+            {/* ── BACKGROUND ACCENTS ── */}
+            <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+                <div className="absolute top-0 -left-1/4 w-[800px] h-[800px] bg-[#1D74CF]/10 rounded-full blur-[140px] opacity-30" />
+                <div className="absolute bottom-0 -right-1/4 w-[600px] h-[600px] bg-[#D04425]/10 rounded-full blur-[120px] opacity-20" />
+            </div>
 
             {/* 1. Hero Section */}
             <ScrollReveal>
-                <section className="relative min-h-[80vh] flex items-center justify-center bg-[#060d1b] overflow-hidden">
-                    {/* Background gradient overlay */}
-                    <div className="absolute inset-0 bg-linear-to-b from-[#0a192f] via-[#060d1b] to-black opacity-90" />
-
-                    {/* Content */}
-                    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-20 flex flex-col justify-center items-center text-center w-full" data-aos="fade-up">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 mb-8" data-aos="fade-down">
-                            <Sparkles className="w-5 h-5 text-white" />
-                            <span className="text-sm font-semibold tracking-wide text-white uppercase">
-                                Leading {industryData.title} Solutions
-                            </span>
-                        </div>
-
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">
-                            <span>{industryData.title}</span><br />
-                            <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>{industryData.subtitle}</span> Company
-                        </h1>
-
-                        <p className="text-white/80 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-                            {industryData.desc}
-                        </p>
-
-                        <button
-                            onClick={() => setIsModalOpen(true)}
-                            className="group bg-linear-to-r from-pink-500 to-blue-500 text-white px-8 py-4 rounded-full text-base font-semibold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(236,72,153,0.5)] flex items-center justify-center gap-3"
-                            data-aos="zoom-in"
-                            data-aos-delay="200"
+                <section className="relative min-h-[90vh] flex items-center justify-center pt-24 overflow-hidden z-10">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 flex flex-col justify-center items-center text-center w-full">
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl mb-12 shadow-2xl"
                         >
-                            <span>Consult Our {industryData.title} Experts</span>
-                            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                        </button>
+                            <Sparkles className="w-4 h-4 text-blue-400" />
+                            <span className="text-xs font-bold tracking-[0.2em] text-blue-400 uppercase">
+                                Elite {industryData.title} Partner
+                            </span>
+                        </motion.div>
+
+                        <motion.h1 
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="text-5xl sm:text-7xl md:text-8xl font-bold text-white mb-8 leading-[0.9] tracking-tight"
+                        >
+                            {industryData.title}<br />
+                            <span className="bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425] bg-clip-text text-transparent">{industryData.subtitle}</span> Expert
+                        </motion.h1>
+
+                        <motion.p 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="text-slate-400 text-lg md:text-2xl max-w-3xl mx-auto mb-16 leading-relaxed font-light italic"
+                        >
+                            &quot;{industryData.desc}&quot;
+                        </motion.p>
+
+                        <motion.button
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.6, delay: 0.6 }}
+                            onClick={() => setIsModalOpen(true)}
+                            className="group relative px-10 py-5 rounded-2xl bg-white text-[#010816] font-bold text-lg hover:scale-105 transition-all shadow-2xl shadow-blue-500/10 overflow-hidden"
+                        >
+                            <span className="relative z-10 flex items-center gap-3">
+                                Consult Our Experts
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                        </motion.button>
                     </div>
                 </section>
             </ScrollReveal>
 
             {/* 2. Intro Section */}
             <ScrollReveal>
-                <section className="pt-16 pb-8 px-4 sm:px-6 bg-white">
-                    <div className="max-w-7xl mx-auto text-center" data-aos="fade-up">
-                        <h2 className="text-black text-3xl md:text-5xl font-bold mb-6">
-                            {industryData.introHeading.split(' ').slice(0, -2).join(' ')}{" "}
-                            <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>
-                                {industryData.introHeading.split(' ').slice(-2).join(' ')}
-                            </span>
-                        </h2>
-                        <p className="text-gray-600 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-                            From digital strategy to implementation and support, we deliver technology solutions that drive excellence, operational efficiency, and sustainable growth. As a leading {industryData.title.toLowerCase()} development company, we build custom software that transforms your ecosystem. Our technology services include custom portals, workflows, and deeply integrated compliant solutions.
-                        </p>
+                <section className="py-32 relative z-10">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                            <div>
+                                <h2 className="text-4xl md:text-6xl font-bold mb-10 leading-tight">
+                                    {industryData.introHeading.split(' ').slice(0, -2).join(' ')}{" "}
+                                    <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                                        {industryData.introHeading.split(' ').slice(-2).join(' ')}
+                                    </span>
+                                </h2>
+                                <p className="text-slate-400 text-xl leading-relaxed font-light border-l-2 border-blue-600/50 pl-8">
+                                    From digital strategy to implementation and support, we deliver technology solutions that drive excellence, operational efficiency, and sustainable growth. Our software ecosystem is built for high-performance and deep integration.
+                                </p>
+                            </div>
+                            <div className="relative">
+                                <div className="absolute inset-0 bg-blue-500/10 blur-[80px] rounded-full" />
+                                <div className="relative grid grid-cols-2 gap-4">
+                                    {[1,2,3,4].map(i => (
+                                        <div key={i} className={`h-40 rounded-3xl border border-white/5 bg-white/5 backdrop-blur-md ${i % 2 === 0 ? 'translate-y-8' : ''}`} />
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </ScrollReveal>
 
             {/* 3. Services / Digital Products */}
-            <ScrollReveal>
-                <section className="pt-8 px-4 sm:px-6 bg-gray-50 border-t border-gray-100">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-6" data-aos="fade-down">
-                            <h2 className="text-3xl md:text-5xl font-bold text-black mb-4">
-                                Our <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Core Solutions</span>
-                            </h2>
-                            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                                Transforming innovative {industryData.title.toLowerCase()} concepts into market-ready digital products.
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-4">
-                            {industryData.services.map((srv, idx) => (
-                                <div 
-                                    key={idx} 
-                                    className="bg-white rounded-2xl p-8 border border-gray-200 shadow-xl hover:shadow-2xl transition-all duration-300 group"
-                                    data-aos="fade-up"
-                                    data-aos-delay={idx * 100}
-                                >
-                                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-md group-hover:scale-110 transition-transform bg-linear-to-br from-pink-500 to-blue-500`}>
-                                        <srv.icon className="w-8 h-8 text-white" />
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-black mb-4">{srv.title}</h3>
-                                    <p className="text-gray-600 leading-relaxed text-lg">{srv.description}</p>
-                                </div>
-                            ))}
-                        </div>
+            <section className="py-32 relative z-10">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                    <div className="text-center mb-24">
+                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                            Core <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent tracking-widest">Digital Solutions</span>
+                        </h2>
+                        <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full" />
                     </div>
-                </section>
-            </ScrollReveal>
 
-            {/* 4. Who We Partner With (Target Audience) */}
-            <ScrollReveal>
-                <section className="py-24 px-4 sm:px-6 bg-white">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16" data-aos="fade-down">
-                            <h2 className="text-3xl md:text-5xl font-bold text-black mb-4">
-                                IT Solutions for <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Organizations We Partner With</span>
-                            </h2>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {industryData.targets.map((target, idx) => (
-                                <div
-                                    key={idx}
-                                    className="flex flex-col gap-3 border border-gray-200 relative bg-gray-50 rounded-2xl p-6 shadow-xs hover:shadow-lg transition-all duration-300 group overflow-hidden"
-                                    data-aos="fade-up"
-                                    data-aos-delay={idx * 50}
-                                >
-                                    <div className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-linear-to-r from-pink-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                                    <div className="flex items-center gap-4 mb-3">
-                                        <div className="p-3 bg-white rounded-xl shadow-xs group-hover:text-[#1D74CF] transition-colors">
-                                            <target.icon className="w-6 h-6 text-gray-700 group-hover:text-blue-600" />
-                                        </div>
-                                        <h3 className="text-xl font-bold text-black">{target.title}</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {industryData.services.map((srv, idx) => (
+                            <ScrollReveal key={idx}>
+                                <div className="h-full bg-linear-to-br from-white/5 to-transparent rounded-[2.5rem] p-10 border border-white/10 hover:border-blue-500/30 transition-all group relative overflow-hidden backdrop-blur-xl">
+                                    <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                                        <srv.icon className="w-16 h-16 text-blue-400" />
                                     </div>
-                                    <p className="text-gray-600 leading-relaxed">
+                                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-blue-500/10 border border-blue-500/20 group-hover:bg-blue-600 group-hover:text-white transition-all text-blue-400">
+                                        <srv.icon className="w-7 h-7" />
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-white mb-6 tracking-tight">{srv.title}</h3>
+                                    <p className="text-slate-400 leading-relaxed text-lg font-light">{srv.description}</p>
+                                </div>
+                            </ScrollReveal>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* 4. Who We Partner With */}
+            <section className="py-32 relative z-10 bg-white/2 border-y border-white/5">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                    <div className="text-center mb-24">
+                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                            Global <span className="bg-linear-to-r from-[orange] to-[red] bg-clip-text text-transparent">Partnership Network</span>
+                        </h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {industryData.targets.map((target, idx) => (
+                            <ScrollReveal key={idx}>
+                                <div className="flex flex-col gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-white/30 transition-all group">
+                                    <div className="flex items-center gap-5">
+                                        <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                            <target.icon className="w-6 h-6" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-white tracking-tight">{target.title}</h3>
+                                    </div>
+                                    <p className="text-slate-400 font-light leading-relaxed">
                                         {target.desc}
                                     </p>
                                 </div>
-                            ))}
-                        </div>
+                            </ScrollReveal>
+                        ))}
                     </div>
-                </section>
-            </ScrollReveal>
+                </div>
+            </section>
 
             {/* 5. Regulatory Compliance */}
-            <ScrollReveal>
-                <section className="py-24 px-4 sm:px-6 bg-[#060d1b]">
-                    <div className="max-w-6xl mx-auto text-center">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6" data-aos="fade-down">
-                            Strict & Built-In <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Regulatory Compliance</span>
-                        </h2>
-                        <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                            Every solution we deliver adheres to the strictest global industry regulations and security standards, fully protecting sensitive data while enabling maximum scaling.
-                        </p>
+            <section className="py-40 relative z-10">
+                <div className="max-w-6xl mx-auto text-center px-4">
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 uppercase tracking-tighter">
+                        Institutional <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Compliance</span>
+                    </h2>
+                    <p className="text-slate-400 text-xl max-w-2xl mx-auto mb-20 font-light italic">
+                        &quot;Every solution we deliver adheres to the strictest global industry regulations and security standards.&quot;
+                    </p>
 
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                            {industryData.compliances.map((comp, idx) => (
-                                <div 
-                                    key={idx} 
-                                    className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors"
-                                    data-aos="zoom-in"
-                                    data-aos-delay={idx * 50}
-                                >
-                                    <h4 className="text-2xl font-bold text-white mb-2">{comp.title}</h4>
-                                    <p className="text-gray-400 text-sm">{comp.desc}</p>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        {industryData.compliances.map((comp, idx) => (
+                            <ScrollReveal key={idx}>
+                                <div className="h-full bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all text-center">
+                                    <h4 className="text-3xl font-black text-white mb-3 tracking-tighter">{comp.title}</h4>
+                                    <p className="text-slate-500 text-xs font-bold uppercase tracking-widest leading-tight">{comp.desc}</p>
                                 </div>
-                            ))}
-                        </div>
+                            </ScrollReveal>
+                        ))}
                     </div>
-                </section>
-            </ScrollReveal>
+                </div>
+            </section>
 
             {/* 6. Why Choose Us */}
-            <ScrollReveal>
-                <section className="py-8 px-4 sm:px-6 bg-gray-50 border-t border-gray-100">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16" data-aos="fade-down">
-                            <h2 className="text-3xl md:text-5xl font-bold text-black mb-4">
-                                Your Trusted Partner in <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Global Innovation</span>
-                            </h2>
-                            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                                We combine deep domain expertise across diverse sectors with cutting-edge engineering capabilities to deliver solutions that genuinely transform business processes.
-                            </p>
-                        </div>
+            <section className="py-40 relative z-10 overflow-hidden">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] border border-blue-600/10 rounded-full -z-10" />
+                <div className="max-w-7xl mx-auto px-4 sm:px-6">
+                    <div className="text-center mb-24">
+                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                            Unrivaled <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Expertise</span>
+                        </h2>
+                    </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {whyChooseUs.map((reason, idx) => (
-                                <div 
-                                    key={idx} 
-                                    className="flex gap-6 bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow border border-gray-100"
-                                    data-aos="fade-up"
-                                    data-aos-delay={idx * 150}
-                                >
-                                    <div className={`w-14 h-14 rounded-xl flex items-center justify-center shrink-0 bg-linear-to-br from-pink-500 to-blue-500`}>
-                                        <reason.icon className="w-7 h-7 text-white" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        {whyChooseUs.map((reason, idx) => (
+                            <ScrollReveal key={idx}>
+                                <div className="flex gap-10 p-10 rounded-[3rem] bg-linear-to-br from-white/5 to-transparent border border-white/10 hover:border-blue-500/20 transition-all">
+                                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 bg-blue-600/10 text-blue-400">
+                                        <reason.icon className="w-8 h-8" />
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl font-bold text-black mb-3">{reason.title}</h3>
-                                        <p className="text-gray-600 leading-relaxed text-lg">{reason.desc}</p>
+                                        <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{reason.title}</h3>
+                                        <p className="text-slate-400 leading-relaxed text-lg font-light">{reason.desc}</p>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
+                            </ScrollReveal>
+                        ))}
                     </div>
-                </section>
-            </ScrollReveal>
+                </div>
+            </section>
 
-            {/* 7. Next-Gen Tech Grid */}
-            <ScrollReveal>
-                <section className="py-24 px-4 sm:px-6 bg-white border-t border-gray-100">
-                    <div className="max-w-7xl mx-auto text-center">
-                        <h2 className="text-3xl md:text-5xl font-bold text-black mb-12" data-aos="fade-down">
-                            Next-Gen <span className={`${globalStyle?.gradientText} bg-clip-text text-transparent`}>Technology Stack</span>
-                        </h2>
-                        <div className="flex flex-wrap justify-center gap-4">
-                            {["Artificial Intelligence", "Blockchain", "Internet of Things", "Cloud Computing", "Data Analytics", "AR/VR Core Services", "Cybersecurity", "RESTful & GraphQL API"].map((tech, idx) => (
-                                <div 
-                                    key={idx} 
-                                    className="px-6 py-3 rounded-full bg-gray-50 border border-gray-200 text-black font-semibold shadow-xs hover:border-pink-500 hover:text-pink-600 transition-colors cursor-pointer"
-                                    data-aos="fade-up"
-                                    data-aos-delay={idx * 30}
-                                >
-                                    {tech}
-                                </div>
-                            ))}
-                        </div>
+            {/* 7. Tech Stack Chips */}
+            <section className="py-32 relative z-10 border-t border-white/5">
+                <div className="max-w-7xl mx-auto text-center px-4">
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-16">
+                        The <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Digital Arsenal</span>
+                    </h2>
+                    <div className="flex flex-wrap justify-center gap-3">
+                        {["Artificial Intelligence", "Blockchain", "Internet of Things", "Cloud Computing", "Data Analytics", "AR/VR Core", "Cybersecurity", "Next.js 15", "GraphQL"].map((tech, idx) => (
+                            <motion.div 
+                                key={idx} 
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.3, delay: idx * 0.05 }}
+                                className="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold text-sm hover:border-blue-500 hover:bg-blue-600/10 transition-all cursor-default shadow-xl"
+                            >
+                                {tech}
+                            </motion.div>
+                        ))}
                     </div>
-                </section>
-            </ScrollReveal>
+                </div>
+            </section>
 
             {/* Reusable Core Components */}
-            <FAQ />
+            <div className="bg-white/2 border-t border-white/5">
+                <FAQ />
+            </div>
             <FreeConsultation />
 
             <DiscussProjectForm isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

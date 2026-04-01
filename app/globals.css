@@ -139,3 +139,7 @@ html {
   border-right: 4px solid;
   border-image: linear-gradient(45deg, #1D74CF, #BA4491, #ff2a2a) 1;
 }
+
+button {
+  cursor: pointer !important;
+}

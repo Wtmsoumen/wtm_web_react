@@ -1,11 +1,15 @@
-import BackgroundParticles from "@/app/components/BackgroundParticles";
+"use client";
+
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import React from "react";
 import {
   Bot, Zap, BarChart2, Link2, ShieldCheck, Cloud,
   Rocket, Lock, TrendingUp, Users, RefreshCw,
+  ArrowRight, Sparkles, CheckCircle2,
   type LucideIcon,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import ScrollReveal from "../../components/ScrollReveal";
 
 const services = [
@@ -155,270 +159,240 @@ const allServices = [
   { slug: "machine-learning-deep-learning", title: "Machine Learning & Deep Learning" },
 ];
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = React.use(params);
+  const { slug } = resolvedParams;
   const raw = allServices.find((s) => s.slug === slug);
   if (!raw) return notFound();
 
   const service = "features" in raw ? raw : generateServiceData(raw.slug, raw.title);
 
   return (
-    <div className="relative min-h-screen bg-[#050816] text-white font-sans">
-      <BackgroundParticles />
+    <div className="relative min-h-screen bg-[#010816] text-white font-sans selection:bg-blue-500/30 overflow-x-hidden">
+      {/* ── BACKGROUND ACCENTS ── */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute top-0 right-1/4 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[140px] opacity-30" />
+        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px] opacity-20" />
+      </div>
 
-      {/* ── HERO ── */}
-      <ScrollReveal>
-        <section className="relative z-10 pt-32 pb-20 px-4 text-center max-w-6xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-sm text-gray-300 mb-8" data-aos="fade-down">
-            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-            {service.badge}
-          </div>
-
-          {/* Headline */}
-          <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight mb-6" data-aos="fade-up">
-            {service.headline.map((line, i) =>
-              service.headlineColors[i] === "gradient-cyan-purple" ? (
-                <span
-                  key={i}
-                  className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent block"
-                >
-                  {line}
-                </span>
-              ) : (
-                <span key={i} className="block text-white">
-                  {line}
-                </span>
-              )
-            )}
-          </h1>
-
-          {/* Description */}
-          <p
-            className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: service.description }}
-            data-aos="fade-up"
-            data-aos-delay="100"
-          />
-
-          {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
-            <Link
-              href="/contact-us"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white bg-linear-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-105"
+      <div className="relative z-10">
+        {/* ── HERO ── */}
+        <ScrollReveal>
+          <section className="pt-32 pb-20 px-4 text-center max-w-7xl mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl mb-12 shadow-2xl"
             >
-              Start Your Project →
-            </Link>
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-bold text-white border border-white/20 hover:border-cyan-400/50 hover:bg-white/5 transition-all duration-300"
-            >
-              View Our Work
-            </Link>
-          </div>
-        </section>
-      </ScrollReveal>
+              <Sparkles className="w-4 h-4 text-blue-400" />
+              <span className="text-xs font-bold tracking-[0.2em] text-blue-400 uppercase">
+                {service.badge}
+              </span>
+            </motion.div>
 
-      {/* ── STATS ── */}
-      <ScrollReveal>
-        <section className="relative z-10 py-10 px-4">
-          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-            {service.stats.map((stat, i) => (
-              <div
-                key={i}
-                className="text-center p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400/30 transition-all duration-300 backdrop-blur-sm"
-                data-aos="zoom-in"
-                data-aos-delay={i * 100}
+            <motion.h1 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-5xl md:text-8xl font-bold leading-[0.9] tracking-tight mb-10"
+            >
+              {service.headline.map((line, i) =>
+                service.headlineColors[i] === "gradient-cyan-purple" ? (
+                  <span
+                    key={i}
+                    className="bg-linear-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent block"
+                  >
+                    {line}
+                  </span>
+                ) : (
+                  <span key={i} className="block text-white">
+                    {line}
+                  </span>
+                )
+              )}
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-slate-400 text-lg md:text-2xl max-w-4xl mx-auto mb-16 leading-relaxed font-light"
+              dangerouslySetInnerHTML={{ __html: service.description }}
+            />
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+            >
+              <Link
+                href="/contact-us"
+                className="group px-10 py-5 rounded-2xl bg-white text-[#010816] font-bold text-lg hover:scale-105 transition-all shadow-2xl shadow-blue-500/10 flex items-center gap-3"
               >
-                <div className="text-4xl font-extrabold bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mb-1">
-                  {stat.value}
+                Start A Workshop
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                href="/portfolio"
+                className="px-10 py-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl font-bold text-lg text-white hover:bg-white/10 transition-all"
+              >
+                Case Studies
+              </Link>
+            </motion.div>
+          </section>
+        </ScrollReveal>
+
+        {/* ── STATS ── */}
+        <section className="py-20 bg-white/2 border-y border-white/5 backdrop-blur-sm">
+          <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-20">
+            {service.stats.map((stat, i) => (
+              <ScrollReveal key={i}>
+                <div className="text-center group">
+                  <div className="text-5xl md:text-6xl font-bold bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-500">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">{stat.label}</div>
                 </div>
-                <div className="text-gray-400 text-sm">{stat.label}</div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </section>
-      </ScrollReveal>
 
-      {/* ── WHAT WE OFFER ── */}
-      <ScrollReveal>
-        <section className="relative z-10 py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-14" data-aos="fade-down">
-              <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase">What We Offer</span>
-              <h2 className="text-4xl md:text-5xl font-extrabold mt-3 mb-4">
-                Comprehensive{" "}
-                <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                  {service.title}
-                </span>{" "}
-                Services
+        {/* ── WHAT WE OFFER ── */}
+        <section className="py-32">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-24">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Institutional <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Capabilities</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                From strategy to deployment, we cover every dimension of {service.title.toLowerCase()} to deliver measurable business outcomes.
-              </p>
+              <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {service.features.map((f, i) => {
                 const Icon = f.icon as LucideIcon;
                 return (
-                  <div
-                    key={i}
-                    className="group p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400/40 hover:bg-white/8 transition-all duration-300 hover:-translate-y-1"
-                    data-aos="fade-up"
-                    data-aos-delay={i * 100}
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center mb-4 group-hover:bg-cyan-400/20 transition-colors">
-                      <Icon className="w-6 h-6 text-cyan-400" />
+                  <ScrollReveal key={i}>
+                    <div className="h-full bg-linear-to-br from-white/5 to-transparent rounded-[2.5rem] p-10 border border-white/10 hover:border-blue-500/30 transition-all group relative overflow-hidden backdrop-blur-xl">
+                      <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <Icon className="w-16 h-16 text-blue-400" />
+                      </div>
+                      <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-blue-500/10 border border-blue-500/20 group-hover:bg-blue-600 group-hover:text-white transition-all text-blue-400">
+                        <Icon className="w-7 h-7" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-6 tracking-tight group-hover:text-blue-300 transition-colors">
+                        {f.title}
+                      </h3>
+                      <p className="text-slate-400 leading-relaxed text-lg font-light">{f.desc}</p>
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
-                      {f.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
-                  </div>
+                  </ScrollReveal>
                 );
               })}
             </div>
           </div>
         </section>
-      </ScrollReveal>
 
-      {/* ── PROCESS ── */}
-      <ScrollReveal>
-        <section className="relative z-10 py-20 px-4 bg-white/[0.02]">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-14" data-aos="fade-down">
-              <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase">Our Approach</span>
-              <h2 className="text-4xl md:text-5xl font-extrabold mt-3 mb-4">
-                How We{" "}
-                <span className="bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  Deliver Results
-                </span>
+        {/* ── PROCESS ── */}
+        <section className="py-32 bg-white/2 border-y border-white/5 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-24">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Execution <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Framework</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                A proven, structured process that ensures every project is delivered on time, on budget, and beyond expectations.
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {service.process.map((p, i) => (
-                <div 
-                  key={i} 
-                  className="relative p-6 rounded-2xl border border-white/10 bg-white/5 hover:border-purple-400/40 transition-all duration-300"
-                  data-aos="fade-up"
-                  data-aos-delay={i * 100}
-                >
-                  <span className="text-5xl font-black text-white/5 absolute top-4 right-6 select-none">
-                    {p.step}
-                  </span>
-                  <div className="text-cyan-400 text-xs font-bold tracking-widest mb-3">STEP {p.step}</div>
-                  <h3 className="text-lg font-bold text-white mb-2">{p.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{p.desc}</p>
-                </div>
+                <ScrollReveal key={i}>
+                  <div className="relative p-10 rounded-3xl border border-white/10 bg-white/5 hover:border-blue-500/30 transition-all group overflow-hidden">
+                    <span className="text-8-xl font-black text-white/5 absolute top-0 right-4 select-none group-hover:text-white/10 transition-all">
+                      {p.step}
+                    </span>
+                    <div className="text-blue-400 text-xs font-bold tracking-[0.3em] uppercase mb-8">Phase {p.step}</div>
+                    <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{p.title}</h3>
+                    <p className="text-slate-400 text-lg leading-relaxed font-light">{p.desc}</p>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
         </section>
-      </ScrollReveal>
 
-      {/* ── TECH STACK ── */}
-      <ScrollReveal>
-        <section className="relative z-10 py-20 px-4">
-          <div className="max-w-5xl mx-auto text-center" data-aos="zoom-in">
-            <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase">Technologies</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold mt-3 mb-4">
-              Tools & Tech{" "}
-              <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                We Master
-              </span>
+        {/* ── TECH STACK ── */}
+        <section className="py-32">
+          <div className="max-w-7xl mx-auto text-center px-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-16 uppercase tracking-tighter">
+              The <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Technology Matrix</span>
             </h2>
-            <p className="text-gray-400 mb-12 max-w-xl mx-auto">
-              We use industry-leading technologies to build robust, scalable, and future-proof solutions.
-            </p>
 
             <div className="flex flex-wrap justify-center gap-3">
               {service.techStack.map((tech, i) => (
-                <span
+                <motion.span
                   key={i}
-                  className="px-5 py-2.5 rounded-full border border-white/15 bg-white/5 text-gray-300 text-sm font-medium hover:border-cyan-400/50 hover:text-cyan-300 hover:bg-cyan-400/5 transition-all duration-200 cursor-default"
-                  data-aos="fade-up"
-                  data-aos-delay={i * 30}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: i * 0.05 }}
+                  className="px-8 py-4 rounded-full border border-white/10 bg-white/5 text-white text-sm font-bold hover:border-blue-500 hover:bg-blue-600/10 transition-all cursor-default shadow-xl"
                 >
                   {tech}
-                </span>
+                </motion.span>
               ))}
             </div>
           </div>
         </section>
-      </ScrollReveal>
 
-      {/* ── CTA BANNER ── */}
-      <ScrollReveal>
-        <section className="relative z-10 py-20 px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 bg-linear-to-br from-cyan-500/10 via-purple-500/10 to-transparent p-12 text-center" data-aos="zoom-out">
-              {/* Glow blobs */}
-              <div className="absolute -top-20 -left-20 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
-
-              <span className="relative text-cyan-400 text-sm font-semibold tracking-widest uppercase">
-                Ready to get started?
-              </span>
-              <h2 className="relative text-4xl md:text-5xl font-extrabold mt-3 mb-4">
-                Let&apos;s Build Something{" "}
-                <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                  Extraordinary
-                </span>
+        {/* ── CTA BANNER ── */}
+        <section className="py-32 max-w-7xl mx-auto px-4 mb-20">
+          <div className="relative rounded-[4rem] overflow-hidden border border-white/10 bg-linear-to-br from-blue-600 to-blue-900/40 p-16 md:p-24 text-center">
+            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+            
+            <ScrollReveal>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-10 leading-tight">
+                Ready to build something <br />
+                <span className="italic">extraordinary?</span>
               </h2>
-              <p className="relative text-gray-400 max-w-xl mx-auto mb-8">
-                Talk to our experts and get a free project consultation. No commitments — just clarity on how we can help you win.
+              <p className="text-white/70 text-xl max-w-2xl mx-auto mb-16 font-light">
+                Talk to our senior consultants and get a roadmap for your digital transformation.
               </p>
               <Link
-                href="/contact"
-                className="relative inline-flex items-center gap-2 px-10 py-4 rounded-full font-bold text-white bg-linear-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105"
+                href="/contact-us"
+                className="inline-flex px-12 py-6 rounded-4xl bg-white text-blue-600 font-bold text-xl hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] transition-all transform hover:scale-105"
               >
-                Get Free Consultation →
+                Start A Project
               </Link>
-            </div>
+            </ScrollReveal>
           </div>
         </section>
-      </ScrollReveal>
 
-      {/* ── FAQ ── */}
-      <ScrollReveal>
-        <section className="relative z-10 py-20 px-4 pb-32">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-14" data-aos="fade-down">
-              <span className="text-purple-400 text-sm font-semibold tracking-widest uppercase">FAQs</span>
-              <h2 className="text-4xl md:text-5xl font-extrabold mt-3">
-                Common{" "}
-                <span className="bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-                  Questions
-                </span>
+        {/* ── FAQ ── */}
+        <section className="py-32 bg-white/2 border-t border-white/5">
+          <div className="max-w-4xl mx-auto px-4">
+            <div className="text-center mb-24">
+              <h2 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-tighter">
+                Common <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Inquiries</span>
               </h2>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-6">
               {service.faqs.map((faq, i) => (
-                <details
-                  key={i}
-                  className="group rounded-2xl border border-white/10 bg-white/5 overflow-hidden"
-                  data-aos="fade-up"
-                  data-aos-delay={i * 100}
-                >
-                  <summary className="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-white hover:text-cyan-300 transition-colors">
-                    {faq.q}
-                    <span className="ml-4 text-cyan-400 group-open:rotate-45 transition-transform duration-200 text-xl flex-shrink-0">+</span>
-                  </summary>
-                  <div className="px-6 pb-6 text-gray-400 text-sm leading-relaxed border-t border-white/5 pt-4">
-                    {faq.a}
-                  </div>
-                </details>
+                <ScrollReveal key={i}>
+                  <details className="group rounded-3xl border border-white/10 bg-white/2 overflow-hidden hover:border-blue-500/30 transition-all">
+                    <summary className="flex items-center justify-between p-8 cursor-pointer list-none font-bold text-xl text-white hover:text-blue-400 transition-colors">
+                      {faq.q}
+                      <span className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-blue-400 group-open:rotate-45 transition-transform duration-300">+</span>
+                    </summary>
+                    <div className="px-8 pb-8 text-slate-400 text-lg font-light leading-relaxed border-t border-white/5 pt-6">
+                      {faq.a}
+                    </div>
+                  </details>
+                </ScrollReveal>
               ))}
             </div>
           </div>
         </section>
-      </ScrollReveal>
+      </div>
     </div>
   );
-}
+}

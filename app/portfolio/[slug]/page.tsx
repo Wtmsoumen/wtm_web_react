@@ -1,6 +1,9 @@
+"use client";
+
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import React from "react";
 import {
   Globe,
   PlayCircle,
@@ -13,7 +16,10 @@ import {
   CheckCircle2,
   TrendingUp,
   Star,
+  Quote,
+  Zap,
 } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollReveal from "../../components/ScrollReveal";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -57,7 +63,7 @@ const projects: Record<string, Project> = {
     teamSize: "25+",
     description:
       "A comprehensive exchange platform with advanced trading engine supporting spot and derivatives trading across 130+ countries. BitDelta serves over 2 million active users with enterprise-grade security, real-time order matching, and a seamless mobile experience.",
-    image: "/images/portfolio/portfolio1.jpg",
+    image: "/images/glubery_B2B.jpg",
     links: {
       website: "https://bitdelta.com",
       playStore: "#",
@@ -81,10 +87,10 @@ const projects: Record<string, Project> = {
       "Advanced charting with TradingView",
     ],
     techStack: [
-      { label: "React", color: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20" },
-      { label: "Next.js", color: "bg-white/5 text-white/60 border-white/10" },
-      { label: "Flutter", color: "bg-blue-500/10 text-blue-400 border-blue-500/20" },
-      { label: "Node.js", color: "bg-green-500/10 text-green-400 border-green-500/20" },
+      { label: "React", color: "bg-blue-50 text-blue-600 border-blue-100" },
+      { label: "Next.js", color: "bg-slate-50 text-slate-600 border-slate-100" },
+      { label: "Flutter", color: "bg-blue-50 text-blue-600 border-blue-100" },
+      { label: "Node.js", color: "bg-green-50 text-green-600 border-green-100" },
     ],
     results: [
       { metric: "2M+", desc: "Active traders onboarded within 12 months" },
@@ -98,8 +104,8 @@ const projects: Record<string, Project> = {
       author: "Alex R.",
       role: "CTO, BitDelta Global",
     },
-    accentColor: "from-blue-500 to-purple-600",
-    glowColor: "rgba(99,102,241,0.3)",
+    accentColor: "from-blue-600 to-indigo-600",
+    glowColor: "rgba(37, 99, 235, 0.1)",
   },
 };
 
@@ -109,7 +115,7 @@ function buildGenericProject(slug: string): Project {
   return {
     slug,
     tag: "Digital Solutions",
-    tagColor: "bg-red-600",
+    tagColor: "bg-blue-600",
     title,
     subtitle: "High-performance digital ecosystem",
     client: `${title} Global`,
@@ -134,9 +140,9 @@ function buildGenericProject(slug: string): Project {
       "Comprehensive analytics",
     ],
     techStack: [
-      { label: "Next.js", color: "bg-white/5 text-white/60 border-white/10" },
-      { label: "PostgreSQL", color: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20" },
-      { label: "AWS", color: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20" },
+      { label: "Next.js", color: "bg-slate-50 text-slate-600 border-slate-100" },
+      { label: "PostgreSQL", color: "bg-indigo-50 text-indigo-600 border-indigo-100" },
+      { label: "AWS", color: "bg-orange-50 text-orange-600 border-orange-100" },
     ],
     results: [
       { metric: "500K+", desc: "Users successfully migrated to platform" },
@@ -148,174 +154,250 @@ function buildGenericProject(slug: string): Project {
       author: "Project Stakeholder",
       role: "Executive Director",
     },
-    accentColor: "from-red-500 to-orange-600",
-    glowColor: "rgba(239,68,68,0.2)",
+    accentColor: "from-blue-600 to-purple-600",
+    glowColor: "rgba(37, 99, 235, 0.05)",
   };
 }
 
-export default async function PortfolioSlugPage({
+export default function PortfolioSlugPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
+  const unwrappedParams = React.use(params);
+  const { slug } = unwrappedParams;
   const project: Project = projects[slug] ?? buildGenericProject(slug);
 
+  const { scrollYProgress } = useScroll();
+  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.98]);
+
   return (
-    <main className="min-h-screen bg-[#080b14] text-white pt-24 overflow-x-hidden">
+    <main className="min-h-screen bg-[#FDFDFF] text-slate-900 pt-24 overflow-x-hidden selection:bg-blue-600/10">
+      {/* ── BACKGROUND ACCENTS ── */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[800px] rounded-full blur-[180px] opacity-10"
+          style={{ background: project.accentColor.includes('from-') ? 'blue' : project.glowColor }}
+        />
+        <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] bg-purple-100/50 rounded-full blur-[140px]" />
+        <div className="absolute bottom-[10%] left-[-10%] w-[700px] h-[700px] bg-blue-100/50 rounded-full blur-[160px]" />
+      </div>
 
-      {/* ── TOP GLOW ── */}
-      <div
-        className="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] rounded-full blur-[160px] pointer-events-none z-0 opacity-40"
-        style={{ background: project.glowColor }}
-      />
+      <div className="relative z-10">
+        {/* Navigation */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-16">
+          <Link
+            href="/portfolio"
+            className="group flex items-center gap-3 text-slate-500 hover:text-blue-600 transition-all w-fit py-2.5 px-5 rounded-xl hover:bg-blue-50 border border-transparent"
+          >
+            <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+            <span className="text-sm font-bold tracking-widest uppercase">Portfolio Gallery</span>
+          </Link>
+        </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
-
-        {/* Header Section */}
-        <ScrollReveal>
-          <div className="flex flex-col gap-8 mb-16" data-aos="fade-up">
-            <Link
-              href="/portfolio"
-              className="group flex items-center gap-2 text-white/40 hover:text-white transition-colors w-fit"
+        {/* Hero Section */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              BACK TO PORTFOLIO
-            </Link>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className={`px-4 py-1.5 rounded-full text-[10px] font-black tracking-widest uppercase mb-6 inline-block text-white ${project.tagColor}`}>
+              <div className="flex items-center gap-4 mb-8">
+                <span className={`px-5 py-2 rounded-full text-[11px] font-bold tracking-[0.2em] uppercase text-white shadow-xl ${project.tagColor} shadow-blue-500/20`}>
                   {project.tag}
                 </span>
-                <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-4">{project.title}</h1>
-                <p className="text-white/50 text-xl font-medium mb-12">{project.subtitle}</p>
+                <div className="h-px w-12 bg-slate-200" />
+                <span className="text-[11px] font-bold text-slate-400 tracking-[0.2em] uppercase leading-none">Case Study {project.year}</span>
+              </div>
 
-                <div className="grid grid-cols-3 gap-6 mb-12">
-                  {[
-                    { icon: Calendar, label: "Year", value: project.year },
-                    { icon: Clock, label: "Duration", value: project.duration },
-                    { icon: Users, label: "Team Size", value: project.teamSize },
-                  ].map((item, i) => (
-                    <div key={i} className="flex flex-col gap-1 border-l border-white/10 pl-4 py-1">
-                      <p className="text-[10px] font-black text-white/30 uppercase tracking-widest">{item.label}</p>
-                      <p className="text-white font-bold">{item.value}</p>
+              <h1 className="text-6xl md:text-8xl font-black text-slate-900 mb-8 leading-[0.95] tracking-tight">
+                {project.title}
+              </h1>
+              <p className="text-2xl md:text-3xl font-light text-slate-500 mb-14 border-l-4 border-blue-600 pl-8 leading-relaxed max-w-xl">
+                {project.subtitle}
+              </p>
+
+              <div className="grid grid-cols-3 gap-10 mb-14 py-10 border-y border-slate-100">
+                {[
+                  { icon: Calendar, label: "Released", value: project.year },
+                  { icon: Clock, label: "Duration", value: project.duration },
+                  { icon: Users, label: "Team", value: project.teamSize },
+                ].map((item, i) => (
+                  <div key={i} className="flex flex-col gap-3">
+                    <p className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.3em] leading-none">{item.label}</p>
+                    <p className="text-xl font-bold text-slate-900 leading-none whitespace-nowrap">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+
+              {project.links.website && (
+                <a
+                  href={project.links.website}
+                  target="_blank"
+                  className={`inline-flex items-center gap-4 px-12 py-6 rounded-2xl bg-slate-900 text-white font-bold text-lg hover:scale-105 transition-all shadow-2xl shadow-slate-900/10 hover:shadow-blue-500/20`}
+                >
+                  Visit Live Project
+                  <ArrowUpRight className="w-5 h-5" />
+                </a>
+              )}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="relative aspect-video rounded-[3.5rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.08)] border border-slate-100"
+            >
+              <div className="absolute inset-0 bg-linear-to-tr from-blue-600/5 to-transparent z-10" />
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover transform hover:scale-105 transition-transform duration-1000"
+                priority
+              />
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Dynamic Stats Grid */}
+        <section className="bg-slate-50/50 border-y border-slate-100 relative mb-32 overflow-hidden py-32">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-20">
+              {project.stats.map((stat, i) => (
+                <ScrollReveal key={i}>
+                  <div className="text-center group">
+                    <div className={`text-6xl md:text-7xl font-black bg-linear-to-r ${project.accentColor} bg-clip-text text-transparent mb-5 group-hover:scale-110 transition-transform duration-500 tracking-tighter`}>
+                      {stat.value}
                     </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-wrap gap-4">
-                  {project.links.website && (
-                    <a href={project.links.website} target="_blank" className={`bg-linear-to-r ${project.accentColor} text-white font-black px-8 py-4 rounded-xl flex items-center gap-2 hover:scale-105 transition-all shadow-2xl`}>
-                      VIEW PROJECT
-                      <ArrowUpRight className="w-4 h-4" />
-                    </a>
-                  )}
-                </div>
-              </div>
-
-              <div className="relative overflow-hidden group" data-aos="fade-left">
-                <div className="absolute inset-0 bg-linear-to-r from-blue-600 to-purple-600 blur-[100px] opacity-10" />
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/5">
-                  <Image src={project.image} alt={project.title} width={800} height={500} className="w-full h-auto" />
-                </div>
-              </div>
+                    <div className="text-xs font-bold text-slate-400 uppercase tracking-[0.3em]">{stat.label}</div>
+                  </div>
+                </ScrollReveal>
+              ))}
             </div>
           </div>
-        </ScrollReveal>
+        </section>
 
-        {/* Stats Section */}
-        <ScrollReveal>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 py-20 border-y border-white/5 mb-20">
-            {project.stats.map((stat, i) => (
-              <div
-                key={i}
-                className="text-center p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors"
-                data-aos="zoom-in"
-                data-aos-delay={i * 100}
-              >
-                <div className={`text-4xl font-black bg-linear-to-r ${project.accentColor} bg-clip-text text-transparent mb-2`}>{stat.value}</div>
-                <div className="text-[10px] font-black text-white/30 uppercase tracking-widest">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
-
-        {/* Core Content */}
-        <ScrollReveal>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
-            <div className="lg:col-span-1 flex flex-col gap-10">
-              <div data-aos="fade-right">
-                <h3 className="text-xs font-black text-white/30 tracking-widest uppercase mb-4">THE CHALLENGE</h3>
-                <p className="text-white/60 leading-relaxed text-lg italic">&quot;{project.challenge}&quot;</p>
-              </div>
-              <div data-aos="fade-right">
-                <h3 className="text-xs font-black text-white/30 tracking-widest uppercase mb-6">TECH STACK</h3>
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech, i) => (
-                    <span key={i} className={`px-4 py-2 rounded-lg border text-[11px] font-bold ${tech.color}`}>
-                      {tech.label}
-                    </span>
-                  ))}
+        {/* Narrative Section */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-40">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
+            <div className="lg:col-span-5 flex flex-col gap-24">
+              <ScrollReveal>
+                <div className="p-12 rounded-[3rem] bg-white border border-slate-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 p-10 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
+                    <Zap className="w-24 h-24 text-blue-600" />
+                  </div>
+                  <h3 className="text-xs font-bold text-blue-600 tracking-[0.4em] uppercase mb-10">The Challenge</h3>
+                  <p className="text-2xl font-light text-slate-700 leading-relaxed italic">
+                    &quot;{project.challenge}&quot;
+                  </p>
                 </div>
-              </div>
+              </ScrollReveal>
+
+              <ScrollReveal>
+                <div className="px-4">
+                  <h3 className="text-xs font-bold text-slate-400 tracking-[0.4em] uppercase mb-12">Core Technology</h3>
+                  <div className="flex flex-wrap gap-4">
+                    {project.techStack.map((tech, i) => (
+                      <span key={i} className={`px-6 py-3 rounded-2xl border text-sm font-bold transition-all hover:-translate-y-1 ${tech.color} shadow-sm`}>
+                        {tech.label}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
 
-            <div className="lg:col-span-2 flex flex-col gap-12" data-aos="fade-left">
-              <div>
-                <h3 className="text-xs font-black text-white/30 tracking-widest uppercase mb-4">OUR SOLUTION</h3>
-                <p className="text-white/70 text-xl leading-relaxed font-light">{project.solution}</p>
-              </div>
+            <div className="lg:col-span-7 flex flex-col gap-20">
+              <ScrollReveal>
+                <div className="mb-6">
+                  <h3 className="text-xs font-bold text-blue-600 tracking-[0.4em] uppercase mb-10">Strategic Engineering</h3>
+                  <p className="text-4xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tight">
+                    {project.solution}
+                  </p>
+                </div>
+              </ScrollReveal>
+
               <div className="grid sm:grid-cols-2 gap-8">
                 {project.features.map((feature, i) => (
-                  <div key={i} className="flex items-start gap-4 p-6 rounded-2xl bg-white/[0.03] border border-white/5">
-                    <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
-                    <span className="text-white/70 font-medium text-sm">{feature}</span>
-                  </div>
+                  <ScrollReveal key={i}>
+                    <div className="flex items-start gap-6 p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-all group">
+                      <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center shrink-0 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">
+                        <CheckCircle2 className="w-6 h-6 text-white" />
+                      </div>
+                      <span className="text-slate-600 font-bold text-lg leading-snug">{feature}</span>
+                    </div>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>
           </div>
-        </ScrollReveal>
+        </section>
 
-        {/* Results Section */}
-        <ScrollReveal>
-          <div className="py-20 bg-linear-to-b from-white/[0.02] to-transparent rounded-[3rem] px-6 md:px-10 mb-20 border border-white/5">
-            <div className="text-center mb-16" data-aos="fade-down">
-              <h2 className="text-4xl font-black text-white">Tangible Impact</h2>
-              <div className={`h-1.5 w-20 bg-linear-to-r ${project.accentColor} mx-auto mt-4 rounded-full`} />
+        {/* Impact / Results */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-40">
+          <div className="relative p-16 md:p-32 rounded-[5rem] bg-slate-900 overflow-hidden shadow-[0_60px_120px_-20px_rgba(0,0,0,0.15)]">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-[0.03]" />
+
+            <div className="text-center mb-24 relative z-10">
+              <h2 className="text-4xl md:text-6xl font-black text-white mb-8 tracking-tight">Quantifiable Results</h2>
+              <div className="h-2 w-24 bg-blue-500 mx-auto rounded-full" />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 text-center relative z-10">
               {project.results.map((result, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col gap-3 group"
-                  data-aos="fade-up"
-                  data-aos-delay={i * 100}
-                >
-                  <div className={`text-4xl font-black bg-linear-to-r ${project.accentColor} bg-clip-text text-transparent group-hover:scale-110 transition-transform origin-left duration-300`}>{result.metric}</div>
-                  <p className="text-white/40 text-sm leading-relaxed">{result.desc}</p>
-                </div>
+                <ScrollReveal key={i}>
+                  <div className="flex flex-col gap-5">
+                    <div className={`text-6xl font-black bg-linear-to-r ${project.accentColor} bg-clip-text text-transparent tracking-tighter`}>
+                      {result.metric}
+                    </div>
+                    <p className="text-slate-400 text-sm font-medium leading-relaxed px-6">{result.desc}</p>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
-        </ScrollReveal>
+        </section>
 
-        {/* Testimonial */}
-        {/* <ScrollReveal> */}
-        <div className="max-w-4xl mx-auto text-center py-20">
-          <div className="relative">
-            <span className="text-9xl text-white/5 absolute -top-10 left-0">&quot;</span>
-            <p className="text-3xl text-white/80 font-light italic mb-10 leading-relaxed px-10">{project.testimonial.quote}</p>
-            <div className="flex flex-col items-center">
-              <p className="text-white font-black text-lg">{project.testimonial.author}</p>
-              <p className="text-white/30 text-xs font-bold uppercase tracking-widest">{project.testimonial.role}</p>
-            </div>
+        {/* Testimonial Quote */}
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 py-48 mb-32 relative text-center">
+          <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-[0.03]">
+            <Quote className="w-120 h-120 text-slate-900" />
           </div>
-        </div>
-        {/* </ScrollReveal> */}
+          <ScrollReveal>
+            <p className="text-4xl md:text-6xl font-light text-slate-900 italic mb-20 leading-[1.2]">
+              &quot;{project.testimonial.quote}&quot;
+            </p>
+            <div className="flex flex-col items-center">
+              <div className="w-20 h-1.5 bg-blue-600 mb-10 rounded-full" />
+              <p className="text-2xl font-black text-slate-900 mb-2 tracking-tight">{project.testimonial.author}</p>
+              <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.4em]">{project.testimonial.role}</p>
+            </div>
+          </ScrollReveal>
+        </section>
 
+        {/* Final CTA */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-40">
+          <div className="p-16 md:p-32 rounded-[5rem] bg-blue-600 text-center relative overflow-hidden shadow-[0_40px_100px_rgba(37,99,235,0.25)]">
+            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+            <ScrollReveal>
+              <h2 className="text-5xl md:text-7xl font-black text-white mb-14 leading-[0.95] tracking-tight">
+                Inspired by this project? <br />
+                <span className="text-blue-100">Let&apos;s build yours next.</span>
+              </h2>
+              <Link
+                href="/contact-us"
+                className="inline-flex px-14 py-7 rounded-4xl bg-white text-blue-600 font-black text-xl hover:shadow-[0_20px_50px_rgba(255,255,255,0.4)] transition-all transform hover:scale-105 active:scale-95"
+              >
+                Start A Workshop
+              </Link>
+            </ScrollReveal>
+          </div>
+        </section>
       </div>
     </main>
   );
 }
+
