@@ -163,7 +163,7 @@ export default function Services() {
           <div className="flex justify-center mt-16" data-aos="fade-up">
             <button
               onClick={() => setFormOpen(true)}
-              className="cursor-pointer bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 flex items-center gap-3 text-white text-base font-bold px-12 py-5 rounded-full hover:shadow-[0_20px_40px_rgba(37,99,235,0.3)] hover:scale-105 transition-all duration-300"
+              className="cursor-pointer  bg-linear-to-r from-blue-500 to-pink-500  flex items-center gap-3 text-white text-base font-bold px-12 py-5 rounded-full hover:shadow-[0_20px_40px_rgba(37,99,235,0.3)] hover:scale-105 transition-all duration-300"
             >
               Discuss Your Project
               <ArrowRight className="w-6 h-6" />
