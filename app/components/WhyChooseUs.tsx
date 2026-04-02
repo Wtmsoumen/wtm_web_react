@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
             data-aos="fade-down"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-black">
-              Why <span className="bg-linear-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Choose Us ?</span>
+              Why <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Choose Us ?</span>
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               We combine technical excellence with proven processes to deliver products that succeed.
@@ -91,7 +91,7 @@ export default function WhyChooseUs() {
                     {f.icon}
                   </div>
                   <div>
-                    <div className="text-3xl font-bold bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] bg-clip-text text-transparent">
+                    <div className="text-3xl font-bold bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">
                       {f.stat}
                     </div>
                     <div className="text-gray-400 text-sm">{f.statLabel}</div>
@@ -99,7 +99,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-black font-semibold text-xl mb-2 transition-all duration-300 group-hover:bg-linear-to-r group-hover:from-[#1D74CF] group-hover:via-[#b33b41] group-hover:to-[#D04425] group-hover:bg-clip-text group-hover:text-transparent leading-snug">
+                <h3 className="text-black font-semibold text-xl mb-2 transition-all duration-300 group-hover:bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] group-hover:bg-clip-text group-hover:text-transparent leading-snug">
                   {f.title}
                 </h3>
 

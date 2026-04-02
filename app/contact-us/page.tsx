@@ -127,7 +127,7 @@ export default function ContactPage() {
             </div>
 
             <h1 className="text-4xl md:text-6xl font-black text-black leading-tight">
-              Have Some <span className="bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] bg-clip-text text-transparent">Questions?</span>
+              Have Some <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Questions?</span>
             </h1>
 
             <p className="text-gray-500 text-lg md:text-xl max-w-2xl leading-relaxed">
@@ -151,7 +151,7 @@ export default function ContactPage() {
                     <span className="text-xs font-bold tracking-widest uppercase text-[#1D74CF]">Meet the Team</span>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-black text-black leading-tight">
-                    The People Behind <span className="bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] bg-clip-text text-transparent">Our Success</span>
+                    The People Behind <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Our Success</span>
                   </h2>
                 </div>
 
@@ -178,7 +178,7 @@ export default function ContactPage() {
                         <p className="text-sm font-bold text-black">{member.name}</p>
                         <p className="text-[10px] text-gray-400 font-medium uppercase tracking-wider">{member.tier}</p>
                       </div>
-                      <div className="h-1 w-full bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] group-hover:flex hidden mt-auto" />
+                      <div className="h-1 w-full bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] group-hover:flex hidden mt-auto" />
                     </div>
                   ))}
                 </div>
@@ -339,7 +339,7 @@ export default function ContactPage() {
 
                   <button
                     onClick={handleSubmit}
-                    className="w-full bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] text-white font-black py-5 rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3 shadow-xl"
+                    className="w-full bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] text-white font-black py-5 rounded-2xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3 shadow-xl"
                   >
                     {submitted ? "MESSAGE RECEIVED ✓" : "SEND MESSAGE"}
                     {!submitted && <Send className="w-5 h-5" />}

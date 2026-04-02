@@ -74,9 +74,8 @@ function AnimatedStat({ value, label }: { value: string; label: string }) {
   return (
     <div ref={ref} className="flex flex-col items-center gap-1">
       <span
-        className={`text-4xl md:text-5xl font-black tracking-tight transition-all duration-700 ${
-          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-        } ${globalStyle?.gradientText} bg-clip-text text-transparent`}
+        className={`text-4xl md:text-5xl font-black tracking-tight transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          } ${globalStyle?.gradientText} bg-clip-text text-transparent`}
         style={{ fontFamily: "'Syne', sans-serif" }}
       >
         {value}
@@ -137,9 +136,8 @@ function ServiceRow({
             {item.title}
           </h4>
           <p
-            className={`text-gray-500 text-sm leading-relaxed overflow-hidden transition-all duration-300 ${
-              hovered ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
-            }`}
+            className={`text-gray-500 text-sm leading-relaxed overflow-hidden transition-all duration-300 ${hovered ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
+              }`}
           >
             {item.desc}
           </p>
@@ -215,7 +213,7 @@ const DigitalMarketingSection = () => {
 
               <h2
                 className="text-4xl md:text-6xl font-semibold  text-gray-900 leading-[1.05] tracking-tight"
-                
+
               >
                 <span className="tracking-[0.1em] text-5xl md:text-7xl">Growth that</span>{" "}
                 <span
@@ -231,11 +229,11 @@ const DigitalMarketingSection = () => {
                 We blend strategy, creative, and ruthless data analysis to turn your marketing into a growth engine — not an expense.
               </p>
               <button
-                className="self-start flex items-center gap-3 text-sm font-bold px-6 py-3.5 rounded-full text-white hover:scale-105 active:scale-100 transition-transform duration-200"
-                style={{
-                  background: "linear-gradient(135deg, #1D74CF 0%, #b33b41 60%, #D04425 100%)",
-                  boxShadow: "0 8px 30px rgba(29,116,207,0.25)",
-                }}
+                className="self-start bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] flex items-center gap-3 text-sm font-bold px-6 py-3.5 rounded-full text-white hover:scale-105 active:scale-100 transition-transform duration-200"
+              // style={{
+              //   background: "linear-gradient(135deg, #1D74CF 0%, #b33b41 60%, #D04425 100%)",
+              //   boxShadow: "0 8px 30px rgba(29,116,207,0.25)",
+              // }}
               >
                 Start Growing
                 <ArrowRight className="w-4 h-4" />
@@ -244,19 +242,19 @@ const DigitalMarketingSection = () => {
           </div>
 
           {/* ── Stats bar ───────────────────── */}
-          <div className="noise-bg relative rounded-2xl overflow-hidden mb-16"
+          <div className="noise-bg relative rounded-2xl overflow-hidden mb-16 border border-solid border-gray-300 shadow-sm"
             data-aos="zoom-in"
-            style={{ background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)" }}>
-            <div className="flex items-center divide-x divide-white/10">
+            style={{ background: "linear-gradient(135deg, #ffebeb 0%, #ffffff 100%)" }}>
+            <div className="flex items-center divide-x divide-gray-300">
               {stats.map((s, i) => (
                 <div key={i} className="flex-1 flex items-center justify-center gap-3 py-4 px-4">
                   <span
                     className={`text-2xl font-black tracking-tight ${globalStyle?.gradientText} bg-clip-text text-transparent`}
-                 
+
                   >
                     {s.value}
                   </span>
-                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest leading-tight">
+                  <span className="text-xs font-semibold text-gray-800 uppercase tracking-widest leading-tight">
                     {s.label}
                   </span>
                 </div>
@@ -318,25 +316,25 @@ const DigitalMarketingSection = () => {
               {/* Two small info tiles */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl border border-gray-100 bg-gray-50 p-5 flex flex-col gap-2">
-                  <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Avg. Time to ROI</span>
+                  <span className="text-xs font-bold text-gray-700 uppercase tracking-widest">Avg. Time to ROI</span>
                   <span className="text-3xl font-black text-gray-900"
-                    >
+                  >
                     47
-                    <span className="text-base font-semibold text-gray-400 ml-1">days</span>
+                    <span className="text-base font-semibold text-gray-600 ml-1">days</span>
                   </span>
-                  <span className="text-xs text-gray-400">From kickoff to measurable returns</span>
+                  <span className="text-xs text-gray-700">From kickoff to measurable returns</span>
                 </div>
 
                 <div className="rounded-xl overflow-hidden relative p-5 flex flex-col gap-2 text-white"
                   style={{
                     background: "linear-gradient(135deg, #1D74CF 0%, #b33b41 100%)",
                   }}>
-                  <span className="text-xs font-bold uppercase tracking-widest text-white/70">Platforms</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-white">Platforms</span>
                   <span className="text-3xl font-black"
                   >
                     12+
                   </span>
-                  <span className="text-xs text-white/70">Channels managed simultaneously</span>
+                  <span className="text-xs text-white">Channels managed simultaneously</span>
                   <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-full bg-white/10 blur-xl" />
                 </div>
               </div>
@@ -350,9 +348,9 @@ const DigitalMarketingSection = () => {
                     "Google Ads", "Meta Ads", "SEO", "Content Marketing",
                     "Email Flows", "LinkedIn Ads", "TikTok", "YouTube",
                   ].map((tag, i) => (
-                    <span key={i} className="inline-flex items-center gap-2 px-4 text-xs font-semibold text-gray-400 uppercase tracking-widest">
+                    <span key={i} className="inline-flex items-center gap-2 px-4 text-xs font-semibold text-gray-500 uppercase tracking-widest">
                       {tag}
-                      <span className="w-1 h-1 rounded-full bg-gray-300" />
+                      <span className="w-1 h-1 rounded-full bg-gray-500" />
                     </span>
                   ))}
                 </div>

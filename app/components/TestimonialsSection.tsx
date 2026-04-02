@@ -96,7 +96,7 @@ function TechMarquee() {
                         className="flex items-center gap-2 px-8 py-5 border-r border-white/10 min-w-[160px] justify-center"
                     >
                         {tech.Logo && <tech.Logo />}
-                        <span className="font-bold text-sm" style={{ color: tech.color }}>
+                        <span className="font-bold text-lg" style={{ color: tech.color }}>
                             {tech.name}
                         </span>
                     </div>
@@ -143,7 +143,7 @@ export default function ServicesTestimonialsSection() {
                                     <p className="text-white/70 text-lg font-light">Your Dream</p>
                                     <h2 className="text-4xl font-bold leading-tight">
                                         Our{" "}
-                                        <span className="bg-linear-to-l from-pink-500 to-blue-500 bg-clip-text text-transparent">
+                                        <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">
                                             Expertise
                                         </span>
                                     </h2>
@@ -162,8 +162,8 @@ export default function ServicesTestimonialsSection() {
                                 icon={<Globe className="w-6 h-6 text-white" />}
                                 title="Full-Stack Development"
                                 description="Webtechnomind provides comprehensive full-stack solutions, solidifying our reputation as a top web development company."
-                                data-aos="fade-up"
-                                data-aos-delay={100}
+                            // data-aos="fade-up"
+                            // data-aos-delay={100}
                             />
 
                             {/* Mobile Apps */}
@@ -174,8 +174,8 @@ export default function ServicesTestimonialsSection() {
                                 icon={<Smartphone className="w-6 h-6 text-white/70" />}
                                 title="Mobile Apps Development"
                                 description="Webtechnomind offers cutting-edge mobile app development services tailored to meet your business goals. Our expert."
-                                data-aos="fade-up"
-                                data-aos-delay={200}
+                            // data-aos="fade-up"
+                            // data-aos-delay={200}
                             />
 
                             {/* Ecommerce */}
@@ -186,8 +186,8 @@ export default function ServicesTestimonialsSection() {
                                 icon={<ShoppingCart className="w-6 h-6 text-white/70" />}
                                 title="Ecommerce Development"
                                 description="Webtechnomind is a trusted ecommerce development company offering custom, scalable, and user-friendly solutions."
-                                data-aos="fade-up"
-                                data-aos-delay={300}
+                            // data-aos="fade-up"
+                            // data-aos-delay={300}
                             />
 
                             {/* Digital Marketing */}
@@ -198,12 +198,12 @@ export default function ServicesTestimonialsSection() {
                                 icon={<Megaphone className="w-6 h-6 text-white/70" />}
                                 title="Digital Marketing"
                                 description="Unlock exponential business growth with Webtechnomind — a tech-powered digital marketing agency that thrives."
-                                data-aos="fade-up"
-                                data-aos-delay={400}
+                            // data-aos="fade-up"
+                            // data-aos-delay={400}
                             />
 
                             {/* CTA Block */}
-                            <div 
+                            <div
                                 className="rounded-2xl bg-[#0d1b3e]/80 border border-white/10 p-7 flex flex-col justify-between"
                                 data-aos="fade-up"
                                 data-aos-delay={500}
@@ -230,7 +230,7 @@ export default function ServicesTestimonialsSection() {
                         <div className="flex-1" data-aos="fade-right">
                             <p className="text-white/70 text-2xl font-light">End to End</p>
                             <h2 className="text-4xl font-bold">
-                                <span className="bg-linear-to-l from-pink-500 to-blue-500 bg-clip-text text-transparent">
+                                <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">
                                     Technology
                                 </span>
                             </h2>

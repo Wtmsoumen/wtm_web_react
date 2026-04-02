@@ -156,7 +156,7 @@ const OurExpertise = () => {
                         </h2>
                     </div>
 
-                    <div className="flex items-center justify-center gap-6 flex-wrap mb-2">
+                    <div className="flex items-center justify-center gap-6 flex-wrap mb-2" data-aos="fade-up">
                         {tabs.map((tab, idx) => {
                             const Icon = tab.IconComponent;
                             const isActive = activeTab === tab.id;
@@ -166,8 +166,8 @@ const OurExpertise = () => {
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
                                     className="relative flex flex-col items-center pt-8 focus:outline-none cursor-pointer"
-                                    data-aos="fade-up"
-                                    data-aos-delay={idx * 100}
+
+                                // data-aos-delay={idx * 100}
                                 >
                                     {/* Floating Icon */}
                                     <div

@@ -119,7 +119,7 @@ function StatItem({ value, label, delay }: { value: string; label: string; delay
       data-aos="zoom-in"
       data-aos-delay={delay}
     >
-      <span className="text-4xl md:text-5xl font-black bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] bg-clip-text text-transparent tabular-nums">
+      <span className="text-4xl md:text-5xl font-black bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent tabular-nums">
         {visible ? count : 0}{suffix}
       </span>
       <span className="text-sm text-gray-500 font-medium text-center">{label}</span>
@@ -247,7 +247,7 @@ export default function AboutPage() {
                 <span className="text-sm font-semibold tracking-wide uppercase">What Drives Us</span>
               </div>
               <h2 className="text-3xl md:text-5xl font-black text-black">
-                Our Core <span className="bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] bg-clip-text text-transparent">Values</span>
+                Our Core <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Values</span>
               </h2>
             </div>
 
@@ -351,13 +351,13 @@ export default function AboutPage() {
               <span className="text-sm font-semibold tracking-wide uppercase">Ready to Start?</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-black text-black leading-tight">
-              Let&apos;s Build Something <span className="bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] bg-clip-text text-transparent">Amazing Together</span>
+              Let&apos;s Build Something <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Amazing Together</span>
             </h2>
             <p className="text-gray-500 text-lg max-w-xl leading-relaxed">
               Whether you&apos;re a startup or an enterprise, we have the expertise and passion to bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
-              <Link href="/contact-us" className="inline-flex items-center gap-2 bg-linear-to-r from-[#1D74CF] via-[#b33b41] to-[#D04425] text-white font-bold px-12 py-5 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 shadow-xl">
+              <Link href="/contact-us" className="inline-flex items-center gap-2 bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] text-white font-bold px-12 py-5 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 shadow-xl">
                 Get In Touch
                 <ArrowRight className="w-5 h-5" />
               </Link>

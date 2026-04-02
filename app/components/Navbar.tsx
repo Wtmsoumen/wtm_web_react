@@ -426,7 +426,7 @@ export default function Navbar() {
           {/* CTA */}
           <button
             onClick={() => setFormOpen(true)}
-            className={`hidden lg:block bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#ff2a2a] text-white hover:scale-105 duration-300 cursor-pointer px-4! py-2! rounded-full text-sm font-medium`}
+            className={`hidden lg:block bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] text-white hover:scale-105 duration-300 cursor-pointer px-4! py-2! rounded-full text-sm font-medium`}
           >
             Get Quote
           </button>

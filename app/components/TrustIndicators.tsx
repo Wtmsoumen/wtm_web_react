@@ -63,17 +63,17 @@ function StarRating({ count }: { count: number }) {
   );
 }
 
-export default function  TrustIndicators() {
+export default function TrustIndicators() {
   return (
     <ScrollReveal>
       <section className="bg-white py-16! border-y border-white/5">
         <div className="max-w-7xl mx-auto! px-4! sm:px-6!">
-          <div 
+          <div
             className="text-center mb-10!"
             data-aos="fade-down"
           >
             <p className="text-3xl md:text-4xl font-bold text-gray-900">
-              Trusted by <span className="bg-linear-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Industry Leaders</span>
+              Trusted by <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Industry Leaders</span>
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export default function  TrustIndicators() {
                 <div className="text-lg font-bold text-gray-800 mb-2!">{r.platform}</div>
                 <div className="flex items-center gap-1 mb-1!">
                   <StarRating count={r.stars} />
-                  <div className="text-2xl font-bold bg-linear-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">{r.score}</div>
+                  <div className="text-2xl font-bold bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">{r.score}</div>
                 </div>
                 <span className="text-xs text-gray-500">
                   {r.reviews}

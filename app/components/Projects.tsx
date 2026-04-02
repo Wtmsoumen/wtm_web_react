@@ -125,7 +125,7 @@ export default function PortfolioSection() {
                     <div className="text-center mb-10" data-aos="fade-up">
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-3">
                             Projects That Drive{" "}
-                            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-500">
+                            <span className="text-transparent bg-clip-text bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)]">
                                 Real Results
                             </span>
                         </h2>
@@ -220,7 +220,7 @@ export default function PortfolioSection() {
                     <div className="flex flex-col items-center gap-2 mt-8" data-aos="zoom-in">
                         <Link
                             href="/portfolio"
-                            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200 shadow-lg shadow-blue-900/30"
+                            className="inline-flex items-center gap-2 bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors duration-200 shadow-lg shadow-blue-900/30"
                         >
                             Explore Full Portfolio
                             <span className="rounded-full p-0.5! flex items-center justify-center text-xs">→</span>

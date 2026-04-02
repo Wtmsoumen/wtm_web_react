@@ -105,7 +105,7 @@ export default function Services() {
 
             {/* Heading */}
             <h2 className="text-black text-4xl md:text-6xl font-black leading-tight">
-              What We <span className="bg-linear-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">Offer</span>
+              What We <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Offer</span>
             </h2>
 
             {/* Description */}
