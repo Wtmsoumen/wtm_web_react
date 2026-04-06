@@ -19,11 +19,15 @@ interface Project {
   id: number;
   title: string;
   category: string;
-  industry: string;
-  tech: string[];
-  image: string;
+  industry?: string;
+  tech?: string[];
+  interaction?: number;
+  visibility?: number;
+  growth?: number;
+  satisfaction?: number;
+  image?: string;
   description: string;
-  stats: Stat[];
+  stats?: Stat[];
   link?: string;
   slug?: string;
 }
@@ -32,109 +36,538 @@ interface Project {
 const projects: Project[] = [
   {
     id: 0,
-    title: "BitDelta",
-    category: "Crypto Exchange",
+    title: "Virtuard",
+    category: "Property Platform",
     industry: "Fintech",
-    tech: ["React", "Node.js", "Flutter"],
+    tech: ["Figma", "Laravel"],
+    interaction: 75,
+    visibility: 83,
+    description: "Modern property selling platform with 360° virtual views. Built with Figma + Laravel. Mobile-friendly, scalable, and SEO-optimized.",
     image: "/images/glubery_B2B.jpg",
-    description:
-      "A comprehensive exchange platform with advanced trading engine supporting spot and derivatives trading across 130+ countries. BitDelta serves over 2 million active users with enterprise-grade security.",
     stats: [
-      { key: "interaction", value: "2M+", label: "Active Users" },
-      { key: "visibility", value: "130+", label: "Countries" },
+      { key: "interaction", value: "75", label: "interaction" },
+      { key: "visibility", value: "83", label: "visibility" },
     ],
-    slug: "bitdelta",
+    slug: "virtuard",
   },
   {
     id: 1,
-    title: "E-commerce Platform for Wine & Liquor Stores",
-    category: "E-commerce",
-    industry: "Retail",
-    tech: ["Laravel", "Angular", "MySQL"],
-    image: "/images/easydrink.jpg",
-    description:
-      "We crafted the EasydrinkbyGrutex wine shop eCommerce website from scratch. Started with custom UI design in Figma and frontend in Angular. Backend development was done using Laravel for smooth performance and scalability.",
+    title: "Sky Dive",
+    category: "Tandem Skydiving",
+    industry: "Adventure",
+    description: "High-performance WordPress website with immersive UI/UX. Delivered 72% traffic growth.",
+    interaction: 75,
+    visibility: 83,
     stats: [
-      { key: "interaction", value: "60%", label: "Interaction" },
-      { key: "visibility", value: "60%", label: "Visibility" },
+      { key: "interaction", value: "75", label: "interaction" },
+      { key: "visibility", value: "83", label: "visibility" },
     ],
-    slug: "ecommerce-wine-liquor",
+    slug: "sky-dive",
   },
   {
     id: 2,
-    title: "Ayurvedic Product E-commerce",
-    category: "E-commerce",
-    industry: "Healthcare",
-    tech: ["Shopify", "React", "Next.js"],
-    image: "/images/drsany_ayurvedic.jpg",
-    description:
-      "DrSany.com is a premium shopify-backed platform offering a robust product selling system, efficient management features, and expert SEO strategies.",
+    title: "Re-Energi",
+    category: "Sustainable Energy",
+    industry: "Energy",
+    description: "SEO-optimized WordPress site with modern UI reflecting eco-friendly mission.",
+    interaction: 76,
+    visibility: 88,
     stats: [
-      { key: "interaction", value: "60%", label: "Interaction" },
-      { key: "visibility", value: "75%", label: "Visibility" },
+      { key: "interaction", value: "76", label: "interaction" },
+      { key: "visibility", value: "88", label: "visibility" },
     ],
-    slug: "ayurvedic-ecommerce",
+    slug: "re-energi",
   },
   {
     id: 3,
-    title: "Real Estate & Lead Gen Portal",
-    category: "Web Development",
-    industry: "Real Estate",
-    tech: ["Next.js", "TypeScript", "Laravel"],
-    image: "/images/glubery_B2B.jpg",
-    description:
-      "A comprehensive real estate platform with advanced search, virtual tours, and CRM integration for lead generation.",
+    title: "Neuro Apply",
+    category: "Psychological Assessment",
+    industry: "Healthcare",
+    description: "Clean, intuitive WordPress platform with strong SEO performance.",
+    interaction: 75,
+    visibility: 89,
     stats: [
-      { key: "growth", value: "80%", label: "Lead Growth" },
-      { key: "visibility", value: "55%", label: "Visibility" },
+      { key: "interaction", value: "75", label: "interaction" },
+      { key: "visibility", value: "89", label: "visibility" },
     ],
-    slug: "real-estate-portal",
+    slug: "neuro-apply",
   },
   {
     id: 4,
-    title: "Food Delivery App",
-    category: "Mobile App",
-    industry: "Food and Beverage",
-    tech: ["Flutter", "Firebase", "Node.js"],
-    image: "/images/easydrink.jpg",
-    description:
-      "Cross-platform Flutter application with real-time tracking, push notifications, and multi-restaurant support.",
+    title: "Enigma Psychometry",
+    category: "Online Education",
+    industry: "Education",
+    description: "Modern e-learning website with responsive design and SEO optimization.",
+    interaction: 70,
+    visibility: 89,
     stats: [
-      { key: "satisfaction", value: "4.8★", label: "App Store Rating" },
-      { key: "growth", value: "50+", label: "Restaurant Partners" },
+      { key: "interaction", value: "70", label: "interaction" },
+      { key: "visibility", value: "89", label: "visibility" },
     ],
-    slug: "food-delivery-app",
+    slug: "enigma-psychometry",
   },
   {
     id: 5,
-    title: "Immigration Suite & CRS Calculator",
-    category: "Web Development",
-    industry: "Legal",
-    tech: ["WordPress", "PHP", "MySQL"],
-    image: "/images/drsany_ayurvedic.jpg",
-    description:
-      "A specialized tool suite for Global Vision Immigration including complex calculators and automated assessment flows.",
+    title: "Canadian Flyers International College",
+    category: "Flight Training",
+    industry: "Aviation",
+    description: "Professional aviation training website with 80%+ traffic growth.",
+    interaction: 82,
+    visibility: 93,
     stats: [
-      { key: "interaction", value: "90%", label: "Form Completion" },
-      { key: "visibility", value: "70%", label: "Traffic Lift" },
+      { key: "interaction", value: "82", label: "interaction" },
+      { key: "visibility", value: "93", label: "visibility" },
     ],
-    slug: "immigration-tools",
+    slug: "canadian-flyers",
   },
   {
     id: 6,
-    title: "Logistics Freight Management",
-    category: "Web Development",
-    industry: "Logistics",
-    tech: ["Next.js", "RTK Query", "Tailwind CSS"],
-    image: "/images/glubery_B2B.jpg",
-    description:
-      "A multi-step shipment management platform featuring quote generation and real-time shipment monitoring.",
+    title: "Brigient",
+    category: "Cybersecurity",
+    industry: "Technology",
+    description: "Secure and performance-driven website with modern UI/UX.",
+    interaction: 79,
+    visibility: 86,
     stats: [
-      { key: "growth", value: "65%", label: "Time Saved" },
-      { key: "visibility", value: "85%", label: "Satisfaction" },
+      { key: "interaction", value: "79", label: "interaction" },
+      { key: "visibility", value: "86", label: "visibility" },
     ],
-    slug: "logistics-platform",
+    slug: "brigient",
   },
+  {
+    id: 7,
+    title: "Balaji Shipping Agency",
+    category: "Transport Solutions",
+    industry: "Logistics",
+    description: "SEO-optimized logistics website boosting online reach.",
+    interaction: 72,
+    visibility: 80,
+    stats: [
+      { key: "interaction", value: "72", label: "interaction" },
+      { key: "visibility", value: "80", label: "visibility" },
+    ],
+    slug: "balaji-shipping",
+  },
+  {
+    id: 8,
+    title: "Ahmad Law",
+    category: "Legal Services",
+    industry: "Legal",
+    description: "Professional legal website with strong SEO and UX.",
+    interaction: 79,
+    visibility: 83,
+    stats: [
+      { key: "interaction", value: "79", label: "interaction" },
+      { key: "visibility", value: "83", label: "visibility" },
+    ],
+    slug: "ahmad-law",
+  },
+  {
+    id: 9,
+    title: "Accoun Tax Australia",
+    category: "Accounting & Tax",
+    industry: "Finance",
+    description: "Clean and modern financial website with strong traffic growth.",
+    interaction: 82,
+    visibility: 88,
+    stats: [
+      { key: "interaction", value: "82", label: "interaction" },
+      { key: "visibility", value: "88", label: "visibility" },
+    ],
+    slug: "accoun-tax",
+  },
+  {
+    id: 10,
+    title: "Accord Attorneys & Solicitors",
+    category: "Legal Services",
+    industry: "Legal",
+    description: "Mobile-optimized legal website with improved visibility.",
+    interaction: 68,
+    visibility: 75,
+    stats: [
+      { key: "interaction", value: "68", label: "interaction" },
+      { key: "visibility", value: "75", label: "visibility" },
+    ],
+    slug: "accord-attorneys",
+  },
+  {
+    id: 11,
+    title: "Pre Drinks Bar",
+    category: "Hospitality",
+    industry: "Retail",
+    description: "Flexible bar experience website with strong engagement growth.",
+    interaction: 85,
+    visibility: 92,
+    stats: [
+      { key: "interaction", value: "85", label: "interaction" },
+      { key: "visibility", value: "92", label: "visibility" },
+    ],
+    slug: "pre-drinks-bar",
+  },
+  {
+    id: 12,
+    title: "Lj Morelli Films",
+    category: "Videography",
+    industry: "Media",
+    description: "Custom CRM-integrated filmmaking website.",
+    interaction: 85,
+    visibility: 70,
+    stats: [
+      { key: "interaction", value: "85", label: "interaction" },
+      { key: "visibility", value: "70", label: "visibility" },
+    ],
+    slug: "lj-morelli-films",
+  },
+  {
+    id: 13,
+    title: "Cerchio Lighting",
+    category: "Lighting Solutions",
+    industry: "Manufacturing",
+    description: "Modern lighting brand website with SEO growth.",
+    interaction: 70,
+    visibility: 86,
+    stats: [
+      { key: "interaction", value: "70", label: "interaction" },
+      { key: "visibility", value: "86", label: "visibility" },
+    ],
+    slug: "cerchio-lighting",
+  },
+  {
+    id: 14,
+    title: "Byiba Lights",
+    category: "Lighting Solutions",
+    industry: "Manufacturing",
+    description: "Stylish lighting website with 80%+ traffic growth.",
+    interaction: 80,
+    visibility: 73,
+    stats: [
+      { key: "interaction", value: "80", label: "interaction" },
+      { key: "visibility", value: "73", label: "visibility" },
+    ],
+    slug: "byiba-lights",
+  },
+  {
+    id: 15,
+    title: "Bullard Collection",
+    category: "Security & Lighting",
+    industry: "Manufacturing",
+    description: "Premium solutions website with responsive design.",
+    interaction: 80,
+    visibility: 70,
+    stats: [
+      { key: "interaction", value: "80", label: "interaction" },
+      { key: "visibility", value: "70", label: "visibility" },
+    ],
+    slug: "bullard-collection",
+  },
+  {
+    id: 16,
+    title: "Bullard Bollards",
+    category: "Industrial Products",
+    industry: "Manufacturing",
+    description: "SEO-driven product website with strong traffic increase.",
+    interaction: 70,
+    visibility: 86,
+    stats: [
+      { key: "interaction", value: "70", label: "interaction" },
+      { key: "visibility", value: "86", label: "visibility" },
+    ],
+    slug: "bullard-bollards",
+  },
+  {
+    id: 17,
+    title: "aib4d",
+    category: "Education System",
+    industry: "Education",
+    description: "Advanced school management system website.",
+    interaction: 70,
+    visibility: 82,
+    stats: [
+      { key: "interaction", value: "70", label: "interaction" },
+      { key: "visibility", value: "82", label: "visibility" },
+    ],
+    slug: "aib4d",
+  },
+  {
+    id: 18,
+    title: "Dr. Bchara",
+    category: "Real Estate / Clinic",
+    industry: "Healthcare",
+    description: "Clean modern website with performance optimization.",
+    interaction: 62,
+    visibility: 74,
+    stats: [
+      { key: "interaction", value: "62", label: "interaction" },
+      { key: "visibility", value: "74", label: "visibility" },
+    ],
+    slug: "dr-bchara",
+  },
+  {
+    id: 19,
+    title: "Dubai Real",
+    category: "Interior Design",
+    industry: "Real Estate",
+    description: "Premium design-focused real estate website.",
+    interaction: 65,
+    visibility: 80,
+    stats: [
+      { key: "interaction", value: "65", label: "interaction" },
+      { key: "visibility", value: "80", label: "visibility" },
+    ],
+    slug: "dubai-real",
+  },
+  {
+    id: 20,
+    title: "Europe Sports Tour",
+    category: "Travel",
+    industry: "Travel",
+    description: "European sports travel platform with SEO growth.",
+    interaction: 70,
+    visibility: 85,
+    stats: [
+      { key: "interaction", value: "70", label: "interaction" },
+      { key: "visibility", value: "85", label: "visibility" },
+    ],
+    slug: "europe-sports-tour",
+  },
+  {
+    id: 21,
+    title: "The Europe Tours",
+    category: "Travel",
+    industry: "Travel",
+    description: "Modern travel website with improved inquiries.",
+    interaction: 65,
+    visibility: 80,
+    stats: [
+      { key: "interaction", value: "65", label: "interaction" },
+      { key: "visibility", value: "80", label: "visibility" },
+    ],
+    slug: "the-europe-tours",
+  },
+  {
+    id: 22,
+    title: "Interior Design Company",
+    category: "Construction",
+    industry: "Real Estate",
+    description: "Mobile-first redesign with 40%+ traffic growth.",
+    interaction: 40,
+    visibility: 75,
+    stats: [
+      { key: "interaction", value: "40", label: "interaction" },
+      { key: "visibility", value: "75", label: "visibility" },
+    ],
+    slug: "interior-design-company",
+  },
+  {
+    id: 23,
+    title: "Total IRP",
+    category: "Trucking Compliance",
+    industry: "Logistics",
+    description: "Compliance solutions platform for US trucking.",
+    interaction: 70,
+    visibility: 90,
+    stats: [
+      { key: "interaction", value: "70", label: "interaction" },
+      { key: "visibility", value: "90", label: "visibility" },
+    ],
+    slug: "total-irp",
+  },
+  {
+    id: 24,
+    title: "MusicMolecule",
+    category: "E-commerce + Learning",
+    industry: "Education",
+    description: "WooCommerce + booking integrated platform.",
+    interaction: 65,
+    visibility: 70,
+    stats: [
+      { key: "interaction", value: "65", label: "interaction" },
+      { key: "visibility", value: "70", label: "visibility" },
+    ],
+    slug: "music-molecule",
+  },
+  {
+    id: 25,
+    title: "EasydrinkbyGrutas",
+    category: "E-commerce",
+    industry: "Retail",
+    description: "Wine shop platform built with Laravel + Angular.",
+    interaction: 60,
+    visibility: 60,
+    stats: [
+      { key: "interaction", value: "60", label: "interaction" },
+      { key: "visibility", value: "60", label: "visibility" },
+    ],
+    slug: "easydrinkbygrutas",
+  },
+  {
+    id: 26,
+    title: "Anytime Tots",
+    category: "Parenting CMS",
+    industry: "Media",
+    description: "SEO-driven parenting content platform.",
+    interaction: 70,
+    visibility: 85,
+    stats: [
+      { key: "interaction", value: "70", label: "interaction" },
+      { key: "visibility", value: "85", label: "visibility" },
+    ],
+    slug: "anytime-tots",
+  },
+  {
+    id: 27,
+    title: "Joli Best View Cafe",
+    category: "Hospitality",
+    industry: "Retail",
+    description: "Restaurant website with booking system and CMS.",
+    interaction: 60,
+    visibility: 80,
+    stats: [
+      { key: "interaction", value: "60", label: "interaction" },
+      { key: "visibility", value: "80", label: "visibility" },
+    ],
+    slug: "joli-cafe",
+  },
+  {
+    id: 28,
+    title: "DrSany",
+    category: "E-commerce Ayurvedic",
+    industry: "Healthcare",
+    description: "Shopify-based Ayurvedic product platform.",
+    interaction: 60,
+    visibility: 75,
+    stats: [
+      { key: "interaction", value: "60", label: "interaction" },
+      { key: "visibility", value: "75", label: "visibility" },
+    ],
+    slug: "drsany",
+  },
+  {
+    id: 29,
+    title: "SchooPed",
+    category: "Education Recruitment",
+    industry: "Education",
+    description: "Teacher recruitment platform with filters and APIs.",
+    interaction: 65,
+    visibility: 85,
+    stats: [
+      { key: "interaction", value: "65", label: "interaction" },
+      { key: "visibility", value: "85", label: "visibility" },
+    ],
+    slug: "schooped",
+  },
+  {
+    id: 30,
+    title: "Glubery",
+    category: "B2B E-commerce",
+    industry: "Retail",
+    description: "Office essentials platform with scalable system.",
+    interaction: 55,
+    visibility: 90,
+    stats: [
+      { key: "interaction", value: "55", label: "interaction" },
+      { key: "visibility", value: "90", label: "visibility" },
+    ],
+    slug: "glubery",
+  },
+  {
+    id: 31,
+    title: "Sattva Ayurved",
+    category: "Healthcare",
+    industry: "Healthcare",
+    description: "Ayurvedic clinic website with SEO focus.",
+    interaction: 65,
+    visibility: 98,
+    stats: [
+      { key: "interaction", value: "65", label: "interaction" },
+      { key: "visibility", value: "98", label: "visibility" },
+    ],
+    slug: "sattva-ayurved",
+  },
+  {
+    id: 32,
+    title: "Flight Enquiry Platform",
+    category: "Travel",
+    industry: "Travel",
+    description: "Flight booking and enquiry platform with SEO ranking.",
+    interaction: 70,
+    visibility: 80,
+    stats: [
+      { key: "interaction", value: "70", label: "interaction" },
+      { key: "visibility", value: "80", label: "visibility" },
+    ],
+    slug: "flight-enquiry",
+  },
+  {
+    id: 33,
+    title: "JTS Innovations",
+    category: "Service CMS",
+    industry: "Services",
+    description: "Inquiry-based CMS platform for services.",
+    interaction: 78,
+    visibility: 80,
+    stats: [
+      { key: "interaction", value: "78", label: "interaction" },
+      { key: "visibility", value: "80", label: "visibility" },
+    ],
+    slug: "jts-innovations",
+  },
+  {
+    id: 34,
+    title: "Rimalinum",
+    category: "E-commerce",
+    industry: "Retail",
+    description: "SEO-optimized WooCommerce platform.",
+    interaction: 70,
+    visibility: 95,
+    stats: [
+      { key: "interaction", value: "70", label: "interaction" },
+      { key: "visibility", value: "95", label: "visibility" },
+    ],
+    slug: "rimalinum",
+  },
+  {
+    id: 35,
+    title: "Whitebook World",
+    category: "Custom E-commerce",
+    industry: "Retail",
+    description: "Scalable photo frame platform with microservices.",
+    interaction: 78,
+    visibility: 89,
+    stats: [
+      { key: "interaction", value: "78", label: "interaction" },
+      { key: "visibility", value: "89", label: "visibility" },
+    ],
+    slug: "whitebook-world",
+  },
+  {
+    id: 36,
+    title: "PG Hostel Mess",
+    category: "Booking Platform",
+    industry: "Services",
+    description: "Hostel booking system with React + Laravel.",
+    interaction: 56,
+    visibility: 79,
+    stats: [
+      { key: "interaction", value: "56", label: "interaction" },
+      { key: "visibility", value: "79", label: "visibility" },
+    ],
+    slug: "pg-hostel-mess",
+  },
+  {
+    id: 37,
+    title: "ABC Learnings",
+    category: "LMS Platform",
+    industry: "Education",
+    description: "Online learning system with dashboards and SEO.",
+    interaction: 70,
+    visibility: 97,
+    stats: [
+      { key: "interaction", value: "70", label: "interaction" },
+      { key: "visibility", value: "97", label: "visibility" },
+    ],
+    slug: "abc-learnings",
+  }
 ];
 
 // ─── Filter Lists ─────────────────────────────────────────────────────────────
@@ -227,7 +660,7 @@ export default function PortfolioPage() {
                   key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`relative z-10 px-8 py-3 rounded-xl text-xs font-black tracking-[0.2em] uppercase transition-all duration-500 ${activeTab === tab
-                    ? "text-white"
+                    ? "text-white bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)]"
                     : "text-slate-500 hover:text-slate-900"
                     }`}
                 >
@@ -245,7 +678,7 @@ export default function PortfolioPage() {
 
             <div className="flex flex-wrap gap-3">
               <AnimatePresence mode="popLayout">
-                {(activeTab === "industries" ? industryList : categoryList).map((f) => {
+                {(activeTab === "industries" ? industryList : categoryList).map((f: any) => {
                   const isActive = (activeTab === "industries" ? activeIndustry : activeCategory) === f;
                   return (
                     <motion.button
@@ -275,7 +708,7 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-1 gap-10 lg:gap-20">
             {filtered.map((project, i) => (
               <motion.div
-                key={project.id}
+                key={project.id ?? `proj-${i}`}
                 initial={{ opacity: 0, y: 60 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -287,10 +720,10 @@ export default function PortfolioPage() {
                   <motion.div
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 1, ease: 'easeOut' }}
-                    className="relative aspect-[16/10]"
+                    className="relative aspect-16/10"
                   >
                     <img
-                      src={project.image}
+                      src={project.image || "/images/glubery_B2B.jpg"}
                       alt={project.title}
                       className="w-full h-full object-cover transition-all duration-700 grayscale-20 group-hover:grayscale-0"
                     />
@@ -305,7 +738,7 @@ export default function PortfolioPage() {
                   </div>
 
                   <div className="absolute bottom-10 left-10 right-10 flex flex-wrap gap-3">
-                    {project.tech.map(t => (
+                    {project.tech?.map(t => (
                       <span key={t} className="px-5 py-2 rounded-xl bg-slate-900 text-white text-[9px] font-black uppercase tracking-widest shadow-xl">{t}</span>
                     ))}
                   </div>
@@ -323,12 +756,12 @@ export default function PortfolioPage() {
                   </p>
 
                   <div className="grid grid-cols-2 gap-10 w-full mb-14">
-                    {project.stats.map(stat => {
+                    {project.stats?.map(stat => {
                       const Icon = StatIcon[stat.key];
                       return (
                         <div key={stat.label} className="flex items-center gap-5 group/stat">
                           <div className="w-14 h-14 rounded-[1.25rem] bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover/stat:bg-blue-600 group-hover/stat:text-white transition-all duration-500 shadow-sm">
-                            <Icon className="w-6 h-6 text-[#9e52d8] group-hover/stat:text-white" />
+                            {Icon && <Icon className="w-6 h-6 text-[#9e52d8] group-hover/stat:text-white" />}
                           </div>
                           <div>
                             <p className="text-3xl font-black text-slate-900 tracking-tighter">{stat.value}</p>
@@ -340,7 +773,7 @@ export default function PortfolioPage() {
                   </div>
 
                   <Link
-                    href={`/portfolio/${project.slug}`}
+                    href={`/portfolio/${project.slug || ""}`}
                     className="group/link w-full py-6 px-10 rounded-3xl bg-slate-900 text-white font-black text-sm tracking-[0.2em] uppercase text-center flex items-center justify-center gap-4 hover:bg-blue-600 transition-all duration-500 shadow-2xl shadow-slate-900/10 hover:shadow-blue-600/30 active:scale-95"
                   >
                     <span>View Case Study</span>
