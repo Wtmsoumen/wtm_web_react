@@ -428,7 +428,7 @@ export default function Navbar() {
             onClick={() => setFormOpen(true)}
             className={`hidden lg:block bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] text-white hover:scale-105 duration-300 cursor-pointer px-4! py-2! rounded-full text-sm font-medium`}
           >
-            Get Quote
+            Get A Free Consultation
           </button>
 
           {/* Mobile menu toggle */}

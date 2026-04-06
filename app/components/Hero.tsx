@@ -93,7 +93,7 @@ export default function Hero() {
             <div
               key={stat.label}
               className="hero-stat flex flex-col justify-center items-center text-center p-3 rounded-2xl
-                bg-black/70 backdrop-blur-lg border border-white/20
+                bg-black/30 backdrop-blur-lg border border-white/20
                 shadow-2xl hover:bg-black/90 hover:scale-105 transition duration-300"
             // style={{ textShadow: "0 0 16px #ffffff !important" }}
             >
