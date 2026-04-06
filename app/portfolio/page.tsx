@@ -183,8 +183,8 @@ export default function PortfolioPage() {
               transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-slate-200 bg-white/80 backdrop-blur-xl mb-12 shadow-sm"
             >
-              <Sparkles className="w-4 h-4 text-blue-600" />
-              <span className="text-[11px] font-black tracking-[0.3em] uppercase text-blue-600">Selected Works</span>
+              <Sparkles className="w-4 h-4 text-[#9e52d8]" />
+              <span className="text-[11px] font-black tracking-[0.3em] uppercase text-[#9e52d8]">Selected Works</span>
             </motion.div>
 
             <motion.h1
@@ -193,7 +193,7 @@ export default function PortfolioPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-6xl md:text-8xl font-black tracking-tight text-slate-900 mb-10 leading-[0.9]"
             >
-              The More We Know <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">You,</span><br />
+              The More We Know <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">You,</span><br />
               the More We <span className="relative inline-block italic">
                 Can Do.
                 <motion.span
@@ -234,7 +234,7 @@ export default function PortfolioPage() {
                   {activeTab === tab && (
                     <motion.div
                       layoutId="tab-bg-v2"
-                      className="absolute inset-0 bg-blue-600 rounded-xl -z-10 shadow-lg shadow-blue-600/20"
+                      className="absolute inset-0 bg-[blue-600] rounded-xl -z-10 shadow-lg shadow-blue-600/20"
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
@@ -256,7 +256,7 @@ export default function PortfolioPage() {
                       onClick={() => (activeTab === "industries" ? setActiveIndustry(f) : setActiveCategory(f))}
                       className={`px-6 py-2.5 rounded-2xl text-[11px] font-black uppercase tracking-widest border transition-all duration-300 ${isActive
                         ? "bg-slate-900 text-white border-slate-900 shadow-xl shadow-slate-900/10"
-                        : "bg-white text-slate-500 border-slate-200 hover:border-blue-600 hover:text-blue-600"
+                        : "bg-white text-slate-500 border-slate-200 hover:border-blue-600 hover:text-[#9e52d8]"
                         }`}
                     >
                       {f}
@@ -314,8 +314,8 @@ export default function PortfolioPage() {
                 {/* Content Container */}
                 <div className="w-full lg:w-2/5 flex flex-col items-start px-4">
                   <div className="w-16 h-1.5 mb-10 bg-blue-600 rounded-full" />
-                  <p className="text-blue-600 text-xs font-black tracking-[0.4em] mb-6 uppercase">Institutional Transformation</p>
-                  <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight group-hover:text-blue-600 transition-colors duration-500">
+                  <p className="text-[#9e52d8] text-xs font-black tracking-[0.4em] mb-6 uppercase">Institutional Transformation</p>
+                  <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight group-hover:text-[#9e52d8] transition-colors duration-500">
                     {project.title}
                   </h3>
                   <p className="text-slate-500 leading-[1.6] text-xl mb-12 font-light italic">
@@ -328,7 +328,7 @@ export default function PortfolioPage() {
                       return (
                         <div key={stat.label} className="flex items-center gap-5 group/stat">
                           <div className="w-14 h-14 rounded-[1.25rem] bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover/stat:bg-blue-600 group-hover/stat:text-white transition-all duration-500 shadow-sm">
-                            <Icon className="w-6 h-6 text-blue-600 group-hover/stat:text-white" />
+                            <Icon className="w-6 h-6 text-[#9e52d8] group-hover/stat:text-white" />
                           </div>
                           <div>
                             <p className="text-3xl font-black text-slate-900 tracking-tighter">{stat.value}</p>
@@ -360,7 +360,7 @@ export default function PortfolioPage() {
           <ScrollReveal>
             <div className="flex justify-center mb-12">
               <div className="w-24 h-24 rounded-[2.5rem] bg-white flex items-center justify-center shadow-3xl transform -rotate-6">
-                <Rocket className="w-12 h-12 text-blue-600" />
+                <Rocket className="w-12 h-12 text-[#9e52d8]" />
               </div>
             </div>
             <h2 className="text-5xl md:text-7xl font-black text-white mb-10 tracking-tight leading-[0.9]">
@@ -400,7 +400,7 @@ export default function PortfolioPage() {
               <div key={stat.label} className="text-center group">
                 <div className="flex justify-center mb-6">
                   <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center border border-slate-100 group-hover:bg-blue-50 transition-colors">
-                    <stat.icon className="w-6 h-6 text-blue-600/30 group-hover:text-blue-600/60" />
+                    <stat.icon className="w-6 h-6 text-[#9e52d8]/30 group-hover:text-[#9e52d8]/60" />
                   </div>
                 </div>
                 <p className="text-4xl font-black text-slate-900 mb-2 tracking-tighter">{stat.value}</p>

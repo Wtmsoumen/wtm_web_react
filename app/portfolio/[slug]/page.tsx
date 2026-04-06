@@ -174,14 +174,14 @@ export default function PortfolioSlugPage({
   return (
     <main className="min-h-screen bg-[#FDFDFF] text-slate-900 pt-24 overflow-x-hidden selection:bg-blue-600/10">
       {/* ── BACKGROUND ACCENTS ── */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+      {/* <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[800px] rounded-full blur-[180px] opacity-10"
           style={{ background: project.accentColor.includes('from-') ? 'blue' : project.glowColor }}
         />
         <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] bg-purple-100/50 rounded-full blur-[140px]" />
         <div className="absolute bottom-[10%] left-[-10%] w-[700px] h-[700px] bg-blue-100/50 rounded-full blur-[160px]" />
-      </div>
+      </div> */}
 
       <div className="relative z-10">
         {/* Navigation */}
@@ -362,7 +362,7 @@ export default function PortfolioSlugPage({
         </section>
 
         {/* Testimonial Quote */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 py-48 mb-32 relative text-center">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-48 mb-32 relative text-center">
           <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-[0.03]">
             <Quote className="w-120 h-120 text-slate-900" />
           </div>
@@ -384,8 +384,8 @@ export default function PortfolioSlugPage({
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
             <ScrollReveal>
               <h2 className="text-5xl md:text-7xl font-black text-white mb-14 leading-[0.95] tracking-tight">
-                Inspired by this project? <br />
-                <span className="text-blue-100">Let&apos;s build yours next.</span>
+                Inspired by this project ? <br />
+                <span className="text-blue-100">Let&apos;s build yours next .</span>
               </h2>
               <Link
                 href="/contact-us"

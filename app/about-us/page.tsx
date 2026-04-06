@@ -153,11 +153,8 @@ export default function AboutPage() {
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black leading-[1.1]">
                   Welcome To{" "}
-                  <span className="bg-linear-to-r from-[#1D74CF] to-[#b33b41] bg-clip-text text-transparent">
-                    Webtechnomind IT Solutions
-                  </span>{" "}
-                  <span className="bg-linear-to-r from-[#b33b41] to-[#D04425] bg-clip-text text-transparent">
-                    Private Limited.
+                  <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">
+                    Webtechnomind IT Solutions Private Limited.
                   </span>
                 </h1>
 
@@ -224,7 +221,7 @@ export default function AboutPage() {
         <section className="py-20 px-4 sm:px-6">
           <div className="max-w-5xl mx-auto" data-aos="zoom-in">
             <div className="rounded-3xl overflow-hidden relative shadow-2xl" style={{
-              background: "linear-gradient(135deg, #1D74CF 0%, #b33b41 50%, #D04425 100%)"
+              background: "linear-gradient(108deg,#0079d0 0%,#9e52d8 32%,#da365c 84%,#d04901 100%)"
             }}>
               <div className="relative z-10 px-8 md:px-16 py-16 text-center">
                 <h2 className="text-3xl md:text-5xl font-black text-white mb-6">Our Purpose</h2>
@@ -255,11 +252,11 @@ export default function AboutPage() {
               {values.map(({ icon: Icon, title, description }, i) => (
                 <div
                   key={i}
-                  className="group relative flex flex-col gap-4 p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                  className="group relative flex flex-col gap-4 p-8 rounded-2xl bg-white border border-gray-100 shadow-md hover:-translate-y-1 transition-all duration-300 overflow-hidden"
                   data-aos="fade-up"
                   data-aos-delay={i * 100}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-[#1D74CF] via-[#b33b41] to-[#D04425] flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] flex items-center justify-center flex-shrink-0">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-black">{title}</h3>
@@ -278,7 +275,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="flex flex-col gap-6" data-aos="fade-right">
                 <h2 className="text-3xl md:text-5xl font-black text-black leading-tight">
-                  Our <span className="bg-linear-to-r from-[#1D74CF] to-[#b33b41] bg-clip-text text-transparent">Global</span> <span className="bg-linear-to-r from-[#b33b41] to-[#D04425] bg-clip-text text-transparent">Presence</span>
+                  Our <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Global Presence</span>
                 </h2>
                 <div className="flex flex-col gap-4 text-gray-600 text-base leading-relaxed">
                   <p>

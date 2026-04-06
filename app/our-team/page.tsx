@@ -55,45 +55,45 @@ const teamData = [
     {
         category: "Development Team",
         members: [
-            { name: "Devjit", role: "Team Lead", image: devjit, id: "WTM-LD-008" },
-            { name: "Priya", role: "Senior Web Developer", image: priya, id: "WTM-SW-009" },
-            { name: "Sourav", role: "Web Developer", image: sourav, id: "WTM-WD-010" },
-            { name: "Suprio", role: "App Developer", image: supriyo, id: "WTM-AD-011" },
-            { name: "Rajdwip", role: "Web Developer", image: rajdwip, id: "WTM-WD-012" },
-            { name: "Aditya", role: "Web Developer", image: aditya, id: "WTM-WD-013" },
-            { name: "Suraj", role: "App Developer", image: suraj, id: "WTM-AD-014" },
-            { name: "Sandip", role: "Web Developer", image: WD1, id: "WTM-WD-015" },
-        ]
-    },
-    {
-        category: "UI/UX & Design",
-        members: [
-            { name: "Ritwik", role: "Team Lead", image: ritwik, id: "WTM-UI-016" },
-            { name: "Jeet", role: "Graphic Designer", image: jeet, id: "WTM-GD-017" },
+            { name: "", role: "Team Lead", image: devjit, id: "WTM-LD-008" },
+            { name: "", role: "Senior Web Developer", image: priya, id: "WTM-SW-009" },
+            { name: "", role: "Web Developer", image: sourav, id: "WTM-WD-010" },
+            { name: "", role: "App Developer", image: supriyo, id: "WTM-AD-011" },
+            { name: "", role: "Web Developer", image: rajdwip, id: "WTM-WD-012" },
+            { name: "", role: "Web Developer", image: aditya, id: "WTM-WD-013" },
+            { name: "", role: "App Developer", image: suraj, id: "WTM-AD-014" },
+            { name: "", role: "Web Developer", image: WD1, id: "WTM-WD-015" },
         ]
     },
     {
         category: "UI Developer",
         members: [
-            { name: "Tarun", role: "Team Lead", image: tarun, id: "WTM-LI-018" },
-            { name: "Satyajit", role: "Senior UI Developer", image: satyajit, id: "WTM-SI-019" },
-            { name: "Arnab", role: "Senior UI Developer", image: arnab, id: "WTM-SI-020" },
-            { name: "Balaram", role: "UI Developer", image: balaram, id: "WTM-UI-021" },
+            { name: "", role: "Team Lead", image: tarun, id: "WTM-LI-018" },
+            { name: "", role: "Senior UI Developer", image: satyajit, id: "WTM-SI-019" },
+            { name: "", role: "Senior UI Developer", image: arnab, id: "WTM-SI-020" },
+            { name: "", role: "UI Developer", image: balaram, id: "WTM-UI-021" },
+        ]
+    },
+    {
+        category: "UI/UX & Design",
+        members: [
+            { name: "", role: "Team Lead", image: ritwik, id: "WTM-UI-016" },
+            { name: "", role: "Graphic Designer", image: jeet, id: "WTM-GD-017" },
         ]
     },
     {
         category: "Performance Marketing",
         members: [
-            { name: "Avijit", role: "CMO", image: avijit, id: "WTM-CM-022" },
-            { name: "Laxmon", role: "Digital Marketing Manager", image: laxman, id: "WTM-MM-023" },
-            { name: "Tanusree", role: "Marketing Executive", image: tanusree, id: "WTM-ME-024" },
-            { name: "Ayan", role: "Creative Strategy", image: ayan, id: "WTM-CS-025" }
+            { name: "", role: "CMO", image: avijit, id: "WTM-CM-022" },
+            { name: "", role: "Digital Marketing Manager", image: laxman, id: "WTM-MM-023" },
+            { name: "", role: "Marketing Executive", image: tanusree, id: "WTM-ME-024" },
+            { name: "", role: "Creative Strategy", image: ayan, id: "WTM-CS-025" }
         ]
     },
     {
-        category: "IT Hardware Enginee",
+        category: "IT Hardware Enginer",
         members: [
-            { name: "subhankar", role: "IT Hardware Engineer", image: subhankar, id: "WTM-IT-026" },
+            { name: "", role: "IT Hardware Engineer", image: subhankar, id: "WTM-IT-026" },
         ]
     }
 ];
@@ -179,7 +179,7 @@ const IDCard = ({ member, index }: { member: any, index: number }) => {
                             <h3 className="text-xl font-semibold text-black group-hover:text-red-600 transition-colors tracking-tight">
                                 {member.name}
                             </h3>
-                            <p className="text-[11px] font-medium text-red-600/80 uppercase tracking-widest mt-1">
+                            <p className={`${member?.name ? 'text-[11px]' : 'text-sm'} font-medium text-red-600/80 uppercase mt-1`}>
                                 {member.role}
                             </p>
                         </div>
