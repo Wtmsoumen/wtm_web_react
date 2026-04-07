@@ -109,6 +109,46 @@ const projects: Record<string, Project> = {
   },
 };
 
+// Link slug to specific image
+const slugToImage: Record<string, string> = {
+  "virtuard": "/images/portfolio/Virtuard.jpg",
+  "sky-dive": "/images/portfolio/skydive.jpg",
+  "re-energi": "/images/portfolio/reenergi.jpg",
+  "neuro-apply": "/images/portfolio/neuroapply.jpg",
+  "enigma-psychometry": "/images/portfolio/enigma.jpg",
+  "canadian-flyers": "/images/portfolio/canadianflyers.jpg",
+  "brigient": "/images/portfolio/brigient.jpg",
+  "balaji-shipping": "/images/portfolio/balajishippingagency.jpg",
+  "ahmad-law": "/images/portfolio/ahmadlaw.jpg",
+  "accoun-tax": "/images/portfolio/accountaxaustralia.jpg",
+  "accord-attorneys": "/images/portfolio/accordattorneys.jpg",
+  "pre-drinks-bar": "/images/portfolio/pre-drimks.jpg",
+  "lj-morelli-films": "/images/portfolio/lj.jpg",
+  "cerchio-lighting": "/images/portfolio/cerchiolighting.jpg",
+  "byiba-lights": "/images/portfolio/byiba.jpg",
+  "bullard-collection": "/images/portfolio/bullardcollaction.jpg",
+  "bullard-bollards": "/images/portfolio/bullard.jpg",
+  "aib4d": "/images/portfolio/aib4d.jpg",
+  "europe-sports-tour": "/images/portfolio/tourseurosports.jpg",
+  "the-europe-tours": "/images/portfolio/theeuropetours.jpg",
+  "interior-design-company": "/images/portfolio/Global-Lifestyle-Interior.jpg",
+  "total-irp": "/images/portfolio/totalirp.jpg",
+  "music-molecule": "/images/portfolio/musicmolecule.jpg",
+  "easydrinkbygrutas": "/images/portfolio/easydrink.jpg",
+  "anytime-tots": "/images/portfolio/anytimetots.jpg",
+  "joli-cafe": "/images/portfolio/jolibestviewcafe.jpg",
+  "drsany": "/images/portfolio/drsany.jpg",
+  "schooped": "/images/portfolio/schooped.jpg",
+  "glubery": "/images/portfolio/glubery.jpg",
+  "sattva-ayurved": "/images/portfolio/sattvaayurved.jpg",
+  "flight-enquiry": "/images/portfolio/cheapbusinessclass.jpg",
+  "jts-innovations": "/images/portfolio/jtsinnovations.jpg",
+  "rimalinum": "/images/portfolio/rimalinum.jpg",
+  "whitebook-world": "/images/portfolio/whitebook.jpg",
+  "pg-hostel-mess": "/images/portfolio/pghostelmess.jpg",
+  "abc-learnings": "/images/portfolio/abclearnings.jpg",
+};
+
 // Generic fallback
 function buildGenericProject(slug: string): Project {
   const title = slug.split("-").map(w => w[0].toUpperCase() + w.slice(1)).join(" ");
@@ -123,7 +163,7 @@ function buildGenericProject(slug: string): Project {
     duration: "10 months",
     teamSize: "15+",
     description: `${title} is a scalable enterprise platform designed to streamline operations and enhance user productivity through modern tech.`,
-    image: "/images/portfolio/portfolio1.jpg",
+    image: slugToImage[slug] ?? "/images/portfolio/glubery.jpg",
     links: { website: "#" },
     stats: [
       { value: "500K+", label: "System Users" },
@@ -154,7 +194,7 @@ function buildGenericProject(slug: string): Project {
       author: "Project Stakeholder",
       role: "Executive Director",
     },
-    accentColor: "from-blue-600 to-purple-600",
+    accentColor: "bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)]",
     glowColor: "rgba(37, 99, 235, 0.05)",
   };
 }
@@ -196,7 +236,7 @@ export default function PortfolioSlugPage({
         </div>
 
         {/* Hero Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-32">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -262,13 +302,13 @@ export default function PortfolioSlugPage({
         </section>
 
         {/* Dynamic Stats Grid */}
-        <section className="bg-slate-50/50 border-y border-slate-100 relative mb-32 overflow-hidden py-32">
+        <section className="bg-slate-50/50 border-y border-slate-100 relative overflow-hidden py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-20">
               {project.stats.map((stat, i) => (
                 <ScrollReveal key={i}>
                   <div className="text-center group">
-                    <div className={`text-6xl md:text-7xl font-black bg-linear-to-r ${project.accentColor} bg-clip-text text-transparent mb-5 group-hover:scale-110 transition-transform duration-500 tracking-tighter`}>
+                    <div className={`text-6xl md:text-7xl font-black ${project.accentColor} bg-clip-text text-transparent mb-5 group-hover:scale-110 transition-transform duration-500 tracking-tighter`}>
                       {stat.value}
                     </div>
                     <div className="text-xs font-bold text-slate-400 uppercase tracking-[0.3em]">{stat.label}</div>
@@ -284,7 +324,7 @@ export default function PortfolioSlugPage({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-start">
             <div className="lg:col-span-5 flex flex-col gap-24">
               <ScrollReveal>
-                <div className="p-12 rounded-[3rem] bg-white border border-slate-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden group">
+                <div className=" bg-white border border-slate-100 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden group">
                   <div className="absolute top-0 right-0 p-10 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity">
                     <Zap className="w-24 h-24 text-blue-600" />
                   </div>
@@ -362,7 +402,7 @@ export default function PortfolioSlugPage({
         </section>
 
         {/* Testimonial Quote */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-6 pt-48 mb-32 relative text-center">
+        <section className="max-w-5xl mx-auto px-4 sm:px-6 mb-32 relative text-center">
           <div className="absolute inset-0 flex items-center justify-center -z-10 opacity-[0.03]">
             <Quote className="w-120 h-120 text-slate-900" />
           </div>
@@ -381,7 +421,7 @@ export default function PortfolioSlugPage({
         {/* Final CTA */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 mb-40">
           <div className="p-16 md:p-32 rounded-[5rem] bg-blue-600 text-center relative overflow-hidden shadow-[0_40px_100px_rgba(37,99,235,0.25)]">
-            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+            {/* <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" /> */}
             <ScrollReveal>
               <h2 className="text-5xl md:text-7xl font-black text-white mb-14 leading-[0.95] tracking-tight">
                 Inspired by this project ? <br />
@@ -389,7 +429,7 @@ export default function PortfolioSlugPage({
               </h2>
               <Link
                 href="/contact-us"
-                className="inline-flex px-14 py-7 rounded-4xl bg-white text-blue-600 font-black text-xl hover:shadow-[0_20px_50px_rgba(255,255,255,0.4)] transition-all transform hover:scale-105 active:scale-95"
+                className="cursor-pointer inline-flex px-14 py-7 rounded-4xl bg-white text-blue-600 font-black text-xl hover:shadow-[0_20px_50px_rgba(255,255,255,0.4)] transition-all transform hover:scale-105 active:scale-95"
               >
                 Start A Workshop
               </Link>

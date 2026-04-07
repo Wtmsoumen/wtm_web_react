@@ -43,7 +43,7 @@ const projects: Project[] = [
     interaction: 75,
     visibility: 83,
     description: "Modern property selling platform with 360° virtual views. Built with Figma + Laravel. Mobile-friendly, scalable, and SEO-optimized.",
-    image: "/images/glubery_B2B.jpg",
+    image: "/images/portfolio/Virtuard.jpg",
     stats: [
       { key: "interaction", value: "75", label: "interaction" },
       { key: "visibility", value: "83", label: "visibility" },
@@ -56,6 +56,7 @@ const projects: Project[] = [
     category: "Tandem Skydiving",
     industry: "Adventure",
     description: "High-performance WordPress website with immersive UI/UX. Delivered 72% traffic growth.",
+    image: "/images/portfolio/skydive.jpg",
     interaction: 75,
     visibility: 83,
     stats: [
@@ -70,6 +71,7 @@ const projects: Project[] = [
     category: "Sustainable Energy",
     industry: "Energy",
     description: "SEO-optimized WordPress site with modern UI reflecting eco-friendly mission.",
+    image: "/images/portfolio/reenergi.jpg",
     interaction: 76,
     visibility: 88,
     stats: [
@@ -84,6 +86,7 @@ const projects: Project[] = [
     category: "Psychological Assessment",
     industry: "Healthcare",
     description: "Clean, intuitive WordPress platform with strong SEO performance.",
+    image: "/images/portfolio/neuroapply.jpg",
     interaction: 75,
     visibility: 89,
     stats: [
@@ -98,6 +101,7 @@ const projects: Project[] = [
     category: "Online Education",
     industry: "Education",
     description: "Modern e-learning website with responsive design and SEO optimization.",
+    image: "/images/portfolio/enigma.jpg",
     interaction: 70,
     visibility: 89,
     stats: [
@@ -112,6 +116,7 @@ const projects: Project[] = [
     category: "Flight Training",
     industry: "Aviation",
     description: "Professional aviation training website with 80%+ traffic growth.",
+    image: "/images/portfolio/canadianflyers.jpg",
     interaction: 82,
     visibility: 93,
     stats: [
@@ -126,6 +131,7 @@ const projects: Project[] = [
     category: "Cybersecurity",
     industry: "Technology",
     description: "Secure and performance-driven website with modern UI/UX.",
+    image: "/images/portfolio/brigient.jpg",
     interaction: 79,
     visibility: 86,
     stats: [
@@ -140,6 +146,7 @@ const projects: Project[] = [
     category: "Transport Solutions",
     industry: "Logistics",
     description: "SEO-optimized logistics website boosting online reach.",
+    image: "/images/portfolio/balajishippingagency.jpg",
     interaction: 72,
     visibility: 80,
     stats: [
@@ -154,6 +161,7 @@ const projects: Project[] = [
     category: "Legal Services",
     industry: "Legal",
     description: "Professional legal website with strong SEO and UX.",
+    image: "/images/portfolio/ahmadlaw.jpg",
     interaction: 79,
     visibility: 83,
     stats: [
@@ -168,6 +176,7 @@ const projects: Project[] = [
     category: "Accounting & Tax",
     industry: "Finance",
     description: "Clean and modern financial website with strong traffic growth.",
+    image: "/images/portfolio/accountaxaustralia.jpg",
     interaction: 82,
     visibility: 88,
     stats: [
@@ -182,6 +191,7 @@ const projects: Project[] = [
     category: "Legal Services",
     industry: "Legal",
     description: "Mobile-optimized legal website with improved visibility.",
+    image: "/images/portfolio/accordattorneys.jpg",
     interaction: 68,
     visibility: 75,
     stats: [
@@ -196,6 +206,7 @@ const projects: Project[] = [
     category: "Hospitality",
     industry: "Retail",
     description: "Flexible bar experience website with strong engagement growth.",
+    image: "/images/portfolio/pre-drimks.jpg",
     interaction: 85,
     visibility: 92,
     stats: [
@@ -210,6 +221,7 @@ const projects: Project[] = [
     category: "Videography",
     industry: "Media",
     description: "Custom CRM-integrated filmmaking website.",
+    image: "/images/portfolio/lj.jpg",
     interaction: 85,
     visibility: 70,
     stats: [
@@ -224,6 +236,7 @@ const projects: Project[] = [
     category: "Lighting Solutions",
     industry: "Manufacturing",
     description: "Modern lighting brand website with SEO growth.",
+    image: "/images/portfolio/cerchiolighting.jpg",
     interaction: 70,
     visibility: 86,
     stats: [
@@ -238,6 +251,7 @@ const projects: Project[] = [
     category: "Lighting Solutions",
     industry: "Manufacturing",
     description: "Stylish lighting website with 80%+ traffic growth.",
+    image: "/images/portfolio/byiba.jpg",
     interaction: 80,
     visibility: 73,
     stats: [
@@ -252,6 +266,7 @@ const projects: Project[] = [
     category: "Security & Lighting",
     industry: "Manufacturing",
     description: "Premium solutions website with responsive design.",
+    image: "/images/portfolio/bullardcollaction.jpg",
     interaction: 80,
     visibility: 70,
     stats: [
@@ -266,6 +281,7 @@ const projects: Project[] = [
     category: "Industrial Products",
     industry: "Manufacturing",
     description: "SEO-driven product website with strong traffic increase.",
+    image: "/images/portfolio/bullard.jpg",
     interaction: 70,
     visibility: 86,
     stats: [
@@ -280,6 +296,7 @@ const projects: Project[] = [
     category: "Education System",
     industry: "Education",
     description: "Advanced school management system website.",
+    image: "/images/portfolio/aib4d.jpg",
     interaction: 70,
     visibility: 82,
     stats: [
@@ -294,6 +311,7 @@ const projects: Project[] = [
     category: "Real Estate / Clinic",
     industry: "Healthcare",
     description: "Clean modern website with performance optimization.",
+    image: "/images/glubery_B2B.jpg",
     interaction: 62,
     visibility: 74,
     stats: [
@@ -308,6 +326,7 @@ const projects: Project[] = [
     category: "Interior Design",
     industry: "Real Estate",
     description: "Premium design-focused real estate website.",
+    image: "/images/Dubai-UAE.jpg",
     interaction: 65,
     visibility: 80,
     stats: [
@@ -322,6 +341,7 @@ const projects: Project[] = [
     category: "Travel",
     industry: "Travel",
     description: "European sports travel platform with SEO growth.",
+    image: "/images/portfolio/tourseurosports.jpg",
     interaction: 70,
     visibility: 85,
     stats: [
@@ -336,6 +356,7 @@ const projects: Project[] = [
     category: "Travel",
     industry: "Travel",
     description: "Modern travel website with improved inquiries.",
+    image: "/images/portfolio/theeuropetours.jpg",
     interaction: 65,
     visibility: 80,
     stats: [
@@ -350,6 +371,7 @@ const projects: Project[] = [
     category: "Construction",
     industry: "Real Estate",
     description: "Mobile-first redesign with 40%+ traffic growth.",
+    image: "/images/portfolio/Global-Lifestyle-Interior.jpg",
     interaction: 40,
     visibility: 75,
     stats: [
@@ -364,6 +386,7 @@ const projects: Project[] = [
     category: "Trucking Compliance",
     industry: "Logistics",
     description: "Compliance solutions platform for US trucking.",
+    image: "/images/portfolio/totalirp.jpg",
     interaction: 70,
     visibility: 90,
     stats: [
@@ -378,6 +401,7 @@ const projects: Project[] = [
     category: "E-commerce + Learning",
     industry: "Education",
     description: "WooCommerce + booking integrated platform.",
+    image: "/images/portfolio/musicmolecule.jpg",
     interaction: 65,
     visibility: 70,
     stats: [
@@ -392,6 +416,7 @@ const projects: Project[] = [
     category: "E-commerce",
     industry: "Retail",
     description: "Wine shop platform built with Laravel + Angular.",
+    image: "/images/portfolio/easydrink.jpg",
     interaction: 60,
     visibility: 60,
     stats: [
@@ -406,6 +431,7 @@ const projects: Project[] = [
     category: "Parenting CMS",
     industry: "Media",
     description: "SEO-driven parenting content platform.",
+    image: "/images/portfolio/anytimetots.jpg",
     interaction: 70,
     visibility: 85,
     stats: [
@@ -420,6 +446,7 @@ const projects: Project[] = [
     category: "Hospitality",
     industry: "Retail",
     description: "Restaurant website with booking system and CMS.",
+    image: "/images/portfolio/jolibestviewcafe.jpg",
     interaction: 60,
     visibility: 80,
     stats: [
@@ -434,6 +461,7 @@ const projects: Project[] = [
     category: "E-commerce Ayurvedic",
     industry: "Healthcare",
     description: "Shopify-based Ayurvedic product platform.",
+    image: "/images/portfolio/drsany.jpg",
     interaction: 60,
     visibility: 75,
     stats: [
@@ -448,6 +476,7 @@ const projects: Project[] = [
     category: "Education Recruitment",
     industry: "Education",
     description: "Teacher recruitment platform with filters and APIs.",
+    image: "/images/portfolio/schooped.jpg",
     interaction: 65,
     visibility: 85,
     stats: [
@@ -462,6 +491,7 @@ const projects: Project[] = [
     category: "B2B E-commerce",
     industry: "Retail",
     description: "Office essentials platform with scalable system.",
+    image: "/images/portfolio/glubery.jpg",
     interaction: 55,
     visibility: 90,
     stats: [
@@ -476,6 +506,7 @@ const projects: Project[] = [
     category: "Healthcare",
     industry: "Healthcare",
     description: "Ayurvedic clinic website with SEO focus.",
+    image: "/images/portfolio/sattvaayurved.jpg",
     interaction: 65,
     visibility: 98,
     stats: [
@@ -490,6 +521,7 @@ const projects: Project[] = [
     category: "Travel",
     industry: "Travel",
     description: "Flight booking and enquiry platform with SEO ranking.",
+    image: "/images/portfolio/cheapbusinessclass.jpg",
     interaction: 70,
     visibility: 80,
     stats: [
@@ -504,6 +536,7 @@ const projects: Project[] = [
     category: "Service CMS",
     industry: "Services",
     description: "Inquiry-based CMS platform for services.",
+    image: "/images/portfolio/jtsinnovations.jpg",
     interaction: 78,
     visibility: 80,
     stats: [
@@ -518,6 +551,7 @@ const projects: Project[] = [
     category: "E-commerce",
     industry: "Retail",
     description: "SEO-optimized WooCommerce platform.",
+    image: "/images/portfolio/rimalinum.jpg",
     interaction: 70,
     visibility: 95,
     stats: [
@@ -532,6 +566,7 @@ const projects: Project[] = [
     category: "Custom E-commerce",
     industry: "Retail",
     description: "Scalable photo frame platform with microservices.",
+    image: "/images/portfolio/whitebook.jpg",
     interaction: 78,
     visibility: 89,
     stats: [
@@ -546,6 +581,7 @@ const projects: Project[] = [
     category: "Booking Platform",
     industry: "Services",
     description: "Hostel booking system with React + Laravel.",
+    image: "/images/portfolio/pghostelmess.jpg",
     interaction: 56,
     visibility: 79,
     stats: [
@@ -560,6 +596,7 @@ const projects: Project[] = [
     category: "LMS Platform",
     industry: "Education",
     description: "Online learning system with dashboards and SEO.",
+    image: "/images/portfolio/abclearnings.jpg",
     interaction: 70,
     visibility: 97,
     stats: [
@@ -608,7 +645,7 @@ export default function PortfolioPage() {
 
       {/* ── HERO SECTION ─────────────────────────────────────────────────── */}
       <ScrollReveal>
-        <section className="relative pt-32 pb-20 z-10">
+        <section className="relative py-20 z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
