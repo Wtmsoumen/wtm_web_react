@@ -295,7 +295,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {industryData.targets.map((target, idx) => (
                             <ScrollReveal key={idx}>
-                                <div className="flex flex-col gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-white/30 transition-all group">
+                                <div className="flex flex-col gap-6 p-8 rounded-3xl bg-white/6 border border-white/10 hover:border-white/30 transition-all group h-[250px]">
                                     <div className="flex items-center gap-5">
                                         <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                             <target.icon className="w-6 h-6" />
@@ -337,7 +337,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
 
             {/* 6. Why Choose Us */}
             <section className="py-40 relative z-10 overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] border border-blue-600/10 rounded-full -z-10" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px]   border border-blue-600/10 rounded-full -z-10" />
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="text-center mb-24">
                         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
