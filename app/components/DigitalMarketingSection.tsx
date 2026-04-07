@@ -315,7 +315,7 @@ const DigitalMarketingSection = () => {
 
               {/* Two small info tiles */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-xl border border-gray-100 bg-gray-50 p-5 flex flex-col gap-2">
+                <div className="rounded-xl border border-gray-200 bg-gray-50 p-5 flex flex-col gap-2">
                   <span className="text-xs font-bold text-gray-700 uppercase tracking-widest">Avg. Time to ROI</span>
                   <span className="text-3xl font-black text-gray-900"
                   >
@@ -327,7 +327,7 @@ const DigitalMarketingSection = () => {
 
                 <div className="rounded-xl overflow-hidden relative p-5 flex flex-col gap-2 text-white"
                   style={{
-                    background: "linear-gradient(135deg, #1D74CF 0%, #b33b41 100%)",
+                    background: "linear-gradient(108deg,#0079d0 0%,#9e52d8 32%,#da365c 84%,#d04901 100%)",
                   }}>
                   <span className="text-xs font-bold uppercase tracking-widest text-white">Platforms</span>
                   <span className="text-3xl font-black"
