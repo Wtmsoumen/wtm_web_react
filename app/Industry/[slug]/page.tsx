@@ -214,7 +214,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.6 }}
                             onClick={() => setIsModalOpen(true)}
-                            className="group relative px-10 py-5 rounded-2xl bg-white text-[#010816] font-bold text-lg hover:scale-105 transition-all shadow-2xl shadow-blue-500/10 overflow-hidden"
+                            className="group relative px-10 py-5 rounded-2xl bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425]  text-white  font-bold text-lg hover:scale-105 transition-all shadow-2xl shadow-blue-500/10 overflow-hidden"
                         >
                             <span className="relative z-10 flex items-center gap-3">
                                 Consult Our Experts
@@ -313,7 +313,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* 5. Regulatory Compliance */}
-            <section className="py-40 relative z-10">
+            <section className="pt-40 pb-20  relative z-10">
                 <div className="max-w-6xl mx-auto text-center px-4">
                     <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 uppercase tracking-tighter">
                         Institutional <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Compliance</span>
@@ -336,8 +336,8 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* 6. Why Choose Us */}
-            <section className="py-40 relative z-10 overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px]   border border-blue-600/10 rounded-full -z-10" />
+            <section className="pt-20 pb-40  relative z-10 overflow-hidden ">
+                {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px]   border border-blue-600/10 rounded-full -z-10" /> */}
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="text-center mb-24">
                         <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
