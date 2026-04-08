@@ -144,10 +144,10 @@ export default function Footer() {
               transition: { staggerChildren: 0.1 }
             }
           }}
-          className="flex flex-wrap gap-8"
+          className="flex lg:flex-wrap flex-col gap-8"
         >
           {/* Brand column */}
-          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }} className="lg:col-span-1 w-[20vw]">
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }} className="lg:col-span-1 lg:w-[20vw] w-full">
             <div className="flex items-center gap-2 mb-4">
               {/* <div className="w-9 h-9 rounded-xl gradient-btn flex items-center justify-center">
                 <span className="text-white font-bold text-base">A</span>
