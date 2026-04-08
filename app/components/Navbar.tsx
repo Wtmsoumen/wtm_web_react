@@ -307,7 +307,7 @@ export default function Navbar() {
                             <Link onClick={() => setOpenMegaMenu({})} href={v?.href} className={`flex p-3 items-center gap-2 font-normal group text-sm rounded-xl border border-solid border-transparent hover:border-gray-200`}>
                               {v?.icon !== "" ?
                                 <div className={`p-3 rounded-xl`} style={{ background: v?.subMenue?.length ? `${v?.color}40` : `${v?.color}20`, }}>
-                                  <Icon className={`w-4 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} />
+                                  <Icon className={`w-6 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} />
                                 </div>
                                 : ""}
                               <span className="font-semibold text-base text-gray-600">{v?.title}</span>

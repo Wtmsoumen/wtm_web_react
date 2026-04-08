@@ -217,7 +217,7 @@ const Industries = () => {
         {/* Section Header */}
         <div className="flex items-center gap-2 mb-8">
           <Bot className="w-5 h-5 text-purple-500" />
-          <h3 className="text-2xl font-bold text-gray-900">More AI-Powered Industries</h3>
+          <h3 className="text-2xl font-bold text-gray-900">Our Products Across Industries</h3>
         </div>
 
         {/* Grid */}

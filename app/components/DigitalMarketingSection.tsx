@@ -269,7 +269,7 @@ const DigitalMarketingSection = () => {
             <div className="flex flex-col" data-aos="fade-right">
               <div className="mb-6">
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-                  What we do
+                 Driving Digital Growth
                 </span>
               </div>
 
