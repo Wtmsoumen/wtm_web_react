@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { Sparkles, ArrowUpRight, TrendingUp, Eye, Users, Star, Box, Code2, Globe, Rocket, ArrowRight } from "lucide-react";
+import { Sparkles, ArrowUpRight, TrendingUp, Eye, Users, Star, Box, Code2, Globe, Rocket, ArrowRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
@@ -608,8 +608,8 @@ const projects: Project[] = [
 ];
 
 // ─── Filter Lists ─────────────────────────────────────────────────────────────
-const industryList = ["All", ...Array.from(new Set(projects.map((p) => p.industry)))];
-const categoryList = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
+const industryList = ["All", ...Array.from(new Set(projects.map((p) => p.industry).filter((i): i is string => !!i)))];
+const categoryList = ["All", ...Array.from(new Set(projects.map((p) => p.category).filter((c): c is string => !!c)))];
 
 // ─── Stat Icon Map ─────────────────────────────────────────────────────────────
 const StatIcon: Record<StatKey, React.ElementType> = {
@@ -617,6 +617,74 @@ const StatIcon: Record<StatKey, React.ElementType> = {
   visibility: Eye,
   growth: TrendingUp,
   satisfaction: Star,
+};
+
+// ─── FilterSelect Component ───────────────────────────────────────────────────
+const FilterSelect = ({
+  options,
+  value,
+  onChange,
+  placeholder
+}: {
+  options: string[],
+  value: string,
+  onChange: (val: string) => void,
+  placeholder: string
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="relative min-w-[240px]">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between px-6 py-4 bg-white border border-slate-300 rounded-2xl text-[11px] font-black uppercase tracking-widest text-slate-900 shadow-md hover:border-blue-600 transition-all group"
+      >
+        <span className={value === "All" ? "text-slate-400" : "text-slate-900"}>
+          {value === "All" ? placeholder : value}
+        </span>
+        <ChevronDown className={`w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-40 bg-transparent"
+              onClick={() => setIsOpen(false)}
+            />
+            <motion.div
+              initial={{ opacity: 0, y: 10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 10, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
+              className="absolute top-full left-0 right-0 mt-3 bg-white border border-slate-100 rounded-3xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] overflow-hidden z-50 backdrop-blur-3xl"
+            >
+              <div className="max-h-[350px] overflow-y-auto py-3 scrollbar-thin scrollbar-thumb-slate-200">
+                {options.map((opt) => (
+                  <button
+                    key={opt}
+                    onClick={() => {
+                      onChange(opt);
+                      setIsOpen(false);
+                    }}
+                    className={`w-full text-left px-7 py-3.5 text-[11px] font-black uppercase tracking-widest transition-all ${value === opt
+                      ? "bg-blue-600/5 text-blue-600"
+                      : "text-slate-500 hover:bg-slate-50 hover:text-slate-900"
+                      }`}
+                  >
+                    {opt}
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 export default function PortfolioPage() {
@@ -689,7 +757,7 @@ export default function PortfolioPage() {
 
       {/* ── FILTER SECTION ────────────────────────────────────────────── */}
       <section className="sticky top-20 z-40 bg-white/60 backdrop-blur-2xl border-y border-slate-100 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-b border-solid border-gray-300">
           <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-8">
             <div className="flex p-1.5 bg-slate-100/50 rounded-2xl border border-slate-200 w-fit">
               {(["industries", "technology"] as const).map((tab) => (
@@ -713,34 +781,32 @@ export default function PortfolioPage() {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              <AnimatePresence mode="popLayout">
-                {(activeTab === "industries" ? industryList : categoryList).map((f: any) => {
-                  const isActive = (activeTab === "industries" ? activeIndustry : activeCategory) === f;
-                  return (
-                    <motion.button
-                      key={f}
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.9 }}
-                      onClick={() => (activeTab === "industries" ? setActiveIndustry(f) : setActiveCategory(f))}
-                      className={`px-6 py-2.5 rounded-2xl text-[11px] font-black uppercase tracking-widest border transition-all duration-300 ${isActive
-                        ? "bg-slate-900 text-white border-slate-900 shadow-xl shadow-slate-900/10"
-                        : "bg-white text-slate-500 border-slate-200 hover:border-blue-600 hover:text-[#9e52d8]"
-                        }`}
-                    >
-                      {f}
-                    </motion.button>
-                  );
-                })}
-              </AnimatePresence>
+            <div className="flex items-center gap-6">
+              <FilterSelect
+                options={activeTab === "industries" ? industryList : categoryList}
+                value={activeTab === "industries" ? activeIndustry : activeCategory}
+                onChange={(val) => activeTab === "industries" ? setActiveIndustry(val) : setActiveCategory(val)}
+                placeholder={activeTab === "industries" ? "Select Industry" : "Select Category"}
+              />
+
+              {(activeIndustry !== "All" || activeCategory !== "All") && (
+                <button
+                  onClick={() => {
+                    setActiveIndustry("All");
+                    setActiveCategory("All");
+                  }}
+                  className="text-[10px] font-black uppercase tracking-widest text-[#9e52d8] hover:text-blue-600 transition-colors"
+                >
+                  Reset Filter
+                </button>
+              )}
             </div>
           </div>
         </div>
       </section>
 
       {/* ── PROJECTS LIST ─────────────────────────────────────────────── */}
-      <section className="relative z-10 py-32">
+      <section className="relative z-10 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:gap-20">
             {filtered.map((project, i) => (
