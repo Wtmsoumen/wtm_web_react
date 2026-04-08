@@ -79,23 +79,23 @@ const DiscussProjectForm = ({ isOpen, onClose }: DiscussProjectFormProps) => {
 
 
 
-       <div>
-  <label className="block text-sm font-medium text-gray-700 mb-1.5">
-    Phone Number <span className="text-red-500">*</span>
-  </label>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+              Phone Number <span className="text-red-500">*</span>
+            </label>
 
-  <PhoneInput
-    country={'in'}
-    value={formData.phone}
-    onChange={(phone: string) =>
-      setFormData({ ...formData, phone })
-    }
-    inputClass="!w-full !py-2.5 !pl-14 !text-sm !border-0 !bg-transparent !text-gray-800 placeholder-gray-400"
-    containerClass="!w-full !border !border-gray-200 !rounded-lg !bg-gray-50"
-    buttonClass="!border-r !border-gray-200 !bg-transparent"
-    dropdownClass="!text-md !text-gray-800"
-  />
-</div>
+            <PhoneInput
+              country={'in'}
+              value={formData.phone}
+              onChange={(phone: string) =>
+                setFormData({ ...formData, phone })
+              }
+              inputClass="!w-full !py-5 !pl-12 !text-sm !border-0 !bg-transparent !text-gray-800 placeholder-gray-400"
+              containerClass="!w-full !border !border-gray-200 !rounded-lg !bg-gray-50"
+              buttonClass="!border-r !border-gray-200 !bg-transparent"
+              dropdownClass="!text-md !text-gray-800"
+            />
+          </div>
         </div>
 
         {/* Email */}
@@ -138,7 +138,7 @@ const DiscussProjectForm = ({ isOpen, onClose }: DiscussProjectFormProps) => {
               <option>Digital Marketing</option>
               <option>SEO Optimization</option>
               <option>Cloud Solutions</option>
-                 <option>Others</option>
+              <option>Others</option>
             </select>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-400 shrink-0">
               <path d="m6 9 6 6 6-6" />
