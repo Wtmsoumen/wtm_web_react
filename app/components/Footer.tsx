@@ -144,7 +144,7 @@ export default function Footer() {
               transition: { staggerChildren: 0.1 }
             }
           }}
-          className="flex lg:flex-wrap flex-col gap-8"
+          className="flex lg:flex-row flex-col gap-8"
         >
           {/* Brand column */}
           <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }} className="lg:col-span-1 lg:w-[20vw] w-full">
