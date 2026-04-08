@@ -850,11 +850,11 @@ export default function PortfolioPage() {
                 {/* Content Container */}
                 <div className="w-full lg:w-2/5 flex flex-col items-start px-4">
                   <div className="w-16 h-1.5 mb-10 bg-blue-600 rounded-full" />
-                  <p className="text-[#9e52d8] text-xs font-black tracking-[0.4em] mb-6 uppercase">Institutional Transformation</p>
+                  <p className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent text-md font-bold tracking-widest mb-6 uppercase">Institutional Transformation</p>
                   <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight group-hover:text-[#9e52d8] transition-colors duration-500">
                     {project.title}
                   </h3>
-                  <p className="text-slate-500 leading-[1.6] text-xl mb-12 font-light italic">
+                  <p className="text-black leading-[1.6] text-xl mb-12 font-light italic">
                     &quot;{project.description}&quot;
                   </p>
 
@@ -863,12 +863,12 @@ export default function PortfolioPage() {
                       const Icon = StatIcon[stat.key];
                       return (
                         <div key={stat.label} className="flex items-center gap-5 group/stat">
-                          <div className="w-14 h-14 rounded-[1.25rem] bg-slate-50 border border-slate-100 flex items-center justify-center shrink-0 group-hover/stat:bg-blue-600 group-hover/stat:text-white transition-all duration-500 shadow-sm">
+                          <div className="w-14 h-14 rounded-[1.25rem] bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 group-hover/stat:bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] group-hover/stat:text-white transition-all duration-500 shadow-sm">
                             {Icon && <Icon className="w-6 h-6 text-[#9e52d8] group-hover/stat:text-white" />}
                           </div>
                           <div>
-                            <p className="text-3xl font-black text-slate-900 tracking-tighter">{stat.value}</p>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">{stat.label}</p>
+                            <p className="text-3xl font-black bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent tracking-tighter">{stat.value}</p>
+                            <p className="text-[10px] font-black text-black/80 uppercase tracking-widest">{stat.label}</p>
                           </div>
                         </div>
                       )
