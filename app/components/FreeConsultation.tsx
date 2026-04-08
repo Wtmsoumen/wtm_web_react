@@ -92,6 +92,7 @@ const FreeConsultation = () => {
                                 <option value='web'>Web Development</option>
                                 <option value='mobile'>Mobile Development</option>
                                 <option value='design'>UI/UX Design</option>
+                                    <option value='design'>Others</option>
                             </select>
                             <svg className='w-4 h-4 text-gray-400 shrink-0' fill='none' stroke='black' viewBox='0 0 24 24'>
                                 <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 9l-7 7-7-7' />

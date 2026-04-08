@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react'
 import { X, User, Mail, Tag, MessageSquare, Send } from 'lucide-react'
+import 'react-phone-input-2/lib/style.css'
+import PhoneInput from 'react-phone-input-2'
 
 interface DiscussProjectFormProps {
   isOpen: boolean
@@ -75,27 +77,24 @@ const DiscussProjectForm = ({ isOpen, onClose }: DiscussProjectFormProps) => {
             </div>
           </div>
 
+
+
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1.5">
               Phone Number <span className="text-red-500">*</span>
             </label>
-            <div className="flex items-center border border-gray-200 rounded-lg bg-gray-50 overflow-hidden">
-              <div className="flex items-center gap-1 px-3 border-r border-gray-200 text-xs font-semibold text-gray-700 h-full py-2.5 whitespace-nowrap">
-                <span>IN</span> +91
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="m6 9 6 6 6-6" />
-                </svg>
-              </div>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="10 digit number"
-                maxLength={10}
-                value={formData.phone}
-                onChange={handleChange}
-                className="w-full py-2.5 px-3 bg-transparent outline-none text-sm text-gray-800 placeholder-gray-400"
-              />
-            </div>
+
+            <PhoneInput
+              country={'in'}
+              value={formData.phone}
+              onChange={(phone: string) =>
+                setFormData({ ...formData, phone })
+              }
+              inputClass="!w-full !py-5 !pl-12 !text-sm !border-0 !bg-transparent !text-gray-800 placeholder-gray-400"
+              containerClass="!w-full !border !border-gray-200 !rounded-lg !bg-gray-50"
+              buttonClass="!border-r !border-gray-200 !bg-transparent"
+              dropdownClass="!text-md !text-gray-800"
+            />
           </div>
         </div>
 
@@ -139,6 +138,7 @@ const DiscussProjectForm = ({ isOpen, onClose }: DiscussProjectFormProps) => {
               <option>Digital Marketing</option>
               <option>SEO Optimization</option>
               <option>Cloud Solutions</option>
+              <option>Others</option>
             </select>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-400 shrink-0">
               <path d="m6 9 6 6 6-6" />
