@@ -4,12 +4,12 @@ import ScrollReveal from "./ScrollReveal";
 const ServicesHeading = () => {
     return (
         <ScrollReveal>
-            <section className="w-full pt-20">
+            <section className="w-full pt-12">
                 <div className="max-w-7xl mx-auto">
                     {/* Services Heading with Button */}
                     <div className="relative text-center">
                         {/* Large SERVICES Text */}
-                        <h2 
+                        <h2
                             className="text-[48px] sm:text-[72px] md:text-[110px] lg:text-[150px] xl:text-[180px] font-bold uppercase leading-none tracking-tight text-black"
                             data-aos="fade-down"
                         >
@@ -17,7 +17,7 @@ const ServicesHeading = () => {
                         </h2>
 
                         {/* Service Categories + Button Row */}
-                        <div 
+                        <div
                             className="flex flex-wrap items-center justify-center gap-4 md:gap-10 mt-6 text-sm md:text-base font-semibold uppercase tracking-wide text-black"
                             data-aos="fade-up"
                         >

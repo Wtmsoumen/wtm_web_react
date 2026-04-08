@@ -105,13 +105,13 @@ const Industries = () => {
   const smallCards = industries.filter((i) => !i.large);
 
   return (
-    <ScrollReveal><section className="w-full bg-white py-20 px-4 sm:px-6  ">
+    <ScrollReveal><section className="w-full bg-white py-16 px-4 sm:px-6  ">
 
       {/* --------------UPPER INDUSTRIES---------------- */}
       <div className={`${globalStyle?.container}`}>
 
         {/* Header */}
-        <div 
+        <div
           className="flex flex-col items-center text-center mb-12"
           data-aos="fade-down"
         >
@@ -135,7 +135,7 @@ const Industries = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mx-auto">
 
           {/* Large card - left, spans 2 rows on lg+ */}
-          <div 
+          <div
             className={`relative sm:col-span-1 lg:row-span-2 shadow-xl  rounded-3xl bg-gradient-to-br ${largeCard.gradient} p-8 flex flex-col justify-between overflow-hidden cursor-pointer group min-h-[260px]`}
             data-aos="fade-right"
           >
@@ -209,7 +209,7 @@ const Industries = () => {
 
 
       {/* -----------LOWER SECTION--------- */}
-      <div 
+      <div
         className="w-full md:w-[85%] mx-auto mt-16 shadow-md bg-white rounded-3xl p-4 md:p-8"
         data-aos="zoom-in"
       >

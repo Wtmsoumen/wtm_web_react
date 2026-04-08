@@ -190,7 +190,7 @@ const DigitalMarketingSection = () => {
       `}</style>
 
       <section
-        className="py-24 bg-white relative overflow-hidden"
+        className="py-16 bg-white relative overflow-hidden"
         style={{ fontFamily: "'DM Sans', sans-serif" }}
       >
         {/* Decorative blobs */}

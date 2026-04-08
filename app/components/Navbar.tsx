@@ -70,7 +70,7 @@ const services = [
 const navLinks = [
   {
     label: "Hello AI", href: "#helloai", title: "AI Development Services", subtitle: "Next-Gen AI & ML Solutions", icon: Sparkles, megaMenu: [
-      { title: "AI development", href: "/services/ai-development", icon: Sparkles, color: "#fb2c36", color1: "#570707" },
+      { title: "AI Development", href: "/services/ai-development", icon: Sparkles, color: "#fb2c36", color1: "#570707" },
       { title: "AI Chatbot Development", href: "/services/ai-chatbot-development", icon: MessageSquare, color: "#fb2c36", color1: "#570707" },
       { title: "Generative AI Development", href: "/services/generative-ai-development", icon: Brain, color: "#fb2c36", color1: "#570707" },
       { title: "AI Agent Development", href: "/services/ai-agent-development", icon: Bot, color: "#fb2c36", color1: "#570707" },
