@@ -20,7 +20,7 @@ import {
   Sparkles
 } from "lucide-react";
 
-
+import { useRouter } from 'next/navigation'
 
 const industries = [
   {
@@ -103,6 +103,7 @@ const moreIndustries = [
 const Industries = () => {
   const largeCard = industries.find((i) => i.large)!;
   const smallCards = industries.filter((i) => !i.large);
+  const router = useRouter();
 
   return (
     <ScrollReveal><section className="w-full bg-white py-20 px-4 sm:px-6  ">
@@ -247,7 +248,7 @@ const Industries = () => {
 
       {/* CTA Button */}
       <div className="flex justify-center mt-8">
-        <button className={`${globalStyle?.gradientText} flex items-center gap-3  text-white text-sm font-bold px-14 py-5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300  `}>
+        <button   onClick={() => router.push('/contact-us')}  className={`${globalStyle?.gradientText} flex items-center gap-3  text-white text-sm font-bold px-14 py-5 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300  `}>
 
           <Sparkles className="w-6 h-6" />
           Start Your AI-Powered Project
