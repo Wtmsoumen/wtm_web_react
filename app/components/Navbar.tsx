@@ -112,24 +112,24 @@ const navLinks = [
     ]
   },
 
-{
-  label: "Services",
-  href: "#services",
-  title: "Our Services",
-  subtitle: "Our Services",
-  icon: LaptopMinimalCheck,
-  megaMenu: [
-    { title: "AI Engineering", href: "/services/ai-engineering", icon: Share2, color: "#a800b7", color1: "#000000" },
-    { title: "Digital Marketing", href: "/services/digital-marketing", icon: Lightbulb, color: "#a800b7", color1: "#000000" },
-    { title: "Mobile App Development", href: "/services/mobile-app-development", icon: TrendingUp, color: "#a800b7", color1: "#000000" },
-    { title: "Custom Web Development", href: "/services/custom-web-development", icon: Users, color: "#a800b7", color1: "#000000" },
-    { title: "Software Development", href: "/services/software-development", icon: Search, color: "#a800b7", color1: "#000000" },
-    { title: "Digital Transformation", href: "/services/digital-transformation", icon: UserPlus, color: "#a800b7", color1: "#000000" },
-    { title: "E-commerce Development", href: "/services/ecommerce-development", icon: ShieldCheck, color: "#a800b7", color1: "#000000" },
-    { title: "Blockchain Development", href: "/services/blockchain-development", icon: ShoppingCart, color: "#a800b7", color1: "#000000" },
-    { title: "Data Science & Analytics", href: "/services/data-science-analytics", icon: Megaphone, color: "#a800b7", color1: "#000000" },
-  ]
-},
+  {
+    label: "Services",
+    href: "#services",
+    title: "Our Services",
+    subtitle: "Our Services",
+    icon: LaptopMinimalCheck,
+    megaMenu: [
+      { title: "AI Engineering", href: "/services/ai-engineering", icon: Share2, color: "#a800b7", color1: "#000000" },
+      { title: "Digital Marketing", href: "/services/digital-marketing", icon: Lightbulb, color: "#a800b7", color1: "#000000" },
+      { title: "Mobile App Development", href: "/services/mobile-app-development", icon: TrendingUp, color: "#a800b7", color1: "#000000" },
+      { title: "Custom Web Development", href: "/services/custom-web-development", icon: Users, color: "#a800b7", color1: "#000000" },
+      { title: "Software Development", href: "/services/software-development", icon: Search, color: "#a800b7", color1: "#000000" },
+      { title: "Digital Transformation", href: "/services/digital-transformation", icon: UserPlus, color: "#a800b7", color1: "#000000" },
+      { title: "E-commerce Development", href: "/services/ecommerce-development", icon: ShieldCheck, color: "#a800b7", color1: "#000000" },
+      { title: "Blockchain Development", href: "/services/blockchain-development", icon: ShoppingCart, color: "#a800b7", color1: "#000000" },
+      { title: "Data Science & Analytics", href: "/services/data-science-analytics", icon: Megaphone, color: "#a800b7", color1: "#000000" },
+    ]
+  },
 
   // on que
   // {
