@@ -33,6 +33,7 @@ export default function RootLayout({
         {children}
         <Footer />
 
+        <div className="animate-ping bg-green-500 w-10 h-10 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 fixed bottom-6.5 right-6.5 z-50" />
         <Link href="https://api.whatsapp.com/send?phone=918777639601" target="_blank" className="fixed bottom-4 right-4 z-50">
           <div className="bg-green-500 w-15 h-15 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30">
             <Image src={whatsapp} alt="whatsapp" width={30} height={30} />
