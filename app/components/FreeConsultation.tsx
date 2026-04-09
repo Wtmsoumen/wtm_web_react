@@ -1,50 +1,86 @@
 import React from 'react'
 import Image from 'next/image'
 import girl from "../../public/images/Freeconsultation_left_girl.webp"
+import { Facebook, Instagram, Twitter, Linkedin, Phone } from "lucide-react";
 
 const FreeConsultation = () => {
     return (
         <div className='w-full pt-8 md:pt-40 flex flex-col md:flex-row p-4 md:p-8 bg-[#f5f5f7]'>
-            {/* -----left girl------ */}
-            <div className='w-full md:w-[50%] h-[260px] md:h-[300px] flex items-center justify-center' data-aos="fade-right">
-                <div className="relative flex items-center justify-center">
 
-                    {/* Gradient Ring - hidden on small mobile to avoid overflow */}
-                    <div
-                        className="absolute top-[80px] md:top-[120px] rounded-full hidden sm:block"
-                        style={{
-                            width: '300px',
-                            height: '270px',
-                            background: 'conic-gradient(from 180deg, #E91E8C, #E53935, #1E88E5, #1E88E5, #E91E8C)',
-                            padding: '14px',
-                            borderRadius: '50%',
-                        }}
-                    >
-                        {/* Inner white circle to create ring effect */}
-                        <div className="w-full h-full rounded-full bg-white" />
+
+            {/* ----- Left Content Section ----- */}
+            <div className="w-full md:w-[50%] px-4 md:px-10 " >
+
+                {/* Heading */}
+                <h1 className="text-3xl md:text-6xl font-bold leading-tight mb-4   bg-gradient-to-r
+                      from-[#1E7FF8]
+                      via-[#0E8DF6]
+                      via-[#AB82E0]
+                      to-[#E75061]  bg-clip-text text-transparent">
+                    Web development company
+                </h1>
+
+                {/* Description */}
+                <p className="text-black text-xl md:text-md leading-relaxed mb-5 max-w-lg">
+                    Partner with a leading web development company to increase your brand
+                    awareness, lead generation, and conversions.
+                </p>
+
+                {/* Points */}
+                <ul className="space-y-2 mb-6 text-black text-lg md:text-md">
+                    <li className="flex items-start gap-2">
+                        <span>•</span> Uphold confidentiality through an NDA.
+                    </li>
+                    <li className="flex items-start gap-2">
+                        <span>•</span> Grasp the essence of the business.
+                    </li>
+                    <li className="flex items-start gap-2">
+                        <span>•</span> Work closely with leadership.
+                    </li>
+                    <li className="flex items-start gap-2">
+                        <span>•</span> Deliver consistent updates.
+                    </li>
+                    <li className="flex items-start gap-2">
+                        <span>•</span> Provide aggressive pricing.
+                    </li>
+                </ul>
+
+                {/* Social Media */}
+                <div className="flex items-center gap-4">
+                    <span className="text-gray-700 font-medium">Social Media :</span>
+
+                    <div className="flex gap-3">
+                        {[
+                            { icon: Facebook },
+                            { icon: Instagram },
+                            { icon: Twitter },
+                            { icon: Linkedin },
+                            { icon: Phone } // WhatsApp alternative
+                        ].map((item, idx) => {
+                            const Icon = item.icon;
+                            return (
+                                <div
+                                    key={idx}
+                                    className="w-9 h-9 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white shadow-md hover:scale-110 transition-all duration-300 cursor-pointer"
+                                >
+                                    <Icon size={16} />
+                                </div>
+                            );
+                        })}
                     </div>
-
-                    {/* Girl Image - sits on top of ring */}
-                    <div className="relative z-10">
-                        <Image
-                            src={girl}
-                            alt="girl with laptop"
-                            height={500}
-                            width={550}
-                            className="object-contain max-h-[250px] md:max-h-none"
-                        />
-                    </div>
-
                 </div>
+
             </div>
 
             {/* -----right part---------- */}
-            <div className='w-full md:w-[50%] flex items-center justify-center' data-aos="fade-left">
+
+
+            <div className='w-full md:w-[50%] flex items-center justify-center ' data-aos="fade-left">
                 <div className='w-full md:relative md:bottom-15'>
                     {/* Title */}
                     <p className='text-[#ED286C] text-[15px] font-bold tracking-widest uppercase mb-1'>Free Consultation</p>
-                    <h2 className='text-3xl md:text-[50px] font-regular text-[#020200] leading-tight'>Web Development</h2>
-                    <h2 className='text-4xl md:text-[55px] font-bold mb-5 text-[#1E7FF8]'>Company</h2>
+                    <h2 className='text-3xl md:text-[50px] font-regular text-[#020200] leading-tight'>Maximize Your Brand’s Performance With </h2>
+                    <h2 className='text-4xl md:text-[55px] font-bold mb-5 text-[#1E7FF8]'> Webtechnomind IT Solutions</h2>
 
                     {/* Form Grid */}
                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-5' data-aos="fade-up" data-aos-delay="100">
@@ -87,11 +123,19 @@ const FreeConsultation = () => {
                                 <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z' />
                                 <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={1.5} d='M15 12a3 3 0 11-6 0 3 3 0 016 0z' />
                             </svg>
-                            <select defaultValue={'ss'} className='bg-transparent outline-none text-sm text-gray-400 w-full appearance-none cursor-pointer'>
+                            <select defaultValue={'ss'} className=' pl-5 bg-transparent outline-none text-sm text-black w-full appearance-none cursor-pointer'>
                                 <option value='ss' disabled>Select Service</option>
                                 <option value='web'>Web Development</option>
-                                <option value='mobile'>Mobile Development</option>
+                                <option value='mobile'>Mobile App Development</option>
+                                <option value='design'>AI Solutions</option>
                                 <option value='design'>UI/UX Design</option>
+                                <option value='design'>Social Media Marketing</option>
+                                <option value='design'>Search Engine Optimization</option>
+                                <option value='design'>Google Ad Campaigns</option>
+                                <option value='design'>Digital Marketing Agency</option>
+                                <option value='design'>Content MArketing</option>
+                                <option value='design'>Conversion Rate Optimization</option>
+                                <option value='design'>Paid Advertising</option>
                                 <option value='design'>Others</option>
                             </select>
                             <svg className='w-4 h-4 text-gray-400 shrink-0' fill='none' stroke='black' viewBox='0 0 24 24'>
