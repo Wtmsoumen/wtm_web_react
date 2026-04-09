@@ -6,6 +6,7 @@ const ratings = [
     reviews: "50+ Reviews",
     badge: "Top Developer",
     stars: 1,
+    image: "/images/logos_clients/vape_marley.png",
   },
   {
     platform: "We Secure Future",
@@ -13,6 +14,25 @@ const ratings = [
     reviews: "40+ Reviews",
     badge: "Top Company",
     stars: 1,
+    image: "/images/logos_clients/we_secure_future.png",
+  },
+
+  {
+    platform: "Aligned Wealth",
+    score: "4.7",
+    reviews: "40+ Reviews",
+    badge: "Top Company",
+    stars: 1,
+    image: "/images/logos_clients/aligned_wealth.png",
+  },
+
+  {
+    platform: "All Good",
+    score: "4.7",
+    reviews: "40+ Reviews",
+    badge: "Top Company",
+    stars: 1,
+    image: "/images/logos_clients/all_good.png",
   },
   {
     platform: "Expedition Security",
@@ -20,6 +40,7 @@ const ratings = [
     reviews: "Top Agency",
     badge: "Verified",
     stars: 1,
+    image: "/images/logos_clients/expedition_sec.png",
   },
   {
     platform: "Anytime Tots",
@@ -27,13 +48,25 @@ const ratings = [
     reviews: "Verified",
     badge: "Top Developer",
     stars: 1,
+    image: "/images/logos_clients/anytime_tots.png",
   },
+
+  {
+    platform: "Atelier",
+    score: "4.5",
+    reviews: "Verified",
+    badge: "Top Developer",
+    stars: 1,
+    image: "/images/logos_clients/atelier.png",
+  },
+
   {
     platform: "Tabor",
     score: "4.8",
     reviews: "100+ Reviews",
     badge: "Verified",
     stars: 1,
+    image: "/images/logos_clients/tabor.png",
   },
   {
     platform: "U&A Homes",
@@ -41,6 +74,17 @@ const ratings = [
     reviews: "100+ Reviews",
     badge: "Verified",
     stars: 1,
+    image: "/images/logos_clients/ua_homes.png",
+  },
+
+
+  {
+    platform: "Benifit Legal",
+    score: "5.0",
+    reviews: "Verified",
+    badge: "Top Developer",
+    stars: 1,
+    image: "/images/logos_clients/benifit_legal.png",
   },
   {
     platform: "Skills Techlab",
@@ -48,6 +92,51 @@ const ratings = [
     reviews: "100+ Reviews",
     badge: "Verified",
     stars: 1,
+    image: "/images/logos_clients/ua_homes.png",
+  },
+
+  {
+    platform: "Ocean Journey",
+    score: "4.7",
+    reviews: "90+ Reviews",
+    badge: "Verified",
+    stars: 1,
+    image: "/images/logos_clients/ocean_journey.png",
+  },
+
+  {
+    platform: "Pain Tax",
+    score: "4.7",
+    reviews: " 100+Reviews",
+    badge: "Verified",
+    stars: 1,
+    image: "/images/logos_clients/pain_tax.png",
+  },
+
+  {
+    platform: "Cheap Business Class",
+    score: "5.0",
+    reviews: "Verified",
+    badge: "Top Developer",
+    stars: 1,
+    image: "/images/logos_clients/cbc.png",
+  },
+
+  {
+    platform: "Khayat",
+    score: "5.0",
+    reviews: "Verified",
+    badge: "Top Developer",
+    stars: 1,
+    image: "/images/logos_clients/khayat.png",
+  },
+  {
+    platform: "MediSync",
+    score: "5.0",
+    reviews: "Verified",
+    badge: "Top Developer",
+    stars: 1,
+    image: "/images/logos_clients/medisync.png",
   },
 ];
 
@@ -77,24 +166,42 @@ export default function TrustIndicators() {
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-12">
-            {ratings.map((r, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col items-center p-6! bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group cursor-default hover:-translate-y-2 border border-gray-100 w-[240px]"
-                data-aos="fade-up"
-                data-aos-delay={idx * 50}
-              >
-                <div className="text-lg font-bold text-gray-800 mb-2!">{r.platform}</div>
-                <div className="flex items-center gap-1 mb-1!">
-                  <StarRating count={r.stars} />
-                  <div className="text-2xl font-bold bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">{r.score}</div>
+          <div className="overflow-hidden relative py-6">
+            <div className="flex gap-8 animate-marquee duration-2000 w-max items-center">
+              {[...ratings, ...ratings].map((r, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center justify-between p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 w-[280px] min-h-[220px]"
+                >
+                  {/* Logo */}
+                  <div className="w-full flex justify-center items-center mb-4 h-16">
+                    <img
+                      src={r.image}
+                      alt={r.platform}
+                      className="h-full object-contain"
+                    />
+                  </div>
+
+                  {/* Platform Name */}
+                  <div className="text-lg font-semibold text-gray-800 text-center mb-2">
+                    {r.platform}
+                  </div>
+
+                  {/* Rating Section */}
+                  <div className="flex items-center gap-2 mb-1">
+                    <StarRating count={r.stars} />
+                    <span className="text-xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 bg-clip-text text-transparent">
+                      {r.score}
+                    </span>
+                  </div>
+
+                  {/* Reviews */}
+                  <span className="text-sm text-gray-500">
+                    {r.reviews}
+                  </span>
                 </div>
-                <span className="text-xs text-gray-500">
-                  {r.reviews}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

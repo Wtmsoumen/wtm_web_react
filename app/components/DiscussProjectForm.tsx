@@ -118,33 +118,49 @@ const DiscussProjectForm = ({ isOpen, onClose }: DiscussProjectFormProps) => {
           </div>
         </div>
 
-        {/* Service */}
-        <div className="mb-3">
-          <label className="block text-sm font-medium text-gray-700 mb-1.5">
-            Service Interested <span className="text-red-500">*</span>
-          </label>
-          <div className="flex items-center gap-2 border border-gray-200 rounded-lg px-3 bg-gray-50">
-            <Tag size={15} className="text-gray-400 shrink-0" />
-            <select
-              name="service"
-              value={formData.service}
-              onChange={handleChange}
-              className="w-full py-2.5 bg-transparent outline-none text-sm text-gray-500 cursor-pointer appearance-none"
-            >
-              <option value="">Select Service</option>
-              <option>Web Development</option>
-              <option>Mobile App Development</option>
-              <option>UI/UX Design</option>
-              <option>Digital Marketing</option>
-              <option>SEO Optimization</option>
-              <option>Cloud Solutions</option>
-              <option>Others</option>
-            </select>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-gray-400 shrink-0">
-              <path d="m6 9 6 6 6-6" />
-            </svg>
-          </div>
-        </div>
+ <div className="mb-4">
+  <label className="block text-sm font-medium text-gray-700 mb-1.5">
+    Service Interested <span className="text-red-500">*</span>
+  </label>
+
+  <div className="relative flex items-center border border-gray-200 rounded-xl px-3 bg-gray-50 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100 transition-all">
+
+    {/* Icon */}
+    <Tag size={16} className="text-gray-400 shrink-0" />
+
+    {/* Select */}
+    <select
+      name="service"
+      value={formData.service}
+      onChange={handleChange}
+      className="w-full py-3 pl-2 pr-8 bg-transparent outline-none text-sm text-gray-700 cursor-pointer appearance-none"
+    >
+      <option value="" className="text-gray-400">Select Service</option>
+      <option>Web Development</option>
+      <option>Mobile App Development</option>
+      <option>UI/UX Design</option>
+      <option>Digital Marketing</option>
+      <option>SEO Optimization</option>
+      <option>Cloud Solutions</option>
+      <option>Others</option>
+    </select>
+
+    {/* Custom Arrow */}
+    <div className="absolute right-3 pointer-events-none">
+      <svg
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        className="text-gray-400"
+      >
+        <path d="m6 9 6 6 6-6" />
+      </svg>
+    </div>
+  </div>
+</div>
 
         {/* Description */}
         <div className="mb-6">
