@@ -12,9 +12,14 @@ interface Service {
   image: string;
   gradientFrom: string;
   gradientTo: string;
+  category: string;
 }
 
-const ServicesTable = () => {
+interface ServicesTableProps {
+  activeFilter: string;
+}
+
+const ServicesTable: React.FC<ServicesTableProps> = ({ activeFilter }) => {
   const [hoveredService, setHoveredService] = useState<string | null>(null);
 
   const services: Service[] = [
@@ -26,6 +31,7 @@ const ServicesTable = () => {
       image: '/images/WEB_DEV_ServiceCard.png',
       gradientFrom: '#9B2C8C',
       gradientTo: '#E94057',
+      category: 'UI/UX DESIGN',
     },
     {
       id: '02',
@@ -35,6 +41,7 @@ const ServicesTable = () => {
       image: '/images/WEB_DEV_ServiceCard.png',
       gradientFrom: '#9B2C8C',
       gradientTo: '#E94057',
+      category: 'UI/UX DESIGN',
     },
     {
       id: '03',
@@ -44,6 +51,7 @@ const ServicesTable = () => {
       image: '/images/WEB_DEV_ServiceCard.png',
       gradientFrom: '#9B2C8C',
       gradientTo: '#E94057',
+      category: 'APP DEVELOPMENT',
     },
     {
       id: '04',
@@ -53,6 +61,7 @@ const ServicesTable = () => {
       image: '/images/WEB_DEV_ServiceCard.png',
       gradientFrom: '#9B2C8C',
       gradientTo: '#E94057',
+      category: 'WEB DEVELOPMENT',
     },
     {
       id: '05',
@@ -62,6 +71,7 @@ const ServicesTable = () => {
       image: '/images/WEB_DEV_ServiceCard.png',
       gradientFrom: '#9B2C8C',
       gradientTo: '#E94057',
+      category: 'DIGITAL MARKETING',
     },
     {
       id: '06',
@@ -71,6 +81,7 @@ const ServicesTable = () => {
       image: '/images/WEB_DEV_ServiceCard.png',
       gradientFrom: '#9B2C8C',
       gradientTo: '#E94057',
+      category: 'WEB DEVELOPMENT',
     },
     {
       id: '07',
@@ -80,6 +91,7 @@ const ServicesTable = () => {
       image: '/images/WEB_DEV_ServiceCard.png',
       gradientFrom: '#9B2C8C',
       gradientTo: '#E94057',
+      category: 'WEB DEVELOPMENT',
     },
     {
       id: '08',
@@ -89,8 +101,13 @@ const ServicesTable = () => {
       image: '/images/WEB_DEV_ServiceCard.png',
       gradientFrom: '#9B2C8C',
       gradientTo: '#E94057',
+      category: 'WEB DEVELOPMENT',
     },
   ];
+
+  const filteredServices = activeFilter === 'ALL'
+    ? services
+    : services.filter(service => service.category === activeFilter);
 
   return (
     <ScrollReveal>
@@ -98,12 +115,12 @@ const ServicesTable = () => {
         <div className="max-w-7xl mx-auto">
           {/* Services Table */}
           <div className="relative">
-            {services.map((service, index) => (
+            {filteredServices.map((service, index) => (
               <div
                 key={service.id}
                 onMouseEnter={() => setHoveredService(service.id)}
                 onMouseLeave={() => setHoveredService(null)}
-                className="grid grid-cols-12 border-t border-gray-200 last:border-b transition-all duration-500 relative overflow-visible cursor-pointer"
+                className={`grid grid-cols-12 border-b border-gray-200 first:border-t transition-all duration-500 relative overflow-visible cursor-pointer`}
                 data-aos="fade-up"
                 data-aos-delay={index * 50}
                 style={{

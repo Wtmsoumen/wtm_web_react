@@ -51,7 +51,7 @@ const allServices: ServiceData[] = [
     title: "AI Engineering",
     badge: "Next-Gen AI Solutions",
     headline: ["Intelligent AI", "Engineering for", "Modern Business"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "As a trusted <strong>artificial intelligence engineering company</strong>, we build custom AI systems that automate complex workflows, unlock predictive insights, and scale your business. Our <strong>AI engineering services</strong> are trusted by startups and Fortune 500 companies across USA, UK, UAE, Singapore, Australia, and India.",
     stats: [
@@ -91,7 +91,7 @@ const allServices: ServiceData[] = [
     title: "Blockchain Development",
     badge: "Web3 & DeFi Experts",
     headline: ["Decentralized", "Blockchain Solutions", "Built to Last"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "As a leading <strong>blockchain development company</strong>, we engineer smart contracts, DeFi protocols, NFT platforms, and enterprise blockchain networks. Our <strong>Web3 engineers</strong> have shipped production-ready decentralized applications trusted by clients across USA, UK, UAE, and Europe.",
     stats: [
@@ -131,7 +131,7 @@ const allServices: ServiceData[] = [
     title: "Mobile App Development",
     badge: "iOS & Android Experts",
     headline: ["Mobile Apps That", "Users Love,", "Businesses Trust"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "From concept to App Store, we build high-performance <strong>iOS and Android applications</strong> using React Native and Flutter. Our <strong>mobile app development team</strong> delivers pixel-perfect UIs, offline-first architecture, and seamless integrations — for startups and enterprise clients worldwide.",
     stats: [
@@ -171,7 +171,7 @@ const allServices: ServiceData[] = [
     title: "Custom Web Development",
     badge: "Bespoke Web Engineering",
     headline: ["Web Experiences", "Engineered for", "Performance"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We design and build <strong>custom web applications</strong> that go beyond templates — scalable architectures, blazing-fast load times, and intuitive interfaces. Our <strong>web development team</strong> partners with businesses across USA, UK, UAE, Australia, and India to ship products that convert.",
     stats: [
@@ -211,7 +211,7 @@ const allServices: ServiceData[] = [
     title: "Software Development",
     badge: "Full-Cycle Engineering",
     headline: ["Software That", "Scales With", "Your Ambition"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "From SaaS platforms to internal tools, we deliver <strong>end-to-end software development</strong> with clean architecture, robust testing, and seamless DevOps. Our <strong>software engineering teams</strong> embed with your organisation to build products that last.",
     stats: [
@@ -251,7 +251,7 @@ const allServices: ServiceData[] = [
     title: "Digital Transformation",
     badge: "Enterprise Modernisation",
     headline: ["Transform Your", "Business for the", "Digital Era"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We guide organisations through <strong>end-to-end digital transformation</strong> — from legacy modernisation and cloud migration to process automation and data strategy. Our consultants and engineers work side-by-side with your leadership to deliver measurable ROI.",
     stats: [
@@ -291,12 +291,12 @@ const allServices: ServiceData[] = [
     title: "Digital Marketing",
     badge: "Growth-Focused Marketing",
     headline: ["Digital Marketing", "That Drives", "Real Revenue"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We deliver <strong>full-funnel digital marketing</strong> — from paid acquisition and SEO to content, email, and conversion optimisation. Our <strong>data-driven marketing team</strong> has generated over $50M in tracked revenue for clients across e-commerce, SaaS, and professional services.",
     stats: [
       { value: "$50M+", label: "Revenue Generated" },
-      { value: "3.8×", label: "Avg ROAS" },
+      { value: "3.8", label: "Avg ROAS" },
       { value: "180+", label: "Brands Grown" },
       { value: "60%", label: "Avg CAC Reduction" },
     ],
@@ -331,7 +331,7 @@ const allServices: ServiceData[] = [
     title: "Data Science & Analytics",
     badge: "Data-Driven Intelligence",
     headline: ["Turn Data Into", "Competitive", "Advantage"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We help organisations unlock the full value of their data through <strong>advanced analytics, machine learning, and business intelligence</strong>. Our <strong>data science team</strong> builds predictive models, unified data platforms, and self-serve dashboards that drive better decisions at every level.",
     stats: [
@@ -371,7 +371,7 @@ const allServices: ServiceData[] = [
     title: "E-commerce Development",
     badge: "Commerce-First Engineering",
     headline: ["E-commerce Stores", "Built to Sell", "at Scale"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We build <strong>high-converting e-commerce platforms</strong> on Shopify, WooCommerce, and custom headless stacks — engineered for speed, SEO, and seamless checkout experiences. Our <strong>e-commerce development team</strong> has delivered stores generating $100M+ in annual GMV.",
     stats: [
@@ -411,7 +411,7 @@ const allServices: ServiceData[] = [
     title: "Social Media Marketing",
     badge: "Organic & Paid Social",
     headline: ["Social Media", "Strategies That", "Build Brands"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We craft and execute <strong>platform-native social media strategies</strong> that grow audiences, spark engagement, and drive qualified traffic. From organic content to paid social campaigns, our team manages your brand presence across Instagram, LinkedIn, TikTok, X, and more.",
     stats: [
@@ -451,7 +451,7 @@ const allServices: ServiceData[] = [
     title: "Digital Marketing Strategy",
     badge: "Strategic Growth Planning",
     headline: ["A Strategy", "That Turns Clicks", "Into Customers"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We build <strong>full-funnel digital marketing strategies</strong> grounded in data — defining your ICP, positioning, channel mix, and 12-month growth roadmap. Our strategists have helped brands scale from startup to category leader across competitive global markets.",
     stats: [
@@ -491,7 +491,7 @@ const allServices: ServiceData[] = [
     title: "Conversion Rate Optimization",
     badge: "CRO & Experimentation",
     headline: ["More Revenue", "From the Traffic", "You Already Have"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "Our <strong>CRO specialists</strong> use behavioural data, user research, and systematic A/B testing to remove friction and increase conversions across your entire funnel. On average, clients see a <strong>30–80% lift in CVR</strong> within 90 days.",
     stats: [
@@ -531,7 +531,7 @@ const allServices: ServiceData[] = [
     title: "Trusted Influencer Marketing Agency",
     badge: "Creator-Led Growth",
     headline: ["Influencer Campaigns", "That Convert, Not", "Just Impress"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We connect brands with the right creators across Instagram, TikTok, YouTube, and LinkedIn — managing everything from talent identification to campaign analytics. Our <strong>performance-focused influencer marketing</strong> drives measurable sales, not just impressions.",
     stats: [
@@ -571,7 +571,7 @@ const allServices: ServiceData[] = [
     title: "Search Engine Optimization",
     badge: "Organic Growth Specialists",
     headline: ["Rank Higher,", "Earn More", "Organic Traffic"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We deliver <strong>technical SEO, content strategy, and link acquisition</strong> that compound into sustained organic growth. Our <strong>SEO team</strong> has taken brands from page 3 to position 1 across competitive verticals including SaaS, e-commerce, finance, and healthcare.",
     stats: [
@@ -611,7 +611,7 @@ const allServices: ServiceData[] = [
     title: "Lead Generation",
     badge: "Pipeline-Focused Growth",
     headline: ["Qualified Leads,", "Delivered to", "Your Pipeline"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We build and operate <strong>multi-channel lead generation systems</strong> — combining paid media, outbound, SEO, and marketing automation to fill your pipeline with high-intent prospects. Our team has generated 500,000+ qualified leads for B2B and B2C clients globally.",
     stats: [
@@ -651,7 +651,7 @@ const allServices: ServiceData[] = [
     title: "Brand Management",
     badge: "Brand Strategy & Identity",
     headline: ["Brands Built for", "Longevity and", "Recognition"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We help companies define, build, and protect their brand across every touchpoint. From <strong>brand strategy and visual identity</strong> to guidelines and brand governance, our team ensures your brand is consistent, compelling, and commercially powerful.",
     stats: [
@@ -691,7 +691,7 @@ const allServices: ServiceData[] = [
     title: "Specialized eCommerce SEO Services",
     badge: "E-commerce Organic Growth",
     headline: ["E-commerce SEO", "That Fills Your", "Cart Organically"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We specialise in <strong>e-commerce SEO</strong> for Shopify, WooCommerce, and custom platforms — driving organic product discovery, category traffic, and revenue without ad spend. Our team has generated $20M+ in organic e-commerce revenue for online retailers globally.",
     stats: [
@@ -731,12 +731,12 @@ const allServices: ServiceData[] = [
     title: "Google Ad Campaigns",
     badge: "Paid Search Specialists",
     headline: ["Google Ads That", "Maximise Return", "on Every Dollar"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "Our certified Google Ads specialists manage <strong>Search, Performance Max, Shopping, Display, and YouTube campaigns</strong> engineered for maximum ROAS. We manage $5M+ in annual ad spend across industries with an average 4.2× return on ad spend.",
     stats: [
       { value: "$5M+", label: "Ad Spend Managed" },
-      { value: "4.2×", label: "Avg ROAS" },
+      { value: "4.2", label: "Avg ROAS" },
       { value: "35%", label: "Avg CPC Reduction" },
       { value: "150+", label: "Accounts Managed" },
     ],
@@ -771,7 +771,7 @@ const allServices: ServiceData[] = [
     title: "Content Marketing",
     badge: "Content That Compounds",
     headline: ["Content That", "Earns Trust and", "Drives Revenue"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We create and distribute <strong>high-quality content</strong> — articles, whitepapers, case studies, videos, and interactive tools — that builds authority, drives organic traffic, and generates leads. Our content strategies are built on search intent data and audience insight.",
     stats: [
@@ -811,7 +811,7 @@ const allServices: ServiceData[] = [
     title: "Paid Advertising",
     badge: "Performance Media Buying",
     headline: ["Paid Ads That", "Scale Revenue", "Predictably"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We manage <strong>omnichannel paid advertising</strong> across Google, Meta, TikTok, LinkedIn, YouTube, and Amazon — building data-driven media strategies that scale revenue without sacrificing margin. Our team manages $8M+ in annual ad spend.",
     stats: [
@@ -851,7 +851,7 @@ const allServices: ServiceData[] = [
     title: "iOS App Development",
     badge: "Apple Platform Specialists",
     headline: ["iOS Apps That", "Set the Standard", "on the App Store"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We build <strong>native and cross-platform iOS applications</strong> using Swift, SwiftUI, and React Native — polished to Apple's Human Interface Guidelines and optimised for App Store success. Our iOS team has shipped 60+ apps with an average rating of 4.8★.",
     stats: [
@@ -891,7 +891,7 @@ const allServices: ServiceData[] = [
     title: "Android App Development",
     badge: "Android & Play Store Experts",
     headline: ["Android Apps", "Built for a", "Billion Devices"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We develop <strong>native Kotlin and cross-platform Android apps</strong> following Material You design principles — tested across OEM devices, optimised for Play Store visibility, and built to handle the fragmentation of the Android ecosystem.",
     stats: [
@@ -931,7 +931,7 @@ const allServices: ServiceData[] = [
     title: "Web App Development",
     badge: "SaaS & Web Application Experts",
     headline: ["Web Applications", "Your Users Will", "Love to Use"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We architect and build <strong>complex web applications</strong> — SaaS platforms, internal tools, and customer portals — with React/Next.js frontends, robust APIs, and scalable cloud infrastructure. Our web app team has shipped products used by 1M+ end users.",
     stats: [
@@ -971,7 +971,7 @@ const allServices: ServiceData[] = [
     title: "WordPress Development",
     badge: "WordPress Specialists",
     headline: ["WordPress Sites", "Built Fast,", "Built Right"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We build <strong>custom WordPress themes, plugins, and WooCommerce stores</strong> — performant, secure, and easy to manage. From corporate websites to complex membership platforms, our WordPress team delivers production-ready sites that score 90+ on PageSpeed.",
     stats: [
@@ -1011,7 +1011,7 @@ const allServices: ServiceData[] = [
     title: "Website Development",
     badge: "Full-Stack Web Delivery",
     headline: ["Websites That", "Work Hard for", "Your Business"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "From landing pages to multi-thousand-page corporate sites, we deliver <strong>high-performance websites</strong> built on the right technology for your goals — WordPress, Next.js, Webflow, or fully custom. Every site we build is fast, accessible, and conversion-optimised.",
     stats: [
@@ -1051,7 +1051,7 @@ const allServices: ServiceData[] = [
     title: "React.js Development",
     badge: "React Specialists",
     headline: ["React Applications", "Built for Speed", "and Scale"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "Our <strong>React.js development team</strong> builds complex SPAs, micro-frontends, and component libraries — with TypeScript, modern state management, and performance as a first-class concern. We've built React UIs handling millions of monthly active users.",
     stats: [
@@ -1091,7 +1091,7 @@ const allServices: ServiceData[] = [
     title: "Next.js Development",
     badge: "Next.js Full-Stack Experts",
     headline: ["Next.js Apps", "That Perform,", "Rank, and Scale"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We build production-grade <strong>Next.js applications</strong> leveraging the App Router, React Server Components, and edge rendering for exceptional Core Web Vitals and developer experience. From marketing sites to full-stack SaaS platforms — we ship Next.js products that perform.",
     stats: [
@@ -1131,7 +1131,7 @@ const allServices: ServiceData[] = [
     title: "Node.js Development",
     badge: "Backend Engineering Experts",
     headline: ["Node.js Backends", "Built for", "High-Traffic Scale"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We engineer <strong>high-performance Node.js backends</strong> — REST APIs, GraphQL servers, real-time systems, and microservices — built with TypeScript, tested end-to-end, and deployed on scalable cloud infrastructure. Our Node.js systems handle millions of requests daily.",
     stats: [
@@ -1171,7 +1171,7 @@ const allServices: ServiceData[] = [
     title: "Laravel Development",
     badge: "Laravel & PHP Experts",
     headline: ["Laravel Applications", "Crafted for", "Enterprise Grade"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We build <strong>robust Laravel applications</strong> — SaaS platforms, REST APIs, and enterprise web systems — following Laravel best practices, SOLID principles, and clean architecture patterns. Our Laravel team has shipped platforms serving 500K+ registered users.",
     stats: [
@@ -1211,7 +1211,7 @@ const allServices: ServiceData[] = [
     title: "AI Development",
     badge: "Applied AI Engineering",
     headline: ["AI Systems That", "Transform How", "You Operate"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We design and build <strong>production AI systems</strong> — from intelligent automation and NLP pipelines to computer vision and recommendation engines. Our AI development team ships models and integrations that deliver measurable business outcomes, not just demos.",
     stats: [
@@ -1251,7 +1251,7 @@ const allServices: ServiceData[] = [
     title: "AI Chatbot Development",
     badge: "Conversational AI Experts",
     headline: ["AI Chatbots That", "Actually Understand", "Your Customers"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We build <strong>intelligent AI chatbots</strong> powered by GPT-4o, Claude, and Gemini — trained on your data, integrated into your products, and capable of handling complex multi-turn conversations. Our chatbots have resolved 70%+ of support tickets automatically for enterprise clients.",
     stats: [
@@ -1291,7 +1291,7 @@ const allServices: ServiceData[] = [
     title: "Generative AI Development",
     badge: "Generative AI Specialists",
     headline: ["Generative AI", "Products That", "Redefine Possible"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We build <strong>generative AI applications</strong> — text, image, audio, and code generation systems — powered by the latest foundation models and deployed as production-grade products. Our generative AI team has shipped tools generating millions of AI outputs per month.",
     stats: [
@@ -1331,7 +1331,7 @@ const allServices: ServiceData[] = [
     title: "AI Agent Development",
     badge: "Autonomous AI Agents",
     headline: ["AI Agents That", "Work While You", "Sleep"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We build <strong>autonomous AI agents</strong> that plan, execute multi-step tasks, use tools, and complete complex workflows with minimal human oversight. Our agents have automated workflows saving clients 1,000+ hours per month.",
     stats: [
@@ -1371,7 +1371,7 @@ const allServices: ServiceData[] = [
     title: "AI Integration",
     badge: "Plug AI Into Your Stack",
     headline: ["Add AI to", "Your Existing", "Products Fast"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We integrate <strong>AI capabilities into your existing software</strong> — adding intelligence to CRMs, ERPs, web apps, and mobile products without a full rebuild. Our integration specialists have connected AI to 50+ enterprise platforms.",
     stats: [
@@ -1411,7 +1411,7 @@ const allServices: ServiceData[] = [
     title: "ML Development",
     badge: "Machine Learning Engineering",
     headline: ["Machine Learning", "Systems Built for", "Production"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We build and deploy <strong>production machine learning systems</strong> — from classical ML to deep learning — with MLOps pipelines, model monitoring, and continuous retraining. Our models power fraud detection, demand forecasting, personalisation, and computer vision at scale.",
     stats: [
@@ -1451,7 +1451,7 @@ const allServices: ServiceData[] = [
     title: "AI Product Development",
     badge: "AI-First Product Engineering",
     headline: ["AI-First Products", "From Idea to", "Market Fast"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We help founders and enterprises <strong>build AI-native products</strong> — from zero to launch. Our multidisciplinary team of product managers, AI engineers, and UX designers has built AI products that have reached product-market fit and scaled to thousands of paying users.",
     stats: [
@@ -1491,7 +1491,7 @@ const allServices: ServiceData[] = [
     title: "Machine Learning & Deep Learning",
     badge: "Advanced ML/DL Research & Engineering",
     headline: ["Advanced ML/DL", "From Research", "to Production"],
-    headlineColors: ["text-white", "gradient-cyan-purple", "text-white"],
+    headlineColors: ["text-slate-900", "gradient-cyan-purple", "text-slate-900"],
     description:
       "We bridge the gap between <strong>ML/DL research and production deployment</strong> — implementing state-of-the-art architectures, custom training pipelines, and inference optimisation for computer vision, NLP, and tabular applications.",
     stats: [
@@ -1536,12 +1536,12 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
   if (!service) return notFound();
 
   return (
-    <div className="relative min-h-screen bg-[#010816] text-white font-sans selection:bg-blue-500/30 overflow-x-hidden">
+    <div className="relative min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-500/30 overflow-x-hidden">
       {/* ── BACKGROUND ACCENTS ── */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-0 right-1/4 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[140px] opacity-30" />
-        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px] opacity-20" />
-      </div>
+      {/* <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute top-0 right-1/4 w-[800px] h-[800px] bg-blue-100/40 rounded-full blur-[140px] opacity-50" />
+        <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-purple-100/40 rounded-full blur-[120px] opacity-40" />
+      </div> */}
 
       <div className="relative z-10">
         {/* ── HERO ── */}
@@ -1550,10 +1550,10 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl mb-12 shadow-2xl"
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-slate-200 bg-slate-50 mb-12 shadow-sm"
             >
-              <Sparkles className="w-4 h-4 text-blue-400" />
-              <span className="text-xs font-bold tracking-[0.2em] text-blue-400 uppercase">
+              <Sparkles className="w-4 h-4 text-blue-600" />
+              <span className="text-xs font-bold tracking-[0.2em] text-blue-600 uppercase">
                 {service.badge}
               </span>
             </motion.div>
@@ -1562,18 +1562,18 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-8xl font-bold leading-[0.9] tracking-tight mb-10"
+              className="text-5xl md:text-8xl font-black leading-[0.9] tracking-tight mb-10 text-slate-900"
             >
               {service.headline.map((line, i) =>
                 service.headlineColors[i] === "gradient-cyan-purple" ? (
                   <span
                     key={i}
-                    className="bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425] bg-clip-text text-transparent block"
+                    className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent block"
                   >
                     {line}
                   </span>
                 ) : (
-                  <span key={i} className="block text-white">
+                  <span key={i} className="block text-slate-900">
                     {line}
                   </span>
                 )
@@ -1584,7 +1584,7 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-slate-400 text-lg md:text-2xl max-w-4xl mx-auto mb-16 leading-relaxed font-light"
+              className="text-slate-600 text-lg md:text-2xl max-w-4xl mx-auto mb-16 leading-relaxed font-light"
               dangerouslySetInnerHTML={{ __html: service.description }}
             />
 
@@ -1596,14 +1596,14 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
             >
               <Link
                 href="/contact-us"
-                className="group px-10 py-5 rounded-2xl bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425]  text-white font-bold text-lg hover:scale-105 transition-all shadow-2xl shadow-blue-500/10 flex items-center gap-3"
+                className="group px-10 py-5 rounded-2xl bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425]  text-white font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-blue-500/20 flex items-center gap-3"
               >
                 Start A Workshop
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 href="/portfolio"
-                className="px-10 py-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl font-bold text-lg text-white hover:bg-white/10 transition-all"
+                className="px-10 py-5 rounded-2xl border border-slate-200 bg-white font-bold text-lg text-slate-700 hover:bg-slate-50 transition-all shadow-sm"
               >
                 Case Studies
               </Link>
@@ -1612,15 +1612,15 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
         </ScrollReveal>
 
         {/* ── STATS ── */}
-        <section className="py-20 bg-white/2 border-y border-white/5 backdrop-blur-sm">
+        <section className="py-20 bg-slate-50 border-y border-slate-100">
           <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-20">
             {service.stats.map((stat, i) => (
               <ScrollReveal key={i}>
                 <div className="text-center group">
-                  <div className="text-5xl md:text-6xl font-bold bg-linear-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-500">
+                  <div className="text-5xl md:text-6xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4 group-hover:scale-110 transition-transform duration-500">
                     {stat.value}
                   </div>
-                  <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">{stat.label}</div>
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">{stat.label}</div>
                 </div>
               </ScrollReveal>
             ))}
@@ -1628,10 +1628,10 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
         </section>
 
         {/* ── WHAT WE OFFER ── */}
-        <section className="py-32">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6">
                 Institutional <span className="bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425] bg-clip-text text-transparent">Capabilities</span>
               </h2>
               <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full" />
@@ -1642,17 +1642,17 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
                 const Icon = f.icon as LucideIcon;
                 return (
                   <ScrollReveal key={i}>
-                    <div className="h-full bg-linear-to-br from-white/5 to-transparent rounded-[2.5rem] p-10 border border-white/10 hover:border-blue-500/30 transition-all group relative overflow-hidden backdrop-blur-xl">
-                      <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <Icon className="w-16 h-16 text-blue-400" />
+                    <div className="h-full bg-white rounded-[2.5rem] p-10 border border-slate-100 hover:border-blue-500/30 transition-all group relative overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-2">
+                      <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <Icon className="w-16 h-16 text-blue-600" />
                       </div>
-                      <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-blue-500/10 border border-blue-500/20 group-hover:bg-blue-600 group-hover:text-white transition-all text-blue-400">
+                      <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-blue-50 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all text-blue-600">
                         <Icon className="w-7 h-7" />
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-6 tracking-tight group-hover:text-blue-300 transition-colors">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-6 tracking-tight group-hover:text-blue-600 transition-colors">
                         {f.title}
                       </h3>
-                      <p className="text-slate-400 leading-relaxed text-lg font-light">{f.desc}</p>
+                      <p className="text-slate-600 leading-relaxed text-lg font-light">{f.desc}</p>
                     </div>
                   </ScrollReveal>
                 );
@@ -1662,11 +1662,11 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
         </section>
 
         {/* ── PROCESS ── */}
-        <section className="py-32 bg-white/2 border-y border-white/5 relative overflow-hidden">
+        <section className="py-16 bg-slate-50/50 border-y border-slate-100 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6">
                 Execution <span className="bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425] bg-clip-text text-transparent">Framework</span>
               </h2>
             </div>
@@ -1674,13 +1674,13 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {service.process.map((p, i) => (
                 <ScrollReveal key={i}>
-                  <div className="relative p-10 rounded-3xl border border-white/10 bg-white/5 hover:border-blue-500/30 transition-all group overflow-hidden">
-                    <span className="text-8xl font-black text-white/5 absolute top-0 right-4 select-none group-hover:text-white/10 transition-all">
+                  <div className="relative p-10 rounded-3xl border border-slate-100 bg-white hover:border-blue-500/30 transition-all group overflow-hidden h-[-webkit-fill-available] shadow-sm hover:shadow-lg">
+                    <span className="text-8xl font-black text-slate-100 absolute top-0 right-4 select-none group-hover:text-slate-200 transition-all">
                       {p.step}
                     </span>
-                    <div className="text-blue-400 text-xs font-bold tracking-[0.3em] uppercase mb-8">Phase {p.step}</div>
-                    <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{p.title}</h3>
-                    <p className="text-slate-400 text-lg leading-relaxed font-light">{p.desc}</p>
+                    <div className="text-blue-600 text-xs font-bold tracking-[0.3em] uppercase mb-8">Phase {p.step}</div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">{p.title}</h3>
+                    <p className="text-slate-600 text-lg leading-relaxed font-light">{p.desc}</p>
                   </div>
                 </ScrollReveal>
               ))}
@@ -1689,9 +1689,9 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
         </section>
 
         {/* ── TECH STACK ── */}
-        <section className="pt-32 pb-16">
+        <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto text-center px-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-16 uppercase tracking-tighter">
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-16 uppercase tracking-tighter">
               The <span className="bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425] bg-clip-text text-transparent">Technology Matrix</span>
             </h2>
 
@@ -1702,7 +1702,7 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: i * 0.05 }}
-                  className="px-8 py-4 rounded-full border border-white/10 bg-white/5 text-white text-sm font-bold hover:border-blue-500 hover:bg-blue-600/10 transition-all cursor-default shadow-xl"
+                  className="px-8 py-4 rounded-full border border-slate-200 bg-white text-slate-700 text-sm font-bold hover:border-blue-500 hover:bg-blue-50 transition-all cursor-default shadow-sm"
                 >
                   {tech}
                 </motion.span>
@@ -1712,21 +1712,21 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
         </section>
 
         {/* ── CTA BANNER ── */}
-        <section className="pt-16 pb-32 max-w-7xl mx-auto px-4 mb-10">
-          <div className="relative rounded-[4rem] overflow-hidden border border-white/10 bg-linear-to-br from-blue-600 to-blue-900/40 p-16 md:p-24 text-center">
+        <section className="pt-16 pb-16 max-w-7xl mx-auto px-4 mb-10">
+          <div className="relative rounded-[4rem] overflow-hidden border border-slate-100 bg-linear-to-br from-blue-600 to-blue-800 p-16 md:p-24 text-center shadow-2xl">
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
 
             <ScrollReveal>
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-10 leading-tight">
+              <h2 className="text-4xl md:text-6xl font-black text-white mb-10 leading-tight">
                 Ready to build something <br />
-                <span className="italic">extraordinary?</span>
+                <span className="italic font-light">extraordinary?</span>
               </h2>
-              <p className="text-white/70 text-xl max-w-2xl mx-auto mb-16 font-light">
+              <p className="text-white/80 text-xl max-w-2xl mx-auto mb-16 font-light">
                 Talk to our senior consultants and get a roadmap for your digital transformation.
               </p>
               <Link
                 href="/contact-us"
-                className="inline-flex px-12 py-6 rounded-4xl bg-white text-blue-600 font-bold text-xl hover:shadow-[0_0_50px_rgba(255,255,255,0.4)] transition-all transform hover:scale-105"
+                className="inline-flex px-12 py-6 rounded-4xl bg-white text-blue-600 font-bold text-xl hover:shadow-xl transition-all transform hover:scale-105 shadow-lg"
               >
                 Start A Project
               </Link>
@@ -1735,10 +1735,10 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
         </section>
 
         {/* ── FAQ ── */}
-        <section className="py-32 bg-white/2 border-t border-white/5">
+        <section className="py-16 bg-slate-50 border-t border-slate-100">
           <div className="max-w-4xl mx-auto px-4">
             <div className="text-center mb-24">
-              <h2 className="text-4xl md:text-5xl font-bold text-white uppercase tracking-tighter">
+              <h2 className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter">
                 Common <span className="bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425] bg-clip-text text-transparent">Inquiries</span>
               </h2>
             </div>
@@ -1746,12 +1746,12 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
             <div className="space-y-6">
               {service.faqs.map((faq, i) => (
                 <ScrollReveal key={i}>
-                  <details className="group rounded-3xl border border-white/10 bg-white/2 overflow-hidden hover:border-blue-500/30 transition-all">
-                    <summary className="flex items-center justify-between p-8 cursor-pointer list-none font-bold text-xl text-white hover:text-blue-400 transition-colors">
+                  <details className="group rounded-3xl border border-slate-200 bg-white overflow-hidden hover:border-blue-500/30 transition-all shadow-sm">
+                    <summary className="flex items-center justify-between p-8 cursor-pointer list-none font-bold text-xl text-slate-900 hover:text-blue-600 transition-colors">
                       {faq.q}
-                      <span className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-blue-400 group-open:rotate-45 transition-transform duration-300">+</span>
+                      <span className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-blue-600 group-open:rotate-45 transition-transform duration-300">+</span>
                     </summary>
-                    <div className="px-8 pb-8 text-slate-400 text-lg font-light leading-relaxed border-t border-white/5 pt-6">
+                    <div className="px-8 pb-8 text-slate-600 text-lg font-light leading-relaxed border-t border-slate-100 pt-6">
                       {faq.a}
                     </div>
                   </details>

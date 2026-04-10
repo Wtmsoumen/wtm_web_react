@@ -173,17 +173,6 @@ const navLinks = [
         color: "#00a63e",
         color1: "#000000"
       },
-
-      {
-        title: "Contact Us",
-        description: "Our story & mission",
-        href: "/contact-us",
-        icon: UserRoundSearch,
-        color: "#ff00eb",
-        color1: "#000000"
-      },
-
-
       {
         title: "How We Work",
         description: "Our development process",
@@ -207,6 +196,14 @@ const navLinks = [
         icon: Users,
         color: "#f2994a",
         color1: "#fff4ec",
+      },
+      {
+        title: "Contact Us",
+        description: "Our story & mission",
+        href: "/contact-us",
+        icon: UserRoundSearch,
+        color: "#ff00eb",
+        color1: "#000000"
       },
     ]
   },

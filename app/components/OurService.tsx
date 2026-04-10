@@ -1,4 +1,6 @@
 
+"use client";
+
 // <<<<<<<<<<<<<<<<<----------------FIRST DESIGN---------->>>>>>>>>>>>>>>
 // import Image from 'next/image'
 
@@ -73,6 +75,7 @@
 
 // <<<<<<<<<<<----------------SECOND DESIGN---------------->>>>>>>>>>>>>>>
 
+import React, { useState } from 'react'
 import Image from 'next/image'
 import ServicesHeading from './Servicesheading'
 import ServicesTable from './ServicesTable'
@@ -82,10 +85,11 @@ import ScrollReveal from "./ScrollReveal";
 
 
 const OurService = () => {
+    const [activeFilter, setActiveFilter] = useState('ALL');
     return (
         <div className='bg-white'>
-            <ServicesHeading />
-            <ServicesTable />
+            <ServicesHeading activeFilter={activeFilter} onFilterChange={setActiveFilter} />
+            <ServicesTable activeFilter={activeFilter} />
         </div>
     )
 }

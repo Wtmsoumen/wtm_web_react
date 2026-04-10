@@ -138,8 +138,7 @@ export default function AboutPage() {
         <section className="relative bg-white pt-20 pb-0 overflow-hidden">
           {/* blobs */}
           <div className="pointer-events-none absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-linear-to-br from-[#1D74CF]/8 to-transparent blur-3xl" />
-          <div className="pointer-events-none absolute top-0 right-0 w-80 h-80 rounded-full bg-linear-to-bl from-[#D04425]/8 to-transparent blur-3xl" />
-
+          <div className="pointer-events-none absolute top-40 right-[8%] w-160 h-160 rounded-full bg-linear-to-bl from-[red]/30 to-transparent blur-3xl" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pb-16">
 

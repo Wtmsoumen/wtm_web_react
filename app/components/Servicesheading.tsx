@@ -1,7 +1,20 @@
 import Link from 'next/link'
 import ScrollReveal from "./ScrollReveal";
 
-const ServicesHeading = () => {
+interface ServicesHeadingProps {
+    activeFilter: string;
+    onFilterChange: (filter: string) => void;
+}
+
+const ServicesHeading: React.FC<ServicesHeadingProps> = ({ activeFilter, onFilterChange }) => {
+    const categories = [
+        "ALL",
+        "UI/UX DESIGN",
+        "DIGITAL MARKETING",
+        "WEB DEVELOPMENT",
+        "APP DEVELOPMENT"
+    ];
+
     return (
         <ScrollReveal>
             <section className="w-full pt-12">
@@ -21,18 +34,24 @@ const ServicesHeading = () => {
                             className="flex flex-wrap items-center justify-center gap-4 md:gap-10 mt-6 text-sm md:text-base font-semibold uppercase tracking-wide text-black"
                             data-aos="fade-up"
                         >
-                            <span className='cursor-pointer'>UI/UX DESIGN</span>
-                            <span className='cursor-pointer'>DIGITAL MARKETING</span>
-                            <span className='cursor-pointer'>WEB DEVELOPMENT</span>
-                            <span className='cursor-pointer'>APP DEVELOPMENT</span>
+                            {categories.map((category) => (
+                                <span
+                                    key={category}
+                                    onClick={() => onFilterChange(category)}
+                                    className={`cursor-pointer transition-all duration-300 hover:text-blue-600 ${activeFilter === category ? "text-blue-600 border-b-2 border-blue-600" : ""
+                                        }`}
+                                >
+                                    {category}
+                                </span>
+                            ))}
 
                             {/* See All Services Button - inline on mobile */}
-                            <Link href="/services">
-                                <button className="cursor-pointer group flex items-center gap-3 pl-8 pr-2 py-1 rounded-full bg-linear-to-r from-[#D91D0B] to-[#3E4697] text-white font-semibold text-sm hover:shadow-xl transition-all duration-300">
+                            <Link href="#services">
+                                <button className="cursor-pointer group flex items-center gap-3 pl-8 pr-2 py-2 rounded-full bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] text-white font-medium text-sm hover:shadow-xl transition-all duration-300">
                                     See All Services
-                                    <div className="w-8 h-8 bg-purple-900 rounded-full flex items-center justify-center">
+                                    <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center shadow-lg">
                                         <svg
-                                            className="w-4 h-4 text-white transition-transform duration-300 group-hover:rotate-45"
+                                            className="w-4 h-4 text-black transition-transform duration-300 group-hover:rotate-45"
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
