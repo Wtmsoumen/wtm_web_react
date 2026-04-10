@@ -167,12 +167,12 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
     const industryData = getIndustryData(resolvedParams?.slug || 'software-development');
 
     return (
-        <div className="min-h-screen bg-[#010816] text-white selection:bg-blue-500/30 overflow-x-hidden">
+        <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-500/30 overflow-x-hidden">
             {/* ── BACKGROUND ACCENTS ── */}
-            <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+            {/* <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
                 <div className="absolute top-0 -left-1/4 w-[800px] h-[800px] bg-[#1D74CF]/10 rounded-full blur-[140px] opacity-30" />
                 <div className="absolute bottom-0 -right-1/4 w-[600px] h-[600px] bg-[#D04425]/10 rounded-full blur-[120px] opacity-20" />
-            </div>
+            </div> */}
 
             {/* 1. Hero Section */}
             <ScrollReveal>
@@ -182,10 +182,10 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl mb-12 shadow-2xl"
+                            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-slate-200 bg-slate-50 mb-12 shadow-sm"
                         >
-                            <Sparkles className="w-4 h-4 text-blue-400" />
-                            <span className="text-xs font-bold tracking-[0.2em] text-blue-400 uppercase">
+                            <Sparkles className="w-4 h-4 text-blue-600" />
+                            <span className="text-xs font-bold tracking-[0.2em] text-blue-600 uppercase">
                                 Elite {industryData.title} Partner
                             </span>
                         </motion.div>
@@ -194,17 +194,17 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-5xl sm:text-7xl md:text-8xl font-bold text-white mb-8 leading-[0.9] tracking-tight"
+                            className="text-5xl sm:text-7xl md:text-8xl font-black text-slate-900 mb-8 leading-[0.9] tracking-tight"
                         >
                             {industryData.title}<br />
-                            <span className="bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425] bg-clip-text text-transparent">{industryData.subtitle}</span> Expert
+                            <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">{industryData.subtitle}</span> Expert
                         </motion.h1>
 
                         <motion.p 
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
-                            className="text-slate-400 text-lg md:text-2xl max-w-3xl mx-auto mb-16 leading-relaxed font-light italic"
+                            className="text-slate-600 text-lg md:text-2xl max-w-3xl mx-auto mb-16 leading-relaxed font-light italic"
                         >
                             &quot;{industryData.desc}&quot;
                         </motion.p>
@@ -214,7 +214,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.6 }}
                             onClick={() => setIsModalOpen(true)}
-                            className="group relative px-10 py-5 rounded-2xl bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425]  text-white  font-bold text-lg hover:scale-105 transition-all shadow-2xl shadow-blue-500/10 overflow-hidden"
+                            className="group relative px-10 py-5 rounded-2xl bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425]  text-white  font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-blue-500/20 overflow-hidden"
                         >
                             <span className="relative z-10 flex items-center gap-3">
                                 Consult Our Experts
@@ -227,25 +227,25 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
 
             {/* 2. Intro Section */}
             <ScrollReveal>
-                <section className="py-32 relative z-10">
+                <section className="py-16 relative z-10 bg-white">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                             <div>
-                                <h2 className="text-4xl md:text-6xl font-bold mb-10 leading-tight">
+                                <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-10 leading-tight">
                                     {industryData.introHeading.split(' ').slice(0, -2).join(' ')}{" "}
-                                    <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                                    <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">
                                         {industryData.introHeading.split(' ').slice(-2).join(' ')}
                                     </span>
                                 </h2>
-                                <p className="text-slate-400 text-xl leading-relaxed font-light border-l-2 border-blue-600/50 pl-8">
+                                <p className="text-slate-600 text-xl leading-relaxed font-light border-l-2 border-blue-600/50 pl-8">
                                     From digital strategy to implementation and support, we deliver technology solutions that drive excellence, operational efficiency, and sustainable growth. Our software ecosystem is built for high-performance and deep integration.
                                 </p>
                             </div>
                             <div className="relative">
-                                <div className="absolute inset-0 bg-blue-500/10 blur-[80px] rounded-full" />
+                                <div className="absolute inset-0 bg-blue-100/30 blur-[80px] rounded-full" />
                                 <div className="relative grid grid-cols-2 gap-4">
                                     {[1,2,3,4].map(i => (
-                                        <div key={i} className={`h-40 rounded-3xl border border-white/5 bg-white/5 backdrop-blur-md ${i % 2 === 0 ? 'translate-y-8' : ''}`} />
+                                        <div key={i} className={`h-40 rounded-3xl border border-slate-100 bg-slate-50 shadow-sm ${i % 2 === 0 ? 'translate-y-8' : ''}`} />
                                     ))}
                                 </div>
                             </div>
@@ -255,11 +255,11 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
             </ScrollReveal>
 
             {/* 3. Services / Digital Products */}
-            <section className="py-32 relative z-10">
+            <section className="py-16 relative z-10 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="text-center mb-24">
-                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            Core <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent tracking-widest">Digital Solutions</span>
+                        <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6">
+                            Core <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent tracking-widest">Digital Solutions</span>
                         </h2>
                         <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full" />
                     </div>
@@ -267,15 +267,15 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {industryData.services.map((srv, idx) => (
                             <ScrollReveal key={idx}>
-                                <div className="h-full bg-linear-to-br from-white/5 to-transparent rounded-[2.5rem] p-10 border border-white/10 hover:border-blue-500/30 transition-all group relative overflow-hidden backdrop-blur-xl">
-                                    <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                                        <srv.icon className="w-16 h-16 text-blue-400" />
+                                <div className="h-full bg-white rounded-[2.5rem] p-10 border border-slate-100 hover:border-blue-500/30 transition-all group relative overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-2">
+                                    <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
+                                        <srv.icon className="w-16 h-16 text-blue-600" />
                                     </div>
-                                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-blue-500/10 border border-blue-500/20 group-hover:bg-blue-600 group-hover:text-white transition-all text-blue-400">
+                                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-blue-50 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all text-blue-600">
                                         <srv.icon className="w-7 h-7" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-6 tracking-tight">{srv.title}</h3>
-                                    <p className="text-slate-400 leading-relaxed text-lg font-light">{srv.description}</p>
+                                    <h3 className="text-2xl font-bold text-slate-900 mb-6 tracking-tight group-hover:text-blue-600 transition-colors">{srv.title}</h3>
+                                    <p className="text-slate-600 leading-relaxed text-lg font-light">{srv.description}</p>
                                 </div>
                             </ScrollReveal>
                         ))}
@@ -284,25 +284,25 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* 4. Who We Partner With */}
-            <section className="py-32 relative z-10 bg-white/2 border-y border-white/5">
+            <section className="py-16 relative z-10 bg-slate-50/50 border-y border-slate-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="text-center mb-24">
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                            Global <span className="bg-linear-to-r from-[orange] to-[red] bg-clip-text text-transparent">Partnership Network</span>
+                        <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
+                            Global <span className="bg-linear-to-r from-[#D04425] to-[#BA4491] bg-clip-text text-transparent italic">Partnership Network</span>
                         </h2>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {industryData.targets.map((target, idx) => (
                             <ScrollReveal key={idx}>
-                                <div className="flex flex-col gap-6 p-8 rounded-3xl bg-white/6 border border-white/10 hover:border-white/30 transition-all group h-[250px]">
+                                <div className="flex flex-col gap-6 p-8 rounded-3xl bg-white border border-slate-100 hover:border-blue-500/30 transition-all group h-[250px] shadow-sm hover:shadow-lg">
                                     <div className="flex items-center gap-5">
-                                        <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                        <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                             <target.icon className="w-6 h-6" />
                                         </div>
-                                        <h3 className="text-xl font-bold text-white tracking-tight">{target.title}</h3>
+                                        <h3 className="text-xl font-bold text-slate-900 tracking-tight group-hover:text-blue-600">{target.title}</h3>
                                     </div>
-                                    <p className="text-slate-400 font-light leading-relaxed">
+                                    <p className="text-slate-600 font-light leading-relaxed">
                                         {target.desc}
                                     </p>
                                 </div>
@@ -313,20 +313,20 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* 5. Regulatory Compliance */}
-            <section className="pt-40 pb-20  relative z-10">
+            <section className="py-16 relative z-10 bg-white">
                 <div className="max-w-6xl mx-auto text-center px-4">
-                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 uppercase tracking-tighter">
-                        Institutional <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Compliance</span>
+                    <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 uppercase tracking-tighter">
+                        Institutional <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Compliance</span>
                     </h2>
-                    <p className="text-slate-400 text-xl max-w-2xl mx-auto mb-20 font-light italic">
+                    <p className="text-slate-600 text-xl max-w-2xl mx-auto mb-20 font-light italic">
                         &quot;Every solution we deliver adheres to the strictest global industry regulations and security standards.&quot;
                     </p>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {industryData.compliances.map((comp, idx) => (
                             <ScrollReveal key={idx}>
-                                <div className="h-full bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all text-center">
-                                    <h4 className="text-3xl font-black text-white mb-3 tracking-tighter">{comp.title}</h4>
+                                <div className="h-full bg-white border border-slate-100 rounded-2xl p-8 hover:shadow-lg hover:border-blue-100 transition-all text-center shadow-sm">
+                                    <h4 className="text-3xl font-black text-slate-900 mb-3 tracking-tighter">{comp.title}</h4>
                                     <p className="text-slate-500 text-xs font-bold uppercase tracking-widest leading-tight">{comp.desc}</p>
                                 </div>
                             </ScrollReveal>
@@ -336,25 +336,24 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* 6. Why Choose Us */}
-            <section className="pt-20 pb-40  relative z-10 overflow-hidden ">
-                {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px]   border border-blue-600/10 rounded-full -z-10" /> */}
+            <section className="py-16 relative z-10 overflow-hidden bg-slate-50/50 border-y border-slate-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="text-center mb-24">
-                        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                            Unrivaled <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Expertise</span>
+                        <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6">
+                            Unrivaled <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Expertise</span>
                         </h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         {whyChooseUs.map((reason, idx) => (
                             <ScrollReveal key={idx}>
-                                <div className="flex gap-10 p-10 rounded-[3rem] bg-linear-to-br from-white/5 to-transparent border border-white/10 hover:border-blue-500/20 transition-all">
-                                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 bg-blue-600/10 text-blue-400">
+                                <div className="flex gap-10 p-10 rounded-[3rem] bg-white border border-slate-100 hover:border-blue-500/20 transition-all shadow-sm hover:shadow-lg">
+                                    <div className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 bg-blue-50 text-blue-600">
                                         <reason.icon className="w-8 h-8" />
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{reason.title}</h3>
-                                        <p className="text-slate-400 leading-relaxed text-lg font-light">{reason.desc}</p>
+                                        <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600">{reason.title}</h3>
+                                        <p className="text-slate-600 leading-relaxed text-lg font-light">{reason.desc}</p>
                                     </div>
                                 </div>
                             </ScrollReveal>
@@ -364,10 +363,10 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* 7. Tech Stack Chips */}
-            <section className="py-32 relative z-10 border-t border-white/5">
+            <section className="py-16 relative z-10 border-t border-slate-100 bg-white">
                 <div className="max-w-7xl mx-auto text-center px-4">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-16">
-                        The <span className="bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Digital Arsenal</span>
+                    <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-16">
+                        The <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Digital Arsenal</span>
                     </h2>
                     <div className="flex flex-wrap justify-center gap-3">
                         {["Artificial Intelligence", "Blockchain", "Internet of Things", "Cloud Computing", "Data Analytics", "AR/VR Core", "Cybersecurity", "Next.js 15", "GraphQL"].map((tech, idx) => (
@@ -376,7 +375,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.3, delay: idx * 0.05 }}
-                                className="px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold text-sm hover:border-blue-500 hover:bg-blue-600/10 transition-all cursor-default shadow-xl"
+                                className="px-8 py-4 rounded-full bg-white border border-slate-200 text-slate-700 font-bold text-sm hover:border-blue-500 hover:bg-blue-50 transition-all cursor-default shadow-sm"
                             >
                                 {tech}
                             </motion.div>
@@ -386,7 +385,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* Reusable Core Components */}
-            <div className="bg-white/2 border-t border-white/5">
+            <div className="bg-slate-50 border-t border-slate-100">
                 <FAQ />
             </div>
             <FreeConsultation />

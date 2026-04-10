@@ -155,8 +155,8 @@ const FreeConsultation = () => {
 
                     <button
                         className="
-                        mt-4 mx-auto  flex items-center justify-between
-                        px-14 py-4 rounded-full gap-4
+                        mt-4 mx-auto flex items-center justify-end
+                        px-4 py-4 rounded-full gap-4
                       text-white font-bold text-sm tracking-widest uppercase
                         bg-gradient-to-r
                       from-[#1E7FF8]
@@ -171,7 +171,7 @@ const FreeConsultation = () => {
                         data-aos="zoom-in"
                         data-aos-delay="700"
                     >
-                        <span>Submit Now</span>
+                        <span>Enquire Now</span>
 
                         <div
                             className="
