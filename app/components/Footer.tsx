@@ -4,37 +4,53 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import logoWhite from "../../public/images/logoWhite.png"
+import paymeat from "../../public/images/paymeat.webp"
 
 const footerLinks = {
-  Services: [
+  "AI Services": [
     { name: "AI Development", href: "/services/ai-development" },
-    { name: "Mobile App Development", href: "/services/mobile-app-development" },
-    { name: "Web Development", href: "/services/website-development" },
-    { name: "Blockchain", href: "#" },
-    { name: "E-commerce", href: "/services/specialized-ecommerce-seo-services" },
-    { name: "On-Demand Apps", href: "/Industry/on-demand" },
+    { name: "AI Chatbot Development", href: "/services/ai-chatbot-development" },
+    { name: "Generative AI Development", href: "/services/generative-ai-development" },
+    { name: "AI Agent Development", href: "/services/ai-agent-development" },
+    { name: "AI Integration", href: "/services/ai-integration" },
+    { name: "ML Development", href: "/services/ml-development" },
+    { name: "AI Product Development", href: "/services/ai-product-development" },
   ],
-  Solutions: [
-    { name: "Food Delivery App", href: "/Industry/restaurant-and-food" },
-    { name: "Taxi Booking App", href: "/Industry/automotive" },
-    { name: "Healthcare App", href: "/Industry/healthcare-software-development" },
-    { name: "FinTech Platform", href: "/Industry/fintech" },
-    { name: "Crypto Exchange", href: "/Industry/fintech" },
-    { name: "NFT Marketplace", href: "#" },
+  Development: [
+    { name: "Web App Development", href: "/services/web-app-development" },
+    { name: "Mobile App Development", href: "/services/mobile-app-development" },
+    { name: "Ios App Development", href: "/services/ios-app-development" },
+    { name: "Android App Development", href: "/services/android-app-development" },
+    { name: "Software Development", href: "/services/software-development" },
+    { name: "Blockchain Development", href: "/services/blockchain-development" },
+    { name: "E-commerce Development", href: "/services/ecommerce-development" },
+  ],
+  Marketing: [
+    { name: "Digital Marketing", href: "/services/digital-marketing" },
+    { name: "SEO Services", href: "/services/search-engine-optimization" },
+    { name: "Social Media Marketing", href: "/services/social-media-marketing" },
+    { name: "Lead Generation", href: "/services/lead-generation" },
+    { name: "Content Marketing", href: "/services/content-marketing" },
+    { name: "Google Ad Campaigns", href: "/services/google-ad-campaigns" },
+    { name: "Paid Advertising", href: "/services/paid-advertising" },
+  ],
+  Industries: [
+    { name: "FinTech", href: "/Industry/fintech" },
+    { name: "Healthcare", href: "/Industry/healthcare-software-development" },
+    { name: "eCommerce", href: "/Industry/ecommerce" },
+    { name: "Logistics", href: "/Industry/logistics" },
+    { name: "SaaS", href: "/Industry/saas" },
+    { name: "Real Estate", href: "/Industry/real-estate" },
+    { name: "Education", href: "/Industry/education" },
   ],
   Company: [
     { name: "About Us", href: "/about-us" },
+    { name: "Contact Us", href: "/contact-us" },
     { name: "How We Work", href: "/how-we-work" },
     { name: "Portfolio", href: "/portfolio" },
-    { name: "Careers", href: "#" },
-    { name: "Blog", href: "/blogs" },
-    { name: "Contact Us", href: "/contact-us" },
-  ],
-  Legal: [
-    { name: "Privacy Policy", href: "/privacy-policy" },
-    // { name: "Terms & Conditions", href: "#" },
+    { name: "Our Team", href: "/our-team" },
     { name: "Sitemap", href: "/sitemap" },
-    // { name: "Cookie Policy", href: "#" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
   ],
 };
 
@@ -50,7 +66,7 @@ const offices = [
 const socialLinks = [
   {
     name: "LinkedIn",
-    href: "#",
+    href: "https://in.linkedin.com/company/webtechnominditsolutions",
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -59,7 +75,7 @@ const socialLinks = [
   },
   {
     name: "Twitter",
-    href: "#",
+    href: "https://x.com/WebtechnomindS",
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -68,7 +84,7 @@ const socialLinks = [
   },
   {
     name: "Facebook",
-    href: "#",
+    href: "https://www.facebook.com/WebTechnoMindITSolutions/",
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
@@ -77,7 +93,7 @@ const socialLinks = [
   },
   {
     name: "Instagram",
-    href: "#",
+    href: "https://www.instagram.com/webtechnomind_it_solutions/",
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
@@ -116,7 +132,7 @@ export default function Footer() {
       </div> */}
 
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto! px-4 sm:px-6   py-16">
+      <div className="max-w-7xl mx-auto! px-4 sm:px-6 pt-16 pb-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -128,10 +144,10 @@ export default function Footer() {
               transition: { staggerChildren: 0.1 }
             }
           }}
-          className="grid grid-cols-1 lg:grid-cols-5 gap-12"
+          className="flex lg:flex-row flex-col gap-8"
         >
           {/* Brand column */}
-          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }} className="lg:col-span-1">
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }} className="lg:col-span-1 lg:w-[20vw] w-full">
             <div className="flex items-center gap-2 mb-4">
               {/* <div className="w-9 h-9 rounded-xl gradient-btn flex items-center justify-center">
                 <span className="text-white font-bold text-base">A</span>
@@ -145,7 +161,7 @@ export default function Footer() {
             </p>
 
             {/* Offices */}
-            <div className="mb-6">
+            <div>
               <div className="text-gray-300 text-xs font-semibold uppercase tracking-widest mb-3">
                 Global Presence
               </div>
@@ -161,19 +177,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Social */}
-            <div className="flex gap-3">
-              {socialLinks.map((s) => (
-                <a
-                  key={s.name}
-                  href={s.href}
-                  className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-gray-700 bg-gray-300 text-gray-900 hover:text-white hover:border-purple-500/40 transition-all"
-                  aria-label={s.name}
-                >
-                  {s.icon}
-                </a>
-              ))}
-            </div>
+
           </motion.div>
 
           {/* Links */}
@@ -181,6 +185,7 @@ export default function Footer() {
             <motion.div
               key={category}
               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+              className="ml-4"
             >
               <div className="text-white font-semibold text-sm mb-4">{category}</div>
               <ul className="flex flex-col gap-2.5">
@@ -195,6 +200,26 @@ export default function Footer() {
             </motion.div>
           ))}
         </motion.div>
+        {/* Social */}
+        <div className="flex items-center justify-between mt-8">
+          <div className="flex gap-3">
+            {socialLinks.map((s) => (
+              <a
+                key={s.name}
+                href={s.href}
+                target="_blank"
+                className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-gray-700 bg-gray-300 text-gray-900 hover:text-white hover:border-purple-500/40 transition-all"
+                aria-label={s.name}
+              >
+                {s.icon}
+              </a>
+            ))}
+          </div>
+
+          <div>
+            <Image src={paymeat} alt="paymeat" width={1920} height={1080} className="w-[240px] h-auto object-cover" />
+          </div>
+        </div>
       </div>
 
       {/* Bottom bar */}
@@ -203,7 +228,7 @@ export default function Footer() {
           <p className="text-white text-sm text-center md:text-left">
             © 2012-2026 Wtm Technologies Pvt. Ltd. All Rights Reserved.
           </p>
-          <div className="flex flex-col items-start text-white text-sm">
+          <div className="flex items-center gap-2 text-white text-sm">
             <strong>Corporate Identity Number :</strong><span className="text-xs font-normal">U62012WB2023PTC261715</span>
           </div>
           <div className="flex items-center gap-2 text-white text-xs">

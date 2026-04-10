@@ -17,61 +17,100 @@ const featuredProject = {
         { value: "130+", label: "Countries" },
     ],
     cta: "View Case Study",
-    image: "/images/portfolio/transform_chic_more.webp",
+    image: "/images/portfolio/Virtuard.jpg",
     bg: "from-[#0d1117] to-[#1a1f2e]",
 };
 
 const gridProjects = [
     {
-        slug: "flitpay",
-        tag: "Crypto Exchange",
-        tagColor: "bg-blue-500",
-        title: "Flitpay",
-        subtitle: "India's Trusted crypto exchange",
-        image: "/images/portfolio/transform_chic_more.webp",
-        stats: ["500K+", "4.8★"],
-        bg: "bg-[#0f172a]",
+        id: 1,
+        title: "Sky Dive",
+        category: "Tandem Skydiving",
+        industry: "Adventure",
+        description: "High-performance WordPress website with immersive UI/UX. Delivered 72% traffic growth.",
+        image: "/images/portfolio/skydive.jpg",
+        interaction: 75,
+        visibility: 83,
+        stats: [
+            "75",
+            "83",
+        ],
+        slug: "sky-dive",
     },
     {
-        slug: "mintit",
-        tag: "Fintech",
-        tagColor: "bg-purple-500",
-        title: "MINTIT",
-        subtitle: "Smart Mutual Fund Investing",
-        image: "/images/portfolio/transform_chic_more.webp",
-        stats: ["10K+", "4.8★"],
-        bg: "bg-[#13111f]",
+        id: 2,
+        title: "Re-Energi",
+        category: "Sustainable Energy",
+        industry: "Energy",
+        description: "SEO-optimized WordPress site with modern UI reflecting eco-friendly mission.",
+        image: "/images/portfolio/reenergi.jpg",
+        interaction: 76,
+        visibility: 88,
+        stats: [
+            "76",
+            "88",
+        ],
+        slug: "re-energi",
     },
     {
-        slug: "bodhi",
-        tag: "Astrology",
-        tagColor: "bg-orange-500",
-        title: "Bodhi",
-        subtitle: "AI-Powered Astrology App",
-        image: "/images/portfolio/transform_chic_more.webp",
-        stats: ["50K+", "4.9★"],
-        bg: "bg-[#1a0a2e]",
-        dark: true,
+        id: 3,
+        title: "Neuro Apply",
+        category: "Psychological Assessment",
+        industry: "Healthcare",
+        description: "Clean, intuitive WordPress platform with strong SEO performance.",
+        image: "/images/portfolio/neuroapply.jpg",
+        interaction: 75,
+        visibility: 89,
+        stats: [
+            "75",
+            "89",
+        ],
+        slug: "neuro-apply",
     },
     {
-        slug: "once-dating",
-        tag: "Dating & Social",
-        tagColor: "bg-pink-500",
-        title: "Once Dating",
-        subtitle: "Perfect Match Dating App",
-        image: "/images/portfolio/transform_chic_more.webp",
-        stats: ["100K+", "4.7★"],
-        bg: "bg-[#1a0f1a]",
+        id: 4,
+        title: "Enigma Psychometry",
+        category: "Online Education",
+        industry: "Education",
+        description: "Modern e-learning website with responsive design and SEO optimization.",
+        image: "/images/portfolio/enigma.jpg",
+        interaction: 70,
+        visibility: 89,
+        stats: [
+            "70",
+            "89",
+        ],
+        slug: "enigma-psychometry",
     },
     {
-        slug: "tuning-empire",
-        tag: "Automotive",
-        tagColor: "bg-green-500",
-        title: "Tuning Empire",
-        subtitle: "Australian Performance Parts",
-        image: "/images/portfolio/transform_chic_more.webp",
-        stats: ["20K+", "4.6★"],
-        bg: "bg-[#0f1a10]",
+        id: 5,
+        title: "Canadian Flyers International College",
+        category: "Flight Training",
+        industry: "Aviation",
+        description: "Professional aviation training website with 80%+ traffic growth.",
+        image: "/images/portfolio/canadianflyers.jpg",
+        interaction: 82,
+        visibility: 93,
+        stats: [
+            "82",
+            "93",
+        ],
+        slug: "canadian-flyers",
+    },
+    {
+        id: 6,
+        title: "Brigient",
+        category: "Cybersecurity",
+        industry: "Technology",
+        description: "Secure and performance-driven website with modern UI/UX.",
+        image: "/images/portfolio/brigient.jpg",
+        interaction: 79,
+        visibility: 86,
+        stats: [
+            "79",
+            "86",
+        ],
+        slug: "brigient",
     },
 ];
 
@@ -145,7 +184,7 @@ export default function PortfolioSection() {
                                 {/* Left: screenshot */}
                                 <div className="relative w-full sm:w-[55%] overflow-hidden p-4">
                                     <Image
-                                        src={gridProjects[0]?.image}
+                                        src={featuredProject?.image}
                                         alt={featuredProject.title}
                                         width={1920}
                                         height={1080}
@@ -186,7 +225,7 @@ export default function PortfolioSection() {
                                     href={`/portfolio/${project.slug}`}
                                     onMouseEnter={() => setHovered(i)}
                                     onMouseLeave={() => setHovered(null)}
-                                    className={`group relative rounded-2xl overflow-hidden border border-white/10 ${project.bg} p-0 flex flex-col transition-transform duration-200 ${hovered === i ? "scale-[1.02] border-white/20" : ""} cursor-pointer`}
+                                    className={`group relative rounded-2xl overflow-hidden border border-white/10  p-0 flex flex-col transition-transform duration-200 ${hovered === i ? "scale-[1.02] border-white/20" : ""} cursor-pointer`}
                                     style={{ minHeight: 160 }}
                                 >
                                     {/* Mock image / bg area */}
@@ -197,9 +236,9 @@ export default function PortfolioSection() {
                                         </span>
 
                                         {/* Tag top-left */}
-                                        <div className="absolute top-2 left-2 z-20">
+                                        {/* <div className="absolute top-2 left-2 z-20">
                                             <Tag label={project.tag} color={project.tagColor} />
-                                        </div>
+                                        </div> */}
                                         <div className="absolute top-0 w-full h-full group-hover:bg-linear-to-t from-black/60 via-blue-black/40 to-blue-800/20 z-10" />
                                     </div>
 
@@ -208,7 +247,7 @@ export default function PortfolioSection() {
                                         <StatsBadges stats={project.stats} />
                                         <div className="mt-1.5">
                                             <div className="text-white text-sm font-bold leading-tight">{project.title}</div>
-                                            <div className="text-white/40 text-[11px] mt-0.5">{project.subtitle}</div>
+                                            <div className="text-white/40 text-[11px] mt-0.5">{project.description}</div>
                                         </div>
                                     </div>
                                 </Link>
