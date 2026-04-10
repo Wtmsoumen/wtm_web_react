@@ -75,7 +75,9 @@ const values = [
 
 const technologies = [
   "React", "Next.js", "Flutter", "React Native", "Laravel", "WordPress",
-  "Node.js", "TypeScript", "Python", "AWS", "Firebase", "MongoDB",
+  "Node.js", "TypeScript", "Python", "AWS", "Firebase", "MongoDB", "Shopify",
+  "Magento",  "Google Ads", "Facebook Ads", "SEO Tools",
+  "Figma", "Adobe XD", "Sketch", "Jira", "GitHub", "Docker", "Kubernetes",
 ];
 
 // ─── Counter Hook ─────────────────────────────────────────────────────────────

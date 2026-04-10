@@ -10,6 +10,7 @@ import {
 } from "lucide-react"
 import ScrollReveal from '../components/ScrollReveal'
 import { globalStyle } from '../globalStyle'
+import Link from "next/link";
 
 const HowWeWork = () => {
     const principles = [
@@ -320,28 +321,47 @@ const HowWeWork = () => {
                 </div>
             </section>
 
-            {/* Final CTA */}
-            <section className="py-20 bg-blue-50/50">
-                <div className={globalStyle.container}>
-                    <div className={`p-10 md:p-20 rounded-[48px] overflow-hidden relative ${globalStyle.gradientBtn} text-white`}>
-                        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-                        <div className="relative z-10 text-center max-w-3xl mx-auto">
-                            <h2 className="text-4xl md:text-6xl font-black mb-8">Ready to Build Something <br /> Extraordinary?</h2>
-                            <p className="text-xl text-white/80 mb-10 leading-relaxed font-light">
-                                Let's turn your vision into a market-leading product using our proven 'Architecture of Excellence' methodology.
-                            </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <button className="px-10 py-5 bg-white text-blue-600 font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl">
-                                    Start Your Project
-                                </button>
-                                <button className="px-10 py-5 bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold rounded-2xl hover:bg-white/30 transition-all">
-                                    View Our Work
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+       
+{/* Final CTA */}
+<section className="py-20 bg-blue-50/50">
+  <div className={globalStyle.container}>
+    <div className={`p-10 md:p-20 rounded-[48px] overflow-hidden relative ${globalStyle.gradientBtn} text-white`}>
+      
+      <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+      
+      <div className="relative z-10 text-center max-w-3xl mx-auto">
+        
+        <h2 className="text-4xl md:text-6xl font-black mb-8">
+          Ready to Build Something <br /> Extraordinary?
+        </h2>
+
+        <p className="text-xl text-white/80 mb-10 leading-relaxed font-light">
+          Let's turn your vision into a market-leading product using our proven 'Architecture of Excellence' methodology.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          {/* 🔥 Start Your Project → /contact-us */}
+          <Link
+            href="/contact-us"
+            className="px-10 py-5 bg-white text-blue-600 font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl text-center"
+          >
+            Start Your Project
+          </Link>
+
+          {/* 🔥 View Our Work → /portfolio */}
+          <Link
+            href="/portfolio"
+            className="px-10 py-5 bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold rounded-2xl hover:bg-white/30 transition-all text-center"
+          >
+            View Our Work
+          </Link>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
         </main>
     )
 }
