@@ -5,7 +5,7 @@ import { Facebook, Instagram, Twitter, Linkedin, Phone } from "lucide-react";
 
 const FreeConsultation = () => {
     return (
-        <div className='w-full pt-8 md:pt-40 flex flex-col md:flex-row p-4 md:p-8 bg-[#f5f5f7]'>
+        <div className='w-full pt-8 md:pt-40 flex flex-col md:flex-row p-4 md:p-8 bg-white'>
 
 
             {/* ----- Left Content Section ----- */}

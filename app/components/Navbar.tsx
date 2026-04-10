@@ -69,46 +69,46 @@ const services = [
 
 const navLinks = [
   {
-    label: "Hello AI", href: "#helloai", title: "AI Development Services", subtitle: "Next-Gen AI & ML Solutions", icon: Sparkles, megaMenu: [
-      { title: "AI Development", href: "/services/ai-development", icon: Sparkles, color: "#fb2c36", color1: "#570707" },
-      { title: "AI Chatbot Development", href: "/services/ai-chatbot-development", icon: MessageSquare, color: "#fb2c36", color1: "#570707" },
-      { title: "Generative AI Development", href: "/services/generative-ai-development", icon: Brain, color: "#fb2c36", color1: "#570707" },
-      { title: "AI Agent Development", href: "/services/ai-agent-development", icon: Bot, color: "#fb2c36", color1: "#570707" },
-      { title: "AI Integration", href: "/services/ai-integration", icon: Plug, color: "#fb2c36", color1: "#570707" },
-      { title: "ML Development", href: "/services/ml-development", icon: ChartColumn, color: "#fb2c36", color1: "#570707" },
-      { title: "AI Product Development", href: "/services/ai-product-development", icon: Cpu, color: "#fb2c36", color1: "#570707" },
-      { title: "Machine Learning & Deep Learning", href: "/services/machine-learning-deep-learning", icon: Layers, color: "#fb2c36", color1: "#570707" },
+    label: "Hello AI", href: "#helloai", title: "AI Development Services", subtitle: "Next-Gen AI & ML Solutions", icon: Sparkles, color: "#A855F7", megaMenu: [
+      { title: "AI Development", href: "/services/ai-development", icon: Sparkles, color: "#8B5CF6", color1: "#4C1D95" },
+      { title: "AI Chatbot Development", href: "/services/ai-chatbot-development", icon: MessageSquare, color: "#EC4899", color1: "#831843" },
+      { title: "Generative AI Development", href: "/services/generative-ai-development", icon: Brain, color: "#06B6D4", color1: "#164E63" },
+      { title: "AI Agent Development", href: "/services/ai-agent-development", icon: Bot, color: "#10B981", color1: "#064E3B" },
+      { title: "AI Integration", href: "/services/ai-integration", icon: Plug, color: "#F59E0B", color1: "#78350F" },
+      { title: "ML Development", href: "/services/ml-development", icon: ChartColumn, color: "#6366F1", color1: "#312E81" },
+      { title: "AI Product Development", href: "/services/ai-product-development", icon: Cpu, color: "#EF4444", color1: "#7F1D1D" },
+      { title: "Machine Learning & Deep Learning", href: "/services/machine-learning-deep-learning", icon: Layers, color: "#3B82F6", color1: "#1E3A8A" },
     ]
   },
 
   {
-    label: "Marketing", href: "#markating", title: "Marketing Services", subtitle: "Marketing Solutions", icon: SquarePercent, megaMenu: [
-      { title: "Social Media Marketing", href: "/services/social-media-marketing", icon: Share2, color: "#D95204", color1: "#782E00" },
-      { title: "Digital Marketing Strategy", href: "/services/digital-marketing-strategy", icon: Lightbulb, color: "#D95204", color1: "#782E00" },
-      { title: "Conversion Rate Optimization", href: "/services/conversion-rate-optimization", icon: TrendingUp, color: "#D95204", color1: "#782E00" },
-      { title: "Trusted Influencer Marketing Agency", href: "/services/trusted-influencer-marketing-agency", icon: Users, color: "#D95204", color1: "#782E00" },
-      { title: "Search Engine Optimization", href: "/services/search-engine-optimization", icon: Search, color: "#D95204", color1: "#782E00" },
-      { title: "Lead Generation", href: "/services/lead-generation", icon: UserPlus, color: "#D95204", color1: "#782E00" },
-      { title: "Brand Management", href: "/services/brand-management", icon: ShieldCheck, color: "#D95204", color1: "#782E00" },
-      { title: "Specialized eCommerce SEO Services", href: "/services/specialized-ecommerce-seo-services", icon: ShoppingCart, color: "#D95204", color1: "#782E00" },
-      { title: "Google Ad Campaigns", href: "/services/google-ad-campaigns", icon: Megaphone, color: "#D95204", color1: "#782E00" },
-      { title: "Content Marketing", href: "/services/content-marketing", icon: FileText, color: "#D95204", color1: "#782E00" },
-      { title: "Paid Advertising", href: "/services/paid-advertising", icon: Target, color: "#D95204", color1: "#782E00" }
+    label: "Marketing", href: "#markating", title: "Marketing Services", subtitle: "Marketing Solutions", icon: SquarePercent, color: "#F97316", megaMenu: [
+      { title: "Social Media Marketing", href: "/services/social-media-marketing", icon: Share2, color: "#E11D48", color1: "#881337" },
+      { title: "Digital Marketing Strategy", href: "/services/digital-marketing-strategy", icon: Lightbulb, color: "#F59E0B", color1: "#78350F" },
+      { title: "Conversion Rate Optimization", href: "/services/conversion-rate-optimization", icon: TrendingUp, color: "#10B981", color1: "#064E3B" },
+      { title: "Trusted Influencer Marketing Agency", href: "/services/trusted-influencer-marketing-agency", icon: Users, color: "#D946EF", color1: "#701A75" },
+      { title: "Search Engine Optimization", href: "/services/search-engine-optimization", icon: Search, color: "#3B82F6", color1: "#1E3A8A" },
+      { title: "Lead Generation", href: "/services/lead-generation", icon: UserPlus, color: "#06B6D4", color1: "#164E63" },
+      { title: "Brand Management", href: "/services/brand-management", icon: ShieldCheck, color: "#6366F1", color1: "#312E81" },
+      { title: "Specialized eCommerce SEO Services", href: "/services/specialized-ecommerce-seo-services", icon: ShoppingCart, color: "#F97316", color1: "#7C2D12" },
+      { title: "Google Ad Campaigns", href: "/services/google-ad-campaigns", icon: Megaphone, color: "#EF4444", color1: "#7F1D1D" },
+      { title: "Content Marketing", href: "/services/content-marketing", icon: FileText, color: "#14B8A6", color1: "#0F766E" },
+      { title: "Paid Advertising", href: "/services/paid-advertising", icon: Target, color: "#8B5CF6", color1: "#4C1D95" }
     ]
   },
 
   {
-    label: "Development", href: "#development", title: "Development Services", subtitle: "Development Solutions", icon: CodeXml, megaMenu: [
-      { title: "Mobile App Development", href: "/services/mobile-app-development", icon: TabletSmartphone, color: "#00bcff", color1: "#000000", },
-      { title: "Ios App Development", href: "/services/ios-app-development", icon: TabletSmartphone, color: "#00bcff", color1: "#000000", },
-      { title: "Android App Development", href: "/services/android-app-development", icon: TabletSmartphone, color: "#00bcff", color1: "#000000", },
-      { title: "Web App Development", href: "/services/web-app-development", icon: MonitorSmartphone, color: "#00bcff", color1: "#000000", },
-      { title: "Wordpress Development", href: "/services/wordpress-development", icon: PanelsTopLeft, color: "#00bcff", color1: "#000000", },
-      { title: "Website Development", href: "/services/website-development", icon: MonitorSpeaker, color: "#00bcff", color1: "#000000", },
-      { title: "React.js Development", href: "/services/react-js-development", icon: Globe, color: "#00bcff", color1: "#000000", },
-      { title: "Next.js Development", href: "/services/next-js-development", icon: Triangle, color: "#00bcff", color1: "#000000", },
-      { title: "Node.js Development", href: "/services/node-js-development", icon: Hexagon, color: "#00bcff", color1: "#000000", },
-      { title: "Laravel Development", href: "/services/laravel-development", icon: Braces, color: "#00bcff", color1: "#000000", },
+    label: "Development", href: "#development", title: "Development Services", subtitle: "Development Solutions", icon: CodeXml, color: "#0EA5E9", megaMenu: [
+      { title: "Mobile App Development", href: "/services/mobile-app-development", icon: TabletSmartphone, color: "#3B82F6", color1: "#1E3A8A", },
+      { title: "Ios App Development", href: "/services/ios-app-development", icon: TabletSmartphone, color: "#0EA5E9", color1: "#075985", },
+      { title: "Android App Development", href: "/services/android-app-development", icon: TabletSmartphone, color: "#22D3EE", color1: "#164E63", },
+      { title: "Web App Development", href: "/services/web-app-development", icon: MonitorSmartphone, color: "#6366F1", color1: "#312E81", },
+      { title: "Wordpress Development", href: "/services/wordpress-development", icon: PanelsTopLeft, color: "#4F46E5", color1: "#3730A3", },
+      { title: "Website Development", href: "/services/website-development", icon: MonitorSpeaker, color: "#06B6D4", color1: "#164E63", },
+      { title: "React.js Development", href: "/services/react-js-development", icon: Globe, color: "#61DAFB", color1: "#20232A", },
+      { title: "Next.js Development", href: "/services/next-js-development", icon: Triangle, color: "#000000", color1: "#404040", },
+      { title: "Node.js Development", href: "/services/node-js-development", icon: Hexagon, color: "#339933", color1: "#1A4D1A", },
+      { title: "Laravel Development", href: "/services/laravel-development", icon: Braces, color: "#FF2D20", color1: "#801610", },
     ]
   },
 
@@ -118,16 +118,17 @@ const navLinks = [
     title: "Our Services",
     subtitle: "Our Services",
     icon: LaptopMinimalCheck,
+    color: "#EC4899",
     megaMenu: [
-      { title: "AI Engineering", href: "/services/ai-engineering", icon: Share2, color: "#a800b7", color1: "#000000" },
-      { title: "Digital Marketing", href: "/services/digital-marketing", icon: Lightbulb, color: "#a800b7", color1: "#000000" },
-      { title: "Mobile App Development", href: "/services/mobile-app-development", icon: TrendingUp, color: "#a800b7", color1: "#000000" },
-      { title: "Custom Web Development", href: "/services/custom-web-development", icon: Users, color: "#a800b7", color1: "#000000" },
-      { title: "Software Development", href: "/services/software-development", icon: Search, color: "#a800b7", color1: "#000000" },
-      { title: "Digital Transformation", href: "/services/digital-transformation", icon: UserPlus, color: "#a800b7", color1: "#000000" },
-      { title: "E-commerce Development", href: "/services/ecommerce-development", icon: ShieldCheck, color: "#a800b7", color1: "#000000" },
-      { title: "Blockchain Development", href: "/services/blockchain-development", icon: ShoppingCart, color: "#a800b7", color1: "#000000" },
-      { title: "Data Science & Analytics", href: "/services/data-science-analytics", icon: Megaphone, color: "#a800b7", color1: "#000000" },
+      { title: "AI Engineering", href: "/services/ai-engineering", icon: Share2, color: "#8B5CF6", color1: "#4C1D95" },
+      { title: "Digital Marketing", href: "/services/digital-marketing", icon: Lightbulb, color: "#F59E0B", color1: "#78350F" },
+      { title: "Mobile App Development", href: "/services/mobile-app-development", icon: TabletSmartphone, color: "#3B82F6", color1: "#1E3A8A" },
+      { title: "Custom Web Development", href: "/services/custom-web-development", icon: CodeXml, color: "#10B981", color1: "#064E3B" },
+      { title: "Software Development", href: "/services/software-development", icon: Layers, color: "#6366F1", color1: "#312E81" },
+      { title: "Digital Transformation", href: "/services/digital-transformation", icon: Sparkles, color: "#EC4899", color1: "#831843" },
+      { title: "E-commerce Development", href: "/services/ecommerce-development", icon: ShoppingCart, color: "#F97316", color1: "#7C2D12" },
+      { title: "Blockchain Development", href: "/services/blockchain-development", icon: ShieldCheck, color: "#3B82F6", color1: "#1E3A8A" },
+      { title: "Data Science & Analytics", href: "/services/data-science-analytics", icon: Megaphone, color: "#06B6D4", color1: "#164E63" },
     ]
   },
 
@@ -136,7 +137,7 @@ const navLinks = [
   //   label: "On-Demand", href: "#ondemand", icon: ShieldAlert,
   // },
   {
-    label: "Industry", href: "/Industry", title: "Industry", subtitle: "Industry", icon: Factory, megaMenu: [
+    label: "Industry", href: "/Industry", title: "Industry", subtitle: "Industry", icon: Factory, color: "#10B981", megaMenu: [
       { title: "FinTech", href: "/Industry/fintech", icon: Landmark, color: "#2d9cdb", color1: "#000000" },
       { title: "Healthcare", href: "/Industry/healthcare-software-development", icon: HeartPulse, color: "#ff4d6d", color1: "#fff0f3" },
       { title: "eCommerce", href: "/Industry/ecommerce", icon: ShoppingCart, color: "#f2994a", color1: "#fff4ec" },
@@ -164,7 +165,7 @@ const navLinks = [
   },
 
   {
-    label: "Company", href: "#footer", title: "Our Company", subtitle: "Our Company Details", icon: Building2, megaMenu: [
+    label: "Company", href: "#footer", title: "Our Company", subtitle: "Our Company Details", icon: Building2, color: "#6366F1", megaMenu: [
       {
         title: "About Us",
         description: "Our story & mission",
@@ -238,13 +239,13 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 duration-300 ${scrolled ? "bg-white shadow-sm shadow-gray-300" : "lg:bg-black/80 bg-white"}`}
+      className={`fixed top-0 left-0 right-0 z-50 duration-300 bg-white shadow-sm shadow-gray-300`}
     >
       <div className={`${globalStyle?.container} max-w-full!`}>
         <div className="flex items-center justify-between h-16 w-[94%] mx-auto">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Image src={scrolled ? logo : logoWhite} alt="logo" width={1920} height={1080} className="w-50 h-auto lg:flex hidden" />
+            <Image src={logo} alt="logo" width={1920} height={1080} className="w-50 h-auto lg:flex hidden" />
             <Image src={logo} alt="logo" width={1920} height={1080} className="w-50 h-auto lg:hidden flex" />
           </Link>
 
@@ -255,12 +256,12 @@ export default function Navbar() {
               return (
                 <div
                   key={index}
-                  className={`${scrolled ? "text-black hover:text-gray-600" : "text-white hover:text-red-300"} cursor-pointer font-medium text-sm transition-colors duration-200 group`}
+                  className={`text-black hover:text-gray-600 cursor-pointer font-medium text-sm transition-colors duration-200 group`}
                   onMouseEnter={() => setOpenMegaMenu({ title: item?.title, subtitle: item?.subtitle, icon: item?.icon, data: item?.megaMenu })}
                   onClick={() => setOpenMegaMenu({})}
                 >
                   <div className="relative flex gap-1 z-11 font-medium text-sm">
-                    <Icon className={`w-5 h-auto ${index === 0 ? "text-red-500" : index === 1 ? "text-amber-400" : index === 2 ? "text-sky-400" : index === 3 ? "text-fuchsia-600" : index === 4 ? "text-cyan-600" : index === 5 ? "text-green-600" : index === 6 ? "text-cyan-600" : ""}`} />
+                    <Icon className={`w-5 h-auto transition-transform group-hover:scale-110 duration-200`} style={{ color: item.color }} />
                     {item.label}
                     <ChevronDown className="w-4.5 h-auto group-hover:rotate-180 duration-300" />
                   </div>
@@ -467,8 +468,8 @@ export default function Navbar() {
                     }
                   }}
                 >
-                  <div className="flex items-center gap-2 hover:text-black text-sm py-1 flex-1">
-                    {Icon && <Icon className="w-4 h-4" />}
+                  <div className="flex items-center gap-2 hover:text-black text-sm py-1 flex-1 font-medium">
+                    {Icon && <Icon className="w-4.5 h-4.5" style={{ color: item.color }} />}
                     {item.label}
                   </div>
                   {item.megaMenu && (
