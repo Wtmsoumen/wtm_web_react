@@ -138,8 +138,8 @@ Webtechnomind – Where creativity meets conversion.`,
 ];
 
 const OurExpertise = () => {
-    const [activeTab, setActiveTab] = useState('digital');
-    const active = tabs.find(t => t.id === activeTab)!;
+  const [activeTab, setActiveTab] = useState(() => tabs[0].id);
+   const active = tabs.find(t => t.id === activeTab) || tabs[0];
 
     return (
         <ScrollReveal>

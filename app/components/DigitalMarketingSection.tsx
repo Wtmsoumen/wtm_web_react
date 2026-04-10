@@ -10,6 +10,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { globalStyle } from "../globalStyle";
+import Link from "next/link";
 
 /* ─── Data ─────────────────────────────────────────── */
 const stats = [
@@ -228,16 +229,14 @@ const DigitalMarketingSection = () => {
               <p className="text-gray-500 text-lg leading-relaxed max-w-md">
                 We blend strategy, creative, and ruthless data analysis to turn your marketing into a growth engine — not an expense.
               </p>
-              <button
-                className="self-start bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] flex items-center gap-3 text-sm font-bold px-6 py-3.5 rounded-full text-white hover:scale-105 active:scale-100 transition-transform duration-200"
-              // style={{
-              //   background: "linear-gradient(135deg, #1D74CF 0%, #b33b41 60%, #D04425 100%)",
-              //   boxShadow: "0 8px 30px rgba(29,116,207,0.25)",
-              // }}
-              >
-                Start Growing
-                <ArrowRight className="w-4 h-4" />
-              </button>
+          <Link href={`/services/digital-marketing`}>
+  <button
+    className="self-start bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] flex items-center gap-3 text-sm font-bold px-6 py-3.5 rounded-full text-white hover:scale-105 active:scale-100 transition-transform duration-200"
+  >
+    Start Growing
+    <ArrowRight className="w-4 h-4" />
+  </button>
+</Link>
             </div>
           </div>
 
