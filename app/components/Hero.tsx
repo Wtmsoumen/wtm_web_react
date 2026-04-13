@@ -55,10 +55,10 @@ export default function Hero() {
 
         {/* Main Heading */}
         <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">
-          <span>Your</span>{" "}
+          <span className="text-shadow-red-600/80 text-shadow-xs">Your</span>{" "}
           <span className={`${globalStyle?.gradientText} text-shadow-white bg-clip-text text-transparent`}>Next-gen</span>
           <br />
-          <span className="text-white text-shadow-black">Tech Growth Partner</span>
+          <span className="text-white text-shadow-red-600/80 text-shadow-xs">Tech Growth Partner</span>
         </h1>
 
         {/* CTA Button */}

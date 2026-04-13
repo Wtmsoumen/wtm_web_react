@@ -176,9 +176,9 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
 
             {/* 1. Hero Section */}
             <ScrollReveal>
-                <section className="relative min-h-[90vh] flex items-center justify-center pt-24 overflow-hidden z-10">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 flex flex-col justify-center items-center text-center w-full">
-                        <motion.div 
+                <section className="relative flex items-center justify-center pt-24 overflow-hidden z-10">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col justify-center items-center text-center w-full">
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
@@ -190,7 +190,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                             </span>
                         </motion.div>
 
-                        <motion.h1 
+                        <motion.h1
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
@@ -200,7 +200,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                             <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">{industryData.subtitle}</span> Expert
                         </motion.h1>
 
-                        <motion.p 
+                        <motion.p
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
@@ -244,7 +244,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                             <div className="relative">
                                 <div className="absolute inset-0 bg-blue-100/30 blur-[80px] rounded-full" />
                                 <div className="relative grid grid-cols-2 gap-4">
-                                    {[1,2,3,4].map(i => (
+                                    {[1, 2, 3, 4].map(i => (
                                         <div key={i} className={`h-40 rounded-3xl border border-slate-100 bg-slate-50 shadow-sm ${i % 2 === 0 ? 'translate-y-8' : ''}`} />
                                     ))}
                                 </div>
@@ -370,8 +370,8 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                     </h2>
                     <div className="flex flex-wrap justify-center gap-3">
                         {["Artificial Intelligence", "Blockchain", "Internet of Things", "Cloud Computing", "Data Analytics", "AR/VR Core", "Cybersecurity", "Next.js 15", "GraphQL"].map((tech, idx) => (
-                            <motion.div 
-                                key={idx} 
+                            <motion.div
+                                key={idx}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.3, delay: idx * 0.05 }}

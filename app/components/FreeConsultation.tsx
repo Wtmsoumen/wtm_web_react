@@ -5,18 +5,14 @@ import { Facebook, Instagram, Twitter, Linkedin, Phone } from "lucide-react";
 
 const FreeConsultation = () => {
     return (
-        <div className='w-full pt-8 md:pt-40 flex flex-col md:flex-row p-4 md:p-8 bg-white'>
+        <div className='w-full pt-8 md:pt-16 flex flex-col md:flex-row p-4 md:p-8 bg-white'>
 
 
             {/* ----- Left Content Section ----- */}
             <div className="w-full md:w-[50%] px-4 md:px-10 " >
 
                 {/* Heading */}
-                <h1 className="text-3xl md:text-6xl font-bold leading-tight mb-4   bg-gradient-to-r
-                      from-[#1E7FF8]
-                      via-[#0E8DF6]
-                      via-[#AB82E0]
-                      to-[#E75061]  bg-clip-text text-transparent">
+                <h1 className="text-3xl md:text-6xl font-bold leading-tight mb-4 bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)]  bg-clip-text text-transparent">
                     Web development company
                 </h1>
 
@@ -61,7 +57,7 @@ const FreeConsultation = () => {
                             return (
                                 <div
                                     key={idx}
-                                    className="w-9 h-9 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white shadow-md hover:scale-110 transition-all duration-300 cursor-pointer"
+                                    className="w-9 h-9 flex items-center justify-center rounded-full bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] text-white shadow-md hover:scale-110 transition-all duration-300 cursor-pointer"
                                 >
                                     <Icon size={16} />
                                 </div>
@@ -76,7 +72,7 @@ const FreeConsultation = () => {
 
 
             <div className='w-full md:w-[50%] flex items-center justify-center ' data-aos="fade-left">
-                <div className='w-full md:relative md:bottom-15'>
+                <div className='w-full md:relative'>
                     {/* Title */}
                     <p className='text-[#ED286C] text-[15px] font-bold tracking-widest uppercase mb-1'>Free Consultation</p>
                     <h2 className='text-3xl md:text-[50px] font-regular text-[#020200] leading-tight'>Maximize Your Brand’s Performance With </h2>

@@ -61,6 +61,7 @@ const offices = [
   { country: "UAE", city: "Dubai", flag: "🇦🇪" },
   { country: "Australia", city: "Sydney", flag: "🇦🇺" },
   { country: "Netherlands", city: "Amsterdam", flag: "🇳🇱" },
+  { country: "Poland", city: "Warsaw", flag: "🇵🇱" },
 ];
 
 const socialLinks = [

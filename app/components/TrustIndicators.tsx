@@ -25,15 +25,6 @@ const ratings = [
     stars: 1,
     image: "/images/logos_clients/aligned_wealth.png",
   },
-
-  {
-    platform: "All Good",
-    score: "4.7",
-    reviews: "40+ Reviews",
-    badge: "Top Company",
-    stars: 1,
-    image: "/images/logos_clients/all_good.png",
-  },
   {
     platform: "Expedition Security",
     score: "5.0",
@@ -50,16 +41,6 @@ const ratings = [
     stars: 1,
     image: "/images/logos_clients/anytime_tots.png",
   },
-
-  {
-    platform: "Atelier",
-    score: "4.5",
-    reviews: "Verified",
-    badge: "Top Developer",
-    stars: 1,
-    image: "/images/logos_clients/atelier.png",
-  },
-
   {
     platform: "Tabor",
     score: "4.8",
@@ -76,8 +57,6 @@ const ratings = [
     stars: 1,
     image: "/images/logos_clients/ua_homes.png",
   },
-
-
   {
     platform: "Benifit Legal",
     score: "5.0",
@@ -103,7 +82,6 @@ const ratings = [
     stars: 1,
     image: "/images/logos_clients/ocean_journey.png",
   },
-
   {
     platform: "Pain Tax",
     score: "4.7",
@@ -121,7 +99,6 @@ const ratings = [
     stars: 1,
     image: "/images/logos_clients/cbc.png",
   },
-
   {
     platform: "Khayat",
     score: "5.0",
@@ -137,6 +114,30 @@ const ratings = [
     badge: "Top Developer",
     stars: 1,
     image: "/images/logos_clients/medisync.png",
+  },
+  {
+    platform: "MediSync",
+    score: "5.0",
+    reviews: "Verified",
+    badge: "Top Developer",
+    stars: 1,
+    image: "/images/logos_clients/jhl.png",
+  },
+  {
+    platform: "MediSync",
+    score: "5.0",
+    reviews: "Verified",
+    badge: "Top Developer",
+    stars: 1,
+    image: "/images/logos_clients/wisglob.svg",
+  },
+  {
+    platform: "MediSync",
+    score: "5.0",
+    reviews: "Verified",
+    badge: "Top Developer",
+    stars: 1,
+    image: "/images/logos_clients/globalvision.png",
   },
 ];
 
@@ -171,21 +172,21 @@ export default function TrustIndicators() {
               {[...ratings, ...ratings].map((r, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col items-center justify-between p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 w-[280px] min-h-[220px]"
+                  className="flex flex-col items-center justify-between p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 w-[280px] min-h-[205px]"
                 >
                   {/* Logo */}
-                  <div className="w-full flex justify-center items-center mb-4 h-16">
+                  <div className="w-full flex justify-center items-center h-16">
                     <img
                       src={r.image}
                       alt={r.platform}
-                      className="h-full object-contain"
+                      className="h-full w-auto object-contain"
                     />
                   </div>
 
                   {/* Platform Name */}
-                  <div className="text-lg font-semibold text-gray-800 text-center mb-2">
+                  {/* <div className="text-lg font-semibold text-gray-800 text-center mb-2">
                     {r.platform}
-                  </div>
+                  </div> */}
 
                   {/* Rating Section */}
                   <div className="flex items-center gap-2 mb-1">

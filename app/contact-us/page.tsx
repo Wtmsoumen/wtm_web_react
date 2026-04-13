@@ -26,6 +26,18 @@ const teamMembers = [
     tier: "founder",
   },
   {
+    name: "Avijit Sir",
+    role: "Chief Marketing Officer",
+    image: "images/avijit_sir.jpg",
+    tier: "manager",
+  },
+  {
+    name: "Rahul Halder",
+    role: "Project Manager",
+    image: "images/rahul-da.jpg",
+    tier: "manager",
+  },
+  {
     name: "Mitul",
     role: "Director of Marketing (Dubai)",
     image: "images/Mitul.jpg",
@@ -44,23 +56,11 @@ const teamMembers = [
     tier: "manager",
   },
   {
-    name: "Rahul Halder",
-    role: "Project Manager",
-    image: "images/rahul-da.jpg",
-    tier: "manager",
-  },
-  {
     name: "Debashis Majumdar",
     role: "Director - Marketing (World Wide)",
     image: "images/debu.jpg",
     tier: "manager",
-  },
-  {
-    name: "Avijit Sir",
-    role: "Chief Marketing Officer",
-    image: "images/avijit_sir.jpg",
-    tier: "manager",
-  },
+  }
 ];
 
 // ─── Office Locations ─────────────────────────────────────────────────────────
