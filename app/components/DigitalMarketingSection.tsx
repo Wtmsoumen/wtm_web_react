@@ -229,14 +229,14 @@ const DigitalMarketingSection = () => {
               <p className="text-gray-500 text-lg leading-relaxed max-w-md">
                 We blend strategy, creative, and ruthless data analysis to turn your marketing into a growth engine — not an expense.
               </p>
-          <Link href={`/services/digital-marketing`}>
-  <button
-    className="self-start bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] flex items-center gap-3 text-sm font-bold px-6 py-3.5 rounded-full text-white hover:scale-105 active:scale-100 transition-transform duration-200"
-  >
-    Start Growing
-    <ArrowRight className="w-4 h-4" />
-  </button>
-</Link>
+              <Link href={`/services/digital-marketing`}>
+                <button
+                  className="self-start bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] flex items-center gap-3 text-sm font-bold px-6 py-3.5 rounded-full text-white hover:scale-105 active:scale-100 transition-transform duration-200"
+                >
+                  Start Growing
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -268,13 +268,16 @@ const DigitalMarketingSection = () => {
             <div className="flex flex-col" data-aos="fade-right">
               <div className="mb-6">
                 <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-                 Driving Digital Growth
+                  Driving Digital Growth
                 </span>
               </div>
-
               <div className="rounded-2xl border border-gray-100 overflow-hidden bg-white shadow-sm">
                 {services.map((item, i) => (
-                  <ServiceRow key={item.id} item={item} index={i} />
+                  <Link key={item.id} href="/services/digital-marketing">
+                    <div className="cursor-pointer">
+                      <ServiceRow item={item} index={i} />
+                    </div>
+                  </Link>
                 ))}
               </div>
             </div>
