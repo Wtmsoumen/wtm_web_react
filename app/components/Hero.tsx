@@ -39,7 +39,7 @@ export default function Hero() {
 
       {/* Video Background - High visibility */}
       <video
-        src="/video/hero-video2.mp4"
+        src="/video/hero-video3.mp4"
         loop
         autoPlay
         muted
@@ -54,11 +54,11 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:py-20 py-10 flex flex-col justify-center items-center text-center w-full">
 
         {/* Main Heading */}
-        <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-black mb-6 leading-[1.1] tracking-tight">
+        <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">
           <span>Your</span>{" "}
           <span className={`${globalStyle?.gradientText} text-shadow-white bg-clip-text text-transparent`}>Next-gen</span>
           <br />
-          <span className="text-black text-shadow-black">Tech Growth Partner</span>
+          <span className="text-white text-shadow-black">Tech Growth Partner</span>
         </h1>
 
         {/* CTA Button */}
