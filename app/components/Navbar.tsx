@@ -40,7 +40,7 @@ import {
   ArrowRight,
   UserRoundSearch
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import logo from "../../public/images/logo.png"
 import logoWhite from "../../public/images/logoWhite.png"
 import Image from "next/image";
@@ -216,6 +216,7 @@ export default function Navbar() {
   const [openMobileMegaMenu, setOpenMobileMegaMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
+  const megaMenuRef = useRef<HTMLDivElement>(null);
 
   // useEffect(() => {
   //   console.log(openMegaMenu[0], "openMegaMenu0__")
@@ -228,6 +229,19 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (megaMenuRef.current && !megaMenuRef.current.contains(event.target as Node)) {
+        setOpenMegaMenu({});
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   let Ticon = openMegaMenu?.icon;
@@ -250,7 +264,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="relative hidden lg:flex items-center gap-3">
+          <div ref={megaMenuRef} className="relative hidden lg:flex items-center gap-6">
             {navLinks.map((item: any, index: number) => {
               let Icon = item.icon
               return (
@@ -331,7 +345,7 @@ export default function Navbar() {
                   </div>
                   <div className="w-[28%] h-[-webkit-fill-available] z-10 flex items-center justify-center"
                     style={{
-                      background: `linear-gradient(0deg, ${openMegaMenu?.data[0]?.color} 0%, ${openMegaMenu?.data[0]?.color1} 100%)`
+                      background: `linear-gradient(180deg,rgba(255, 181, 181, 1) 0%, rgba(255, 209, 209, 1) 50%, rgba(255, 255, 255, 1) 100%)`
                     }} >
                     <div className="flex items-center justify-center p-6">
                       <div
@@ -349,13 +363,13 @@ export default function Navbar() {
                               border: "1px solid rgba(139,92,246,0.3)",
                             }}
                           >
-                            <Brain size={20} className="text-violet-300" />
+                            <Brain size={20} className="text-white" />
                           </div>
                           <div>
                             <h2 className="text-white font-bold text-base leading-tight tracking-wide">
                               AI Excellence
                             </h2>
-                            <p className="text-violet-300/70 text-xs font-medium tracking-wider uppercase">
+                            <p className="text-violet-400 text-xs font-medium tracking-wider uppercase">
                               Cutting-Edge Technology
                             </p>
                           </div>
@@ -366,41 +380,37 @@ export default function Navbar() {
                           {services.map(({ abbr, abbrColor, label }) => (
                             <div
                               key={abbr}
-                              className="flex items-center gap-4 rounded-2xl px-4 py-3 transition-all duration-200 cursor-pointer group"
-                              style={{
-                                background: "rgba(255,255,255,0.05)",
-                                border: "1px solid rgba(255,255,255,0.07)",
-                              }}
-                              onMouseEnter={(e) => {
-                                (e.currentTarget as HTMLDivElement).style.background =
-                                  "rgba(255,255,255,0.09)";
-                                (e.currentTarget as HTMLDivElement).style.border =
-                                  "1px solid rgba(255,255,255,0.13)";
-                              }}
-                              onMouseLeave={(e) => {
-                                (e.currentTarget as HTMLDivElement).style.background =
-                                  "rgba(255,255,255,0.05)";
-                                (e.currentTarget as HTMLDivElement).style.border =
-                                  "1px solid rgba(255,255,255,0.07)";
-                              }}
+                              className="flex items-center gap-4 rounded-2xl px-4 py-3 transition-all duration-200 cursor-pointer group bg-white/60"
+                            // onMouseEnter={(e) => {
+                            //   (e.currentTarget as HTMLDivElement).style.background =
+                            //     "rgba(255,255,255,0.09)";
+                            //   (e.currentTarget as HTMLDivElement).style.border =
+                            //     "1px solid rgba(255,255,255,0.13)";
+                            // }}
+                            // onMouseLeave={(e) => {
+                            //   (e.currentTarget as HTMLDivElement).style.background =
+                            //     "rgba(255,255,255,0.05)";
+                            //   (e.currentTarget as HTMLDivElement).style.border =
+                            //     "1px solid rgba(255,255,255,0.07)";
+                            // }}
                             >
                               <span
                                 className={`font-extrabold text-xl w-12 shrink-0 tracking-tight ${abbrColor}`}
                               >
                                 {abbr}
                               </span>
-                              <span className="text-white/80 text-sm font-medium">{label}</span>
+                              <span className="text-gray-600 text-sm font-medium">{label}</span>
                             </div>
                           ))}
                         </div>
 
                         {/* CTA Button */}
                         <button
-                          className="relative z-10 flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-semibold text-sm text-white transition-all duration-200 active:scale-95"
-                          style={{
-                            background: "linear-gradient(135deg, #a855f7 0%, #ec4899 100%)",
-                            boxShadow: "0 8px 24px rgba(168, 85, 247, 0.4)",
-                          }}
+                          className="relative bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] z-10 flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-semibold text-sm text-white transition-all duration-200 active:scale-95"
+                          // style={{
+                          //   background: "linear-gradient(135deg, #a855f7 0%, #ec4899 100%)",
+                          //   boxShadow: "0 8px 24px rgba(168, 85, 247, 0.4)",
+                          // }}
                           onMouseEnter={(e) => {
                             (e.currentTarget as HTMLButtonElement).style.boxShadow =
                               "0 12px 32px rgba(168, 85, 247, 0.6)";

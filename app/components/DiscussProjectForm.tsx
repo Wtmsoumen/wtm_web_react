@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { X, User, Mail, Tag, MessageSquare, Send } from 'lucide-react'
+import { X, User, Mail, Tag, MessageSquare, Send, Building2 } from 'lucide-react'
 import 'react-phone-input-2/lib/style.css'
 import PhoneInput from 'react-phone-input-2'
 
@@ -15,6 +15,7 @@ const DiscussProjectForm = ({ isOpen, onClose }: DiscussProjectFormProps) => {
     name: '',
     phone: '',
     email: '',
+    companyName: '',
     service: '',
     description: '',
   })
@@ -50,8 +51,8 @@ const DiscussProjectForm = ({ isOpen, onClose }: DiscussProjectFormProps) => {
 
         {/* Header */}
         <div className="flex items-center gap-2 mb-1">
-          <div className="w-[3px] h-[18px] bg-blue-600 rounded-full" />
-          <span className="text-xs font-semibold text-blue-600 uppercase tracking-widest">
+          <div className="w-[3px] h-[18px] bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] rounded-full" />
+          <span className="text-xs font-semibold bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] uppercase tracking-widest">
             Contact Us
           </span>
         </div>
@@ -98,69 +99,85 @@ const DiscussProjectForm = ({ isOpen, onClose }: DiscussProjectFormProps) => {
           </div>
         </div>
 
-        {/* Email */}
-        <div className="mb-3">
-          <label className="block text-sm font-medium text-gray-700 mb-1.5">
-            Business Email <span className="text-red-500">*</span>
-          </label>
-          <div className="flex items-center gap-2 border border-gray-200 rounded-lg px-3 bg-gray-50">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="text-gray-400 shrink-0">
-              <rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
-            <input
-              type="email"
-              name="email"
-              placeholder="john@company.com"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full py-2.5 bg-transparent outline-none text-sm text-gray-800 placeholder-gray-400"
-            />
+        {/* Email + Company row */}
+        <div className="grid grid-cols-2 gap-3 mb-3">
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+              Business Email <span className="text-red-500">*</span>
+            </label>
+            <div className="flex items-center gap-2 border border-gray-200 rounded-lg px-3 bg-gray-50">
+              <Mail size={15} className="text-gray-400 shrink-0" />
+              <input
+                type="email"
+                name="email"
+                placeholder="john@company.com"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full py-2.5 bg-transparent outline-none text-sm text-gray-800 placeholder-gray-400"
+              />
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">
+              Company Name <span className="text-red-500">*</span>
+            </label>
+            <div className="flex items-center gap-2 border border-gray-200 rounded-lg px-3 bg-gray-50">
+              <Building2 size={15} className="text-gray-400 shrink-0" />
+              <input
+                type="text"
+                name="companyName"
+                placeholder="Company Ltd"
+                value={formData.companyName}
+                onChange={handleChange}
+                className="w-full py-2.5 bg-transparent outline-none text-sm text-gray-800 placeholder-gray-400"
+              />
+            </div>
           </div>
         </div>
 
- <div className="mb-4">
-  <label className="block text-sm font-medium text-gray-700 mb-1.5">
-    Service Interested <span className="text-red-500">*</span>
-  </label>
+        <div className="mb-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1.5">
+            Service Interested <span className="text-red-500">*</span>
+          </label>
 
-  <div className="relative flex items-center border border-gray-200 rounded-xl px-3 bg-gray-50 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100 transition-all">
+          <div className="relative flex items-center border border-gray-200 rounded-xl px-3 bg-gray-50 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-100 transition-all">
 
-    {/* Icon */}
-    <Tag size={16} className="text-gray-400 shrink-0" />
+            {/* Icon */}
+            <Tag size={16} className="text-gray-400 shrink-0" />
 
-    {/* Select */}
-    <select
-      name="service"
-      value={formData.service}
-      onChange={handleChange}
-      className="w-full py-3 pl-2 pr-8 bg-transparent outline-none text-sm text-gray-700 cursor-pointer appearance-none"
-    >
-      <option value="" className="text-gray-400">Select Service</option>
-      <option>Web Development</option>
-      <option>Mobile App Development</option>
-      <option>UI/UX Design</option>
-      <option>Digital Marketing</option>
-      <option>SEO Optimization</option>
-      <option>Cloud Solutions</option>
-      <option>Others</option>
-    </select>
+            {/* Select */}
+            <select
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
+              className="w-full py-3 pl-2 pr-8 bg-transparent outline-none text-sm text-gray-700 cursor-pointer appearance-none"
+            >
+              <option value="" className="text-gray-400">Select Service</option>
+              <option>Web Development</option>
+              <option>Mobile App Development</option>
+              <option>UI/UX Design</option>
+              <option>Digital Marketing</option>
+              <option>SEO Optimization</option>
+              <option>Cloud Solutions</option>
+              <option>Others</option>
+            </select>
 
-    {/* Custom Arrow */}
-    <div className="absolute right-3 pointer-events-none">
-      <svg
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        className="text-gray-400"
-      >
-        <path d="m6 9 6 6 6-6" />
-      </svg>
-    </div>
-  </div>
-</div>
+            {/* Custom Arrow */}
+            <div className="absolute right-3 pointer-events-none">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="text-gray-400"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </div>
+          </div>
+        </div>
 
         {/* Description */}
         <div className="mb-6">
@@ -183,7 +200,7 @@ const DiscussProjectForm = ({ isOpen, onClose }: DiscussProjectFormProps) => {
         {/* Submit */}
         <button
           onClick={handleSubmit}
-          className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-semibold text-[15px] py-3.5 rounded-xl transition-all duration-150"
+          className="w-full flex items-center justify-center gap-2 bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] active:scale-[0.99] text-white font-semibold text-[15px] py-3.5 rounded-xl transition-all duration-150"
         >
           <Send size={16} />
           Submit Request

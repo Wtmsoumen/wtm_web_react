@@ -75,8 +75,8 @@ const FreeConsultation = () => {
                 <div className='w-full md:relative'>
                     {/* Title */}
                     <p className='text-[#ED286C] text-[15px] font-bold tracking-widest uppercase mb-1'>Free Consultation</p>
-                    <h2 className='text-3xl md:text-[50px] font-regular text-[#020200] leading-tight'>Maximize Your Brand’s Performance With </h2>
-                    <h2 className='text-4xl md:text-[55px] font-bold mb-5 text-[#1E7FF8]'> Webtechnomind IT Solutions</h2>
+                    <h2 className='text-3xl md:text-[50px] font-regular text-[#020200] leading-tight'>Maximize Your Brand's Performance With </h2>
+                    <h2 className='text-4xl md:text-[55px] font-bold mb-5 bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent'>Webtechnomind IT Solutions</h2>
 
                     {/* Form Grid */}
                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-5' data-aos="fade-up" data-aos-delay="100">
@@ -151,15 +151,10 @@ const FreeConsultation = () => {
 
                     <button
                         className="
-                        mt-4 mx-auto flex items-center justify-end
-                        px-4 py-4 rounded-full gap-4
+                        mt-8 mx-auto flex items-center justify-end
+                        px-8 py-4 rounded-full gap-4
                       text-white font-bold text-sm tracking-widest uppercase
-                        bg-gradient-to-r
-                      from-[#1E7FF8]
-                      via-[#0E8DF6]
-                      via-[#AB82E0]
-                      to-[#E75061]
-
+                        bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)]
                         transition-all duration-300 ease-in-out
                         hover:scale-[1.03]
                          hover:shadow-xl
