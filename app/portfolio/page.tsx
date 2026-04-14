@@ -819,7 +819,7 @@ export default function PortfolioPage() {
                 className={`border-b border-solid border-gray-200 pb-10 lg:pb-20 flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-20 lg:gap-32 items-center group`}
               >
                 {/* Image Container */}
-                <div className="relative w-full lg:w-3/5 rounded-[4rem] overflow-hidden bg-slate-50 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 transition-all duration-700 group-hover:shadow-[0_60px_120px_-30px_rgba(37,99,235,0.15)] group-hover:border-blue-200">
+                <div className="relative w-full lg:w-3/5 rounded-2xl overflow-hidden bg-slate-50 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 transition-all duration-700 group-hover:shadow-[0_60px_120px_-30px_rgba(37,99,235,0.15)] group-hover:border-blue-200">
                   <motion.div
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 1, ease: 'easeOut' }}

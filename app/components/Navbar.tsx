@@ -38,7 +38,9 @@ import {
   ChartColumn,
   Cpu,
   ArrowRight,
-  UserRoundSearch
+  UserRoundSearch,
+  Phone,
+  Smartphone
 } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import logo from "../../public/images/logo.png"
@@ -49,27 +51,25 @@ import { motion, AnimatePresence } from "framer-motion";
 import { globalStyle } from "../globalStyle";
 import DiscussProjectForm from "./DiscussProjectForm";
 
-const services = [
-  {
-    abbr: "GPT",
-    abbrColor: "text-violet-300",
-    label: "OpenAI Integration",
-  },
-  {
-    abbr: "LLM",
-    abbrColor: "text-pink-400",
-    label: "Custom Models",
-  },
-  {
-    abbr: "ML",
-    abbrColor: "text-cyan-400",
-    label: "Deep Learning",
-  },
-];
+
+
 
 const navLinks = [
   {
-    label: "Hello AI", href: "#helloai", title: "AI Development Services", subtitle: "Next-Gen AI & ML Solutions", icon: Sparkles, color: "#A855F7", megaMenu: [
+    label: "Hello AI", href: "#helloai", title: "AI Development Services", subtitle: "Next-Gen AI & ML Solutions", icon: Sparkles, color: "#A855F7",
+    sidePanel: {
+      headerTitle: "AI Excellence",
+      headerSubtitle: "Cutting-Edge Technology",
+      headerIcon: Brain,
+      gradient: "linear-gradient(180deg,rgba(255, 181, 181, 1) 0%, rgba(255, 209, 209, 1) 50%, rgba(255, 255, 255, 1) 100%)",
+      items: [
+        { abbr: "GPT", label: "OpenAI Integration", abbrColor: "text-violet-500" },
+        { abbr: "LLM", label: "Custom Models", abbrColor: "text-pink-500" },
+        { abbr: "ML", label: "Deep Learning", abbrColor: "text-cyan-500" },
+      ],
+      ctaText: "Explore AI Services",
+    },
+    megaMenu: [
       { title: "AI Development", href: "/services/ai-development", icon: Sparkles, color: "#8B5CF6", color1: "#4C1D95" },
       { title: "AI Chatbot Development", href: "/services/ai-chatbot-development", icon: MessageSquare, color: "#EC4899", color1: "#831843" },
       { title: "Generative AI Development", href: "/services/generative-ai-development", icon: Brain, color: "#06B6D4", color1: "#164E63" },
@@ -82,7 +82,20 @@ const navLinks = [
   },
 
   {
-    label: "Marketing", href: "#markating", title: "Marketing Services", subtitle: "Marketing Solutions", icon: SquarePercent, color: "#F97316", megaMenu: [
+    label: "Marketing", href: "#markating", title: "Marketing Services", subtitle: "Marketing Solutions", icon: SquarePercent, color: "#F97316",
+    sidePanel: {
+      headerTitle: "Marketing Mastery",
+      headerSubtitle: "Scale Your Growth",
+      headerIcon: Target,
+      gradient: "linear-gradient(180deg, #FFEFD5 0%, #FFE4B5 50%, #FFFFFF 100%)",
+      items: [
+        { abbr: "SEO", label: "Search Optimization", abbrColor: "text-orange-500" },
+        { abbr: "ADS", label: "Paid Campaigns", abbrColor: "text-red-500" },
+        { abbr: "SMM", label: "Social Growth", abbrColor: "text-pink-500" }
+      ],
+      ctaText: "Explore Marketing",
+    },
+    megaMenu: [
       { title: "Social Media Marketing", href: "/services/social-media-marketing", icon: Share2, color: "#E11D48", color1: "#881337" },
       { title: "Digital Marketing Strategy", href: "/services/digital-marketing-strategy", icon: Lightbulb, color: "#F59E0B", color1: "#78350F" },
       { title: "Conversion Rate Optimization", href: "/services/conversion-rate-optimization", icon: TrendingUp, color: "#10B981", color1: "#064E3B" },
@@ -98,17 +111,34 @@ const navLinks = [
   },
 
   {
-    label: "Development", href: "#development", title: "Development Services", subtitle: "Development Solutions", icon: CodeXml, color: "#0EA5E9", megaMenu: [
+    label: "Development", href: "#development", title: "Development Services", subtitle: "Development Solutions", icon: CodeXml, color: "#0EA5E9",
+    sidePanel: {
+      headerTitle: "Dev Excellence",
+      headerSubtitle: "High-Performance Apps",
+      headerIcon: CodeXml,
+      gradient: "linear-gradient(180deg, #E0F2FE 0%, #BAE6FD 50%, #FFFFFF 100%)",
+      items: [
+        { abbr: "IOS", label: "Native Apple Apps", abbrColor: "text-blue-500" },
+        { abbr: "WEB", label: "Modern Web Apps", abbrColor: "text-indigo-500" },
+        { abbr: "CMS", label: "Manage Content", abbrColor: "text-sky-500" }
+      ],
+      ctaText: "Explore Development",
+    },
+    megaMenu: [
       { title: "Mobile App Development", href: "/services/mobile-app-development", icon: TabletSmartphone, color: "#3B82F6", color1: "#1E3A8A", },
       { title: "Ios App Development", href: "/services/ios-app-development", icon: TabletSmartphone, color: "#0EA5E9", color1: "#075985", },
       { title: "Android App Development", href: "/services/android-app-development", icon: TabletSmartphone, color: "#22D3EE", color1: "#164E63", },
       { title: "Web App Development", href: "/services/web-app-development", icon: MonitorSmartphone, color: "#6366F1", color1: "#312E81", },
+      { title: "React Native Development", href: "/services/react-native-development", icon: Smartphone, color: "#6366F1", color1: "#312E81", },
       { title: "Wordpress Development", href: "/services/wordpress-development", icon: PanelsTopLeft, color: "#4F46E5", color1: "#3730A3", },
       { title: "Website Development", href: "/services/website-development", icon: MonitorSpeaker, color: "#06B6D4", color1: "#164E63", },
       { title: "React.js Development", href: "/services/react-js-development", icon: Globe, color: "#61DAFB", color1: "#20232A", },
       { title: "Next.js Development", href: "/services/next-js-development", icon: Triangle, color: "#000000", color1: "#404040", },
       { title: "Node.js Development", href: "/services/node-js-development", icon: Hexagon, color: "#339933", color1: "#1A4D1A", },
       { title: "Laravel Development", href: "/services/laravel-development", icon: Braces, color: "#FF2D20", color1: "#801610", },
+      { title: "SaaS Development", href: "/services/saas-development", icon: Layers, color: "#FF2D20", color1: "#801610", },
+      { title: "Shopify Development", href: "/services/shopify-development", icon: ShoppingCart, color: "#FF2D20", color1: "#801610", },
+      { title: "Website Design", href: "/services/website-design", icon: MonitorSpeaker, color: "#FF2D20", color1: "#801610", },
     ]
   },
 
@@ -119,6 +149,18 @@ const navLinks = [
     subtitle: "Our Services",
     icon: LaptopMinimalCheck,
     color: "#EC4899",
+    sidePanel: {
+      headerTitle: "Our Expertise",
+      headerSubtitle: "Tailored Solutions",
+      headerIcon: LaptopMinimalCheck,
+      gradient: "linear-gradient(180deg, #F3E8FF 0%, #E9D5FF 50%, #FFFFFF 100%)",
+      items: [
+        { abbr: "UX", label: "Modern Design", abbrColor: "text-purple-500" },
+        { abbr: "QA", label: "Quality Testing", abbrColor: "text-fuchsia-500" },
+        { abbr: "DEV", label: "Agile Development", abbrColor: "text-violet-500" }
+      ],
+      ctaText: "View All Services",
+    },
     megaMenu: [
       { title: "AI Engineering", href: "/services/ai-engineering", icon: Share2, color: "#8B5CF6", color1: "#4C1D95" },
       { title: "Digital Marketing", href: "/services/digital-marketing", icon: Lightbulb, color: "#F59E0B", color1: "#78350F" },
@@ -132,12 +174,21 @@ const navLinks = [
     ]
   },
 
-  // on que
-  // {
-  //   label: "On-Demand", href: "#ondemand", icon: ShieldAlert,
-  // },
   {
-    label: "Industry", href: "/Industry", title: "Industry", subtitle: "Industry", icon: Factory, color: "#10B981", megaMenu: [
+    label: "Industry", href: "/Industry", title: "Industry", subtitle: "Industry", icon: Factory, color: "#10B981",
+    sidePanel: {
+      headerTitle: "Vertical Mastery",
+      headerSubtitle: "Industry-Specific Tech",
+      headerIcon: Factory,
+      gradient: "linear-gradient(180deg, #DCFCE7 0%, #BBF7D0 50%, #FFFFFF 100%)",
+      items: [
+        { abbr: "FIN", label: "Financial Tech", abbrColor: "text-green-500" },
+        { abbr: "HLT", label: "Health Systems", abbrColor: "text-emerald-500" },
+        { abbr: "RET", label: "Retail Solutions", abbrColor: "text-teal-500" }
+      ],
+      ctaText: "View Industries",
+    },
+    megaMenu: [
       { title: "FinTech", href: "/Industry/fintech", icon: Landmark, color: "#2d9cdb", color1: "#000000" },
       { title: "Healthcare", href: "/Industry/healthcare-software-development", icon: HeartPulse, color: "#ff4d6d", color1: "#fff0f3" },
       { title: "eCommerce", href: "/Industry/ecommerce", icon: ShoppingCart, color: "#f2994a", color1: "#fff4ec" },
@@ -165,7 +216,20 @@ const navLinks = [
   },
 
   {
-    label: "Company", href: "#footer", title: "Our Company", subtitle: "Our Company Details", icon: Building2, color: "#6366F1", megaMenu: [
+    label: "Company", href: "#footer", title: "Our Company", subtitle: "Our Company Details", icon: Building2, color: "#6366F1",
+    sidePanel: {
+      headerTitle: "Global Impact",
+      headerSubtitle: "Empowering Businesses",
+      headerIcon: Building2,
+      gradient: "linear-gradient(180deg, #EEF2FF 0%, #E0E7FF 50%, #FFFFFF 100%)",
+      items: [
+        { abbr: "WTM", label: "Who We Are", abbrColor: "text-indigo-500" },
+        { abbr: "JOB", label: "Join the Team", abbrColor: "text-blue-500" },
+        { abbr: "PRT", label: "Our Portfolio", abbrColor: "text-violet-500" }
+      ],
+      ctaText: "Work With Us",
+    },
+    megaMenu: [
       {
         title: "About Us",
         description: "Our story & mission",
@@ -271,7 +335,8 @@ export default function Navbar() {
                 <div
                   key={index}
                   className={`text-black hover:text-gray-600 cursor-pointer font-medium text-sm transition-colors duration-200 group`}
-                  onMouseEnter={() => setOpenMegaMenu({ title: item?.title, subtitle: item?.subtitle, icon: item?.icon, data: item?.megaMenu })}
+                  onMouseEnter={() => setOpenMegaMenu({ title: item?.title, subtitle: item?.subtitle, icon: item?.icon, data: item?.megaMenu, sidePanel: item?.sidePanel })}
+
                   onClick={() => setOpenMegaMenu({})}
                 >
                   <div className="relative flex gap-1 z-11 font-medium text-sm">
@@ -294,7 +359,7 @@ export default function Navbar() {
                   onMouseLeave={() => setOpenMegaMenu({})}
                   className={`absolute top-11 bg-white rounded-3xl overflow-hidden flex w-[150%] -right-32 shadow-md shadow-gray-300`}
                 >
-                  <div className={`w-[72%]`}>
+                  <div className={`w-[72%] max-h-[80vh] overflow-y-auto`}>
                     <div className="text-black px-8 pt-6">
                       <div className="flex items-start gap-2">
                         <div
@@ -343,17 +408,14 @@ export default function Navbar() {
                       }) : ""}
                     </div>
                   </div>
-                  <div className="w-[28%] h-[-webkit-fill-available] z-10 flex items-center justify-center"
+                  <div className="w-[28%] h-[-webkit-fill-available] z-10 flex items-center justify-center transition-all duration-300"
                     style={{
-                      background: `linear-gradient(180deg,rgba(255, 181, 181, 1) 0%, rgba(255, 209, 209, 1) 50%, rgba(255, 255, 255, 1) 100%)`
+                      background: openMegaMenu?.sidePanel?.gradient || `linear-gradient(180deg,rgba(255, 181, 181, 1) 0%, rgba(255, 209, 209, 1) 50%, rgba(255, 255, 255, 1) 100%)`
                     }} >
                     <div className="flex items-center justify-center p-6">
                       <div
                         className="relative flex flex-col gap-5"
                       >
-                        {/* Subtle glow blob */}
-
-
                         {/* Header */}
                         <div className="flex items-center gap-3 relative z-10">
                           <div
@@ -363,36 +425,27 @@ export default function Navbar() {
                               border: "1px solid rgba(139,92,246,0.3)",
                             }}
                           >
-                            <Brain size={20} className="text-white" />
+                            {(() => {
+                              const SideIcon = openMegaMenu?.sidePanel?.headerIcon || Brain;
+                              return <SideIcon size={20} className="text-white" />;
+                            })()}
                           </div>
                           <div>
                             <h2 className="text-white font-bold text-base leading-tight tracking-wide">
-                              AI Excellence
+                              {openMegaMenu?.sidePanel?.headerTitle || "AI Excellence"}
                             </h2>
                             <p className="text-violet-400 text-xs font-medium tracking-wider uppercase">
-                              Cutting-Edge Technology
+                              {openMegaMenu?.sidePanel?.headerSubtitle || "Cutting-Edge Technology"}
                             </p>
                           </div>
                         </div>
 
                         {/* Service Items */}
                         <div className="flex flex-col gap-3 relative z-10">
-                          {services.map(({ abbr, abbrColor, label }) => (
+                          {(openMegaMenu?.sidePanel?.items || []).map(({ abbr, abbrColor, label }: any) => (
                             <div
                               key={abbr}
-                              className="flex items-center gap-4 rounded-2xl px-4 py-3 transition-all duration-200 cursor-pointer group bg-white/60"
-                            // onMouseEnter={(e) => {
-                            //   (e.currentTarget as HTMLDivElement).style.background =
-                            //     "rgba(255,255,255,0.09)";
-                            //   (e.currentTarget as HTMLDivElement).style.border =
-                            //     "1px solid rgba(255,255,255,0.13)";
-                            // }}
-                            // onMouseLeave={(e) => {
-                            //   (e.currentTarget as HTMLDivElement).style.background =
-                            //     "rgba(255,255,255,0.05)";
-                            //   (e.currentTarget as HTMLDivElement).style.border =
-                            //     "1px solid rgba(255,255,255,0.07)";
-                            // }}
+                              className="flex items-center gap-4 rounded-2xl px-4 py-3 transition-all duration-200 cursor-pointer group bg-white/60 hover:bg-white/80"
                             >
                               <span
                                 className={`font-extrabold text-xl w-12 shrink-0 tracking-tight ${abbrColor}`}
@@ -406,24 +459,16 @@ export default function Navbar() {
 
                         {/* CTA Button */}
                         <button
-                          className="relative bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] z-10 flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-semibold text-sm text-white transition-all duration-200 active:scale-95"
-                          // style={{
-                          //   background: "linear-gradient(135deg, #a855f7 0%, #ec4899 100%)",
-                          //   boxShadow: "0 8px 24px rgba(168, 85, 247, 0.4)",
-                          // }}
+                          className="relative bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] z-10 flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-semibold text-sm text-white transition-all duration-200 active:scale-95 shadow-lg"
                           onMouseEnter={(e) => {
-                            (e.currentTarget as HTMLButtonElement).style.boxShadow =
-                              "0 12px 32px rgba(168, 85, 247, 0.6)";
                             (e.currentTarget as HTMLButtonElement).style.filter = "brightness(1.1)";
                           }}
                           onMouseLeave={(e) => {
-                            (e.currentTarget as HTMLButtonElement).style.boxShadow =
-                              "0 8px 24px rgba(168, 85, 247, 0.4)";
                             (e.currentTarget as HTMLButtonElement).style.filter = "brightness(1)";
                           }}
                         >
                           <Sparkles size={15} className="shrink-0" />
-                          Explore AI Services
+                          {openMegaMenu?.sidePanel?.ctaText || "Explore AI Services"}
                           <ArrowRight size={15} className="shrink-0" />
                         </button>
                       </div>

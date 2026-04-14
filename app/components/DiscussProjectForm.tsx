@@ -52,7 +52,7 @@ const DiscussProjectForm = ({ isOpen, onClose }: DiscussProjectFormProps) => {
         {/* Header */}
         <div className="flex items-center gap-2 mb-1">
           <div className="w-[3px] h-[18px] bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] rounded-full" />
-          <span className="text-xs font-semibold bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] uppercase tracking-widest">
+          <span className="text-xs font-semibold bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent uppercase tracking-widest">
             Contact Us
           </span>
         </div>

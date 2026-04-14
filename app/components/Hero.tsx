@@ -58,7 +58,7 @@ export default function Hero() {
           <span className="text-white">Your</span>{" "}
           <span className={`${globalStyle?.gradientText} text-shadow-white bg-clip-text text-transparent`}>Next-gen</span>
           <br />
-          <span className="text-white">Tech Growth Partner</span>
+          <span className="text-white">AI Tech Growth Partner</span>
         </h1>
 
         {/* CTA Button */}
