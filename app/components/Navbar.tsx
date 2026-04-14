@@ -431,7 +431,7 @@ export default function Navbar() {
                             })()}
                           </div>
                           <div>
-                            <h2 className="text-white font-bold text-base leading-tight tracking-wide">
+                            <h2 className="bg-clip-text text-transparent bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] font-bold text-base leading-tight tracking-wide">
                               {openMegaMenu?.sidePanel?.headerTitle || "AI Excellence"}
                             </h2>
                             <p className="text-violet-400 text-xs font-medium tracking-wider uppercase">
