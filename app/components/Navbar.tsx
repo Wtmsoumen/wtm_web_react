@@ -40,7 +40,8 @@ import {
   ArrowRight,
   UserRoundSearch,
   Phone,
-  Smartphone
+  Smartphone,
+  Briefcase
 } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import logo from "../../public/images/logo.svg"
@@ -263,12 +264,28 @@ const navLinks = [
         color1: "#fff4ec",
       },
       {
+        title: "Careers",
+        description: "Join our growing team",
+        href: "/careers",
+        icon: Briefcase,
+        color: "#10B981",
+        color1: "#064E3B"
+      },
+      {
         title: "Contact Us",
         description: "Our story & mission",
         href: "/contact-us",
         icon: UserRoundSearch,
         color: "#ff00eb",
         color1: "#000000"
+      },
+      {
+        title: "Our Gallery",
+        description: "Visual showcase of our work",
+        href: "/gallery",
+        icon: Clapperboard,
+        color: "#3B82F6",
+        color1: "#1E3A8A"
       },
     ]
   },
