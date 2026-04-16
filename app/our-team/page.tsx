@@ -130,7 +130,7 @@ const IDCard = ({ member, index }: { member: any, index: number }) => {
                     <div className="flex items-center gap-2">
                         {/* <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center border border-red-100 shadow-inner"> */}
                         {/* <Orbit className="w-4 h-4 text-red-500 animate-spin-slow" /> */}
-                        <Image src="/images/roundLogo.png" alt="Logo" width={16} height={16} className="w-7 h-auto" unoptimized />
+                        <Image src="/images/roundlogo.svg" alt="Logo" width={16} height={16} className="w-7 h-auto" unoptimized />
                         {/* </div> */}
                         <span className="text-[12px] font-medium uppercase tracking-[0.1em] text-slate-500">Official Member</span>
                     </div>

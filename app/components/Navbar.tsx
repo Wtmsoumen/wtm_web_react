@@ -43,8 +43,8 @@ import {
   Smartphone
 } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
-import logo from "../../public/images/logo.png"
-import logoWhite from "../../public/images/logoWhite.png"
+import logo from "../../public/images/logo.svg"
+import logoWhite from "../../public/images/logoWhite.svg"
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";

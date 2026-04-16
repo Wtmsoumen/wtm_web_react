@@ -11,6 +11,22 @@ export const metadata: Metadata = {
   title: "Wtm Technologies - Next-gen AI & On-Demand Solutions",
   description:
     "We deliver next-gen on-demand solutions powered by AI. 13+ years, 350+ products, 96% satisfaction rate across 12+ countries.",
+  icons: {
+    icon: [
+      {
+        url: "/images/icon.svg",
+        sizes: "180x180",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: [
+      {
+        url: "/images/icon.svg",
+        sizes: "180x180",
+        type: "image/svg+xml",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
