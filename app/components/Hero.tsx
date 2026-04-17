@@ -39,7 +39,7 @@ export default function Hero() {
 
       {/* Video Background - High visibility */}
       <video
-        src="/video/hero-video3.mp4"
+        src="/video/hero-video6.mp4"
         loop
         autoPlay
         muted
@@ -94,7 +94,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom fade - Adjusted for white theme */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-white to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-white/80 to-transparent pointer-events-none" />
 
       {/* Modal */}
       <DiscussProjectForm

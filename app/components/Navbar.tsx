@@ -41,7 +41,8 @@ import {
   UserRoundSearch,
   Phone,
   Smartphone,
-  Briefcase
+  Briefcase,
+  BarChart3
 } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import logo from "../../public/images/logo.svg"
@@ -254,6 +255,14 @@ const navLinks = [
         icon: Layers,
         color: "#9b51e0",
         color1: "#f3ecfd",
+      },
+      {
+        title: "Case Studies",
+        description: "Real results, real clients",
+        href: "/case-studies",
+        icon: BarChart3,
+        color: "#0079d0",
+        color1: "#e8f4ff",
       },
       {
         title: "Our Team",
