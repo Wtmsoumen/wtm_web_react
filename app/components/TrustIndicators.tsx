@@ -172,7 +172,7 @@ export default function TrustIndicators() {
               {[...ratings, ...ratings].map((r, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col items-center justify-between p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 w-[280px] min-h-[205px]"
+                  className="flex flex-col items-center justify-between p-6 transition-all duration-300"
                 >
                   {/* Logo */}
                   <div className="w-full flex justify-center items-center h-16">
@@ -189,17 +189,17 @@ export default function TrustIndicators() {
                   </div> */}
 
                   {/* Rating Section */}
-                  <div className="flex items-center gap-2 mb-1">
+                  {/* <div className="flex items-center gap-2 mb-1">
                     <StarRating count={r.stars} />
                     <span className="text-xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 bg-clip-text text-transparent">
                       {r.score}
                     </span>
-                  </div>
+                  </div> */}
 
                   {/* Reviews */}
-                  <span className="text-sm text-gray-500">
+                  {/* <span className="text-sm text-gray-500">
                     {r.reviews}
-                  </span>
+                  </span> */}
                 </div>
               ))}
             </div>

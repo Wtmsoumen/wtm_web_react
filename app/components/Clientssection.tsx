@@ -1,6 +1,6 @@
 "use client";
 
-import { Star } from "lucide-react";
+import { ArrowRight, Link, Star } from "lucide-react";
 import { globalStyle } from "../globalStyle";
 import { motion } from "framer-motion";
 
@@ -284,7 +284,9 @@ export default function ClientsSection() {
                     products with us.
                 </p>
             </div>
-
+            {/* <div>
+                <Link href="https://share.google/c5C6kqd2WyoiuYbo2" target="_blank">More <ArrowRight /> </Link>
+            </div> */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col gap-4">
                 {/* ── Row 1: Featured + 2 grid cards ───────────────────── */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -364,8 +366,8 @@ export default function ClientsSection() {
                     className="flex flex-col md:flex-row items-center gap-4 pt-6 border-t border-gray-200 mt-4 overflow-hidden"
                     data-aos="fade-in"
                 >
-                    <span className="text-gray-400 text-xs font-medium whitespace-nowrap bg-white z-10 pr-4">
-                        Trusted by teams in:
+                    <span className="text-gray-400 text-xs font-medium whitespace-nowrap z-10 pr-4">
+                        Countries we operate in :
                     </span>
 
                     <div className="relative flex overflow-hidden w-full items-center">

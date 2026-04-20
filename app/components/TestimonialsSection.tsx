@@ -109,7 +109,7 @@ function TechMarquee() {
 // ─── Main Component ───────────────────────────────────────────────────────────
 export default function ServicesTestimonialsSection() {
 
-    const [highlight, setHighlight] = useState("")
+    const [highlight, setHighlight] = useState("Full-Stack Development")
 
     return (
         <div
@@ -158,7 +158,7 @@ export default function ServicesTestimonialsSection() {
                             <ServiceCard
                                 highlight={highlight === "Full-Stack Development"}
                                 onMouseEnter={() => setHighlight("Full-Stack Development")}
-                                onMouseLeave={() => setHighlight("")}
+                                onMouseLeave={() => setHighlight("Full-Stack Development")}
                                 icon={<Globe className="w-6 h-6 text-white" />}
                                 title="Full-Stack Development"
                                 description="Webtechnomind provides comprehensive full-stack solutions, solidifying our reputation as a top web development company."
@@ -170,7 +170,7 @@ export default function ServicesTestimonialsSection() {
                             <ServiceCard
                                 highlight={highlight === "Mobile Apps Development"}
                                 onMouseEnter={() => setHighlight("Mobile Apps Development")}
-                                onMouseLeave={() => setHighlight("")}
+                                onMouseLeave={() => setHighlight("Mobile Apps Development")}
                                 icon={<Smartphone className="w-6 h-6 text-white/70" />}
                                 title="Mobile Apps Development"
                                 description="Webtechnomind offers cutting-edge mobile app development services tailored to meet your business goals. Our expert."
@@ -182,7 +182,7 @@ export default function ServicesTestimonialsSection() {
                             <ServiceCard
                                 highlight={highlight === "Ecommerce Development"}
                                 onMouseEnter={() => setHighlight("Ecommerce Development")}
-                                onMouseLeave={() => setHighlight("")}
+                                onMouseLeave={() => setHighlight("Ecommerce Development")}
                                 icon={<ShoppingCart className="w-6 h-6 text-white/70" />}
                                 title="Ecommerce Development"
                                 description="Webtechnomind is a trusted ecommerce development company offering custom, scalable, and user-friendly solutions."
@@ -194,7 +194,7 @@ export default function ServicesTestimonialsSection() {
                             <ServiceCard
                                 highlight={highlight === "Digital Marketing"}
                                 onMouseEnter={() => setHighlight("Digital Marketing")}
-                                onMouseLeave={() => setHighlight("")}
+                                onMouseLeave={() => setHighlight("Digital Marketing")}
                                 icon={<Megaphone className="w-6 h-6 text-white/70" />}
                                 title="Digital Marketing"
                                 description="Unlock exponential business growth with Webtechnomind — a tech-powered digital marketing agency that thrives."
@@ -211,12 +211,12 @@ export default function ServicesTestimonialsSection() {
                                 <p className="text-white/60 text-sm leading-relaxed">
                                     From social media management to search engine optimization, we provide a full suite of services to help your business succeed.
                                 </p>
-                                <button
+                                {/* <button
                                     className="mt-6 self-start px-6 py-3 rounded-full border-2 text-white text-sm font-semibold tracking-wide transition-all hover:bg-white/10"
                                     style={{ borderColor: "#E91E8C", color: "#E91E8C" }}
                                 >
                                     Discover More
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </div>

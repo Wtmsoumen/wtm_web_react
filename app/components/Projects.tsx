@@ -6,15 +6,15 @@ import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 
 const featuredProject = {
-    slug: "bitdelta",
-    tag: "Crypto Exchange",
-    title: "BitDelta",
-    subtitle: "Global Crypto & Derivatives Exchange",
+    slug: "virtuard",
+    tag: "Property Platform",
+    title: "Virtuard",
+    subtitle: "Property Selling Platform",
     description:
-        "A comprehensive exchange platform with advanced trading engine supporting spot and derivatives trading across 130 ...",
+        "Modern property selling platform with 360° virtual views. Built with Figma + Laravel. Mobile-friendly, scalable, and SEO-optimized.",
     stats: [
-        { value: "2M+", label: "Active Users" },
-        { value: "130+", label: "Countries" },
+        { value: "75", label: "Interaction" },
+        { value: "83", label: "Visibility" },
     ],
     cta: "View Case Study",
     image: "/images/portfolio/Virtuard.jpg",

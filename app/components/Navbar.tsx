@@ -402,7 +402,7 @@ export default function Navbar() {
                       </div>
                     </div>
                     <hr className="w-full border-gray-200 mt-5!" />
-                    <div className={`text-black grid ${openMegaMenu?.title === "Industry" ? "grid-cols-4" : openMegaMenu?.title === "Our Company" ? "grid-cols-1" : "grid-cols-2"} p-5! gap-x-2`}>
+                    <div className={`text-black grid ${openMegaMenu?.title === "Industry" ? "grid-cols-4" : openMegaMenu?.title === "Our Company" ? "grid-cols-2" : "grid-cols-2"} p-5! gap-x-2`}>
                       {openMegaMenu?.data?.length > 0 ? openMegaMenu?.data?.map((v: any, idx: number) => {
                         const Icon = v?.icon;
                         return (
@@ -471,7 +471,7 @@ export default function Navbar() {
                           {(openMegaMenu?.sidePanel?.items || []).map(({ abbr, abbrColor, label }: any) => (
                             <div
                               key={abbr}
-                              className="flex items-center gap-4 rounded-2xl px-4 py-3 transition-all duration-200 cursor-pointer group bg-white/60 hover:bg-white/80"
+                              className="flex items-center gap-4 rounded-2xl px-4 py-3 transition-all duration-200 group bg-white/60 hover:bg-white/80"
                             >
                               <span
                                 className={`font-extrabold text-xl w-12 shrink-0 tracking-tight ${abbrColor}`}

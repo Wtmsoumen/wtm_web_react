@@ -43,18 +43,18 @@ const teamMembers = [
     image: "images/Mitul.jpg",
     tier: "director",
   },
-  {
-    name: "ANZ Region Sales (Aus)",
-    role: "ANZ Region Sales",
-    image: "images/Vaibhav.jpg",
-    tier: "manager",
-  },
-  {
-    name: "ANZ Region Sales (Aus)",
-    role: "ANZ Region Sales",
-    image: "images/Manuj.jpeg",
-    tier: "manager",
-  },
+  // {
+  //   name: "ANZ Region Sales (Aus)",
+  //   role: "ANZ Region Sales",
+  //   image: "images/Vaibhav.jpg",
+  //   tier: "manager",
+  // },
+  // {
+  //   name: "ANZ Region Sales (Aus)",
+  //   role: "ANZ Region Sales",
+  //   image: "images/Manuj.jpeg",
+  //   tier: "manager",
+  // },
   {
     name: "Debashis Majumdar",
     role: "Director - Marketing (World Wide)",
