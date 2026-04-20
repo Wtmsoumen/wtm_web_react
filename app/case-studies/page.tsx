@@ -17,8 +17,11 @@ import {
   BookOpen,
   Plane,
   Zap,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "../components/ScrollReveal";
 
@@ -53,6 +56,7 @@ interface CaseStudy {
   winMetrics: { label: string; value: string; icon: React.ElementType }[];
   conclusion: string;
   tags: string[];
+  images?: string[];
 }
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
@@ -127,6 +131,9 @@ const caseStudies: CaseStudy[] = [
     conclusion:
       "With accurate tracking, campaign restructuring, and conversion-focused landing pages, we cut CPL by 84% and grew qualified leads 6x — and we're still scaling.",
     tags: ["B2B", "SaaS", "Lead Gen", "Landing Pages"],
+    images: [
+      "/images/caseStudy/b2b.png",
+    ]
   },
   {
     id: 2,
@@ -198,6 +205,9 @@ const caseStudies: CaseStudy[] = [
     conclusion:
       "By fixing tracking, creating product-specific ads, and deploying a focused landing page, we reduced CPL by over 85% — with room to scale further as data matures.",
     tags: ["E-Commerce", "High-End Retail", "PPC", "Landing Pages"],
+    images: [
+      "/images/caseStudy/eCommercePPc.png",
+    ]
   },
   {
     id: 3,
@@ -270,6 +280,9 @@ const caseStudies: CaseStudy[] = [
     conclusion:
       "By expanding creative assets, adding video, optimizing the Play Store listing, and refining bidding — we grew installs 220% and cut CPI from $5.00 to $1.60.",
     tags: ["App Install", "UAC", "Fitness", "Canada"],
+    images: [
+      "/images/caseStudy/AppInstall.png",
+    ]
   },
   {
     id: 4,
@@ -342,6 +355,9 @@ const caseStudies: CaseStudy[] = [
     conclusion:
       "Destination-targeted campaigns, accurate tracking, and dedicated landing pages slashed CPL from £261 to £41.80 — a 6x increase in qualified travel leads.",
     tags: ["Lead Gen", "Travel", "PPC", "UK"],
+    images: [
+      "/images/caseStudy/leadGeneration.png",
+    ]
   },
   {
     id: 5,
@@ -414,6 +430,11 @@ const caseStudies: CaseStudy[] = [
     conclusion:
       "Dynamic catalog ads, a structured audience funnel, and refreshed creatives transformed a struggling Meta account into a 4.8x ROAS machine with 395 monthly purchases.",
     tags: ["eCommerce", "Meta Ads", "Electronics", "USA"],
+    images: [
+      "/images/caseStudy/metaAdds1.png",
+      "/images/caseStudy/metaAdds2.png",
+      "/images/caseStudy/metaAdds3.png",
+    ],
   },
   {
     id: 6,
@@ -487,6 +508,11 @@ const caseStudies: CaseStudy[] = [
     conclusion:
       "Career-focused targeting, stronger creative messaging, and optimized lead forms grew leads 262% and cut CPL from $55.17 to $16.19 in just two months.",
     tags: ["Lead Gen", "Education", "Meta Ads", "Dubai"],
+    images: [
+      "/images/caseStudy/metaAddsLead1.png",
+      "/images/caseStudy/metaAddsLead2.png",
+      "/images/caseStudy/metaAddsLead3.png",
+    ],
   },
 ];
 
@@ -533,7 +559,22 @@ function PhaseTimeline({ phases }: { phases: Phase[] }) {
 // ─── Case Study Card ───────────────────────────────────────────────────────────
 function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
   const [expanded, setExpanded] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const Icon = study.icon;
+
+  const nextImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (study.images && study.images.length > 0) {
+      setCurrentImageIndex((prev) => (prev + 1) % study.images!.length);
+    }
+  };
+
+  const prevImage = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (study.images && study.images.length > 0) {
+      setCurrentImageIndex((prev) => (prev - 1 + study.images!.length) % study.images!.length);
+    }
+  };
 
   return (
     <motion.div
@@ -541,10 +582,67 @@ function CaseStudyCard({ study, index }: { study: CaseStudy; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.05 }}
-      className="bg-white rounded-3xl border border-slate-200 shadow-[0_4px_40px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_-20px_rgba(0,121,208,0.18)] transition-all duration-500 overflow-hidden group"
+      className="bg-white rounded-3xl border border-slate-200 shadow-[0_4px_40px_-10px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_-20px_rgba(0,121,208,0.18)] transition-all duration-500 overflow-hidden group flex flex-col h-fit"
     >
+      {/* Image Slider */}
+      {study.images && study.images.length > 0 && (
+        <div className="relative w-full h-64 sm:h-80 overflow-hidden group/slider border-b border-slate-100 shrink-0">
+          <AnimatePresence initial={false}>
+            <motion.div
+              key={currentImageIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="absolute inset-0 bg-gray-100"
+            >
+              <Image
+                src={study.images[currentImageIndex]}
+                alt={`${study.title} ${currentImageIndex + 1}`}
+                fill
+                className="object-cover object-top h-[94%]! w-[98%]! left-[1%]! top-[2%]! rounded-t-3xl rounded-b-md shadow-md"
+              />
+            </motion.div>
+          </AnimatePresence>
+          
+          {study.images.length > 1 && (
+            <>
+              {/* Controls */}
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur shadow-sm flex items-center justify-center text-slate-700 opacity-0 group-hover/slider:opacity-100 transition-opacity hover:bg-white z-10"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur shadow-sm flex items-center justify-center text-slate-700 opacity-0 group-hover/slider:opacity-100 transition-opacity hover:bg-white z-10"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+
+              {/* Dots */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10 bg-black/30 px-3 py-1.5 rounded-full backdrop-blur-md">
+                {study.images.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentImageIndex(idx);
+                    }}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      idx === currentImageIndex ? "bg-white w-5" : "bg-white/50 hover:bg-white"
+                    }`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
       {/* Card Header */}
-      <div className="p-8 pb-6">
+      <div className="p-8 pb-6 flex-1">
         <div className="flex items-start justify-between gap-4 mb-6">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded-2xl bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] flex items-center justify-center shadow-lg shadow-[#0079d0]/20 shrink-0">
