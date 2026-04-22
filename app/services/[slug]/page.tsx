@@ -1562,7 +1562,7 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-8xl font-black leading-[0.9] tracking-tight mb-10 text-slate-900"
+              className="text-5xl md:text-8xl font-black leading-[1] tracking-tight mb-10 text-slate-900"
             >
               {service.headline.map((line, i) =>
                 service.headlineColors[i] === "gradient-cyan-purple" ? (
@@ -1596,7 +1596,7 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
             >
               <Link
                 href="/contact-us"
-                className="group px-10 py-5 rounded-2xl bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425]  text-white font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-blue-500/20 flex items-center gap-3"
+                className="group px-10 py-5 rounded-2xl bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)]  text-white font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-blue-500/20 flex items-center gap-3"
               >
                 Start A Workshop
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -1632,7 +1632,7 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-24">
               <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6">
-                Institutional <span className="bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425] bg-clip-text text-transparent">Capabilities</span>
+                Institutional <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Capabilities</span>
               </h2>
               <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full" />
             </div>
@@ -1649,7 +1649,7 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
                       <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-blue-50 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all text-blue-600">
                         <Icon className="w-7 h-7" />
                       </div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-6 tracking-tight group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-2xl font-bold mb-6 tracking-tight transition-colors bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">
                         {f.title}
                       </h3>
                       <p className="text-slate-600 leading-relaxed text-lg font-light">{f.desc}</p>
@@ -1667,7 +1667,7 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-24">
               <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-6">
-                Execution <span className="bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425] bg-clip-text text-transparent">Framework</span>
+                Execution <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Framework</span>
               </h2>
             </div>
 
@@ -1679,7 +1679,7 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
                       {p.step}
                     </span>
                     <div className="text-blue-600 text-xs font-bold tracking-[0.3em] uppercase mb-8">Phase {p.step}</div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">{p.title}</h3>
+                    <h3 className="text-2xl font-bold bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent mb-4 tracking-tight">{p.title}</h3>
                     <p className="text-slate-600 text-lg leading-relaxed font-light">{p.desc}</p>
                   </div>
                 </ScrollReveal>
@@ -1692,7 +1692,7 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
         <section className="py-16 bg-white">
           <div className="max-w-7xl mx-auto text-center px-4">
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-16 uppercase tracking-tighter">
-              The <span className="bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425] bg-clip-text text-transparent">Technology Matrix</span>
+              The <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Technology Matrix</span>
             </h2>
 
             <div className="flex flex-wrap justify-center gap-3">
@@ -1712,7 +1712,7 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
         </section>
 
         {/* ── CTA BANNER ── */}
-        <section className="pt-16 pb-16 max-w-7xl mx-auto px-4 mb-10">
+        <section className="py-8 max-w-7xl mx-auto px-4 mb-10">
           <div className="relative rounded-[4rem] overflow-hidden border border-slate-100 bg-linear-to-br from-blue-600 to-blue-800 p-16 md:p-24 text-center shadow-2xl">
             <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
 
@@ -1739,7 +1739,7 @@ export default function Page({ params }: { params: Promise<{ slug: string }> }) 
           <div className="max-w-4xl mx-auto px-4">
             <div className="text-center mb-24">
               <h2 className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter">
-                Common <span className="bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425] bg-clip-text text-transparent">Inquiries</span>
+                Common <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Inquiries</span>
               </h2>
             </div>
 

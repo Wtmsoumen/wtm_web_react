@@ -26,21 +26,9 @@ const teamMembers = [
     tier: "founder",
   },
   {
-    name: "Mitul",
-    role: "Director of Marketing (Dubai)",
-    image: "images/Mitul.jpg",
-    tier: "director",
-  },
-  {
-    name: "ANZ Region Sales (Aus)",
-    role: "ANZ Region Sales",
-    image: "images/Vaibhav.jpg",
-    tier: "manager",
-  },
-  {
-    name: "ANZ Region Sales (Aus)",
-    role: "ANZ Region Sales",
-    image: "images/Manuj.jpeg",
+    name: "Avijit Sir",
+    role: "Chief Marketing Officer",
+    image: "images/avijit_sir.jpg",
     tier: "manager",
   },
   {
@@ -50,17 +38,29 @@ const teamMembers = [
     tier: "manager",
   },
   {
+    name: "Mitul",
+    role: "Director of Marketing (Dubai)",
+    image: "images/Mitul.jpg",
+    tier: "director",
+  },
+  // {
+  //   name: "ANZ Region Sales (Aus)",
+  //   role: "ANZ Region Sales",
+  //   image: "images/Vaibhav.jpg",
+  //   tier: "manager",
+  // },
+  // {
+  //   name: "ANZ Region Sales (Aus)",
+  //   role: "ANZ Region Sales",
+  //   image: "images/Manuj.jpeg",
+  //   tier: "manager",
+  // },
+  {
     name: "Debashis Majumdar",
     role: "Director - Marketing (World Wide)",
     image: "images/debu.jpg",
     tier: "manager",
-  },
-  {
-    name: "Avijit Sir",
-    role: "Chief Marketing Officer",
-    image: "images/avijit_sir.jpg",
-    tier: "manager",
-  },
+  }
 ];
 
 // ─── Office Locations ─────────────────────────────────────────────────────────
@@ -263,7 +263,7 @@ export default function ContactPage() {
                       src={office.mapEmbedUrl}
                       width="100%"
                       height="300"
-                      className="border-0 grayscale group-hover:grayscale-0 transition-all duration-700"
+                      className="border-0 transition-all duration-700"
                       loading="lazy"
                       title={office.country}
                     />
@@ -279,7 +279,7 @@ export default function ContactPage() {
                 <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-linear-to-br from-[#1D74CF]/5 to-[#D04425]/5 blur-3xl" />
 
                 <h3 className="text-3xl font-black text-black mb-2">Ready to Grow?</h3>
-                <p className="text-[#D04425] font-bold text-xl mb-10 uppercase tracking-tight">Let&apos;s talk about your project.</p>
+                <p className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent font-bold text-xl mb-10 uppercase tracking-tight">Let&apos;s talk about your project.</p>
 
                 <div className="space-y-6">
                   <div className="flex items-center gap-4 border-b-2 border-gray-100 pb-4 group focus-within:border-blue-600 transition-all">

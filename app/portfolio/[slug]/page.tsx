@@ -386,7 +386,7 @@ export default function PortfolioSlugPage({
               <div className="h-2 w-24 bg-blue-500 mx-auto rounded-full" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 text-center relative z-10">
+            <div className="flex justify-center gap-16 text-center relative z-10">
               {project.results.map((result, i) => (
                 <ScrollReveal key={i}>
                   <div className="flex flex-col gap-5">

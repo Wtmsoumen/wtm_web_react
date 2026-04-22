@@ -5,6 +5,7 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import TrustIndicators from "./components/TrustIndicators";
 import Portfolio from "./components/Portfolio";
 import Industries from "./components/Industries";
+import IndustriesUpper from "./components/IndustriesUpper";
 import OnDemand from "./components/OnDemand";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
@@ -26,17 +27,18 @@ export default function Home() {
     <div className="min-h-screen flex flex-col ">
       <Hero />
       <ScrollReveal><Services /></ScrollReveal>
-        <ScrollReveal><OurService /></ScrollReveal>
-      <ScrollReveal><DigitalMarketingSection/></ScrollReveal>
-      <ScrollReveal><Industries /></ScrollReveal>
+      <ScrollReveal><OurService /></ScrollReveal>
+      <ScrollReveal><DigitalMarketingSection /></ScrollReveal>
+      <ScrollReveal><IndustriesUpper /></ScrollReveal>
+      <ScrollReveal><PoweredByAI /></ScrollReveal>
       <ScrollReveal><WhyChooseUs /></ScrollReveal>
-     
+
       <ScrollReveal><TrustIndicators /></ScrollReveal>
       <ScrollReveal><PortfolioSection /></ScrollReveal>
-    
 
-      <ScrollReveal><PoweredByAI /></ScrollReveal>
+
       {/* <ScrollReveal><OurExpertise /></ScrollReveal> */}
+      <ScrollReveal><Industries /></ScrollReveal>
       <ScrollReveal><ServicesTestimonialsSection /></ScrollReveal>
       <ScrollReveal><ClientsSection /></ScrollReveal>
       <ScrollReveal><FAQ /></ScrollReveal>

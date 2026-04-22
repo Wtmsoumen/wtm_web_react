@@ -15,10 +15,12 @@ import {
   Share2,
 } from "lucide-react";
 import ScrollReveal from "../../components/ScrollReveal";
+import Link from "next/link";
 
 // ─── Mock related posts ──────────────────────────────────────────────────────
 const relatedPosts = [
   {
+    slug: "building-scalable-defi-platforms-architecture-deep-dive",
     category: "Blockchain",
     title: "Building Scalable DeFi Platforms: Architecture Deep Dive",
     excerpt:
@@ -28,6 +30,7 @@ const relatedPosts = [
     image: "https://images.unsplash.com/photo-1639322537228-f710d846310a",
   },
   {
+    slug: "how-ai-is-transforming-on-demand-app-development-2025",
     category: "AI & ML",
     title: "How AI is Transforming On-Demand App Development in 2025",
     excerpt:
@@ -37,6 +40,7 @@ const relatedPosts = [
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
   },
   {
+    slug: "react-native-vs-flutter-in-2025-which-should-you-choose",
     category: "Mobile Dev",
     title: "React Native vs Flutter in 2025: Which Should You Choose?",
     excerpt:
@@ -127,31 +131,31 @@ export default function BlogDetailPage() {
 
       {/* ── Main Content Area ───────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:grid lg:grid-cols-12 gap-16 items-start">
-        
+
         {/* Sidebar TOC */}
         <aside className="hidden lg:block lg:col-span-3 sticky top-32">
           <div className="flex flex-col gap-10" data-aos="fade-right">
-             <div>
-                <h3 className="text-[10px] font-black text-white/30 tracking-widest uppercase mb-6 flex items-center gap-2">
-                   <BookOpen size={14} /> CONTENT NAVIGATION
-                </h3>
-                <ul className="space-y-4">
-                  {toc.map(item => (
-                    <li key={item.id}>
-                      <a href={`#${item.id}`} className="text-sm font-bold text-gray-500 hover:text-white flex items-center gap-3 transition-colors group">
-                        <span className="w-1 h-1 rounded-full bg-purple-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-             </div>
+            <div>
+              <h3 className="text-[10px] font-black text-white/30 tracking-widest uppercase mb-6 flex items-center gap-2">
+                <BookOpen size={14} /> CONTENT NAVIGATION
+              </h3>
+              <ul className="space-y-4">
+                {toc.map(item => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`} className="text-sm font-bold text-gray-500 hover:text-white flex items-center gap-3 transition-colors group">
+                      <span className="w-1 h-1 rounded-full bg-purple-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-             <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/5">
-                <p className="text-xs font-black text-purple-400 mb-2 uppercase tracking-tight">Need expert help?</p>
-                <p className="text-gray-400 text-xs leading-relaxed mb-6">Building a crypto exchange is complex. Let our experts guide you.</p>
-                <button className="w-full bg-white text-black font-black py-3 rounded-xl text-[10px] tracking-widest uppercase hover:bg-purple-500 hover:text-white transition-all">CONSULT EXPERT</button>
-             </div>
+            <div className="p-8 rounded-3xl bg-white/[0.03] border border-white/5">
+              <p className="text-xs font-black text-purple-400 mb-2 uppercase tracking-tight">Need expert help?</p>
+              <p className="text-gray-400 text-xs leading-relaxed mb-6">Building a crypto exchange is complex. Let our experts guide you.</p>
+              <button className="w-full bg-white text-black font-black py-3 rounded-xl text-[10px] tracking-widest uppercase hover:bg-purple-500 hover:text-white transition-all">CONSULT EXPERT</button>
+            </div>
           </div>
         </aside>
 
@@ -162,65 +166,65 @@ export default function BlogDetailPage() {
           </div>
 
           <div className="prose prose-invert prose-purple max-w-none">
-             <div id="overview" className="mb-16">
-                <h2 className="text-3xl font-black text-white mb-6">Guide Overview</h2>
-                <p className="text-gray-400 text-lg leading-relaxed">
-                  India&apos;s crypto landscape has undergone a seismic shift since the RBI circular reversal in 2020. With the FIU-IND now mandating VDA service providers to register and comply with PMLA provisions, building a compliant crypto exchange is both a technical and regulatory challenge. This guide covers everything a founder or CTO needs to know.
-                </p>
-             </div>
+            <div id="overview" className="mb-16">
+              <h2 className="text-3xl font-black text-white mb-6">Guide Overview</h2>
+              <p className="text-gray-400 text-lg leading-relaxed">
+                India&apos;s crypto landscape has undergone a seismic shift since the RBI circular reversal in 2020. With the FIU-IND now mandating VDA service providers to register and comply with PMLA provisions, building a compliant crypto exchange is both a technical and regulatory challenge. This guide covers everything a founder or CTO needs to know.
+              </p>
+            </div>
 
-             <div className="p-8 rounded-3xl bg-linear-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 mb-16 italic text-gray-300">
-                &quot;Regulatory compliance is not a post-launch concern — it must be baked into the architecture from day one, especially for wallet custody and KYC flows.&quot;
-             </div>
+            <div className="p-8 rounded-3xl bg-linear-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 mb-16 italic text-gray-300">
+              &quot;Regulatory compliance is not a post-launch concern — it must be baked into the architecture from day one, especially for wallet custody and KYC flows.&quot;
+            </div>
 
-             <div id="legal" className="mb-16">
-                <h2 className="text-3xl font-black text-white mb-6">Legal & Compliance (FIU-IND)</h2>
-                <p className="text-gray-400 mb-10 leading-relaxed">All Virtual Digital Asset (VDA) service providers operating in India must register with the Financial Intelligence Unit – India (FIU-IND) under the Prevention of Money Laundering Act (PMLA).</p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {[
-                    "FIU-IND registration as Reporting Entity",
-                    "Aadhaar + PAN based e-KYC flow",
-                    "Transaction monitoring & STR filing",
-                    "30% TDS gain calculation logic",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-4 p-5 rounded-2xl bg-white/[0.03] border border-white/5">
-                      <div className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
-                      <span className="text-white/70 font-bold text-sm">{item}</span>
-                    </div>
-                  ))}
-                </div>
-             </div>
+            <div id="legal" className="mb-16">
+              <h2 className="text-3xl font-black text-white mb-6">Legal & Compliance (FIU-IND)</h2>
+              <p className="text-gray-400 mb-10 leading-relaxed">All Virtual Digital Asset (VDA) service providers operating in India must register with the Financial Intelligence Unit – India (FIU-IND) under the Prevention of Money Laundering Act (PMLA).</p>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  "FIU-IND registration as Reporting Entity",
+                  "Aadhaar + PAN based e-KYC flow",
+                  "Transaction monitoring & STR filing",
+                  "30% TDS gain calculation logic",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4 p-5 rounded-2xl bg-white/[0.03] border border-white/5">
+                    <div className="w-2 h-2 rounded-full bg-purple-500 shrink-0" />
+                    <span className="text-white/70 font-bold text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Related Posts */}
           <div className="mt-32 pt-20 border-t border-white/5">
-             <div className="flex items-center justify-between mb-12" data-aos="fade-up">
-                <h2 className="text-3xl font-black text-white">Recommended For You</h2>
-                <div className="flex gap-2">
-                   {post.tags.map(t => (
-                     <span key={t} className="text-[10px] font-black text-gray-500 uppercase tracking-widest border border-white/10 px-4 py-2 rounded-full">{t}</span>
-                   ))}
-                </div>
-             </div>
+            <div className="flex items-center justify-between mb-12" data-aos="fade-up">
+              <h2 className="text-3xl font-black text-white">Recommended For You</h2>
+              <div className="flex gap-2">
+                {post.tags.map(t => (
+                  <span key={t} className="text-[10px] font-black text-gray-500 uppercase tracking-widest border border-white/10 px-4 py-2 rounded-full">{t}</span>
+                ))}
+              </div>
+            </div>
 
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {relatedPosts.map((r, i) => (
-                  <div key={i} className="group cursor-pointer" data-aos="fade-up" data-aos-delay={i * 100}>
-                    <div className="relative aspect-video rounded-3xl overflow-hidden mb-6 shadow-xl border border-white/5">
-                       <img src={r.image} alt={r.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                       <div className="absolute top-4 left-4">
-                          <span className="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-black text-purple-600 uppercase tracking-widest">{r.category}</span>
-                       </div>
-                    </div>
-                    <h3 className="text-white font-black text-lg group-hover:text-purple-400 transition-colors leading-tight mb-4">{r.title}</h3>
-                    <div className="flex items-center gap-4 text-gray-500 text-xs font-bold">
-                       <span>{r.date}</span>
-                       <div className="w-1 H-1 rounded-full bg-gray-700" />
-                       <span>{r.readTime}</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {relatedPosts.map((r, i) => (
+                <Link href={`/blogs/${r.slug}`} key={i} className="group cursor-pointer" data-aos="fade-up" data-aos-delay={i * 100}>
+                  <div className="relative aspect-video rounded-3xl overflow-hidden mb-6 shadow-xl border border-white/5">
+                    <img src={r.image} alt={r.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-4 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-black text-purple-600 uppercase tracking-widest">{r.category}</span>
                     </div>
                   </div>
-                ))}
-             </div>
+                  <h3 className="text-white font-black text-lg group-hover:text-purple-400 transition-colors leading-tight mb-4">{r.title}</h3>
+                  <div className="flex items-center gap-4 text-gray-500 text-xs font-bold">
+                    <span>{r.date}</span>
+                    <div className="w-1 H-1 rounded-full bg-gray-700" />
+                    <span>{r.readTime}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </article>
 

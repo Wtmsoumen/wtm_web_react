@@ -1,22 +1,18 @@
 import React from 'react'
 import Image from 'next/image'
 import girl from "../../public/images/Freeconsultation_left_girl.webp"
-import { Facebook, Instagram, Twitter, Linkedin, Phone } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin, Phone, ShieldCheck, Target, Users, RefreshCw, HandCoins } from "lucide-react";
 
 const FreeConsultation = () => {
     return (
-        <div className='w-full pt-8 md:pt-40 flex flex-col md:flex-row p-4 md:p-8 bg-white'>
+        <div className='w-full pt-8 md:pt-16 flex flex-col md:flex-row p-4 md:p-8 bg-white'>
 
 
             {/* ----- Left Content Section ----- */}
             <div className="w-full md:w-[50%] px-4 md:px-10 " >
 
                 {/* Heading */}
-                <h1 className="text-3xl md:text-6xl font-bold leading-tight mb-4   bg-gradient-to-r
-                      from-[#1E7FF8]
-                      via-[#0E8DF6]
-                      via-[#AB82E0]
-                      to-[#E75061]  bg-clip-text text-transparent">
+                <h1 className="text-3xl md:text-6xl font-bold leading-tight mb-4 bg-blue-500 bg-clip-text text-transparent">
                     Web development company
                 </h1>
 
@@ -27,26 +23,30 @@ const FreeConsultation = () => {
                 </p>
 
                 {/* Points */}
-                <ul className="space-y-2 mb-6 text-black text-lg md:text-md">
-                    <li className="flex items-start gap-2">
-                        <span>•</span> Uphold confidentiality through an NDA.
-                    </li>
-                    <li className="flex items-start gap-2">
-                        <span>•</span> Grasp the essence of the business.
-                    </li>
-                    <li className="flex items-start gap-2">
-                        <span>•</span> Work closely with leadership.
-                    </li>
-                    <li className="flex items-start gap-2">
-                        <span>•</span> Deliver consistent updates.
-                    </li>
-                    <li className="flex items-start gap-2">
-                        <span>•</span> Provide aggressive pricing.
-                    </li>
-                </ul>
+                <div className="flex flex-wrap gap-4 mb-8">
+                    {[
+                        { icon: ShieldCheck, text: "Uphold confidentiality through an NDA." },
+                        { icon: Target, text: "Grasp the essence of the business." },
+                        { icon: Users, text: "Work closely with leadership." },
+                        { icon: RefreshCw, text: "Deliver consistent updates." },
+                        { icon: HandCoins, text: "Provide aggressive pricing." }
+                    ].map((feature, idx) => {
+                        const Icon = feature.icon;
+                        return (
+                            <div title={feature.text} key={idx} className="flex items-center gap-4 group shadow-sm w-fit rounded-lg scaale-100 hover:scaale-110" data-aos="fade-right" data-aos-delay={idx * 100}>
+                                <div className="w-35 h-35 shrink-0 rounded-lg bg-gray-50 flex items-center justify-center border border-gray-100 group-hover:bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] group-hover:text-white transition-all duration-300">
+                                    <Icon size={35} strokeWidth={1.5} className="text-gray-600 group-hover:text-white" />
+                                </div>
+                                {/* <span className="text-gray-800 text-lg md:text-base font-medium group-hover:text-black transition-colors">
+                                    {feature.text}
+                                </span> */}
+                            </div>
+                        );
+                    })}
+                </div>
 
                 {/* Social Media */}
-                <div className="flex items-center gap-4">
+                {/* <div className="flex items-center gap-4">
                     <span className="text-gray-700 font-medium">Social Media :</span>
 
                     <div className="flex gap-3">
@@ -61,14 +61,14 @@ const FreeConsultation = () => {
                             return (
                                 <div
                                     key={idx}
-                                    className="w-9 h-9 flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white shadow-md hover:scale-110 transition-all duration-300 cursor-pointer"
+                                    className="w-9 h-9 flex items-center justify-center rounded-full bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] text-white shadow-md hover:scale-110 transition-all duration-300 cursor-pointer"
                                 >
                                     <Icon size={16} />
                                 </div>
                             );
                         })}
                     </div>
-                </div>
+                </div> */}
 
             </div>
 
@@ -76,11 +76,11 @@ const FreeConsultation = () => {
 
 
             <div className='w-full md:w-[50%] flex items-center justify-center ' data-aos="fade-left">
-                <div className='w-full md:relative md:bottom-15'>
+                <div className='w-full md:relative'>
                     {/* Title */}
                     <p className='text-[#ED286C] text-[15px] font-bold tracking-widest uppercase mb-1'>Free Consultation</p>
-                    <h2 className='text-3xl md:text-[50px] font-regular text-[#020200] leading-tight'>Maximize Your Brand’s Performance With </h2>
-                    <h2 className='text-4xl md:text-[55px] font-bold mb-5 text-[#1E7FF8]'> Webtechnomind IT Solutions</h2>
+                    <h2 className='text-3xl md:text-[50px] font-regular text-[#020200] leading-tight'>Maximize Your Brand's Performance With </h2>
+                    <h2 className='text-4xl md:text-[55px] font-bold mb-5 bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent'>Webtechnomind IT Solutions</h2>
 
                     {/* Form Grid */}
                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-5' data-aos="fade-up" data-aos-delay="100">
@@ -153,49 +153,57 @@ const FreeConsultation = () => {
 
                     </div>
 
-                    <button
-                        className="
-                        mt-4 mx-auto flex items-center justify-end
-                        px-4 py-4 rounded-full gap-4
-                      text-white font-bold text-sm tracking-widest uppercase
-                        bg-gradient-to-r
-                      from-[#1E7FF8]
-                      via-[#0E8DF6]
-                      via-[#AB82E0]
-                      to-[#E75061]
+                    <div className='flex flex-col-reverse md:flex-row items-center justify-between mt-8 gap-4'>
+                        <div className="flex gap-3">
+                            {[
+                                { icon: Facebook },
+                                { icon: Instagram },
+                                { icon: Twitter },
+                                { icon: Linkedin },
+                                { icon: Phone } // WhatsApp alternative
+                            ].map((item, idx) => {
+                                const Icon = item.icon;
+                                return (
+                                    <div
+                                        key={idx}
+                                        className="w-9 h-9 flex items-center justify-center rounded-full bg-white hover:bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] text-black hover:text-white shadow-md hover:scale-110 transition-all duration-300 cursor-pointer"
+                                    >
+                                        <Icon size={16} />
+                                    </div>
+                                );
+                            })}
+                        </div>
+                        <button
+                            className="flex items-center justify-end px-8 py-4 rounded-full gap-4 text-white font-bold text-sm tracking-widest uppercase bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] transition-all duration-300 ease-in-out hover:scale-[1.03] hover:shadow-xl"
+                            data-aos="zoom-in"
+                            data-aos-delay="700"
+                        >
+                            <span>Enquire Now</span>
 
-                        transition-all duration-300 ease-in-out
-                        hover:scale-[1.03]
-                         hover:shadow-xl
-                           "
-                        data-aos="zoom-in"
-                        data-aos-delay="700"
-                    >
-                        <span>Enquire Now</span>
-
-                        <div
-                            className="
+                            <div
+                                className="
                             w-8 h-8 bg-white rounded-full
                             flex items-center justify-center
                             transition-all duration-300
                             group-hover:translate-x-1
     "
-                        >
-                            <svg
-                                className="w-4 h-4 text-[#ED2831] transition-transform duration-300 group-hover:translate-x-1"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2.5}
-                                    d="M9 5l7 7-7 7"
-                                />
-                            </svg>
-                        </div>
-                    </button>
+                                <svg
+                                    className="w-4 h-4 text-[#ED2831] transition-transform duration-300 group-hover:translate-x-1"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2.5}
+                                        d="M9 5l7 7-7 7"
+                                    />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
 
                 </div>
             </div>

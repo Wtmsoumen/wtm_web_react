@@ -8,9 +8,25 @@ import Image from "next/image";
 import whatsapp from "../public/images/whatsapp.svg"
 
 export const metadata: Metadata = {
-  title: "Wtm Technologies - Next-gen AI & On-Demand Solutions",
+  title: "Webtechnomind IT Solutions Private Limited | AI Solutions, Software Development Digital Marketing India",
   description:
-    "We deliver next-gen on-demand solutions powered by AI. 13+ years, 350+ products, 96% satisfaction rate across 12+ countries.",
+    "We deliver next-gen on-demand solutions powered by AI. 13+ years, 350+ products, 96% satisfaction rate across 12+ countries, Meta Ads, Google Ads, SEO, SMM, Content Marketing, Lead Generation, Brand Management, Specialized eCommerce SEO Services, Google Ad Campaigns, Content Marketing, Paid Advertising",
+  icons: {
+    icon: [
+      {
+        url: "/images/icon.svg",
+        sizes: "180x180",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: [
+      {
+        url: "/images/icon.svg",
+        sizes: "180x180",
+        type: "image/svg+xml",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

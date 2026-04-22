@@ -732,14 +732,14 @@ export default function PortfolioPage() {
               className="text-6xl md:text-8xl font-black tracking-tight text-slate-900 mb-10 leading-[0.9]"
             >
               The More We Know <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">You,</span><br />
-              the More We <span className="relative inline-block italic">
+              the More <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">We</span> <span className="relative inline-block italic">
                 Can Do.
-                <motion.span
+                {/* <motion.span
                   initial={{ width: 0 }}
                   animate={{ width: "110%" }}
                   transition={{ delay: 1, duration: 1 }}
                   className="absolute bottom-4 -left-2 h-2 bg-blue-600/10 -z-10 rounded-full"
-                />
+                /> */}
               </span>
             </motion.h1>
 
@@ -819,7 +819,7 @@ export default function PortfolioPage() {
                 className={`border-b border-solid border-gray-200 pb-10 lg:pb-20 flex flex-col ${i % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-20 lg:gap-32 items-center group`}
               >
                 {/* Image Container */}
-                <div className="relative w-full lg:w-3/5 rounded-[4rem] overflow-hidden bg-slate-50 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 transition-all duration-700 group-hover:shadow-[0_60px_120px_-30px_rgba(37,99,235,0.15)] group-hover:border-blue-200">
+                <div className="relative w-full lg:w-3/5 rounded-2xl overflow-hidden bg-slate-50 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.1)] border border-slate-100 transition-all duration-700 group-hover:shadow-[0_60px_120px_-30px_rgba(37,99,235,0.15)] group-hover:border-blue-200">
                   <motion.div
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 1, ease: 'easeOut' }}
@@ -877,7 +877,7 @@ export default function PortfolioPage() {
 
                   <Link
                     href={`/portfolio/${project.slug || ""}`}
-                    className="group/link w-full py-6 px-10 rounded-3xl bg-slate-900 text-white font-black text-sm tracking-[0.2em] uppercase text-center flex items-center justify-center gap-4 hover:bg-blue-600 transition-all duration-500 shadow-2xl shadow-slate-900/10 hover:shadow-blue-600/30 active:scale-95"
+                    className="group/link w-full py-6 px-10 rounded-3xl bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] text-white font-black text-sm tracking-[0.2em] uppercase text-center flex items-center justify-center gap-4 hover:bg-blue-600 transition-all duration-500 shadow-2xl shadow-slate-900/10 hover:shadow-blue-600/30 active:scale-95"
                   >
                     <span>View Case Study</span>
                     <ArrowRight className="w-5 h-5 group-hover/link:translate-x-2 transition-transform" />

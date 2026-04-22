@@ -1,7 +1,8 @@
 "use client";
 
-import { Star } from "lucide-react";
+import { ArrowRight, Link, Star } from "lucide-react";
 import { globalStyle } from "../globalStyle";
+import { motion } from "framer-motion";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface Testimonial {
@@ -63,11 +64,19 @@ function Badge({ label, color = "#8B5CF6" }: { label: string; color?: string }) 
     );
 }
 
-// ─── Flag emoji helper ────────────────────────────────────────────────────────
-const flags: Record<string, string> = {
-    SG: "🇸🇬", US: "🇺🇸", UK: "🇬🇧", AE: "🇦🇪", AU: "🇦🇺",
-    IN: "🇮🇳", JP: "🇯🇵", DE: "🇩🇪", FR: "🇫🇷",
-};
+// ─── Flag Icon Component ───────────────────────────────────────────────────
+function FlagIcon({ code, className = "w-5 h-3.5" }: { code: string; className?: string }) {
+    // Map UK to GB for the flag API
+    const isoCode = code.toUpperCase() === "UK" ? "gb" : code.toLowerCase();
+    return (
+        <img
+            src={`https://flagcdn.com/${isoCode}.svg`}
+            alt={`${code} flag`}
+            className={`${className} object-cover rounded-sm shadow-sm inline-block`}
+            loading="lazy"
+        />
+    );
+}
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const featuredTestimonial: Testimonial = {
@@ -216,9 +225,11 @@ const trustedCountries = [
     { code: "SG", label: "Singapore" },
     { code: "AU", label: "Australia" },
     { code: "IN", label: "India" },
-    { code: "JP", label: "Japan" },
-    { code: "DE", label: "Germany" },
     { code: "FR", label: "France" },
+    { code: "PL", label: "Poland" },
+    { code: "AL", label: "Airland" },
+    { code: "CY", label: "Cyprus" },
+    { code: "PT", label: "Portugal" },
 ];
 
 const avatarColors: Record<string, string> = {
@@ -273,12 +284,14 @@ export default function ClientsSection() {
                     products with us.
                 </p>
             </div>
-
+            {/* <div>
+                <Link href="https://share.google/c5C6kqd2WyoiuYbo2" target="_blank">More <ArrowRight /> </Link>
+            </div> */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 flex flex-col gap-4">
                 {/* ── Row 1: Featured + 2 grid cards ───────────────────── */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {/* Featured Card */}
-                    <div 
+                    <div
                         className="bg-white rounded-2xl p-6 shadow-sm border-t border-x border-gray-200 flex flex-col justify-between md:row-span-2 scale-100 hover:scale-105 duration-300"
                         data-aos="fade-right"
                     >
@@ -297,8 +310,9 @@ export default function ClientsSection() {
                                 <div>
                                     <p className="font-semibold text-gray-900 text-sm">{featuredTestimonial.name}</p>
                                     <p className="text-gray-400 text-xs">{featuredTestimonial.role}</p>
-                                    <p className="text-gray-400 text-xs">
-                                        {flags[featuredTestimonial.location.split(" ")[0]]} {featuredTestimonial.location.split(" ").slice(1).join(" ")}
+                                    <p className="text-gray-400 text-xs flex items-center gap-1.5">
+                                        <FlagIcon code={featuredTestimonial.location.split(" ")[0]} />
+                                        {featuredTestimonial.location.split(" ").slice(1).join(" ")}
                                     </p>
                                 </div>
                             </div>
@@ -348,17 +362,42 @@ export default function ClientsSection() {
                 </div>
 
                 {/* ── Footer: Trusted by ────────────────────────────────── */}
-                <div 
-                    className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 pt-4 border-t border-gray-200 mt-2"
+                <div
+                    className="flex flex-col md:flex-row items-center gap-4 pt-6 border-t border-gray-200 mt-4 overflow-hidden"
                     data-aos="fade-in"
                 >
-                    <span className="text-gray-400 text-xs">Trusted by teams in:</span>
-                    {trustedCountries.map((c) => (
-                        <span key={c.code} className="text-gray-600 text-xs font-medium flex items-center gap-1">
-                            <span>{flags[c.code]}</span>
-                            {c.label}
-                        </span>
-                    ))}
+                    <span className="text-gray-400 text-xs font-medium whitespace-nowrap z-10 pr-4">
+                        Countries we operate in :
+                    </span>
+
+                    <div className="relative flex overflow-hidden w-full items-center">
+                        <motion.div
+                            className="flex gap-8 items-center"
+                            animate={{
+                                x: [0, -1000],
+                            }}
+                            transition={{
+                                x: {
+                                    repeat: Infinity,
+                                    repeatType: "loop",
+                                    duration: 30,
+                                    ease: "linear",
+                                },
+                            }}
+                        >
+                            {/* Duplicated for seamless loop */}
+                            {[...trustedCountries, ...trustedCountries, ...trustedCountries].map((c, idx) => (
+                                <span key={`${c.code}-${idx}`} className="text-gray-600 text-xs font-semibold flex items-center gap-2 whitespace-nowrap hover:text-purple-600 transition-colors duration-300">
+                                    <FlagIcon code={c.code} className="w-5 h-3.5" />
+                                    {c.label}
+                                </span>
+                            ))}
+                        </motion.div>
+
+                        {/* Gradient Fades */}
+                        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-[#f8f9fb] to-transparent z-10 pointer-events-none" />
+                        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-[#f8f9fb] to-transparent z-10 pointer-events-none" />
+                    </div>
                 </div>
             </div>
         </section>
@@ -394,8 +433,8 @@ function TestimonialCard({ t }: { t: Testimonial }) {
                 <Avatar initials={t.avatar} bg={avatarColors[t.avatar] ?? "linear-gradient(135deg,#6366f1,#8b5cf6)"} />
                 <div>
                     <p className="font-semibold text-gray-900 text-xs">{t.name}</p>
-                    <p className="text-gray-400 text-xs">
-                        {t.role} · {flags[locCode]} {locName.join(" ")}
+                    <p className="text-gray-400 text-xs flex items-center gap-1.5">
+                        {t.role} · <FlagIcon code={locCode} /> {locName.join(" ")}
                     </p>
                 </div>
             </div>

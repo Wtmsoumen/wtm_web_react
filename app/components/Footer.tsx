@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import logoWhite from "../../public/images/logoWhite.png"
+import logoWhite from "../../public/images/logoWhite.svg"
 import paymeat from "../../public/images/paymeat.webp"
 
 const footerLinks = {
@@ -48,7 +48,9 @@ const footerLinks = {
     { name: "Contact Us", href: "/contact-us" },
     { name: "How We Work", href: "/how-we-work" },
     { name: "Portfolio", href: "/portfolio" },
+    { name: "Our Gallery", href: "/gallery" },
     { name: "Our Team", href: "/our-team" },
+    { name: "Careers", href: "/careers" },
     { name: "Sitemap", href: "/sitemap" },
     { name: "Privacy Policy", href: "/privacy-policy" },
   ],
@@ -61,6 +63,7 @@ const offices = [
   { country: "UAE", city: "Dubai", flag: "🇦🇪" },
   { country: "Australia", city: "Sydney", flag: "🇦🇺" },
   { country: "Netherlands", city: "Amsterdam", flag: "🇳🇱" },
+  { country: "Poland", city: "Warsaw", flag: "🇵🇱" },
 ];
 
 const socialLinks = [
@@ -153,7 +156,7 @@ export default function Footer() {
                 <span className="text-white font-bold text-base">A</span>
               </div> */}
               <Link href="/" className="flex items-center gap-2">
-                <Image src={logoWhite} alt="logo" width={1920} height={1080} className="w-auto h-auto" />
+                <Image src={logoWhite} alt="logo" width={1920} height={1080} className="w-65 h-auto" />
               </Link>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">

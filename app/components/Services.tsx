@@ -133,7 +133,7 @@ export default function Services() {
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h3 className="text-gray-900 font-bold text-xl mb-3 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-gray-900 font-bold text-xl mb-3 group-hover:bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text group-hover:text-transparent transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed mb-6">
@@ -142,7 +142,7 @@ export default function Services() {
 
                   <Link
                     href={`/services/${service.slug}`}
-                    className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 group/link"
+                    className="inline-flex items-center gap-2 text-sm font-bold bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent transition-colors group/link"
                   >
                     Explore Service
                     <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />

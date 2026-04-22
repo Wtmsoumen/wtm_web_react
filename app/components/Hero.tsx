@@ -35,11 +35,11 @@ export default function Hero() {
   }, { scope: container });
 
   return (
-    <ScrollReveal><section ref={container} className="relative min-h-screen flex items-center justify-center bg-white overflow-hidden pt-16">
+    <ScrollReveal><section ref={container} className="relative lg:min-h-[100vh] min-h-[80vh] flex items-center justify-center bg-white overflow-hidden pt-16">
 
       {/* Video Background - High visibility */}
       <video
-        src="/video/hero-video2.mp4"
+        src="/video/hero-video7.mp4"
         loop
         autoPlay
         muted
@@ -48,17 +48,18 @@ export default function Hero() {
       />
 
       {/* Minimal white tint */}
-      <div className="absolute inset-0 bg-white/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+      <div className="flex md:hidden absolute top-[3.5em] left-[25%] w-64 h-44 bg-[radial-gradient(circle,#ffffff95_0%,#ffffff90_20%,#ffffff00_70%)] rounded-full pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:py-20 py-10 flex flex-col justify-center items-center text-center w-full">
 
         {/* Main Heading */}
-        <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-black mb-6 leading-[1.1] tracking-tight">
-          <span>Your</span>{" "}
+        <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight">
+          <span className="text-white">Your</span>{" "}
           <span className={`${globalStyle?.gradientText} text-shadow-white bg-clip-text text-transparent`}>Next-gen</span>
           <br />
-          <span className="text-black text-shadow-black">Tech Growth Partner</span>
+          <span className="text-white">AI Tech Growth Partner</span>
         </h1>
 
         {/* CTA Button */}
@@ -94,7 +95,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom fade - Adjusted for white theme */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-white to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-white via-white/50 to-transparent pointer-events-none" />
 
       {/* Modal */}
       <DiscussProjectForm

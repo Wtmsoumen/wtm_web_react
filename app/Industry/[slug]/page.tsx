@@ -176,9 +176,9 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
 
             {/* 1. Hero Section */}
             <ScrollReveal>
-                <section className="relative min-h-[90vh] flex items-center justify-center pt-24 overflow-hidden z-10">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-20 flex flex-col justify-center items-center text-center w-full">
-                        <motion.div 
+                <section className="relative flex items-center justify-center pt-24 overflow-hidden z-10">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 flex flex-col justify-center items-center text-center w-full">
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
@@ -190,7 +190,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                             </span>
                         </motion.div>
 
-                        <motion.h1 
+                        <motion.h1
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
@@ -200,7 +200,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                             <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">{industryData.subtitle}</span> Expert
                         </motion.h1>
 
-                        <motion.p 
+                        <motion.p
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
@@ -214,7 +214,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.6, delay: 0.6 }}
                             onClick={() => setIsModalOpen(true)}
-                            className="group relative px-10 py-5 rounded-2xl bg-linear-to-r from-[#1D74CF] via-[#BA4491] to-[#D04425]  text-white  font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-blue-500/20 overflow-hidden"
+                            className="group relative px-10 py-5 rounded-2xl bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)]  text-white  font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-blue-500/20 overflow-hidden"
                         >
                             <span className="relative z-10 flex items-center gap-3">
                                 Consult Our Experts
@@ -244,7 +244,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                             <div className="relative">
                                 <div className="absolute inset-0 bg-blue-100/30 blur-[80px] rounded-full" />
                                 <div className="relative grid grid-cols-2 gap-4">
-                                    {[1,2,3,4].map(i => (
+                                    {[1, 2, 3, 4].map(i => (
                                         <div key={i} className={`h-40 rounded-3xl border border-slate-100 bg-slate-50 shadow-sm ${i % 2 === 0 ? 'translate-y-8' : ''}`} />
                                     ))}
                                 </div>
@@ -274,7 +274,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                                     <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-8 bg-blue-50 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all text-blue-600">
                                         <srv.icon className="w-7 h-7" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-slate-900 mb-6 tracking-tight group-hover:text-blue-600 transition-colors">{srv.title}</h3>
+                                    <h3 className="text-2xl font-bold bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent mb-6 tracking-tight transition-colors">{srv.title}</h3>
                                     <p className="text-slate-600 leading-relaxed text-lg font-light">{srv.description}</p>
                                 </div>
                             </ScrollReveal>
@@ -288,7 +288,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="text-center mb-24">
                         <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6">
-                            Global <span className="bg-linear-to-r from-[#D04425] to-[#BA4491] bg-clip-text text-transparent italic">Partnership Network</span>
+                            Global <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent italic">Partnership Network</span>
                         </h2>
                     </div>
 
@@ -300,7 +300,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                                         <div className="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all">
                                             <target.icon className="w-6 h-6" />
                                         </div>
-                                        <h3 className="text-xl font-bold text-slate-900 tracking-tight group-hover:text-blue-600">{target.title}</h3>
+                                        <h3 className="text-xl font-bold bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent tracking-tight">{target.title}</h3>
                                     </div>
                                     <p className="text-slate-600 font-light leading-relaxed">
                                         {target.desc}
@@ -313,7 +313,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
             </section>
 
             {/* 5. Regulatory Compliance */}
-            <section className="py-16 relative z-10 bg-white">
+            {/* <section className="py-16 relative z-10 bg-white">
                 <div className="max-w-6xl mx-auto text-center px-4">
                     <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 uppercase tracking-tighter">
                         Institutional <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Compliance</span>
@@ -333,7 +333,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* 6. Why Choose Us */}
             <section className="py-16 relative z-10 overflow-hidden bg-slate-50/50 border-y border-slate-100">
@@ -352,7 +352,7 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                                         <reason.icon className="w-8 h-8" />
                                     </div>
                                     <div>
-                                        <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600">{reason.title}</h3>
+                                        <h3 className="text-2xl font-bold bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent mb-4 tracking-tight ">{reason.title}</h3>
                                         <p className="text-slate-600 leading-relaxed text-lg font-light">{reason.desc}</p>
                                     </div>
                                 </div>
@@ -370,8 +370,8 @@ export default function IndustryPage({ params }: { params: Promise<{ slug: strin
                     </h2>
                     <div className="flex flex-wrap justify-center gap-3">
                         {["Artificial Intelligence", "Blockchain", "Internet of Things", "Cloud Computing", "Data Analytics", "AR/VR Core", "Cybersecurity", "Next.js 15", "GraphQL"].map((tech, idx) => (
-                            <motion.div 
-                                key={idx} 
+                            <motion.div
+                                key={idx}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.3, delay: idx * 0.05 }}

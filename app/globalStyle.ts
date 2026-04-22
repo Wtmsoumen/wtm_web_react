@@ -1,5 +1,5 @@
 export const globalStyle = {
-  container: "max-w-7xl! mx-auto! px-4! sm:px-6!  !",
+  container: "max-w-7xl! mx-auto! px-4!",
   cardGlassWhyChooseUs:
     "py-10 md:py-20 px-5 md:px-10 " +
     "bg-[rgba(55,55,55,0.85)] " +

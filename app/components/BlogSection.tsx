@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { globalStyle } from "../globalStyle";
 import ScrollReveal from "./ScrollReveal";
+// import { useRouter } from "next/router";
 
 const posts = [
   {
@@ -36,12 +37,15 @@ const posts = [
 ];
 
 export default function BlogSection() {
+
+  // const router = useRouter();
+
   return (
     <ScrollReveal>
       <section className="bg-white pb-18! pt-10">
         <div className="max-w-7xl mx-auto! px-4 sm:px-6">
           {/* Header */}
-          <div 
+          <div
             className="flex flex-col items-center mb-16 gap-4"
             data-aos="fade-down"
           >
@@ -67,11 +71,12 @@ export default function BlogSection() {
           {/* Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {posts.map((post, idx) => (
-              <article
+              <Link
                 key={idx}
                 className="card-glass rounded-2xl shadow-sm hover:shadow-md overflow-hidden transition-all duration-300 cursor-pointer group"
                 data-aos="fade-up"
                 data-aos-delay={idx * 100}
+                href={`/blogs/${post.slug}`}
               >
                 {/* Card image/banner */}
                 <div className="h-40 relative overflow-hidden">
@@ -103,7 +108,7 @@ export default function BlogSection() {
                     </Link>
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
