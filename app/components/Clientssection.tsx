@@ -423,7 +423,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
     const [locCode, ...locName] = t.location.split(" ");
 
     return (
-        <div className="bg-white rounded-2xl p-5 shadow-sm border-t border-x border-gray-200 flex flex-col gap-3 scale-100 hover:scale-105 duration-300 h-full">
+        <div className="bg-white rounded-2xl p-5 shadow-sm  border-t border-x border-gray-200 flex flex-col gap-3 scale-100 hover:scale-105 duration-300 h-full">
             <div className="flex items-center justify-between">
                 <Badge label={t.category} color={categoryColors[t.category] ?? "#6366f1"} />
             </div>
