@@ -25,8 +25,8 @@ import { useRouter } from 'next/navigation'
 const industries = [
   {
     id: 1,
-    title: "Healthcare",
-    subtitle: "AI Diagnostics & Patient Care",
+    title: "Travel & Booking",
+    subtitle: "AI Travel Assistants & Dynamic Pricing",
     stat: "150+ Apps Delivered",
     image: hewe,
     gradient: "from-[#f0547a] to-[#c2185b]",
@@ -56,7 +56,7 @@ const industries = [
   },
   {
     id: 4,
-    title: "Education",
+    title: "E-Learning",
     subtitle: "Adaptive Learning AI",
     stat: "110+ Apps Delivered",
     image: ida,
