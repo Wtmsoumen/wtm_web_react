@@ -17,7 +17,7 @@ const featuredProject = {
         { value: "83", label: "Visibility" },
     ],
     cta: "View Case Study",
-    image: "/images/portfolio/easydrink.jpg",
+    image: "/images/portfolio/whitebook.jpg",
     bg: "from-[#0d1117] to-[#1a1f2e]",
 };
 
