@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
             <h2 className="text-4xl md:text-5xl font-bold text-black">
               Why <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Choose Us ?</span>
             </h2>
-            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            <p className="text-black text-lg max-w-2xl mx-auto">
               We combine technical excellence with proven processes to deliver products that succeed.
             </p>
           </div>
@@ -76,7 +76,7 @@ export default function WhyChooseUs() {
                 data-aos-delay={idx * 100}
               >
                 {/* Index badge */}
-                <div className="absolute -top-3 -left-2 w-10 h-10 rounded-full bg-gray-200 group-hover:bg-linear-to-br group-hover:from-[#1D74CF] group-hover:to-[#b33b41] flex items-center justify-center text-gray-600 group-hover:text-white text-xs font-bold shadow-md z-10 transition-all duration-300">
+                <div className="absolute -top-3 -left-2 w-10 h-10 rounded-full bg-gray-200 group-hover:bg-linear-to-br group-hover:from-[#1D74CF] group-hover:to-[#b33b41] flex items-center justify-center text-black group-hover:text-white text-xs font-bold shadow-md z-10 transition-all duration-300">
                   {String(idx + 1).padStart(2, "0")}
                 </div>
 
@@ -104,7 +104,7 @@ export default function WhyChooseUs() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-500 text-sm md:text-md leading-relaxed">
+                <p className="text-black text-sm md:text-md leading-relaxed">
                   {f.description}
                 </p>
               </div>

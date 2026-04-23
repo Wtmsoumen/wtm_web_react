@@ -20,90 +20,106 @@ interface ServicesTableProps {
 }
 
 const ServicesTable: React.FC<ServicesTableProps> = ({ activeFilter }) => {
-const [hoveredService, setHoveredService] = useState<string | null>('01');
+  const [hoveredService, setHoveredService] = useState<string | null>('01');
 
-  const services: Service[] = [
-    {
-      id: '01',
-      number: '01',
-      title: 'UI/UX DESIGN',
-      description: 'Best can be a vague word while defining our market position...',
-      image: '/images/services_pics/uiux.jpg',
-      gradientFrom: '#9B2C8C',
-      gradientTo: '#E94057',
-      category: 'UI/UX DESIGN',
-    },
-    {
-      id: '02',
-      number: '02',
-      title: 'GRAPHICS DESIGN',
-      description: 'Our goal is to generate inventive design solutions and provide...',
-      image: '/images/services_pics/graphics_design.jpg',
-      gradientFrom: '#9B2C8C',
-      gradientTo: '#E94057',
-      category: 'UI/UX DESIGN',
-    },
-    {
-      id: '03',
-      number: '03',
-      title: 'MOBILE APP DEVELOPMENT',
-      description: 'Best can be a vague word while defining our market position...',
-      image: '/images/services_pics/MOBILE APP DEVELOPMENT.jpg',
-      gradientFrom: '#9B2C8C',
-      gradientTo: '#E94057',
-      category: 'APP DEVELOPMENT',
-    },
-    {
-      id: '04',
-      number: '04',
-      title: 'WEBSITE DEVELOPMENT',
-      description: 'WordPress is known for its intuitive interface, making it easy to manage...',
-      image: '/images/services_pics/WEBSITE DEVELOPMENT.jpg',
-      gradientFrom: '#9B2C8C',
-      gradientTo: '#E94057',
-      category: 'WEB DEVELOPMENT',
-    },
-    {
-      id: '05',
-      number: '05',
-      title: 'DIGITAL MARKETING',
-      description: 'Our attention to detail in keyword research, competitive analysis...',
-      image: '/images/services_pics/DIGITAL MARKETING.jpg',
-      gradientFrom: '#9B2C8C',
-      gradientTo: '#E94057',
-      category: 'DIGITAL MARKETING',
-    },
-    {
-      id: '06',
-      number: '06',
-      title: 'SHOPIFY DEVELOPMENT',
-      description: 'We bring advanced technical expertise to Shopify website development...',
-      image: '/images/services_pics/SHOPIFY DEVELOPMENT.jpg',
-      gradientFrom: '#9B2C8C',
-      gradientTo: '#E94057',
-      category: 'WEB DEVELOPMENT',
-    },
-    {
-      id: '07',
-      number: '07',
-      title: 'CLOUD SERVICES',
-      description: 'Instead of owning physical hardware, businesses can rent access to...',
-      image: '/images/services_pics/CLOUD SERVICES.jpg',
-      gradientFrom: '#9B2C8C',
-      gradientTo: '#E94057',
-      category: 'WEB DEVELOPMENT',
-    },
-    {
-      id: '08',
-      number: '08',
-      title: 'ERP & CRM',
-      description: 'We develop custom ERP and CRM solutions suitable for streamlining...',
-      image: '/images/services_pics/ERP & CRM.jpg',
-      gradientFrom: '#9B2C8C',
-      gradientTo: '#E94057',
-      category: 'WEB DEVELOPMENT',
-    },
-  ];
+const services: Service[] = [
+  {
+    id: '01',
+    number: '01',
+    title: 'AI Solutions',
+    description: 'We Provide AI solutions that leverage machine learning, natural language processing...',
+    image: '/images/services_pics/ai_sol.jpeg',
+    gradientFrom: '#9B2C8C',
+    gradientTo: '#E94057',
+    category: 'AI SOLUTIONS',
+  },
+  {
+    id: '02',
+    number: '02',
+    title: 'WEBSITE DEVELOPMENT',
+    description: 'WordPress is known for its intuitive interface, making it easy to manage...',
+    image: '/images/services_pics/WEBSITE DEVELOPMENT.jpg',
+    gradientFrom: '#9B2C8C',
+    gradientTo: '#E94057',
+    category: 'WEB DEVELOPMENT',
+  },
+  {
+
+     id: '03',
+    number: '03',
+    title: 'MOBILE APP DEVELOPMENT',
+    description: 'Best can be a vague word while defining our market position...',
+    image: '/images/services_pics/MOBILE APP DEVELOPMENT.jpg',
+    gradientFrom: '#9B2C8C',
+    gradientTo: '#E94057',
+    category: 'APP DEVELOPMENT',
+
+   
+  },
+  {
+     id: '04',
+    number: '04',
+    title: 'GRAPHICS DESIGN',
+    description: 'Our goal is to generate inventive design solutions and provide...',
+    image: '/images/services_pics/graphics_design.jpg',
+    gradientFrom: '#9B2C8C',
+    gradientTo: '#E94057',
+    category: 'UI/UX DESIGN',
+  },
+  {
+
+       id: '05',
+    number: '05',
+    title: 'DIGITAL MARKETING',
+    description: 'Our attention to detail in keyword research, competitive analysis...',
+    image: '/images/services_pics/DIGITAL MARKETING.jpg',
+    gradientFrom: '#9B2C8C',
+    gradientTo: '#E94057',
+    category: 'DIGITAL MARKETING',
+   
+  },
+  {
+     id: '06',
+    number: '06',
+    title: 'SHOPIFY DEVELOPMENT',
+    description: 'We bring advanced technical expertise to Shopify website development...',
+    image: '/images/services_pics/SHOPIFY DEVELOPMENT.jpg',
+    gradientFrom: '#9B2C8C',
+    gradientTo: '#E94057',
+    category: 'WEB DEVELOPMENT',
+  },
+  {
+     id: '07',
+    number: '07',
+    title: 'CLOUD SERVICES',
+    description: 'Instead of owning physical hardware, businesses can rent access to...',
+    image: '/images/services_pics/CLOUD SERVICES.jpg',
+    gradientFrom: '#9B2C8C',
+    gradientTo: '#E94057',
+    category: 'WEB DEVELOPMENT',
+ 
+  },
+  {
+   id: '08',
+    number: '08',
+    title: 'ERP & CRM',
+    description: 'We develop custom ERP and CRM solutions suitable for streamlining...',
+    image: '/images/services_pics/ERP & CRM.jpg',
+    gradientFrom: '#9B2C8C',
+    gradientTo: '#E94057',
+    category: 'WEB DEVELOPMENT',
+  },
+  {
+    id: '09',
+    number: '09',
+    title: 'UI/UX DESIGN',
+    description: 'Best can be a vague word while defining our market position...',
+    image: '/images/services_pics/uiux.jpg',
+    gradientFrom: '#9B2C8C',
+    gradientTo: '#E94057',
+    category: 'UI/UX DESIGN',
+  },
+];
 
   const filteredServices = activeFilter === 'ALL'
     ? services
@@ -120,7 +136,7 @@ const [hoveredService, setHoveredService] = useState<string | null>('01');
                 key={service.id}
                 onMouseEnter={() => setHoveredService(service.id)}
                 // onMouseLeave={() => setHoveredService(null)}
-                className={`grid grid-cols-12 border-b border-gray-200 first:border-t transition-all duration-500 relative overflow-visible cursor-pointer`}
+                className={`grid grid-cols-12 border-b rounded-2xl border-gray-200 first:border-t transition-all duration-500 relative overflow-visible cursor-pointer`}
                 data-aos="fade-up"
                 data-aos-delay={index * 50}
                 style={{
@@ -161,7 +177,7 @@ const [hoveredService, setHoveredService] = useState<string | null>('01');
                       : 'opacity-0 translate-x-10 scale-95'
                       }`}
                   >
-                    <div className="w-66 h-42 overflow-hidden shadow-2xl z-10 relative">
+                    <div className="w-66 h-42 overflow-hidden rounded-2xl shadow-2xl z-10 relative">
                       <Image
                         src={service.image}
                         alt={service.title}

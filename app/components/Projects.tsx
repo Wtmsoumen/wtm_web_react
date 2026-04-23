@@ -6,66 +6,66 @@ import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
 
 const featuredProject = {
-    slug: "virtuard",
+    slug: "easydrinkbygrutas",
     tag: "Property Platform",
-    title: "Virtuard",
-    subtitle: "Property Selling Platform",
+    title: "Easy Drinks",
+    subtitle: "Liquor Selling Platform",
     description:
-        "Modern property selling platform with 360° virtual views. Built with Figma + Laravel. Mobile-friendly, scalable, and SEO-optimized.",
+        "Wine shop platform built with Laravel + Angular",
     stats: [
         { value: "75", label: "Interaction" },
         { value: "83", label: "Visibility" },
     ],
     cta: "View Case Study",
-    image: "/images/portfolio/Virtuard.jpg",
+    image: "/images/portfolio/easydrink.jpg",
     bg: "from-[#0d1117] to-[#1a1f2e]",
 };
 
 const gridProjects = [
     {
         id: 1,
-        title: "Sky Dive",
+        title: "Total IRP",
         category: "Tandem Skydiving",
         industry: "Adventure",
-        description: "High-performance WordPress website with immersive UI/UX. Delivered 72% traffic growth.",
-        image: "/images/portfolio/skydive.jpg",
+       description: "Cross-platform mobile app built using React Native with immersive UI/UX and real-time booking features. Achieved 72% increase in user engagement.",
+        image: "/images/portfolio/totalirp.jpg",
         interaction: 75,
         visibility: 83,
         stats: [
             "75",
             "83",
         ],
-        slug: "sky-dive",
+        slug: "total-irp",
     },
     {
         id: 2,
-        title: "Re-Energi",
+        title: "Remailinum",
         category: "Sustainable Energy",
         industry: "Energy",
-        description: "SEO-optimized WordPress site with modern UI reflecting eco-friendly mission.",
-        image: "/images/portfolio/reenergi.jpg",
+        description: "User-friendly mobile app built using React Native with intuitive navigation and optimized performance for psychological assessments and tracking.",
+        image: "/images/portfolio/rimalinum.jpg",
         interaction: 76,
         visibility: 88,
         stats: [
             "76",
             "88",
         ],
-        slug: "re-energi",
+        slug: "rimalinum",
     },
     {
         id: 3,
-        title: "Neuro Apply",
+        title: "ABC Learnings",
         category: "Psychological Assessment",
         industry: "Healthcare",
-        description: "Clean, intuitive WordPress platform with strong SEO performance.",
-        image: "/images/portfolio/neuroapply.jpg",
+           description: "Scalable mobile application developed with Flutter, featuring modern UI and performance optimization aligned with eco-friendly solutions.",
+        image: "/images/portfolio/abclearnings.jpg",
         interaction: 75,
         visibility: 89,
         stats: [
             "75",
             "89",
         ],
-        slug: "neuro-apply",
+        slug: "abc-learnings",
     },
     {
         id: 4,
@@ -84,26 +84,26 @@ const gridProjects = [
     },
     {
         id: 5,
-        title: "Canadian Flyers International College",
+        title: "Re-Energi",
         category: "Flight Training",
         industry: "Aviation",
-        description: "Professional aviation training website with 80%+ traffic growth.",
-        image: "/images/portfolio/canadianflyers.jpg",
+        description: "SEO-optimized WordPress site with modern UI reflecting eco-friendly mission.",
+        image: "/images/portfolio/reenergi.jpg",
         interaction: 82,
         visibility: 93,
         stats: [
             "82",
             "93",
         ],
-        slug: "canadian-flyers",
+        slug: "re-energi",
     },
     {
         id: 6,
         title: "Brigient",
         category: "Cybersecurity",
         industry: "Technology",
-        description: "Secure and performance-driven website with modern UI/UX.",
-        image: "/images/portfolio/brigient.jpg",
+        description: "High-performance WordPress website with immersive UI/UX. Delivered 72% traffic growth",
+        image: "/images/portfolio/skydive.jpg",
         interaction: 79,
         visibility: 86,
         stats: [
@@ -246,8 +246,8 @@ export default function PortfolioSection() {
                                     <div className="p-3 pt-2 z-11">
                                         <StatsBadges stats={project.stats} />
                                         <div className="mt-1.5">
-                                            <div className="text-white text-sm font-bold leading-tight">{project.title}</div>
-                                            <div className="text-white/40 text-[11px] mt-0.5">{project.description}</div>
+                                            <div className="text-white text-md font-bold leading-tight">{project.title}</div>
+                                            <div className="text-white/40 text-[14px] mt-0.5">{project.description}</div>
                                         </div>
                                     </div>
                                 </Link>

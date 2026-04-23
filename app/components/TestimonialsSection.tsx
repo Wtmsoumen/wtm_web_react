@@ -202,22 +202,43 @@ export default function ServicesTestimonialsSection() {
                             // data-aos-delay={400}
                             />
 
-                            {/* CTA Block */}
-                            <div
-                                className="rounded-2xl bg-[#0d1b3e]/80 border border-white/10 p-7 flex flex-col justify-between"
-                                data-aos="fade-up"
-                                data-aos-delay={500}
-                            >
-                                <p className="text-white/60 text-sm leading-relaxed">
-                                    From social media management to search engine optimization, we provide a full suite of services to help your business succeed.
-                                </p>
-                                {/* <button
-                                    className="mt-6 self-start px-6 py-3 rounded-full border-2 text-white text-sm font-semibold tracking-wide transition-all hover:bg-white/10"
-                                    style={{ borderColor: "#E91E8C", color: "#E91E8C" }}
-                                >
-                                    Discover More
-                                </button> */}
-                            </div>
+                      {/* CTA Block */}
+<div
+  className="rounded-2xl bg-[#0d1b3e]/80 border border-white/10 p-7 flex flex-col justify-between gap-5"
+  data-aos="fade-up"
+  data-aos-delay={500}
+>
+  <div className="flex items-center gap-2">
+    <span className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-400 text-xs font-semibold tracking-wide">
+      AI & SaaS
+    </span>
+    <span className="px-3 py-1 rounded-full bg-purple-400/10 border border-purple-400/30 text-purple-400 text-xs font-semibold tracking-wide">
+      Next-Gen Tech
+    </span>
+  </div>
+
+  <h3 className="text-white text-lg font-bold leading-snug">
+    Intelligent Solutions for <span className="text-cyan-400">Modern Businesses</span>
+  </h3>
+
+  <p className="text-white/50 text-sm leading-relaxed">
+    We build AI-powered SaaS platforms that automate workflows, predict outcomes, and scale effortlessly — helping your business stay ahead of the curve.
+  </p>
+
+  <div className="flex flex-col gap-2">
+    {[
+      "AI & ML Model Integration",
+      "Custom SaaS Architecture",
+      "Automation & Smart Workflows",
+      "Real-time Analytics Dashboards",
+    ].map((item, i) => (
+      <div key={i} className="flex items-center gap-2 text-white/70 text-sm">
+        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+        {item}
+      </div>
+    ))}
+  </div>
+</div>
                         </div>
                     </div>
                 </section>

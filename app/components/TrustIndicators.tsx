@@ -175,7 +175,7 @@ export default function TrustIndicators() {
                   className="flex flex-col items-center justify-between p-6 transition-all duration-300"
                 >
                   {/* Logo */}
-                  <div className="w-full flex justify-center items-center h-16">
+                  <div className="w-full flex justify-center items-center h-12">
                     <img
                       src={r.image}
                       alt={r.platform}

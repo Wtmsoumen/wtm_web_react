@@ -90,7 +90,7 @@ export default function BlogSection() {
 
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-sm px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/20 text-purple-400">
+                    <span className="text-sm px-3 py-1 rounded-full border border-purple-500/30 bg-purple-500/20 text-purple-600">
                       {post.category}
                     </span>
                     <span className="text-black text-xs">{post.readTime}</span>
@@ -101,12 +101,15 @@ export default function BlogSection() {
                   <p className="text-black text-sm leading-relaxed mb-4 line-clamp-2">
                     {post.excerpt}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-black text-xs">{post.date}</span>
-                    <Link href={`/blogs/${post.slug}`} className="text-purple-400 text-sm font-medium hover:text-pink-400 transition-colors">
-                      Read More →
-                    </Link>
-                  </div>
+                 <div className="flex items-center justify-between">
+  <span className="text-black text-xs">{post.date}</span>
+  <Link
+    href={`/blogs/${post.slug}`}
+    className="text-xs font-semibold px-4 py-1.5 rounded-full border border-purple-400/40 bg-purple-400/10 text-purple-400 hover:bg-purple-400 hover:text-white transition-all duration-300"
+  >
+    Read More →
+  </Link>
+</div>
                 </div>
               </Link>
             ))}

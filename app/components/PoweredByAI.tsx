@@ -126,7 +126,7 @@ export default function PoweredByAI() {
               </h2>
 
               {/* Subtitle */}
-              <p className="text-gray-500 text-lg leading-relaxed max-w-lg">
+              <p className="text-black text-lg leading-relaxed max-w-lg">
                 Launch your on-demand business with our battle-tested, AI-powered
                 solutions trusted by startups and enterprises worldwide
               </p>
@@ -171,7 +171,7 @@ export default function PoweredByAI() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 text-md leading-relaxed line-clamp-2">
+                  <p className="text-black text-md leading-relaxed line-clamp-2">
                     {item.description}
                   </p>
 

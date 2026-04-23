@@ -226,7 +226,7 @@ const DigitalMarketingSection = () => {
             </div>
 
             <div className="flex flex-col gap-6" data-aos="fade-left">
-              <p className="text-gray-500 text-lg leading-relaxed max-w-md">
+              <p className="text-black text-lg leading-relaxed max-w-md">
                 We blend strategy, creative, and ruthless data analysis to turn your marketing into a growth engine — not an expense.
               </p>
               <Link href={`/services/digital-marketing`}>

@@ -36,8 +36,8 @@ const industries = [
   },
   {
     id: 2,
-    title: "FinTech",
-    subtitle: "Smart Fraud Detection",
+    title: "Restaurant",
+    subtitle: "Smart Food Ordering",
     stat: "200+ Apps Delivered",
     image: fapp,
     gradient: "from-[#2bbfa4] to-[#1a8c76]",

@@ -48,8 +48,8 @@ export default function Hero() {
       />
 
       {/* Minimal white tint */}
-      <div className="absolute inset-0 bg-black/10 pointer-events-none" />
-      <div className="flex md:hidden absolute top-[3.5em] left-[25%] w-64 h-44 bg-[radial-gradient(circle,#ffffff95_0%,#ffffff90_20%,#ffffff00_70%)] rounded-full pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+      <div className="flex md:hidden absolute top-[3.5em] left-[25%] w-64 h-44 bg-[radial-gradient(circle,#ffffff95_0%,#ffffff90_20%,#ffffff00_70%)] rounded-full pointer-events-none" /> */}
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:py-20 py-10 flex flex-col justify-center items-center text-center w-full">
@@ -95,7 +95,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom fade - Adjusted for white theme */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-white via-white/50 to-transparent pointer-events-none" />
+      {/* <div className="absolute bottom-0 left-0 right-0 h-24 bg-linear-to-t from-white via-white/50 to-transparent pointer-events-none" /> */}
 
       {/* Modal */}
       <DiscussProjectForm

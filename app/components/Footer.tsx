@@ -107,7 +107,10 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-[#040912] border-t border-white/5">
+   <footer id="footer" className="bg-[#0a1529] border-t border-white/5 relative overflow-hidden">
+     {/* Gradient Glows - like screenshot */}
+ <div className="pointer-events-none absolute bottom-0 right-1 w-[800px] h-[600px] rounded-full bg-purple-700/30 blur-[120px] translate-x-1/3 translate-y-1/4" />
+{/* <div className="pointer-events-none absolute bottom-0 right-1/4 w-[500px] h-[400px] rounded-full bg-pink-700/25 blur-[120px] translate-y-1/3" /> */}
       {/* CTA Banner */}
       {/* <div className="border-b border-white/5">
         <div className="max-w-7xl mx-auto! px-4 sm:px-6   py-16">

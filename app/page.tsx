@@ -38,9 +38,10 @@ export default function Home() {
 
 
       {/* <ScrollReveal><OurExpertise /></ScrollReveal> */}
-      <ScrollReveal><Industries /></ScrollReveal>
+      {/* <ScrollReveal><Industries /></ScrollReveal> */}
+       <ScrollReveal><ClientsSection /></ScrollReveal>
       <ScrollReveal><ServicesTestimonialsSection /></ScrollReveal>
-      <ScrollReveal><ClientsSection /></ScrollReveal>
+     
       <ScrollReveal><FAQ /></ScrollReveal>
       <ScrollReveal><FreeConsultation /></ScrollReveal>
 

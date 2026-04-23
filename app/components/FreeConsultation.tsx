@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import girl from "../../public/images/Freeconsultation_left_girl.webp"
-import { Facebook, Instagram, Twitter, Linkedin, Phone, ShieldCheck, Target, Users, RefreshCw, HandCoins } from "lucide-react";
+import { Facebook, Instagram, Twitter, Linkedin, Phone, ShieldCheck, Target, Users, RefreshCw, HandCoins, FileText, BarChart2, Monitor, ChevronRight, } from "lucide-react";
 
 const FreeConsultation = () => {
     return (
@@ -22,24 +22,39 @@ const FreeConsultation = () => {
                     awareness, lead generation, and conversions.
                 </p>
 
+
                 {/* Points */}
-                <div className="flex flex-wrap gap-4 mb-8">
+                <div className="flex flex-col gap-3 mb-8">
                     {[
-                        { icon: ShieldCheck, text: "Uphold confidentiality through an NDA." },
-                        { icon: Target, text: "Grasp the essence of the business." },
-                        { icon: Users, text: "Work closely with leadership." },
-                        { icon: RefreshCw, text: "Deliver consistent updates." },
-                        { icon: HandCoins, text: "Provide aggressive pricing." }
+                        { icon: ShieldCheck, text: "Confidentiality with NDA" },
+                        { icon: FileText, text: "Understanding the core business." },
+                        { icon: Users, text: "Brainstorm with our leaders" },
+                        { icon: BarChart2, text: "Daily & Weekly Updates" },
+                        { icon: Monitor, text: "Super competitive pricing" }
                     ].map((feature, idx) => {
                         const Icon = feature.icon;
                         return (
-                            <div title={feature.text} key={idx} className="flex items-center gap-4 group shadow-sm w-fit rounded-lg scaale-100 hover:scaale-110" data-aos="fade-right" data-aos-delay={idx * 100}>
-                                <div className="w-35 h-35 shrink-0 rounded-lg bg-gray-50 flex items-center justify-center border border-gray-100 group-hover:bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] group-hover:text-white transition-all duration-300">
-                                    <Icon size={35} strokeWidth={1.5} className="text-gray-600 group-hover:text-white" />
+                            <div
+                                key={idx}
+                                className="flex items-center gap-4 group px-4 py-3 rounded-xl border border-transparent hover:border-cyan-400/20 hover:bg-cyan-400/5 transition-all duration-300 cursor-default"
+                                data-aos="fade-right"
+                                data-aos-delay={idx * 100}
+                            >
+                                {/* Icon Box */}
+                                <div className="w-12 h-12 p-2  shrink-0 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-100 group-hover:scale-110 group-hover:shadow-cyan-200 transition-all duration-300">
+                                    <Icon size={35} strokeWidth={1.5} className="text-cyan-500" />
                                 </div>
-                                {/* <span className="text-gray-800 text-lg md:text-base font-medium group-hover:text-black transition-colors">
+
+                                {/* Text */}
+                                <span className="text-gray-600 text-md font-medium group-hover:text-gray-900 transition-colors duration-300">
                                     {feature.text}
-                                </span> */}
+                                </span>
+
+                                {/* Trailing arrow — appears on hover */}
+                                {/* <ChevronRight
+          size={15}
+          className="ml-auto text-cyan-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+        /> */}
                             </div>
                         );
                     })}
