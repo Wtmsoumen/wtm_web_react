@@ -20,7 +20,7 @@ interface ServicesTableProps {
 }
 
 const ServicesTable: React.FC<ServicesTableProps> = ({ activeFilter }) => {
-  const [hoveredService, setHoveredService] = useState<string | null>(null);
+const [hoveredService, setHoveredService] = useState<string | null>('01');
 
   const services: Service[] = [
     {
@@ -119,7 +119,7 @@ const ServicesTable: React.FC<ServicesTableProps> = ({ activeFilter }) => {
               <div
                 key={service.id}
                 onMouseEnter={() => setHoveredService(service.id)}
-                onMouseLeave={() => setHoveredService(null)}
+                // onMouseLeave={() => setHoveredService(null)}
                 className={`grid grid-cols-12 border-b border-gray-200 first:border-t transition-all duration-500 relative overflow-visible cursor-pointer`}
                 data-aos="fade-up"
                 data-aos-delay={index * 50}
@@ -147,7 +147,7 @@ const ServicesTable: React.FC<ServicesTableProps> = ({ activeFilter }) => {
 
                 {/* Description */}
                 <div className="hidden md:flex md:col-span-5 items-center py-6 md:py-10 px-4">
-                  <p className={`text-sm md:text-base transition-colors duration-300 ${hoveredService === service.id ? 'text-white' : 'text-gray-700'
+                  <p className={`text-sm md:text-base transition-colors duration-300 ${hoveredService === service.id ? 'text-white' : 'text-black'
                     }`}>
                     {service.description}
                   </p>

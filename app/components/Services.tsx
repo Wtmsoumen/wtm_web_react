@@ -109,7 +109,7 @@ export default function Services() {
             </h2>
 
             {/* Description */}
-            <p className="text-gray-500 text-lg md:text-xl max-w-2xl leading-relaxed">
+            <p className="text-black text-lg md:text-xl max-w-2xl leading-relaxed">
               Comprehensive technology services to build, scale, and transform your digital products.
             </p>
           </div>
@@ -133,10 +133,10 @@ export default function Services() {
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h3 className="text-gray-900 font-bold text-xl mb-3 group-hover:bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text group-hover:text-transparent transition-colors">
+                  <h3 className="text-black font-bold text-xl mb-3 group-hover:bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text group-hover:text-transparent transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6">
+                  <p className="text-black text-sm leading-relaxed mb-6">
                     {service.description}
                   </p>
 

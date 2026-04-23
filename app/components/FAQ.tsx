@@ -98,11 +98,11 @@ const FAQ = () => {
                     className={`w-full flex items-center justify-between px-6 py-5 text-left transition-all duration-300
                                       ${isOpen
                         ? "bg-gradient-to-r from-[#1E7FF8] via-[#0E8DF6] via-[#AB82E0] to-[#E75061] text-white"
-                        : "bg-white text-gray-800"
+                        : "bg-white text-black"
                       }`}
                   >
                     <span
-                      className={`text-[15px] font-semibold ${isOpen ? 'text-white' : 'text-gray-800'
+                      className={`text-[15px] font-semibold ${isOpen ? 'text-white' : 'text-black'
                         }`}
                     >
                       {faq.id}.{faq.question}
@@ -133,7 +133,7 @@ const FAQ = () => {
                       ) : (
                         // Plus icon when closed — gray colored
                         <svg
-                          className="w-4 h-4 text-gray-500"
+                          className="w-4 h-4 text-black"
                           fill="none"
                           stroke="currentColor"
                           viewBox="0 0 24 24"

@@ -159,7 +159,7 @@ export default function AboutPage() {
                   </span>
                 </h1>
 
-                <p className="text-gray-500 text-base md:text-lg leading-relaxed">
+                <p className="text-black text-base md:text-lg leading-relaxed">
                   With <strong className="text-black">12+ years</strong> of experience in the industry we have established{" "}
                   <strong className="text-black">3500+ robust websites and applications</strong> and gathered{" "}
                   <strong className="text-black">40+ exceptional brains</strong> working on our projects 24×7. We take pride in being trusted by{" "}
@@ -187,7 +187,7 @@ export default function AboutPage() {
                         <Icon className="w-4 h-4" style={{ color }} />
                         <span className="text-xs font-bold tracking-widest uppercase" style={{ color }}>{label}</span>
                       </div>
-                      <p className="text-gray-500 text-sm leading-relaxed">{text}</p>
+                      <p className="text-black text-sm leading-relaxed">{text}</p>
                     </div>
                   ))}
                 </div>
@@ -261,7 +261,7 @@ export default function AboutPage() {
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-black">{title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
+                  <p className="text-black text-sm leading-relaxed">{description}</p>
                 </div>
               ))}
             </div>
@@ -351,7 +351,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-5xl font-black text-black leading-tight">
               Let&apos;s Build Something <span className="bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent">Amazing Together</span>
             </h2>
-            <p className="text-gray-500 text-lg max-w-xl leading-relaxed">
+            <p className="text-black text-lg max-w-xl leading-relaxed">
               Whether you&apos;re a startup or an enterprise, we have the expertise and passion to bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
