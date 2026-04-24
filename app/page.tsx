@@ -21,13 +21,17 @@ import FreeConsultation from "./components/FreeConsultation";
 import PortfolioSection from "./components/Projects";
 import DigitalMarketingSection from "./components/DigitalMarketingSection";
 import ScrollReveal from "./components/ScrollReveal";
+import VideoTestimonials from "./components/VideoTestimonials";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col ">
       <Hero />
+
+
       <ScrollReveal><Services /></ScrollReveal>
       <ScrollReveal><OurService /></ScrollReveal>
+      <ScrollReveal><VideoTestimonials /></ScrollReveal>
       <ScrollReveal><DigitalMarketingSection /></ScrollReveal>
       <ScrollReveal><IndustriesUpper /></ScrollReveal>
       <ScrollReveal><PoweredByAI /></ScrollReveal>
@@ -39,9 +43,9 @@ export default function Home() {
 
       {/* <ScrollReveal><OurExpertise /></ScrollReveal> */}
       {/* <ScrollReveal><Industries /></ScrollReveal> */}
-       <ScrollReveal><ClientsSection /></ScrollReveal>
+      <ScrollReveal><ClientsSection /></ScrollReveal>
       <ScrollReveal><ServicesTestimonialsSection /></ScrollReveal>
-     
+
       <ScrollReveal><FAQ /></ScrollReveal>
       <ScrollReveal><FreeConsultation /></ScrollReveal>
 

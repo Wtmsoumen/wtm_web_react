@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 import ScrollReveal from "./ScrollReveal";
+import { useState, useRef } from "react";
 
 const techIcons: Record<string, string> = {
   "React Native": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
@@ -22,69 +23,105 @@ const techIcons: Record<string, string> = {
 };
 
 const featuredProject = {
-  slug: "accoun-tax",
-  tag: "Business Management Platform",
-  title: "AccounTax",
-  subtitle: "Smart Accounting & Retail Management Solution",
-  description:
-    "A full-stack business platform built using Laravel and Angular, designed to manage retail operations, inventory, billing, and financial records in one place. Provides seamless reporting, real-time data tracking, and a scalable architecture for growing businesses.",
+  slug: "timble",
+  tag: "Adventure",
+  title: "Timble",
+  subtitle: "Modern Dating & Matchmaking Platform",
+description:
+  "Cross-platform mobile app built using React Native, designed to create meaningful connections through smart matching and intuitive UI/UX. Features real-time chat, profile discovery, and seamless interactions, delivering a smooth and engaging dating experience for modern users.",
   stats: [
     { value: "75", label: "Interaction" },
     { value: "83", label: "Visibility" },
   ],
   cta: "View Case Study",
-  image: "/images/portfolio/accountaxaustralia.jpg",
+  image: "/images/portfolio/timble_app.jpeg",
   bg: "from-[#0d1117] to-[#1a1f2e]",
-  tech: ["Laravel", "Angular", "MySQL"],
+  tech: ["React Native", "Node.js", "Firebase"],
 };
 
 const gridProjects = [
   {
-    id: 1,
-    title: "Timble",
-    category: "Tandem Skydiving",
-    industry: "Adventure",
-    description: "Cross-platform mobile app built using React Native with immersive UI/UX and real-time booking features. Achieved 72% increase in user engagement.",
-    image: "/images/portfolio/timble_app.jpeg",
+    id: 0,
+    title: "Easy Drinks",
+    category: "Business Management Platform",
+    industry: "Finance",
+    description: "Full-stack business platform built using Laravel and Angular to manage retail operations, inventory, billing, and financial records in one place.",
+    images: [
+      "/images/portfolio/easy_drinks/ED1.jpg",
+      "/images/portfolio/easy_drinks/ED2.jpg",
+      "/images/portfolio/easy_drinks/ED3.jpg",
+    ],
     interaction: 75,
     visibility: 83,
     stats: ["75", "83"],
-    slug: "total-irp",
-    tech: ["React Native", "Node.js", "Firebase"],
+    slug: "easydrinkbygrutas",
+    tech: ["Laravel", "Angular", "MySQL"],
   },
   {
-    id: 2,
-    title: "Paper Track",
+    id: 1,
+    title: "Paper Track Mobile App",
     category: "Sustainable Energy",
     industry: "Energy",
     description: "User-friendly mobile app built using React Native with intuitive navigation and optimized performance for psychological assessments and tracking.",
-    image: "/images/portfolio/paper_track.jpeg",
+    images: [
+      "/images/portfolio/paper_track.jpeg",
+      "/images/portfolio/paper_track.jpeg",
+      "/images/portfolio/paper_track.jpeg",
+    ],
     interaction: 76,
     visibility: 88,
     stats: ["76", "88"],
-    slug: "rimalinum",
+    slug: "paper-track",
     tech: ["React Native", "Laravel", "MySQL"],
   },
-  {
-    id: 3,
-    title: "ABC Learnings",
+
+  // {
+  //   id: 2,
+  //   title: "ABC Learnings",
+  //   category: "Psychological Assessment",
+  //   industry: "Healthcare",
+  //   description: "Scalable mobile application developed with Flutter, featuring modern UI and performance optimization aligned with eco-friendly solutions.",
+  //   images: [
+  //     "/images/portfolio/abclearnings.jpg",
+  //     "/images/portfolio/abclearnings.jpg",
+  //     "/images/portfolio/abclearnings.jpg",
+  //   ],
+  //   interaction: 75,
+  //   visibility: 89,
+  //   stats: ["75", "89"],
+  //   slug: "abc-learnings",
+  //   tech: ["Flutter", "Dart", "Firebase"],
+  // },
+  
+    {
+    id: 2,
+    title: "WhiteBook",
     category: "Psychological Assessment",
     industry: "Healthcare",
     description: "Scalable mobile application developed with Flutter, featuring modern UI and performance optimization aligned with eco-friendly solutions.",
-    image: "/images/portfolio/abclearnings.jpg",
+    images: [
+      "/images/portfolio/whitebook/WB1.jpg",
+      "/images/portfolio/whitebook/WB2.jpg",
+      "/images/portfolio/whitebook/WB3.jpg",
+    ],
     interaction: 75,
     visibility: 89,
     stats: ["75", "89"],
-    slug: "abc-learnings",
+    slug: "whitebook-world",
     tech: ["Flutter", "Dart", "Firebase"],
   },
+
   {
-    id: 4,
+    id: 3,
     title: "Enigma Psychometry",
     category: "Online Education",
     industry: "Education",
     description: "Modern e-learning website with responsive design and SEO optimization.",
-    image: "/images/portfolio/enigma.jpg",
+    images: [
+      "/images/portfolio/enigma.jpg",
+      "/images/portfolio/enigma.jpg",
+      "/images/portfolio/enigma.jpg",
+    ],
     interaction: 70,
     visibility: 89,
     stats: ["70", "89"],
@@ -92,12 +129,16 @@ const gridProjects = [
     tech: ["WordPress", "PHP", "MySQL"],
   },
   {
-    id: 5,
+    id: 4,
     title: "Re-Energi",
     category: "Flight Training",
     industry: "Aviation",
     description: "SEO-optimized WordPress site with modern UI reflecting eco-friendly mission.",
-    image: "/images/portfolio/reenergi.jpg",
+    images: [
+      "/images/portfolio/reenergi.jpg",
+      "/images/portfolio/reenergi.jpg",
+      "/images/portfolio/reenergi.jpg",
+    ],
     interaction: 82,
     visibility: 93,
     stats: ["82", "93"],
@@ -105,16 +146,20 @@ const gridProjects = [
     tech: ["WordPress", "PHP", "JavaScript"],
   },
   {
-    id: 6,
-    title: "Brigient",
+    id: 5,
+    title: "Sky-Maldives",
     category: "Cybersecurity",
     industry: "Technology",
     description: "High-performance WordPress website with immersive UI/UX. Delivered 72% traffic growth",
-    image: "/images/portfolio/skydive.jpg",
+    images: [
+      "/images/portfolio/skydive.jpg",
+      "/images/portfolio/skydive.jpg",
+      "/images/portfolio/skydive.jpg",
+    ],
     interaction: 79,
     visibility: 86,
     stats: ["79", "86"],
-    slug: "brigient",
+    slug: "sky-dive",
     tech: ["WordPress", "PHP", "JavaScript"],
   },
 ];
@@ -150,9 +195,9 @@ function TechLogos({ tech }: { tech: string[] }) {
           <div
             key={t}
             title={t}
-            className="w-5 h-5 rounded-full bg-white/10 p-0.5 flex items-center justify-center border border-white/10 hover:border-white/30 transition-all"
+            className="w-7 h-7 rounded-full bg-white/10 p-0.5 flex items-center justify-center border border-white/10 hover:border-white/30 transition-all"
           >
-            <img src={techIcons[t]} alt={t} width={14} height={14} className="w-full h-full object-contain" />
+            <img src={techIcons[t]} alt={t} width={18} height={18} className="w-full h-full object-contain" />
           </div>
         ) : null
       )}
@@ -161,7 +206,29 @@ function TechLogos({ tech }: { tech: string[] }) {
 }
 
 export default function PortfolioSection() {
-  const [hovered, setHovered] = useState<number | null>(null);
+
+    const [hovered, setHovered] = useState<number | null>(null);
+  const [activeImageIndex, setActiveImageIndex] = useState<Record<number, number>>({});
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+ 
+
+
+
+  const handleMouseEnter = (i: number) => {
+    setHovered(i);
+    intervalRef.current = setInterval(() => {
+      setActiveImageIndex((prev) => ({
+        ...prev,
+        [i]: ((prev[i] ?? 0) + 1) % gridProjects[i].images.length,
+      }));
+    }, 800);
+  };
+
+  const handleMouseLeave = (i: number) => {
+    setHovered(null);
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    setActiveImageIndex((prev) => ({ ...prev, [i]: 0 }));
+  };
 
   return (
     <ScrollReveal>
@@ -206,7 +273,7 @@ export default function PortfolioSection() {
                     alt={featuredProject.title}
                     width={1920}
                     height={1080}
-                    className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-300"
+                    className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-300 rounded-2xl"
                   />
                 </div>
 
@@ -238,40 +305,64 @@ export default function PortfolioSection() {
           </div>
 
           {/* Grid Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-5">
-            {gridProjects.map((project, i) => (
-              <div key={i} data-aos="fade-up" data-aos-delay={i * 100}>
-                <Link
-                  href={`/portfolio/${project.slug}`}
-                  onMouseEnter={() => setHovered(i)}
-                  onMouseLeave={() => setHovered(null)}
-                  className={`group relative rounded-2xl overflow-hidden border border-white/10 p-0 flex flex-col transition-transform duration-200 ${hovered === i ? "scale-[1.02] border-white/20" : ""} cursor-pointer`}
-                  style={{ minHeight: 160 }}
-                >
-                  {/* Image area */}
-                  <div className="relative w-full flex-1 min-h-[90px] flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 opacity-30 bg-linear-to-br from-white/5 to-transparent" />
-                    <span className="text-white/10 text-[10px] font-mono select-none z-10">
-                      <Image src={project?.image} alt={project?.title} width={1920} height={1080} />
-                    </span>
-                    <div className="absolute top-0 w-full h-full group-hover:bg-linear-to-t from-black/60 via-blue-black/40 to-blue-800/20 z-10" />
-                  </div>
+           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-5">
+            {gridProjects.map((project, i) => {
+              const currentImg = project.images[activeImageIndex[i] ?? 0];
+              return (
+                <div key={i} data-aos="fade-up" data-aos-delay={i * 100}>
+                  <Link
+                    href={`/portfolio/${project.slug}`}
+                    onMouseEnter={() => handleMouseEnter(i)}
+                    onMouseLeave={() => handleMouseLeave(i)}
+                    className={`group relative rounded-2xl overflow-hidden border border-white/10 p-0 flex flex-col transition-transform duration-200 ${hovered === i ? "scale-[1.02] border-white/20" : ""} cursor-pointer`}
+                    style={{ minHeight: 160 }}
+                  >
+                    {/* Image area */}
+                    <div className="relative w-full flex-1 min-h-[90px] flex items-center justify-center overflow-hidden">
+                      <div className="absolute inset-0 opacity-30 bg-linear-to-br from-white/5 to-transparent" />
+                      <span className="text-white/10 text-[10px] font-mono select-none z-10 w-full">
+                        <Image
+                          src={currentImg}
+                          alt={project?.title}
+                          width={1920}
+                          height={1080}
+                          className="w-full h-full object-cover transition-opacity duration-300"
+                        />
+                      </span>
+                      <div className="absolute top-0 w-full h-full group-hover:bg-linear-to-t from-black/60 via-blue-black/40 to-blue-800/20 z-10" />
 
-                  {/* Bottom info */}
-                  <div className="p-3 pt-2 z-11">
-                    <StatsBadges stats={project.stats} />
-                    <div className="mt-1.5">
-                      {/* Title + tech logos on same row */}
-                      <div className="flex items-center justify-between gap-2">
-                        <div className="text-white text-md font-bold leading-tight truncate">{project.title}</div>
-                        <TechLogos tech={project.tech} />
-                      </div>
-                      <div className="text-white/40 text-[14px] mt-0.5">{project.description}</div>
+                      {/* Dot indicators */}
+                      {hovered === i && project.images.length > 1 && (
+                        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 z-20">
+                          {project.images.map((_, dotIdx) => (
+                            <span
+                              key={dotIdx}
+                              className={`block rounded-full transition-all duration-300 ${
+                                (activeImageIndex[i] ?? 0) === dotIdx
+                                  ? "w-4 h-1.5 bg-white"
+                                  : "w-1.5 h-1.5 bg-white/40"
+                              }`}
+                            />
+                          ))}
+                        </div>
+                      )}
                     </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
+
+                    {/* Bottom info — unchanged */}
+                    <div className="p-3 pt-2 z-11">
+                      <StatsBadges stats={project.stats} />
+                      <div className="mt-1.5">
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="text-white text-md font-bold leading-tight truncate">{project.title}</div>
+                          <TechLogos tech={project.tech} />
+                        </div>
+                        <div className="text-white/40 text-[14px] mt-0.5">{project.description}</div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
           </div>
 
           {/* CTA Button */}

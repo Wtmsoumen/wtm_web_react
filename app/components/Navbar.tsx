@@ -322,6 +322,16 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    if (!formOpen) {
+      const delay = Math.floor(Math.random() * 2000) + 10000; // Random delay between 10-12 seconds
+      const timer = setTimeout(() => {
+        setFormOpen(true);
+      }, delay);
+      return () => clearTimeout(timer);
+    }
+  }, [formOpen]);
+
+  useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (megaMenuRef.current && !megaMenuRef.current.contains(event.target as Node)) {
         setOpenMegaMenu({});

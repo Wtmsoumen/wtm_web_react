@@ -62,7 +62,7 @@ const offices = [
   { country: "UK", city: "London", flag: "🇬🇧" },
   { country: "UAE", city: "Dubai", flag: "🇦🇪" },
   { country: "Australia", city: "Sydney", flag: "🇦🇺" },
-  { country: "Netherlands", city: "Amsterdam", flag: "🇳🇱" },
+  { country: "Irelands", city: "Amsterdam", flag: "IE" },
   { country: "Poland", city: "Warsaw", flag: "🇵🇱" },
 ];
 
@@ -107,10 +107,10 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-   <footer id="footer" className="bg-[#0a1529] border-t border-white/5 relative overflow-hidden">
-     {/* Gradient Glows - like screenshot */}
- <div className="pointer-events-none absolute bottom-0 right-1 w-[800px] h-[600px] rounded-full bg-purple-700/30 blur-[120px] translate-x-1/3 translate-y-1/4" />
-{/* <div className="pointer-events-none absolute bottom-0 right-1/4 w-[500px] h-[400px] rounded-full bg-pink-700/25 blur-[120px] translate-y-1/3" /> */}
+    <footer id="footer" className="bg-[#0a1529] border-t border-white/5 relative overflow-hidden">
+      {/* Gradient Glows - like screenshot */}
+      <div className="pointer-events-none absolute bottom-0 right-1 w-[800px] h-[600px] rounded-full bg-purple-700/30 blur-[120px] translate-x-1/3 translate-y-1/4" />
+      {/* <div className="pointer-events-none absolute bottom-0 right-1/4 w-[500px] h-[400px] rounded-full bg-pink-700/25 blur-[120px] translate-y-1/3" /> */}
       {/* CTA Banner */}
       {/* <div className="border-b border-white/5">
         <div className="max-w-7xl mx-auto! px-4 sm:px-6   py-16">
@@ -207,7 +207,7 @@ export default function Footer() {
           ))}
         </motion.div>
         {/* Social */}
-        <div className="flex items-center justify-between mt-8">
+        <div className=" relative flex items-center justify-between mt-8">
           <div className="flex gap-3">
             {socialLinks.map((s) => (
               <a
@@ -220,6 +220,23 @@ export default function Footer() {
                 {s.icon}
               </a>
             ))}
+
+            {/* Motto — perfectly centered regardless of side widths */}
+            <div className="absolute left-1/2 -translate-x-1/2 text-center bottom-0.5">
+              <p className="text-transparent bg-clip-text bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] font-extrabold text-4xl tracking-wider leading-snug">
+                AI Driven-{" "}
+                <span className="text-white">
+                  Design-
+                </span>{" "}
+                
+                Deliver.
+              </p>
+              {/* <p className="text-gray-400 text-xs leading-relaxed mt-1 max-w-[220px] mx-auto">
+                From first pixel to final deployment — we build products that scale.
+              </p> */}
+            </div>
+
+          
           </div>
 
           <div>
@@ -234,6 +251,7 @@ export default function Footer() {
           <p className="text-white text-sm text-center md:text-left">
             © 2012-2026 Wtm Technologies Pvt. Ltd. All Rights Reserved.
           </p>
+
           <div className="flex items-center gap-2 text-white text-sm">
             <strong>Corporate Identity Number :</strong><span className="text-xs font-normal">U62012WB2023PTC261715</span>
           </div>

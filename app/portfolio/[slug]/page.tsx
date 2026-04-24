@@ -147,6 +147,8 @@ const slugToImage: Record<string, string> = {
   "whitebook-world": "/images/portfolio/whitebook.jpg",
   "pg-hostel-mess": "/images/portfolio/pghostelmess.jpg",
   "abc-learnings": "/images/portfolio/abclearnings.jpg",
+  "timble": "/images/portfolio/timble_app.jpeg",
+  "paper-track": "/images/portfolio/paper_track.jpeg"
 };
 
 // Generic fallback

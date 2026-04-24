@@ -41,9 +41,9 @@ const FreeConsultation = () => {
                                 data-aos-delay={idx * 100}
                             >
                                 {/* Icon Box */}
-                                <div className="w-12 h-12 p-2  shrink-0 flex items-center justify-center rounded-full bg-white shadow-md border border-gray-100 group-hover:scale-110 group-hover:shadow-cyan-200 transition-all duration-300">
-                                    <Icon size={35} strokeWidth={1.5} className="text-cyan-500" />
-                                </div>
+                               <div className="w-12 h-12 p-2 shrink-0 flex items-center justify-center rounded-full bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] shadow-md border border-white/10 group-hover:scale-110 group-hover:shadow-purple-400/30 transition-all duration-300">
+    <Icon size={35} strokeWidth={1.5} className="text-white" />
+</div>
 
                                 {/* Text */}
                                 <span className="text-gray-600 text-md font-medium group-hover:text-gray-900 transition-colors duration-300">
@@ -94,7 +94,7 @@ const FreeConsultation = () => {
                 <div className='w-full md:relative'>
                     {/* Title */}
                     <p className='text-[#ED286C] text-[15px] font-bold tracking-widest uppercase mb-1'>Free Consultation</p>
-                    <h2 className='text-3xl md:text-[50px] font-regular text-[#020200] leading-tight'>Maximize Your Brand's Performance With </h2>
+                    <h2 className='text-3xl md:text-[50px] font-regular text-[#020200] leading-tight'>Accelerate Growth With AI Solutions From</h2>
                     <h2 className='text-4xl md:text-[55px] font-bold mb-5 bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] bg-clip-text text-transparent'>Webtechnomind IT Solutions</h2>
 
                     {/* Form Grid */}
@@ -181,9 +181,9 @@ const FreeConsultation = () => {
                                 return (
                                     <div
                                         key={idx}
-                                        className="w-9 h-9 flex items-center justify-center rounded-full bg-white hover:bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] text-black hover:text-white shadow-md hover:scale-110 transition-all duration-300 cursor-pointer"
+                                        className="w-12 h-12 flex items-center justify-center rounded-full bg-white hover:bg-[linear-gradient(108deg,#0079d0_0%,#9e52d8_32%,#da365c_84%,#d04901_100%)] text-black hover:text-white shadow-md hover:scale-110 transition-all duration-300 cursor-pointer"
                                     >
-                                        <Icon size={16} />
+                                        <Icon size={22} />
                                     </div>
                                 );
                             })}
