@@ -32,6 +32,9 @@ import amit from "../../public/images/team/amit.jpg";
 import debu from "../../public/images/team/debu.jpg";
 import kalyan from "../../public/images/team/kalyan.jpg";
 import nehasingh from "../../public/images/team/nehasingh.jpg";
+import Os_rupa from "../../public/images/team/Os_rupa.jpeg";
+import Hr_samiksha from "../../public/images/team/Hr_samiksha.jpg";
+import roundLogo from "../../public/images/roundlogo.png";
 // ID Card Image Bypasses static import due to memory limits
 
 const teamData = [
@@ -49,7 +52,8 @@ const teamData = [
         category: "Management Team",
         members: [
             { name: "Rahul Halder", role: "VP - Projects & Operations", image: rahul, id: "WTM-MG-006" },
-            { name: "Suchandra", role: "Project Coordinator", image: suchandra, id: "WTM-PC-007" }
+            { name: "Suchandra", role: "Project Coordinator", image: suchandra, id: "WTM-PC-007" },
+            { name: "Samiksha Singh", role: "HR Manager", image: Hr_samiksha, id: "WTM-HR-008" },  
         ]
     },
     {
@@ -95,9 +99,14 @@ const teamData = [
         members: [
             { name: "", role: "IT Hardware Engineer", image: subhankar, id: "WTM-IT-026" },
         ]
+    },
+    {
+        category: "Office Staff",   // ← new section
+        members: [
+            { name: "Rupa Biswas", role: "Office Staff", image: Os_rupa, id: "WTM-OS-027" },
+        ]
     }
 ];
-
 const BarcodeIcon = () => (
     <div className="flex gap-x-[2px] h-6 opacity-50">
         {[...Array(20)].map((_, i) => (
@@ -130,7 +139,7 @@ const IDCard = ({ member, index }: { member: any, index: number }) => {
                     <div className="flex items-center gap-2">
                         {/* <div className="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center border border-red-100 shadow-inner"> */}
                         {/* <Orbit className="w-4 h-4 text-red-500 animate-spin-slow" /> */}
-                        <Image src="/images/roundlogo.svg" alt="Logo" width={16} height={16} className="w-7 h-auto" unoptimized />
+                        <Image src="/images/roundLogo.png" alt="Logo" width={16} height={16} className="w-7 h-auto" unoptimized />
                         {/* </div> */}
                         <span className="text-[12px] font-medium uppercase tracking-[0.1em] text-slate-500">Official Member</span>
                     </div>

@@ -306,6 +306,7 @@ export default function Navbar() {
   const [openMobileMegaMenu, setOpenMobileMegaMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
+  const [appearanceCount, setAppearanceCount] = useState(0);
   const megaMenuRef = useRef<HTMLDivElement>(null);
 
   // useEffect(() => {
@@ -322,14 +323,15 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (!formOpen) {
+    if (!formOpen && appearanceCount < 3) {
       const delay = Math.floor(Math.random() * 2000) + 10000; // Random delay between 10-12 seconds
       const timer = setTimeout(() => {
         setFormOpen(true);
+        setAppearanceCount(prev => prev + 1);
       }, delay);
       return () => clearTimeout(timer);
     }
-  }, [formOpen]);
+  }, [formOpen, appearanceCount]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
