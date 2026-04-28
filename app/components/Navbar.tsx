@@ -289,7 +289,7 @@ const navLinks = [
         color1: "#000000"
       },
       {
-        title: "Our Gallery",
+        title: "Life at Webtechnomind ",
         description: "Visual showcase of our work",
         href: "/gallery",
         icon: Clapperboard,
@@ -322,16 +322,18 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (!formOpen && appearanceCount < 3) {
-      const delay = Math.floor(Math.random() * 2000) + 10000; // Random delay between 10-12 seconds
-      const timer = setTimeout(() => {
-        setFormOpen(true);
-        setAppearanceCount(prev => prev + 1);
-      }, delay);
-      return () => clearTimeout(timer);
-    }
-  }, [formOpen, appearanceCount]);
+
+  // -----------Form Appearing---------------
+  // useEffect(() => {
+  //   if (!formOpen && appearanceCount < 3) {
+  //     const delay = Math.floor(Math.random() * 2000) + 10000; // Random delay between 10-12 seconds
+  //     const timer = setTimeout(() => {
+  //       setFormOpen(true);
+  //       setAppearanceCount(prev => prev + 1);
+  //     }, delay);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [formOpen, appearanceCount]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -419,11 +421,10 @@ export default function Navbar() {
                         const Icon = v?.icon;
                         return (
                           <div key={idx}>
-                            <Link onClick={() => setOpenMegaMenu({})} href={v?.href} className={`flex p-3 items-center gap-2 font-normal group text-sm rounded-xl border border-solid border-transparent hover:border-gray-200`}>
+                            <Link onClick={() => setOpenMegaMenu({})} href={v?.href} className={`flex p-3 items-center gap-10 font-normal group text-sm rounded-xl border border-solid border-transparent hover:border-gray-200`}>
                               {v?.icon !== "" ?
-                                <div className={`p-3 rounded-xl`} style={{ background: v?.subMenue?.length ? `${v?.color}40` : `${v?.color}20`, }}>
                                   <Icon className={`w-6 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} />
-                                </div>
+                              
                                 : ""}
                               <span className="font-semibold text-base text-gray-600">{v?.title}</span>
                             </Link>

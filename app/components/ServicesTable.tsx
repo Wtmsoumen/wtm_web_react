@@ -142,7 +142,7 @@ const ServicesTable: React.FC<ServicesTableProps> = ({ activeFilter }) => {
               <div
                 key={service.id}
                 onMouseEnter={() => setHoveredService(service.id)}
-                className={`grid grid-cols-12 border-b rounded-2xl border-gray-200 first:border-t transition-all duration-500 relative overflow-visible cursor-pointer`}
+                className="grid grid-cols-12 border-b rounded-2xl border-gray-200 first:border-t transition-all duration-500 relative overflow-visible cursor-pointer"
                 data-aos="fade-up"
                 data-aos-delay={index * 50}
                 style={{
@@ -151,6 +151,38 @@ const ServicesTable: React.FC<ServicesTableProps> = ({ activeFilter }) => {
                     : 'transparent',
                 }}
               >
+                {/* ── FLOATING ARROW — lifts above the row's top-right corner ── */}
+                <Link
+                  href={`/services/${service.slug}`}
+                  aria-label={`Go to ${service.title}`}
+                  onClick={(e) => e.stopPropagation()}
+                  className={`absolute -top-5 -right-5 z-30
+                    w-14 h-14 rounded-full
+                    flex items-center justify-center
+                    shadow-lg shadow-black/20
+                    border border-white/30
+                    backdrop-blur-sm
+                    transition-all duration-400 ease-out
+                    ${isHovered(service.id)
+                      ? 'opacity-100 scale-100 translate-y-0 rotate-0'
+                      : 'opacity-0 scale-50 translate-y-3 pointer-events-none'
+                    }`}
+                  style={
+                    isHovered(service.id)
+                      ? {
+                          background: `white`,
+                          boxShadow: `0 8px 24px -4px ${service.gradientTo}66`,
+                        }
+                      : {}
+                  }
+                >
+                  <ArrowUpRight
+                    className="text-black drop-shadow-sm"
+                    size={30}
+                    strokeWidth={1.5}
+                  />
+                </Link>
+
                 {/* Number */}
                 <div className="col-span-2 md:col-span-1 flex items-center justify-center py-6 md:py-10">
                   <span className={`text-2xl md:text-3xl font-light transition-colors duration-300 ${isHovered(service.id) ? 'text-white' : 'text-black'}`}>
@@ -172,28 +204,8 @@ const ServicesTable: React.FC<ServicesTableProps> = ({ activeFilter }) => {
                   </p>
                 </div>
 
-                {/* Arrow + Image Container */}
+                {/* Image Container */}
                 <div className="col-span-2 md:col-span-3 flex items-center justify-end pr-4 md:pr-6 relative">
-
-                  {/* Arrow icon — links to the service slug page */}
-                  <Link
-                    href={`/services/${service.slug}`}
-                    aria-label={`Go to ${service.title}`}
-                    className={`transition-all duration-400 ease-out flex items-center justify-center
-                      w-10 h-10 rounded-full
-                      ${isHovered(service.id)
-                        ? 'opacity-100 translate-x-0 scale-100 border-white ml-18'
-                        : 'opacity-0 translate-x-4 scale-75 border-transparent'
-                      }`}
-                    style={{ transitionDuration: '350ms' }}
-                  >
-                    <ArrowUpRight
-                      className={`transition-all duration-300 ${isHovered(service.id) ? 'text-white' : 'text-transparent'}`}
-                      size={25}
-                      strokeWidth={2.2}
-                    />
-                  </Link>
-
                   {/* Image — desktop only, floats above the row */}
                   <div className="hidden lg:block absolute right-16 top-1/2 transform -translate-y-1/2 z-10">
                     <div
