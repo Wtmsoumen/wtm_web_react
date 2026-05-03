@@ -455,7 +455,7 @@ export default function Hero() {
 
         {/* Bottom gradient bar */}
         <div
-          className="relative w-full py-4"
+          className="relative w-[90%] mx-auto rounded-3xl mt-10 py-4"
           style={{ background: "linear-gradient(90deg,#1D74CF 0%,#6d28d9 35%,#be185d 65%,#ea580c 100%)", zIndex: 10 }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
