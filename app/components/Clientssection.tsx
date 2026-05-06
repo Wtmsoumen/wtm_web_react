@@ -84,15 +84,14 @@ const featuredTestimonial: Testimonial = {
     stars: 5,
     quote: (
         <>
-            "Working with WTM was transformative for our business. They didn't
-            just build an app— they became our strategic partner. The platform handles{" "}
-            <strong>$50M+ in daily transactions</strong> with zero downtime. Their
-            expertise in AI integration helped us launch faster than expected."
+            "Had a great experience working with Amit and his team for my website development. They helped me from the very beginning, from choosing the right theme to setting everything up properly, and made the whole process easy. Even after the handover, they were still there to help and explain things clearly, which I really appreciated.
+
+            I’m based in Australia, and communication was smooth the entire time. Amit and his team are friendly, reliable, and really know their stuff. Would definitely recommend them to anyone looking for a web developer."
         </>
     ),
-    name: "Marcus Chen",
-    role: "CEO, TechScale Ventures",
-    location: "SG Singapore",
+    name: "Sandip Sandhu",
+    role: "",
+    location: "AU Australia",
     avatar: "MC",
     stats: [
         { value: "$50M+", label: "Daily Volume" },
@@ -107,14 +106,12 @@ const gridTestimonials: Testimonial[] = [
         stars: 5,
         quote: (
             <>
-                "Outstanding delivery app solution with incredible customization options.
-                We launched our service in just <strong>6 weeks</strong>. The AI-powered
-                matching algorithm was invaluable."
+                "Amit and his team have been absolutely outstanding in delivering top-quality website and logo design services for my business in Australia. Their attention to detail, creativity, and commitment to Australian standards truly set them apart. The level of professionalism and expertise they bring to the table is remarkable. Every project they handle is executed flawlessly, ensuring the best results. If you're looking for a reliable, skilled, and highly professional team for your website and branding needs, I highly recommend Amit and his team. Australian businesses can trust them for exceptional work that meets and exceeds expectations👍👌🏻✨"
             </>
         ),
-        name: "Ahmed Al-Rashid",
-        role: "CTO",
-        location: "AE Dubai",
+        name: "Khalsa Tyres",
+        role: "Khalsa Tyres",
+        location: "Au Australia",
         avatar: "AA",
     },
     {
@@ -122,29 +119,27 @@ const gridTestimonials: Testimonial[] = [
         stars: 5,
         quote: (
             <>
-                "Their AI diagnostic integration has{" "}
-                <strong>improved patient outcomes by 40%</strong>. True partners who
-                understood healthcare compliance from day one."
+                "We had a great experience working with Webtechnomind for developing our company website. From the beginning, their team was professional, responsive, and truly understood our vision. They delivered a modern, user-friendly, and fully functional website that exceeded our expectations."
             </>
         ),
-        name: "David Mitchell",
-        role: "Director",
-        location: "AU Sydney",
+        name: "Debankit Chakraborty",
+        role: "",
+        location: "IN Bangalore",
         avatar: "DM",
     },
+
+
     {
         category: "Education",
         stars: 5,
         quote: (
             <>
-                "WTM built our adaptive learning platform that now serves{" "}
-                <strong>500K+ students</strong>. Professional, knowledgeable, and always
-                available."
+                "I had a great experience working with Webtechnomind and their team, led by Amit. They were professional, knowledgeable, and always available to answer my questions. The website they developed for me was exactly what I wanted and more. They were able to capture my vision and bring it to life. I highly recommend Webtechnomind for anyone looking for quality website development services."
             </>
         ),
-        name: "Sarah Williams",
-        role: "Founder",
-        location: "UK London",
+        name: "Total Multi Services Inc. (TOTAL TRUCK PERMITS)",
+        role: "",
+        location: "PL Poland",
         avatar: "SW",
     },
     {
@@ -152,12 +147,11 @@ const gridTestimonials: Testimonial[] = [
         stars: 5,
         quote: (
             <>
-                "Our grocery delivery app processes <strong>100K+ orders daily</strong>.
-                The AI recommendation engine increased average order value by 35%."
+                "Amit and his team at Webtechnomind IT Solutions Pvt. Ltd. are WordPress website experts. They delivered a stunning, user-friendly site tailored to our needs. Their attention to detail and prompt support make them a reliable choice for web development."
             </>
         ),
-        name: "Priya Sharma",
-        role: "Product Director",
+        name: "Pravin Desai",
+        role: "",
         location: "IN Bangalore",
         avatar: "PS",
     },
@@ -165,13 +159,12 @@ const gridTestimonials: Testimonial[] = [
 
 const miniTestimonials: MiniTestimonial[] = [
     {
-        name: "Michael Weber",
+        name: "Joel Nupier",
         category: "Logistics",
         stars: 4,
         quote: (
             <>
-                "The route optimization AI reduced our delivery costs by 35%. Now
-                handling 10,000+ daily deliveries seamlessly."
+                "Great communication, great service, great woth seo and website design! Highly reccomend as we have used this team on multiple businesses!"
             </>
         ),
         avatar: "MW",

@@ -119,6 +119,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollReveal from "./ScrollReveal";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import HeroOrbit from "./Heroorbit";
 
 const serviceTagsRow1 = [
   { icon: <Cpu className="w-3.5 h-3.5" />, label: "AI Engineering" },
@@ -302,153 +304,25 @@ export default function Hero() {
             {/* ════ RIGHT COLUMN ════ */}
             <div className="hero-card relative flex items-center justify-center lg:justify-end">
 
-              {/* Decorative "!" */}
-              {/* <div
-                className="absolute hidden lg:flex flex-col items-center pointer-events-none select-none"
-                style={{ left: "-68px", top: "10%", zIndex: 1, gap: "10px" }}
-              >
-                <div style={{
-                  width: "34px", height: "120px", borderRadius: "20px", background: "#e91e8c",
-                  boxShadow: "0 0 36px 10px rgba(233,30,140,0.50), 0 6px 20px rgba(233,30,140,0.40)",
-                }} />
-                <div style={{
-                  width: "34px", height: "34px", borderRadius: "50%", background: "#e91e8c",
-                  boxShadow: "0 0 24px 8px rgba(233,30,140,0.50), 0 4px 12px rgba(233,30,140,0.40)",
-                }} />
-              </div> */}
 
-              {/* Dashed ellipse */}
-              <svg
-                className="absolute hidden lg:block pointer-events-none"
-                style={{ right: "-32px", top: "50%", transform: "translateY(-50%)", zIndex: 0, overflow: "visible" }}
-                width="500" height="400" viewBox="0 0 500 400" fill="none"
-              >
-                <ellipse cx="270" cy="200" rx="215" ry="170"
-                  stroke="#e91e8c" strokeWidth="2" strokeDasharray="8 6" fill="none" opacity="0.40" />
-              </svg>
 
-              {/* The Card */}
-              <div
-                className="relative z-10 w-full max-w-[430px] rounded-3xl overflow-hidden"
-                style={{
-                  background: "rgba(255,255,255,0.92)",
-                  backdropFilter: "blur(16px)",
-                  WebkitBackdropFilter: "blur(16px)",
-                  boxShadow: "0 24px 64px rgba(29,116,207,0.14), 0 4px 20px rgba(0,0,0,0.07)",
-                  border: "1px solid rgba(226,232,240,0.9)",
-                }}
-              >
-                {/* Card Top Row */}
-                <div className="flex items-start justify-between px-5 pt-5 pb-3 border-b border-gray-100">
-                  <div className="flex items-center gap-3">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: "linear-gradient(135deg,#1D74CF,#db2777)" }}
-                    >
-                      <Sparkles className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold text-gray-900">WTM AI Growth Engine</div>
-                      <div className="text-xs text-gray-400">360° Digital Transformation Platform</div>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-end gap-2">
-                    <div className="flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold text-white" style={{ background: "#16a34a" }}>
-                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse inline-block" />
-                      LIVE
-                    </div>
-                    <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl border" style={{ borderColor: "#e5e7eb" }}>
-                      <TrendingUp className="w-3 h-3 text-red-500" />
-                      <div className="flex flex-col leading-none">
-                        <span className="text-[8px] text-gray-400 uppercase tracking-wide">Average ROAS</span>
-                        <span className="font-bold text-gray-800 text-sm">3.8x Growth</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 360 Service */}
-                <div className="flex items-center gap-4 px-5 py-4 border-b border-gray-100">
-                  <div className="relative w-16 h-16 flex-shrink-0">
-                    <svg viewBox="0 0 64 64" className="w-full h-full" fill="none">
-                      <circle cx="32" cy="32" r="28" stroke="#ddd6fe" strokeWidth="1.5" strokeDasharray="4 3" />
-                      <circle cx="32" cy="32" r="20" stroke="url(#cg1)" strokeWidth="2" />
-                      <text x="32" y="37" textAnchor="middle" fontSize="10" fontWeight="800" fill="url(#cg2)">360°</text>
-                      <defs>
-                        <linearGradient id="cg1" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-                          <stop stopColor="#1D74CF" /><stop offset="1" stopColor="#db2777" />
-                        </linearGradient>
-                        <linearGradient id="cg2" x1="0" y1="0" x2="64" y2="0" gradientUnits="userSpaceOnUse">
-                          <stop stopColor="#1D74CF" /><stop offset="1" stopColor="#db2777" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="text-[9px] font-bold tracking-widest uppercase text-gray-400 mb-0.5">Full-Circle Service</div>
-                    <div className="text-[15px] font-extrabold bg-clip-text text-transparent leading-tight"
-                      style={{ backgroundImage: "linear-gradient(90deg,#1D74CF,#db2777)" }}>
-                      AI-Based Digital<br />Marketing Excellence
-                    </div>
-                    <div className="text-xs text-gray-400 mt-1">Strategy · Content · SEO · PPC · Analytics</div>
-                  </div>
-                </div>
-
-                {/* Progress Bars */}
-                <div className="px-5 py-4 border-b border-gray-100 space-y-2.5">
-                  {progressBars.map((bar) => (
-                    <div key={bar.label}>
-                      <div className="flex justify-between items-center mb-1">
-                        <span className="text-xs text-gray-600 font-medium">{bar.label}</span>
-                        <span className="text-xs font-bold text-gray-700">{bar.value}%</span>
-                      </div>
-                      <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ background: "#f1f5f9" }}>
-                        <div className="h-full rounded-full" style={{
-                          width: `${bar.value}%`,
-                          background: "linear-gradient(90deg,#1D74CF 0%,#9333ea 50%,#db2777 80%,#D04425 100%)",
-                          boxShadow: "0 0 6px rgba(29,116,207,0.35)",
-                        }} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-4 divide-x divide-gray-100 border-b border-gray-100">
-                  {stats.map((s) => (
-                    <div key={s.label} className="flex flex-col items-center py-3">
-                      <span className="text-xl font-extrabold bg-clip-text text-transparent"
-                        style={{ backgroundImage: "linear-gradient(135deg,#1D74CF,#db2777)" }}>
-                        {s.value}
-                      </span>
-                      <span className="text-[9px] font-bold uppercase tracking-wider text-gray-400 mt-0.5">{s.label}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Terminal */}
-                <div className="mx-4 my-4 rounded-xl overflow-hidden" style={{ background: "#0f172a" }}>
-                  <div className="flex items-center gap-1.5 px-3 py-2 border-b border-white/10">
-                    <span className="w-2.5 h-2.5 rounded-full bg-red-500" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-400" />
-                  </div>
-                  <div className="px-4 py-3 font-mono text-[11px] leading-relaxed">
-                    <div>
-                      <span className="text-green-400">wtm@studio</span>
-                      <span className="text-white"> ~ $ </span>
-                      <span className="text-blue-300">ai-deploy --service=360-marketing</span>
-                    </div>
-                    <div className="text-green-400 mt-1">✓ SEO · PPC · Content · Social activated</div>
-                    <div className="text-green-400">✓ AI model GPT-4 + WTM Custom LLM</div>
-                    <div className="mt-1">
-                      <span className="text-green-400">wtm@studio</span>
-                      <span className="text-white"> ~ $ </span>
-                      <span className="animate-pulse text-white">▍</span>
-                    </div>
-                  </div>
-                </div>
+              <div className="relative z-10 w-full max-w-[1400px] scale-110">
+                <Image
+                  src="/images/hero_png_image.png"
+                  alt="Hero"
+                  width={1400}
+                  height={1400}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
               </div>
+
+
+
+              {/* <HeroOrbit /> */}
+
+
+
             </div>
           </div>
         </div>

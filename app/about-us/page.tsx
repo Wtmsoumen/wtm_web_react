@@ -23,6 +23,9 @@ import {
 import { globalStyle } from "../globalStyle";
 import Link from "next/link";
 import ScrollReveal from "../components/ScrollReveal";
+import CustomMapColor from "../components/CustomMapColor";
+import GlobalPresenceSection from "../components/Globalpresencesection";
+import ServicesAboutUs from "../components/ServicesAboutUs";
 
 const slides = [
   { src: "images/abacus-building.webp", alt: "Webtechnomind India Office" },
@@ -235,6 +238,10 @@ export default function AboutPage() {
         </section>
       </ScrollReveal>
 
+
+
+      <ServicesAboutUs/>
+
       {/* ══ 3. CORE VALUES ════════════════════════════════════════════════════ */}
       <ScrollReveal>
         <section className="relative bg-gray-50 py-20 overflow-hidden">
@@ -270,7 +277,7 @@ export default function AboutPage() {
       </ScrollReveal>
 
       {/* ══ 4. GLOBAL PRESENCE ═════════════════════════════════════════════════ */}
-      <ScrollReveal>
+      {/* <ScrollReveal>
         <section className="bg-white py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -315,7 +322,9 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-      </ScrollReveal>
+      </ScrollReveal> */}
+
+        <GlobalPresenceSection  />
 
       {/* ══ 5. TECHNOLOGIES ════════════════════════════════════════════════════ */}
       <ScrollReveal>
