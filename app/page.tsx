@@ -22,6 +22,7 @@ import PortfolioSection from "./components/Projects";
 import DigitalMarketingSection from "./components/DigitalMarketingSection";
 import ScrollReveal from "./components/ScrollReveal";
 import VideoTestimonials from "./components/VideoTestimonials";
+import CreativeMediaStudioSection from "./components/CreativeMediaStudioSection ";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
 
 
       <ScrollReveal><Services /></ScrollReveal>
+       <ScrollReveal><CreativeMediaStudioSection /></ScrollReveal>
       <ScrollReveal><OurService /></ScrollReveal>
       <ScrollReveal><VideoTestimonials /></ScrollReveal>
       <ScrollReveal><DigitalMarketingSection /></ScrollReveal>
