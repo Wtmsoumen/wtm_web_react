@@ -409,7 +409,7 @@ export default function Navbar() {
                           }} >
                           <Ticon className={`w-5 h-auto text-white`} />
                         </div>
-                        <div className="flex flex-col font-semibold text-gray-600">
+                        <div className="flex flex-col font-semibold text-black">
                           <h1 className="text-xl">{openMegaMenu?.title}</h1>
                           <h2 className="font-medium text-sm">{openMegaMenu?.subtitle}</h2>
                         </div>
@@ -426,7 +426,7 @@ export default function Navbar() {
                                   <Icon className={`w-6 duration-300 h-auto mt-0.5!`} style={{ color: v?.color }} />
                               
                                 : ""}
-                              <span className="font-semibold text-base text-gray-600">{v?.title}</span>
+                              <span className="font-semibold text-base text-black">{v?.title}</span>
                             </Link>
 
                             {/* {v?.subMenue?.length > 0 ? v?.subMenue?.map((val: any, indx: number) => {
@@ -491,7 +491,7 @@ export default function Navbar() {
                               >
                                 {abbr}
                               </span>
-                              <span className="text-gray-600 text-sm font-medium">{label}</span>
+                              <span className="text-black text-sm font-medium">{label}</span>
                             </div>
                           ))}
                         </div>

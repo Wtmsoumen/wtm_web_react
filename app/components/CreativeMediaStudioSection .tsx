@@ -95,9 +95,9 @@ function RoleCard({ role }: { role: (typeof roles)[0] }) {
       {/* Bullets */}
       <ul className="space-y-1.5">
         {role.bullets.map((b, i) => (
-          <li key={i} className="flex items-center gap-2 text-xs text-gray-500">
+          <li key={i} className="flex items-center gap-2 text-md text-black">
             <Check
-              className="w-3.5 h-3.5 flex-shrink-0"
+              className="w-5 h-5 flex-shrink-0"
               style={{ color: "#da365c" }}
               strokeWidth={2.5}
             />
@@ -155,7 +155,7 @@ export default function CreativeMediaStudioSection() {
 
             <h2>
               <span
-                className="block text-4xl md:text-6xl font-black text-gray-900 leading-tight"
+                className="block text-4xl md:text-6xl font-black text-black leading-tight"
                 style={{ fontFamily: "'DM Serif Display', serif" }}
               >
                 We make brands
@@ -173,7 +173,7 @@ export default function CreativeMediaStudioSection() {
               </span>
             </h2>
 
-            <p className="text-gray-500 text-lg max-w-xl leading-relaxed">
+            <p className="text-black text-lg max-w-xl leading-relaxed">
               From pixel-perfect UI to cinematic brand films — our studio crafts every visual touchpoint with intention.
             </p>
           </div>
@@ -240,7 +240,7 @@ export default function CreativeMediaStudioSection() {
           </div>
 
           {/* ── Role cards grid ── */}
-          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-5" data-aos="fade-up">
+          <p className="text-sm font-bold text-black uppercase tracking-widest mb-5" data-aos="fade-up">
             Our Studio Team
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
