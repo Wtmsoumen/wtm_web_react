@@ -101,15 +101,16 @@ export default function BlogSection() {
                   <p className="text-black text-sm leading-relaxed mb-4 line-clamp-2">
                     {post.excerpt}
                   </p>
-                 <div className="flex items-center justify-between">
-  <span className="text-black text-xs">{post.date}</span>
-  <Link
-    href={`/blogs/${post.slug}`}
-    className="text-xs font-semibold px-4 py-1.5 rounded-full border border-purple-400/40 bg-purple-400/10 text-purple-400 hover:bg-purple-400 hover:text-white transition-all duration-300"
-  >
-    Read More →
-  </Link>
-</div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-black text-xs">{post.date}</span>
+
+
+                    {/*/blogs/${post.slug}  */}
+                    <span className="text-xs font-semibold px-4 py-1.5 rounded-full border border-purple-400/40 bg-purple-400/10 text-purple-400 group-hover:bg-purple-400 group-hover:text-white transition-all duration-300">
+                      Read More →
+                    </span>
+
+                  </div>
                 </div>
               </Link>
             ))}
