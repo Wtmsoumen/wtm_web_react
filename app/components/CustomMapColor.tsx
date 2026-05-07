@@ -207,7 +207,7 @@ export default function CustomMapColor() {
   return (
     <div className="relative w-full">
       <Image
-        src="/images/map_color.png"
+        src="/images/map-color-Photoroom.png"
         alt="WebTechnoMind Global Offices Map"
         width={1456}
         height={816}
